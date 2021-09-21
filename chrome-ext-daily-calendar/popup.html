@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Time Blocker</title>
+
+  <!-- <script src="popup.js"></script> -->
+  <link rel="stylesheet" href="./styles/main.css">
+  <link rel="stylesheet" href="./styles/modal.css">
+
+</head>
+
+<body data-long-press-delay="500">
+  <script src="src/modal.js"></script>
+  <script src="popup.js"></script>
+  <script src="src/long-press-event.js"></script>
+
+  <div class="header">
+    <div class="daily-activities">
+      <div class="header-container">
+
+      </div>
+      <div class="daily-activity-icon-container" data-modal-event="placeholder">
+        <img class="daily-activity-icon" src="./icons/add.png">
+      </div>
+
+    </div>
+    <div class="daily-activities-text-container">
+      <div class="daily-activities-text"></div>
+
+
+    </div>
+  </div>
+  <div class="bolt-group">
+    <img class="bolt bolt1" src="./icons/bolt.png" alt="bolt" />
+    <img class="bolt bolt2" src="./icons/bolt.png" alt="bolt" />
+    <img class="bolt bolt3" src="./icons/bolt.png" alt="bolt" />
+    <img class="bolt bolt4" src="./icons/bolt.png" alt="bolt" />
+    <img class="bolt bolt5" src="./icons/bolt.png" alt="bolt" />
+    <img class="bolt bolt6" src="./icons/bolt.png" alt="bolt" />
+
+  </div>
+  <div class="calendar-content-container">
+    <div class="calendar-content">
+    </div>
+  </div>
+  
+  <audio id="audio" src="./audio/beep1.mp3"></audio>
+  <audio id="audio-low" src="./audio/beep2.mp3"></audio>
+
+
+  <section class="section__modal">
+    <!-- Normal Loading Modal -->
+    <div class="modal__wrapper js-modal--placeholder">
+      <div class="modal__overflow-wrapper">
+        <div class="modal__content">
+          <div class="modal__close">
+            <img
+              src="https://brandlive-upload.s3-us-west-2.amazonaws.com/1676/documents/fwtty4e03m/closeicon--black.svg"
+              class="modal__close--icon" alt="Close This Modal" />
+          </div>
+          <!-- <div class="all-activites">
+            
+          </div> -->
+          <!-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" rel="stylesheet" /> -->
+
+
+          <legend class="modal-header">
+            Create a new tracker
+          </legend>
+          <input type="text" id="activity-description" name="activity-description"
+            placeholder="What do you want to accomplish every single day?">
+
+          <legend class="legend-promp">
+            Pick an icon that represents your goal
+          </legend>
+          <fieldset>
+            <input type="radio" name="activity" class="sr-only" id="reading">
+            <label for="reading">
+              <img src="./color-icons/reading.png" alt="reading">
+            </label>
+
+            <input type="radio" name="activity" class="sr-only" id="schedule">
+            <label for="schedule">
+              <img src="./color-icons/schedule.png" alt="schedule">
+            </label>
+
+            <input type="radio" name="activity" class="sr-only" id="eating">
+            <label for="eating">
+              <img src="./color-icons/eating.png" alt="eating">
+            </label>
+
+            <input type="radio" name="activity" class="sr-only" id="email">
+            <label for="email">
+              <img src="./color-icons/email.png" alt="email">
+            </label>
+
+            <input type="radio" name="activity" class="sr-only" id="family">
+            <label for="family">
+              <img src="./color-icons/family.png" alt="family">
+            </label>
+
+            <input type="radio" name="activity" class="sr-only" id="sleep">
+            <label for="sleep">
+              <img src="./color-icons/sleep.png" alt="sleep">
+            </label>
+
+            <input type="radio" name="activity" class="sr-only" id="coding">
+            <label for="coding">
+              <img src="./color-icons/coding.png" alt="coding">
+            </label>
+
+          </fieldset>
+          <button id="process-form-button" class="large action">Create</button>
+        </div>
+      </div>
+    </div>
+
+
+
+    <div class="modal__wrapper delete-modal-wrapper">
+      <div class="modal__overflow-wrapper">
+        <div class="modal__content">
+          <div class="modal__close">
+            <img
+              src="https://brandlive-upload.s3-us-west-2.amazonaws.com/1676/documents/fwtty4e03m/closeicon--black.svg"
+              class="modal__close--icon" alt="Close This Modal" />
+          </div>
+          <div class="delete-modal">
+            <span class="delete-prompt">Are you sure you'd like to remove the goal:</span>
+            <span class="delete-goal-title">DEFAULT GOAL</span>
+
+            <div class="button-group">
+              <button class="button" data-remove-goal='true' >Yes</button>
+              <button class="button" data-remove-goal='false'>No</button>
+
+            </div>
+
+          </div>
+          <!-- <div class="all-activites">
+            
+          </div> -->
+          <!-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" rel="stylesheet" /> -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+</body>
+
+</html>

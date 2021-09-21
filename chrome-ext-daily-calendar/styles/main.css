@@ -1,0 +1,327 @@
+body {
+  background: #beb59c;
+  width: 100vw;
+  height: 100vh;
+}
+.header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 32px 0 0 0;
+  justify-content: space-between;
+}
+
+.daily-activities {
+  display: flex;
+  flex-direction: row;
+  padding: 0 0 0 80px;
+  gap: 30px;
+}
+.header-container {
+  display: flex;
+  flex-direction: row;
+}
+.daily-activity-icon-container {
+  width: 78px;
+  height: 83px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.daily-activity-icon-container:hover {
+  background-image: url("/icons/activity-select.png");
+}
+.active-click {
+  background-image: url("/icons/activity-select.png");
+}
+.daily-activity-icon {
+  width: 40px;
+  height: 40px;
+}
+
+.daily-activities-text-container {
+  display: flex;
+  align-items: center;
+  justify-self: center;
+  width: 380px;
+  height: 80px;
+  background: #171411;
+  margin-right: 25px;
+}
+
+.daily-activities-text {
+  padding: 0 15px;
+  color: rgba(178, 171, 139, 1);
+}
+
+.calendar-content-container {
+  /* display: flex; */
+  /* justify-content: center; */
+  /* align-items: center; */
+  /* width: 100%; */
+  /* height: 100%; */
+  background: #171411;
+  margin: 32px 25px 10px 10px;
+  padding: 40px;
+}
+.calendar-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 10px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.active-hover {
+  background-image: url("/icons/activity-select.png");
+}
+.month-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 76px;
+}
+
+.month-name {
+  color: rgba(178, 171, 139, 1);
+  font-size: 22px;
+}
+
+.day-numbers {
+  /* margin: 10px; */
+  padding-top: 20px;
+  display: grid;
+  grid-template-areas:
+    "a ."
+    "a b"
+    "c b"
+    "c d"
+    "e d"
+    "e f"
+    "g f"
+    "g h"
+    "i h"
+    "i j"
+    "k j"
+    "k l"
+    "m l"
+    "m n"
+    "o n"
+    "o p"
+    "q p"
+    "q r"
+    "s r"
+    "s t"
+    "u t"
+    "u v"
+    "w v"
+    "w x"
+    "y x"
+    "y z"
+    "A z"
+    "A B"
+    "C B"
+    "C D"
+    "E D"
+    "E .";
+  transition: left 0.5s;
+}
+.day1 {
+  grid-area: a;
+}
+.day2 {
+  grid-area: b;
+}
+.day3 {
+  grid-area: c;
+}
+.day4 {
+  grid-area: d;
+}
+.day5 {
+  grid-area: e;
+}
+.day6 {
+  grid-area: f;
+}
+.day7 {
+  grid-area: g;
+}
+.day8 {
+  grid-area: h;
+}
+.day9 {
+  grid-area: i;
+}
+.day10 {
+  grid-area: j;
+}
+.day11 {
+  grid-area: k;
+}
+.day12 {
+  grid-area: l;
+}
+.day13 {
+  grid-area: m;
+}
+.day14 {
+  grid-area: n;
+}
+.day15 {
+  grid-area: o;
+}
+.day16 {
+  grid-area: p;
+}
+.day17 {
+  grid-area: q;
+}
+.day18 {
+  grid-area: r;
+}
+.day19 {
+  grid-area: s;
+}
+.day20 {
+  grid-area: t;
+}
+.day21 {
+  grid-area: u;
+}
+.day22 {
+  grid-area: v;
+}
+.day23 {
+  grid-area: w;
+}
+.day24 {
+  grid-area: x;
+}
+.day25 {
+  grid-area: y;
+}
+.day26 {
+  grid-area: z;
+}
+.day27 {
+  grid-area: A;
+}
+.day28 {
+  grid-area: B;
+}
+.day29 {
+  grid-area: C;
+}
+.day30 {
+  grid-area: D;
+}
+.day31 {
+  grid-area: E;
+}
+.day-number {
+  position: relative;
+  color: rgba(89, 77, 19, 1);
+  width: 38px;
+  cursor: pointer;
+}
+
+.badge {
+}
+
+.badge-number {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 20px;
+}
+
+.bolt-group {
+  position: relative;
+}
+.bolt {
+  position: absolute;
+}
+:root {
+  --bolt-top: 47px;
+  --bolt-bottom: 765px;
+  --bolt-bottom-narrow: 1365px;
+}
+.bolt1 {
+  left: 25px;
+  top: var(--bolt-top);
+}
+.bolt2 {
+  left: 50vw;
+  top: var(--bolt-top);
+}
+.bolt3 {
+  right: 38px;
+  top: var(--bolt-top);
+}
+
+.bolt4 {
+  left: 25px;
+  top: var(--bolt-bottom);
+}
+.bolt5 {
+  left: 50vw;
+  top: var(--bolt-bottom);
+}
+.bolt6 {
+  right: 38px;
+  top: var(--bolt-bottom);
+}
+
+@media only screen and (max-width: 1200px) {
+  .day-numbers {
+    /* margin: 10px; */
+    padding-top: 20px;
+    display: grid;
+
+    grid-template-areas:
+      "a"
+      "b"
+      "c"
+      "d"
+      "e"
+      "f"
+      "g"
+      "h"
+      "i"
+      "j"
+      "k"
+      "l"
+      "m"
+      "n"
+      "o"
+      "p"
+      "q"
+      "r"
+      "s"
+      "t"
+      "u"
+      "v"
+      "w"
+      "x"
+      "y"
+      "z"
+      "A"
+      "B"
+      "C"
+      "D"
+      "E";
+  }
+
+  .bolt4 {
+    top: var(--bolt-bottom-narrow);
+  }
+  .bolt5 {
+    top: var(--bolt-bottom-narrow);
+  }
+  .bolt6 {
+    top: var(--bolt-bottom-narrow);
+  }
+}
