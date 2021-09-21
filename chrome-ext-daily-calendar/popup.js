@@ -24,7 +24,7 @@ function processForm() {
     activeStates[newActiveActivity] = emptyYear()
     createHeaderContent();
     // SAVE TO LOCAL
-    saveInLocal('active-states', JSON.stringify(activeStates));
+    saveInLocal('active-states-daily-calendar', JSON.stringify(activeStates));
     saveInLocal('active-activities', JSON.stringify(activities));
     
     // Remove the visible class for both the mobile and desktop versions
@@ -43,7 +43,7 @@ function removeGoal(action) {
         delete activeStates[activityToRemove]
 
         let activeActivity = Object.keys(activities)[0];
-        saveInLocal('active-activity', activeActivity)
+        saveInLocal('active-activity-daily-calendar', activeActivity)
 
 
         createHeaderContent();
@@ -54,7 +54,7 @@ function removeGoal(action) {
 
 
         // SAVE TO LOCAL
-        saveInLocal('active-states', JSON.stringify(activeStates));
+        saveInLocal('active-states-daily-calendar', JSON.stringify(activeStates));
         saveInLocal('active-activities', JSON.stringify(activities));
         
         console.log(activities, activeStates)
@@ -219,7 +219,7 @@ function createPageContent(activeStates, activeActivity) {
                 }
 
                 console.log(activeStates)
-                saveInLocal('active-states', JSON.stringify(activeStates))
+                saveInLocal('active-states-daily-calendar', JSON.stringify(activeStates))
             }
         })
     })
@@ -255,7 +255,7 @@ function createHeaderContent() {
             activityText.innerHTML = activities[activityKeys[i]].title
             setTextSize(activityText, activities[activityKeys[i]].title)
             let activeActivityIcons = document.querySelectorAll(".active-click");
-            saveInLocal('active-activity', activityKeys[i])
+            saveInLocal('active-activity-daily-calendar', activityKeys[i])
             activeActivityIcons.forEach((element) => {
                 element.classList.remove("active-click");
             })
@@ -325,16 +325,16 @@ const activities = JSON.parse(window.localStorage.getItem('active-activities')) 
 const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sept", "Oct", "Nov", "Dec"]
 let activityKeys = Object.keys(activities);
 // LOAD THE DAYS FROM STORAGE
-let activeActivity = window.localStorage.getItem('active-activity') || 'reading';
-let dayBegan = window.localStorage.getItem("start-day");
+let activeActivity = window.localStorage.getItem('active-activity-daily-calendar') || 'reading';
+let dayBegan = window.localStorage.getItem("start-day-daily-calenar");
 if (!dayBegan) {
     dayBegan = getCurrentDate();
-    saveInLocal('start-day', dayBegan)
+    saveInLocal('start-day-daily-calenar', dayBegan)
 }
 
-let activeStates = JSON.parse(window.localStorage.getItem('active-states')) || createActiveStates(activityKeys);
-saveInLocal('active-states', JSON.stringify(activeStates))
-saveInLocal('active-activity', activeActivity);
+let activeStates = JSON.parse(window.localStorage.getItem('active-states-daily-calendar')) || createActiveStates(activityKeys);
+saveInLocal('active-states-daily-calendar', JSON.stringify(activeStates))
+saveInLocal('active-activity-daily-calendar', activeActivity);
 let activityToRemove = '';
 
 

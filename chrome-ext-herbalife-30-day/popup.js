@@ -211,7 +211,8 @@ function createPageContent(activeStates) {
             activeStates[actDayParts[0]][actDayParts[1]] = 1  * checked;
 
             saveInLocal('active-states-hl', JSON.stringify(activeStates));
-
+            let audio = document.getElementById("audio");
+            audio.play();
 
         })
     })
@@ -405,11 +406,11 @@ const allActivities = {
 // LOAD THE DAYS FROM STORAGE
 // let activeActivity = window.localStorage.getItem('active-activity') || 'reading';
 
-let dayBegan = window.localStorage.getItem("start-day");
+let dayBegan = window.localStorage.getItem("start-day-hl");
 
 if (!dayBegan) {
     dayBegan = getCurrentDate();
-    saveInLocal('start-day', dayBegan)
+    saveInLocal('start-day-hl', dayBegan)
 }
 let activeStates = JSON.parse(window.localStorage.getItem('active-states-hl')) || createActiveStates(["steps", "water", "sleep", "shakes", "meditate"]);
 saveInLocal('active-states-hl', JSON.stringify(activeStates))
