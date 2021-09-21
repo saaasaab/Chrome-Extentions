@@ -1,0 +1,48 @@
+body {
+  background: #dadada;
+  width: 100vw;
+  height: 100vh;
+}
+.calendar-content-container{
+  background-image: url("/icons/ribbon.png");
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+}
+.calendar-content{
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(7,1fr);
+  padding: 60px;
+}
+
+.day-container{
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  outline: #77B856 solid 2px;
+  padding: 10px;
+  background: #ffffffcc;
+  aspect-ratio: 1/1;
+  box-sizing: border-box;
+}
+
+.day-number{
+  font-size: 36px;
+}
+.day-activities{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.individual-act{
+  display: flex;
+  justify-content: space-between;
+    gap: 3px;
+  align-items: center;
+}
+.act-image{
+  width: 20px;
+}
+
+
