@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Time Blocker</title>
+  <script>
+    let allZones = {
+      0: { color: "#fd6a6a", },
+      1: { color: "#fd9f6a", },
+      2: { color: "#fddd6a", },
+      3: { color: "#d7fd6a", },
+      4: { color: "#90fd6a", },
+      5: { color: "#6afdd1", },
+      6: { color: "#6aebfd", },
+      7: { color: "#6aaefd", },
+      8: { color: "#6a79fd", },
+      9: { color: "#e06afd", },
+      10: { color: "#959595", },
+      11: { color: "#363637", },
+      12: { color: "#8c592b", },
+    }
+
+    let allActivities = {
+    0: {
+        name: "Sleeping",
+        tags: [],
+        src: "./icons/moon.png"
+    },
+    1: {
+        name: "Reading",
+        tags: [],
+        src: "./icons/book.png"
+    },
+    2: {
+        name: "Working",
+        tags: [],
+        src: "./icons/email.png"
+    },
+    3: {
+        name: "Running",
+        tags: [],
+        src: "./icons/running.png"
+    },
+    4: {
+        name: "Settings",
+        tags: [],
+        src: "./icons/settings.png"
+    },
+    5: {
+        name: "Family",
+        tags: [],
+        src: "./icons/family.png"
+    },
+    6: {
+        name: "Eating",
+        tags: [],
+        src: "./icons/eating.png"
+    },
+    7: {
+        name: "Thinking",
+        tags: [],
+        src: "./icons/eating.png"
+    },
+    8: {
+        name: "Planning",
+        tags: [],
+        src: "./icons/eating.png"
+    },
+    9: {
+        name: "Video Games",
+        tags: [],
+        src: "./icons/eating.png"
+    },
+    10: {
+        name: "Sports",
+        tags: [],
+        src: "./icons/eating.png"
+    },
+    11: {
+        name: "Phone Calls",
+        tags: [],
+        src: "./icons/eating.png"
+    },
+    12: {
+        name: "Watching TV",
+        tags: [],
+        src: "./icons/eating.png"
+    },
+    13: {
+        name: "Socializing",
+        tags: [],
+        src: "./icons/eating.png"
+    },
+    14: {
+        name: "Making food",
+        tags: [],
+        src: "./icons/eating.png"
+    },
+    15: {
+        name: "Daydreaming",
+        tags: [],
+        src: "./icons/eating.png"
+    },
+    16: {
+        name: "Texting",
+        tags: [],
+        src: "./icons/eating.png"
+    },
+    17: {
+        name: "Youtube",
+        tags: [],
+        src: "./icons/eating.png"
+    },
+    18: {
+        name: "Social Media",
+        tags: [],
+        src: "./icons/eating.png"
+    },
+    19: {
+        name: "Sex",
+        tags: [],
+        src: "./icons/eating.png"
+    },
+}
+   
+  </script>
+
+  <script>
+    /* TODOS 
+      [X] Create local storage for colors and states 8/3/2021
+      [X] Pull states from local storage 8/3/2021
+      [X] change inbetween divs to small circles 8/3/2021
+      [X] Fix Spacing with timer 8/3/2021
+      [X] Add smoothing animation to timer 8/3/2021
+      [X] Create cell html in JS 8/3/2021
+
+      [X] Highlight cell that is currently the active cell 8/4/2021
+
+      [X] Add discription on sides 8/5/2021
+      [X] Add Minutes on the top 8/5/2021
+      [X] Add icons to colors 8/5/2021
+
+      [X] Create options page 8/6/2021
+
+      [X] Create drag and drop functionality for icons 8/7/2021
+      [X] Add multiple icons to options page 8/7/2021
+      [X] Modal - Create places for icons to be added to  8/7/2021
+      [X] Modal - Format spots for icons to be added 8/7/2021
+      [X] Settings - need to select what activities go where 8/7/2021
+
+      [X] Modal - add icons programatically  8/8/2021
+      [X] Modal - Reset icon position when released 8/8/2021 
+      [X] Modal - Add states for activities, zones, and icons 8/8/2021 
+      [X] Modal - If activity is already taken, prevent it from being filled
+      [X] Modal - create json of of icons 8/8/2021 
+      [X] Modal - Change saved activity based on icon index 8/8/2021 
+      [X] Modal - Center Icon in Activity Square 8/8/2021 
+      [X] Modal - Save Activity States and Zone States in local storage 8/8/2021 
+      [X] Create activities automatically based on settings 8/8/2021 
+      [X] Modal - Connect Activity Settings to front end 8/8/2021 
+      [X] Ability to change activities to track 8/8/2021 
+
+      [X] Fix Activity Selector Biggenizer 8/11/2021
+      [X] On load, correctly apply colors and styles 8/11/2021
+      [X] Modal - When switch from active activity cell, actual reset 8/11/2021
+      [X] Settings - On change, update the main page without having to refresh 8/11/2021
+      [X] Activity Select - When active and open options, everything breaks 8/11/2021
+      [X] Teal doesn't want to select 8/11/2021 (Nothing a hard reset won't fix) 8/11/2021
+      [X] Reset at the end of the day 8/11/2021
+      
+      [X] Add Icons to clicked cells 8/15/2021
+      [X] Icons filling in last cell 8/15/2021
+      [X] Activity Select - be able to cancel 8/15/2021
+      [X] Activity Select - correct offset using element.getBoundingClientRect() 8/15/2021
+
+      [ ] When click 2nd selection highlight all the middle cells 
+      [ ] Add Icons to colors because icons will switch colors
+      [ ] BUG - Modal - When I swap from one color to another without resetting first, the icon is not reset
+      [ ] Modal - Add hover text
+      [ ] Modal - Add inside border to elements
+      [ ] Modal - Add hover effect to icons
+      [ ] Modal - Add Search
+      [ ] Modal - Add a +- buffer to the activities box
+
+      [ ] Activity Select - make colors follow pattern
+    
+      [ ] Customize colors
+      [ ] Save to DB?
+      [ ] Can't go past current time
+      
+      [ ] Search will darken all those that don't fit instead of removing. 
+  
+    */
+
+    /* STATES */
+
+    let stage1 = true;
+    let stage2 = false;
+    let stage3 = false;
+    let stage4 = false;
+
+    /* GLOBALS */
+    // 20px -> 30
+    // 40px -> 10
+
+    let perRow = 6;
+    let gap = 3;
+    // let numCells = 4420;
+    let numCells = 144;
+    let activeCell = 0;
+    let GLOBAL_iconId = 0;
+    let cellWidth = 30;
+    let xOff = 100;
+    let activeClickPos = [];
+    let columnOffset = 200;
+
+    let yOff = interpolate(cellWidth, 20, 40, 30, 10) - gap + 1;
+    let out_max = interpolate(cellWidth, 30, 80, -120, -70);
+
+    let activityProps = {}
+    let daySaved = ""
+    //let gap = document.querySelector('.daily-grid').style.columnGap
+
+
+    let colorStates = pullFromLocal('color-states') || new Array(100); // Load from local storage
+    let cellStates = pullFromLocal('cell-states') || new Array(100); // Load from local storage
+
+    Object.size = function (obj) {
+      var size = 0,
+        key;
+      for (key in obj) {
+        if (obj.hasOwnProperty(key)) size++;
+      }
+      return size;
+    };
+
+    function setCellColors(colorStates) {
+      let timeBlocks = document.querySelectorAll('.time-block');
+      // FIND CURRENT CELL
+      let currentCell = getCurrentCell();
+      timeBlocks.forEach((timeBlock, i) => {
+        timeBlock.style.backgroundColor = colorStates[i];
+        let imgIconElement = timeBlock.querySelector('.time-block-img');
+        //allZones[i]["color"]
+        // console.log(cellStates[i])
+
+        if (cellStates[i]) {
+          imgIconElement.src = allActivities[cellStates[i]]["src"]
+          imgIconElement.style.display = "inline"
+        }
+
+        if (i == currentCell) {
+          timeBlock.style.backgroundColor = "#bec6cc";
+        }
+      });
+
+
+    }
+
+    function getCurentDate() {
+      let dateObj = new Date();
+      let month = dateObj.getUTCMonth() + 1; //months from 1-12
+      let day = dateObj.getUTCDate();
+      let year = dateObj.getUTCFullYear();
+
+      return year + "/" + month + "/" + day;
+    }
+
+    function saveInLocal() {
+      // Save it using the Chrome extension storage API.
+      // chrome.storage.sync.set({ 'foo': 'hello', 'bar': 'hi' }, function () {
+      //   console.log('Settings saved');
+      // });
+
+      window.localStorage.setItem('color-states', colorStates);
+      window.localStorage.setItem('cell-states', cellStates);
+    }
+
+    function pullFromLocal(key) {
+      // Read it using the storage API
+      // chrome.storage.sync.get(['foo', 'bar'], function (items) {
+      //   message('Settings retrieved', items);
+      // });
+      let value = window.localStorage.getItem(key);
+
+      if (value) {
+        value = value.split(',')
+      }
+
+      return value
+
+    }
+    function setCellStates(cellStates) {
+      let timeBlocks = document.querySelectorAll('.time-block');
+      timeBlocks.forEach((timeBlock, i) => {
+
+        if (cellStates[i] == 1) {
+          timeBlock.style.borderRadius = 0;
+          // timeBlock.style.width = cellWidth/2+"px";
+          // timeBlock.style.height = cellWidth + "px";
+          // timeBlock.style.marginTop = cellWidth / 100 + "px";
+          // timeBlock.style.marginBottom = cellWidth / 100 + "px";
+        }
+      });
+    }
+
+    function getCurrentCell() {
+      let today = new Date();
+      let currentCell = Math.floor((today.getHours() * 60 + today.getMinutes() + today.getSeconds() / 60) / 10)
+      return currentCell
+
+    }
+
+    function calculateTime(i, width, increment) {
+      let hour = Math.floor(i * increment / 60).toString();
+      let minute = ((i * increment) % 60).toString();
+
+      hour = hour.length === 1 ? "0" + hour : hour
+      minute = minute.length === 1 ? "0" + minute : minute
+
+      return `${hour}:${minute}`
+    }
+
+    function interpolate(x, in_min, in_max, out_min, out_max) {
+      return (x - in_min) * (out_max - out_min) / (in_max - in_min) + out_min;
+    }
+    function setTimerBaseStyles(timeBlock, i, gap) {
+      if (stage1) {
+        timeBlock.style.backgroundColor = "#2f5876";
+      }
+
+      if (stage3) {
+        timeBlock.style.backgroundColor = colorStates[activeCell]
+      }
+
+      // set up the timer. Use element's position, 
+      // Calculate the position of the time to be above the element
+      let xBlock = i % perRow;
+      let yBlock = Math.floor(i / perRow);
+      let wBlock = cellWidth;
+
+      let xdisplacement = interpolate(xBlock, 0, perRow - 1, 0, out_max);
+
+      let timerPos = [
+        xBlock * wBlock + xBlock * gap,
+        yBlock * wBlock + yBlock * gap
+      ];
+
+      let offset = [xdisplacement, -cellWidth - gap];
+
+      let timeBlockTimer = document.querySelector('.time-block-timer');
+      timeBlockTimer.style.display = "inline";
+      timeBlockTimer.style.left = timerPos[0] + offset[0] + "px";
+      timeBlockTimer.style.top = timerPos[1] + offset[1] + "px";
+      timeBlockTimer.style.transition = "all .1s";
+      timeBlockTimer.innerHTML = calculateTime(i, perRow, 10)
+    }
+
+    function clearActivities() {
+      let activitySelector = document.querySelector(".activity-selector");
+      activitySelector.innerHTML = "";
+      activitySelector.style.display = "none";
+    }
+
+    function createActivities(zoneStates) {
+      let activitySelector = document.querySelector(".activity-selector");
+      let numActivities = 7; // This should be from zoneStates
+      let activityPropsTemp = {}
+      for (let i = 0; i < zoneStates.length; i++) {
+        if (zoneStates[i] != -1) {
+          activityPropsTemp[zoneStates[i]] = {}
+          activityPropsTemp[zoneStates[i]]["color"] = allZones[i].color
+          activityPropsTemp[zoneStates[i]]["icon"] = allActivities[zoneStates[i]]
+        }
+      }
+
+      for (var prop in activityPropsTemp) {
+        if (Object.prototype.hasOwnProperty.call(activityPropsTemp, prop)) {
+          let activitySelector = document.querySelector(".activity-selector");
+          let act = document.createElement("div");
+          act.setAttribute("data-icon", prop)
+          act.className = "activity";
+          let img = document.createElement("img");
+          img.src = activityPropsTemp[prop].icon.src
+
+          act.appendChild(img);
+          activitySelector.appendChild(act)
+        }
+      }
+      return activityPropsTemp
+    }
+
+    function showActivities(timeBlock, i, gap, eTimeBlock, activityProps) {
+      stage1 = false;
+      stage2 = true;
+      let xBlock = i % perRow;
+      let yBlock = Math.floor(i / perRow);
+      let wBlock = cellWidth;
+      // let offset = [xOff, 100 + gap];
+      let offset = [0, 0];
+
+      let activityPos = [
+        xBlock * wBlock + xBlock * gap,
+        yBlock * wBlock + yBlock * gap + gap / 3
+      ];
+
+      let activitySelector = document.querySelector(".activity-selector");
+      let activities = document.querySelectorAll(".activity");
+
+      activitySelector.style.display = "inline";
+      activitySelector.style.left = activityPos[0] + offset[0] + "px";
+      activitySelector.style.top = activityPos[1] + offset[1] + "px";
+
+      let numActivities = activities.length;
+      let arc = 360 / numActivities * 3.14159 / 180;
+      let radius = interpolate(numActivities, 3, 6, 50, 75);
+
+      // let cancelDistance = 200;
+
+      // let dailyGrid = document.querySelector('.daily-grid');
+      // dailyGrid.addEventListener('mousemove', e => {
+      //   console.log(activityPos[0],activityPos[1])
+      //   let mouseX=e.clientX;
+      //   let mouseY=e.clientY;
+
+      //   // if (
+      //   //   Math.sqrt(
+      //   //     ((activityPo[0] + wBlock/2 + offset[0])-e.x) ** 2 + 
+      //   //     ((activityPo[1] + wBlock/2 + offset[1])-e.y) ** 2) >cancelDistance
+      //   // ) {
+
+      //   //   activitySelector.style.display = "none";
+      //   // }
+      // });
+
+      let actOff = -4;
+      activities.forEach((activity, ii) => {
+        let iconId = activity.dataset.icon;
+        let basex = Math.cos(arc * ii - 3.14159 / 2) * radius + actOff;
+        let basey = Math.sin(arc * ii - 3.14159 / 2) * radius + actOff;
+        activity.style.left = basex + "px";
+        activity.style.top = basey + "px";
+
+        activity.style.backgroundColor = activityProps[iconId]["color"];
+
+        // Set the listener for when you hover over the activity
+        activity.addEventListener('mouseover', (e) => {
+          activity.style.width = "100px";
+          activity.style.height = "100px";
+          activity.style.borderRadius = "50px";
+          activity.style.left = basex - cellWidth / 4 + "px";
+          activity.style.top = basey - cellWidth / 4 - 10 + "px";
+          activity.style.zIndex = 1;
+          activity.style.transition = "all .3s";
+        });
+
+
+        activity.addEventListener('mouseout', (e) => {
+          activity.style.width = "50px";
+          activity.style.height = "50px";
+          activity.style.left = basex + "px";
+          activity.style.top = basey + "px";
+          activity.style.borderRadius = "25px";
+        });
+
+        activity.addEventListener('click', (e) => {
+          if (activeCell == i) {
+
+            stage2 = false;
+            stage3 = true;
+            // if (eTimeBlock.currentTarget === timeBlock){
+            GLOBAL_iconId = iconId;
+            activitySelector = document.querySelector(".activity-selector");
+            activitySelector.style.display = "none";
+            colorStates[i] = activityProps[GLOBAL_iconId]["color"];
+            cellStates[i] = GLOBAL_iconId
+            setCellColors(colorStates);
+            setCellStates(cellStates);
+          }
+
+          // Set Activity
+        })
+      });
+    };
+
+
+    function getState(key, obj) {
+      let size = Object.size(obj);
+      let activityStates = pullFromLocal(key) || new Array(size).fill(-1);
+      return activityStates
+    }
+
+    let zoneStates = getState("zone-states", allZones)
+    let activityStates = getState("activity-states", allActivities)
+    let tempColorStates;
+    let tempCellStates;
+
+
+
+    window.addEventListener('load', function (e) {
+      let root = document.documentElement;
+      root.style.setProperty('--cell-width', cellWidth + "px");
+      root.style.setProperty('--cell-gap', gap + "px");
+      root.style.setProperty('--num-columns', perRow);
+
+      // Check time
+      let daySaved = window.localStorage.getItem("current-day") || getCurentDate();
+
+      if (daySaved != getCurentDate()) {
+        // Reset the clock - Start a new day
+        colorStates = new Array(100); // Load from local storage
+        cellStates = new Array(100); // Load from local storage
+        daySaved = getCurentDate()
+
+      }
+
+      window.localStorage.setItem("current-day", daySaved);
+      window.localStorage.setItem('color-states', colorStates);
+      window.localStorage.setItem('cell-states', cellStates);
+
+
+      // Create the time blocks
+      let rowLabelIndex = 0;
+      for (let i = 0; i < numCells; i++) {
+        let columnNum = i/numCells>=.5?1:0;
+        let dailyGrid = document.querySelector('.daily-grid');
+        let timeElement = document.createElement("div");
+        timeElement.className = `time-block column${columnNum}`;
+        let timeElementInternal = document.createElement("img");
+        timeElementInternal.src='./icons/dotted-border.png'
+        timeElementInternal.className = `time-block-internal`;
+
+        let timeImage = document.createElement("img");
+        timeImage.className = "time-block-img";
+
+        timeImage.src = "";
+        timeElement.appendChild(timeElementInternal)
+        timeElement.appendChild(timeImage)
+        dailyGrid.appendChild(timeElement)
+      }
+
+      // These go here so on load the colors are automatically set
+      setCellColors(colorStates)
+      setCellStates(cellStates)
+      // Create the activity buttons and return activiyProps object
+      activityProps = createActivities(zoneStates);
+
+
+
+
+
+      let dailyGrid = document.querySelector('.daily-grid');
+      dailyGrid.addEventListener('mousemove', e => {
+        if (stage2) {
+          
+          var rect = dailyGrid.getBoundingClientRect();
+
+          let gridOffset = [rect.left, rect.top];
+
+          let xBlock = activeCell % perRow;
+          let yBlock = Math.floor(activeCell / perRow);
+
+          let wBlock = cellWidth;
+
+          let activityPos = [
+            xBlock * wBlock + xBlock * gap + gridOffset[0],
+            yBlock * wBlock + yBlock * gap + gridOffset[1]
+          ];
+          // console.log(timerPos,xBlock,yBlock)
+          let mouseX = e.clientX;
+          let mouseY = e.clientY;
+
+          let cancelDistance = 150;
+          // console.log( Math.sqrt((activityPos[0]+wBlock/2-e.x) ** 2 + (activityPos[1]+wBlock/2-e.y) ** 2) )
+          // console.log(e)
+
+
+          if (
+            Math.sqrt((activityPos[0] + wBlock / 2 - e.x) ** 2 + (activityPos[1] + wBlock / 2 - e.y) ** 2) > cancelDistance
+          ) {
+
+            // activitySelector.style.display = "none";
+            clearActivities()
+            createActivities(zoneStates)
+            stage2 = false;
+            stage1 = true;
+          }
+        }
+      });
+
+
+
+
+
+      let timeBlocks = document.querySelectorAll('.time-block');
+      timeBlocks.forEach((timeBlock, i) => {
+        timeBlock.style.width = cellWidth + "px";
+        timeBlock.style.height = cellWidth + "px";
+
+        timeBlock.addEventListener('mouseover', (e) => {
+
+
+          if (stage2) {
+            return
+          }
+
+          if (stage3) {
+            // Highlight all the inbetween cells
+            // setCellColors(colorStates);
+            // [tempColorStates,tempCellStates]=drawInbetweenCells(activeCell,tempColorStates,tempCellStates, i)
+            // setCellColors(tempColorStates);
+            // tempColorStates=colorStates
+          }
+
+          if (stage4) {
+            // This is a buffer stage to prevent stage 1 from 
+            // triggering too soon
+            stage4 = false
+            stage1 = true
+            setTimerBaseStyles(timeBlock, i, gap);
+            saveInLocal();
+            return
+          }
+
+          if (stage1 || stage3) {
+            setTimerBaseStyles(timeBlock, i, gap);
+          }
+
+          timeBlock.addEventListener('click', () => {
+            if (stage1) {
+              tempColorStates = colorStates
+              tempCellStates = cellStates
+
+              let timeBlockTimer = document.querySelector('.time-block-timer');
+              timeBlockTimer.style.display = "none";
+              // showStartTime will enable the color selectors
+              activeCell = i;
+              showActivities(timeBlock, i, gap, e, activityProps);
+            }
+
+            else if (stage3) {
+              // if (activeCell == i) {
+              stage3 = false;
+              stage4 = true;
+              // FINALIZE THE PROCESS
+              // SET COLOR OF CELL
+              colorStates[i] = colorStates[activeCell];
+              // SET COLOR OF ALL INBETWEEN CELLS
+              [colorStates, cellStates] = drawInbetweenCells(activeCell, colorStates, cellStates, i)
+
+              //Save cellStates into local storage/
+              let timeBlockTimer = document.querySelector('.time-block-timer');
+              timeBlockTimer.style.display = "none";
+              setCellColors(colorStates)
+              setCellStates(cellStates)
+            }
+          })
+        });
+        // Cancel your action if mouse moved out within 2 sec
+        timeBlock.addEventListener('mouseout', function () {
+          timeBlock.style.backgroundColor = colorStates[i] || "#6e7275"
+          setCellColors(colorStates)
+
+          // setCellStates(cellStates)
+
+        });
+
+      })
+
+    });
+
+
+    function drawInbetweenCells(activeCell, tColorStates, tCellStates, i) {
+      let start, end;
+      if (activeCell < i) {
+        start = activeCell;
+        end = i;
+      }
+      else {
+        start = i;
+        end = activeCell;
+      }
+
+      for (let cellIndex = start; cellIndex <= end; cellIndex++) {
+        tColorStates[cellIndex] = tColorStates[activeCell]
+        tCellStates[cellIndex] = GLOBAL_iconId
+      }
+      return [tColorStates, tCellStates]
+    }
+
+  </script>
+  <script src="popup.js"></script>
+  <link rel="stylesheet" href="./styles/main.css">
+  <link rel="stylesheet" href="./styles/modal.css">
+
+</head>
+
+<body>
+  <div class="modal-header">
+    <h1 class="logo">
+      Time Blocker
+    </h1>
+    <div>
+    <img data-modal-event="settings" class="settings-icon" src="./icons/settings.png" />
+    <img class="settings-icon" src="./icons/calendar.png" />
+  </div>
+
+  </div>
+  <div class="modal-content">
+
+   
+  </div>
+  <!-- <div class="daily-grid">
+    <div class="time-block-timer"></div>
+  </div>
+   -->
+
+
+  <div class="daily-grid-container">
+    <div class="null-cell"></div>
+
+    <div class="daily-grid-header">
+      <span>0-10</span>
+      <span>10-20</span>
+      <span>20-30</span>
+      <span>30-40</span>
+      <span>40-50</span>
+      <span>50-60</span>
+    </div>
+    <div class="daily-grid-labels">
+      <span>12am-1am</span>
+      <span>1am-2am</span>
+      <span>2am-3am</span>
+      <span>3am-4am</span>
+      <span>4am-5am</span>
+      <span>5am-6am</span>
+      <span>6am-7am</span>
+      <span>7am-8am</span>
+      <span>8am-9am</span>
+      <span>9am-10am</span>
+      <span>10am-11am</span>
+      <span>11am-12pm</span>
+      <span>12pm-1pm</span>
+      <span>1pm-2pm</span>
+      <span>2pm-3pm</span>
+      <span>3pm-4pm</span>
+      <span>4pm-5pm</span>
+      <span>5pm-6pm</span>
+      <span>6pm-8pm</span>
+      <span>7pm-8pm</span>
+      <span>8pm-9pm</span>
+      <span>9pm-10pm</span>
+      <span>10pm-11pm</span>
+      <span>11pm-12am</span>
+
+    </div>
+
+    <div class="daily-grid">
+      <div class="activity-selector"></div>
+      <div class="time-block-timer"></div>
+    </div>
+  </div>
+  <span class="version">Version (1.3.0)</span>
+  <section class="section__modal">
+
+
+    <!-- Dynamically Loading Modal -->
+    <div class="modal__wrapper js-modal--settings">
+      <div class="modal__overflow-wrapper">
+        <div class="modal__content">
+          <div class="modal__close">
+            <img
+              src="https://brandlive-upload.s3-us-west-2.amazonaws.com/1676/documents/fwtty4e03m/closeicon--black.svg"
+              class="modal__close--icon" alt="Close This Modal" />
+          </div>
+          <!-- empty src tag will be filled with the data-url from the clicked link -->
+          <h1>Time Block Settings</h1>
+          <!-- Draggable DIV -->
+          <!-- Include a header DIV with the same name as the draggable DIV, followed by "header" -->
+          <div class="icon-group"></div>
+          <div class="landing-zones"></div>
+          <div class="content"></div>
+          <div class="modal-activity-selector"></div>
+        </div>
+      </div>
+    </div>
+    <script src="./src/modal.js"></script>
+  </section>
+
+
+
+
+</body>
+
+</html>
