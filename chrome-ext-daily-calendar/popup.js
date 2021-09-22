@@ -107,6 +107,11 @@ function preventAddingFutureDates(clickIndex) {
 
     // todayIndex= 4
 
+    let allowableMin = todayIndex < limitLow ? 0 : todayIndex - limitLow ;
+    let allowableMax = todayIndex+limitHigh;
+    let yearWrap = todayIndex < limitLow ? 365-limitLow+todayIndex : 0; 
+    limitLow = todayIndex < limitLow ? limitLow - todayIndex: limitLow;
+
     // let offset=0;
     // if (todayIndex < limitLow && clickIndex > 365-clickIndex){
     //     offset =  365-clickIndex;
@@ -115,10 +120,15 @@ function preventAddingFutureDates(clickIndex) {
     // clickIndex = 365-clickIndex; 
 
     // console.log( clickIndex, todayIndex, offset)
+    if(yearWrap > 0 && clickIndex > allowableMax+10){
+        if(clickIndex>yearWrap){
+            return true
+        }
+    }
 
     if (clickIndex - limitHigh > todayIndex || clickIndex < todayIndex - limitLow) {
         return false
-    }
+    }  
     return true
 }
 function createActiveStates(activityKeys) {
@@ -218,7 +228,6 @@ function createPageContent(activeStates, activeActivity) {
                     activeStates[activeActivity][monthIndex][dayIndex] = 0;
                 }
 
-                console.log(activeStates)
                 saveInLocal('active-states-daily-calendar', JSON.stringify(activeStates))
             }
         })

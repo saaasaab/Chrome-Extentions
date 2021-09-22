@@ -324,4 +324,7 @@ body {
   .bolt6 {
     top: var(--bolt-bottom-narrow);
   }
+  .calendar-content {
+    max-width: 800px;
+  }
 }
