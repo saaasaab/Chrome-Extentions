@@ -1,4 +1,22 @@
-
+// {
+//     "manifest_version": 2,
+  
+//     "name": "Daily Calendar",
+//     "description": "Do something every day",
+//     "version": "1.0.0",
+//     "icons": { "128": "icon_128.png" },
+//     "browser_action": {
+//       "default_icon": "icon.png"
+//     },
+//     "background": {
+//         "scripts": [
+//             "background.js"
+//         ]
+//     },
+   
+    
+//     "permissions": ["storage"]
+//   }
 function processForm() {
     const checked = document.querySelector('input[name=activity]:checked')
     const description = document.querySelector('input[name=activity-description]')
@@ -118,7 +136,7 @@ function preventAddingFutureDates(clickIndex) {
     // }
 
     // clickIndex = 365-clickIndex; 
-
+    // return true
     // console.log( clickIndex, todayIndex, offset)
     if(yearWrap > 0 && clickIndex > allowableMax+10){
         if(clickIndex>yearWrap){
@@ -219,7 +237,6 @@ function createPageContent(activeStates, activeActivity) {
                     audio.play();
                     // WHAT MONTH IS IT?
                     activeStates[activeActivity][monthIndex][dayIndex] = 1
-                    
                 }
                 else{
                     badgeImage.style.filter = "brightness(100%)";
@@ -227,7 +244,6 @@ function createPageContent(activeStates, activeActivity) {
                     audioLow.play();
                     activeStates[activeActivity][monthIndex][dayIndex] = 0;
                 }
-
                 saveInLocal('active-states-daily-calendar', JSON.stringify(activeStates))
             }
         })
@@ -252,8 +268,15 @@ function createHeaderContent() {
         topImageContainer.addEventListener('long-press', function (e) {
             let deleteModal = document.querySelector('.delete-modal-wrapper');
             deleteModal.classList.toggle('modal--visible');
+            
 
             activityToRemove = activityKeys[i];
+
+            // console.log(activities[activityToRemove].title)
+            let goalToDelete = deleteModal.querySelector('.delete-goal-title');
+            if (goalToDelete ){
+                goalToDelete.innerHTML = activities[activityToRemove].title;
+            }
             // Hide the body's scroll bar, so only the modal's scroll is shown. Also helps to ensure mobile scrolling is on correct element
             document.querySelector("body").classList.add("no-scroll--modal");
             e.preventDefault();

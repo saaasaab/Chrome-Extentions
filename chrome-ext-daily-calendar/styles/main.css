@@ -246,8 +246,8 @@ body {
 }
 :root {
   --bolt-top: 47px;
-  --bolt-bottom: 765px;
-  --bolt-bottom-narrow: 1365px;
+  --bolt-bottom: 780px;
+  --bolt-bottom-narrow: 1400px;
 }
 .bolt1 {
   left: 25px;
