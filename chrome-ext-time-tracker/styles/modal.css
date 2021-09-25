@@ -1,0 +1,147 @@
+/* Modal */
+
+.modal__wrapper {
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  left: 0;
+  opacity: 0;
+  overflow: auto;
+  position: fixed;
+  right: 0;
+  top: 0;
+  visibility: hidden;
+  z-index: 100;
+}
+
+.modal__overflow-wrapper {
+  align-items: center;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  left: 0;
+  /* overflow: auto; */
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.modal--visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal__content,
+.modal__close {
+  border-radius: 10px;
+}
+
+.modal__close {
+  background-color: white;
+  display: flex;
+  height: 2.5rem;
+  left: 0;
+  justify-content: flex-end;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+}
+
+.modal__close--icon {
+  padding-right: 0.25rem;
+  width: 2.25rem;
+}
+
+.modal__content {
+  background-color: white;
+  max-height: 100vh;
+  max-width: 50rem;
+  overflow: auto;
+  padding: 2.25rem;
+  position: relative;
+}
+
+[data-modal-event],
+.modal__close {
+  cursor: pointer;
+}
+/* Applied to body on modal open */
+.modal-activity-selector {
+  display: none;
+  background-color: #2f5876;
+  position: absolute;
+  width: 250px;
+  height: var(--cell-width);
+  left: 0px;
+  top: 0px;
+  pointer-events: none;
+  color: white;
+  font-size: 24px;
+  z-index: 100;
+}
+
+.no-scroll--modal {
+  overflow: hidden !important;
+}
+
+@media screen and (max-width: 768px) {
+  .modal__window {
+    margin: 2rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .modal__window,
+  .modal__content {
+    max-height: calc(100vh - 4rem);
+  }
+  .modal__window {
+    margin: 4rem 0 0;
+  }
+}
+
+/* Modal Content */
+.content {
+  height: 500px;
+  width: 500px;
+}
+
+#mydiv {
+}
+
+#mydivheader {
+}
+
+.landing-zones {
+
+}
+.landing-zone {
+  position: absolute;
+
+  background-color: rgb(128, 23, 23);
+  border-radius: 8px;
+}
+
+.icon-group{
+    position: absolute;
+
+    top: 0;
+    left: 0;
+}
+.movable-icon-container {
+  padding: 0;
+  margin: 0;
+  cursor: move;
+  position: absolute;
+  z-index: 9;
+  top: 0;
+  left: 0;
+}
+.movable-icon {
+  width: 35px;
+  height: 35px;
+
+}
