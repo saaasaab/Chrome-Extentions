@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Time Blocker</title>
+
+  <!-- <script src="popup.js">
+</script> -->
+  <link rel="stylesheet" href="./styles/main.css">
+  <link rel="stylesheet" href="./styles/modal.css">
+
+</head>
+
+<body data-long-press-delay="500">
+  <script src="src/modal.js"></script>
+  <script src="popup.js"></script>
+  <script src="src/long-press-event.js"></script>
+  <div id="root">
+    <section class="container">
+      <div class="background">
+        <div class="form"
+          style="background-image: url(&quot;https://picsum.photos/1200/800&quot;); background-position: center center; background-size: cover; background-repeat: no-repeat;">
+          <h1 class="title-main">OWN YOUR 2021</h1>
+          <form class="form-inline">
+            <div class="input-row">
+              <input class="text-input" name="verb" placeholder="Verb" required="" value="">
+              <input class="text-input" name="number" placeholder="Number" required="" value="">
+              <input class="text-input" name="noun" placeholder="Noun" required="" value="">
+            </div>
+            <input class="submit-button" type="submit" value="Create Goal Sheet">
+          </form>
+          <br>
+          <br>
+          <h1 class="example-title">Example Goals</h1>
+          <div class="goals-container">
+            <div class="goal-row">Give 5,000 Dollars</div>
+            <div class="goal-row">Rock Climb 30 Walls</div>
+            <div class="goal-row">Work through 2,000 Math Problems</div>
+            <div class="goal-row">Read 52 Books</div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+</body>
+
+</html>

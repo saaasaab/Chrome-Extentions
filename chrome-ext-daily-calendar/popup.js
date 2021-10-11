@@ -1,6 +1,6 @@
 // {
 //     "manifest_version": 2,
-  
+
 //     "name": "Daily Calendar",
 //     "description": "Do something every day",
 //     "version": "1.0.0",
@@ -13,8 +13,8 @@
 //             "background.js"
 //         ]
 //     },
-   
-    
+
+
 //     "permissions": ["storage"]
 //   }
 function processForm() {
@@ -24,7 +24,7 @@ function processForm() {
     console.log(description.value)
     // activities.1;
 
-    if (!checked){
+    if (!checked) {
         return
     }
     let newActiveActivity = checked.id;
@@ -35,7 +35,8 @@ function processForm() {
     let activityIcon = document.querySelector(`label[for=${checked.id}] img`)
     activities[newActiveActivity] = {
         title: description.value,
-        icon: activityIcon.src
+        icon: activityIcon.src,
+        lastChecked: getCurrentDate()
     }
 
 
@@ -44,7 +45,7 @@ function processForm() {
     // SAVE TO LOCAL
     saveInLocal('active-states-daily-calendar', JSON.stringify(activeStates));
     saveInLocal('active-activities', JSON.stringify(activities));
-    
+
     // Remove the visible class for both the mobile and desktop versions
     document.querySelectorAll(".modal--visible").forEach((el) => {
         el.classList.remove("modal--visible");
@@ -67,17 +68,17 @@ function removeGoal(action) {
         createHeaderContent();
 
         let activityText = document.querySelector('.daily-activities-text');
-        activityText.innerHTML = activities[activeActivity ].title
-        setTextSize(activityText, activities[activeActivity ].title)
+        activityText.innerHTML = activities[activeActivity].title
+        setTextSize(activityText, activities[activeActivity].title)
 
 
         // SAVE TO LOCAL
         saveInLocal('active-states-daily-calendar', JSON.stringify(activeStates));
         saveInLocal('active-activities', JSON.stringify(activities));
-        
+
         console.log(activities, activeStates)
 
-        
+
         //Refresh the pages icons 
         let pageContent = document.querySelector(".calendar-content")
         pageContent.innerHTML = ""
@@ -125,10 +126,10 @@ function preventAddingFutureDates(clickIndex) {
 
     // todayIndex= 4
 
-    let allowableMin = todayIndex < limitLow ? 0 : todayIndex - limitLow ;
-    let allowableMax = todayIndex+limitHigh;
-    let yearWrap = todayIndex < limitLow ? 365-limitLow+todayIndex : 0; 
-    limitLow = todayIndex < limitLow ? limitLow - todayIndex: limitLow;
+    let allowableMin = todayIndex < limitLow ? 0 : todayIndex - limitLow;
+    let allowableMax = todayIndex + limitHigh;
+    let yearWrap = todayIndex < limitLow ? 365 - limitLow + todayIndex : 0;
+    limitLow = todayIndex < limitLow ? limitLow - todayIndex : limitLow;
 
     // let offset=0;
     // if (todayIndex < limitLow && clickIndex > 365-clickIndex){
@@ -138,15 +139,15 @@ function preventAddingFutureDates(clickIndex) {
     // clickIndex = 365-clickIndex; 
     // return true
     // console.log( clickIndex, todayIndex, offset)
-    if(yearWrap > 0 && clickIndex > allowableMax+10){
-        if(clickIndex>yearWrap){
+    if (yearWrap > 0 && clickIndex > allowableMax + 10) {
+        if (clickIndex > yearWrap) {
             return true
         }
     }
 
     if (clickIndex - limitHigh > todayIndex || clickIndex < todayIndex - limitLow) {
         return false
-    }  
+    }
     return true
 }
 function createActiveStates(activityKeys) {
@@ -228,17 +229,17 @@ function createPageContent(activeStates, activeActivity) {
                 let monthIndex = badge.dataset.monthIndex;
                 let dayIndex = badge.dataset.dayIndex;
                 let badgeState = activeStates[activeActivity][monthIndex][dayIndex];
-                
+
                 badge.src = './icons/daybadge-off.png';
-    
-                if(badgeState == 0){
+
+                if (badgeState == 0) {
                     badgeImage.style.filter = "brightness(150%)";
                     let audio = document.getElementById("audio");
                     audio.play();
                     // WHAT MONTH IS IT?
                     activeStates[activeActivity][monthIndex][dayIndex] = 1
                 }
-                else{
+                else {
                     badgeImage.style.filter = "brightness(100%)";
                     let audioLow = document.getElementById("audio-low");
                     audioLow.play();
@@ -251,7 +252,7 @@ function createPageContent(activeStates, activeActivity) {
 }
 function createHeaderContent() {
     let header = document.querySelector(".header-container");
-    if(!header){
+    if (!header) {
         return
     }
     header.innerHTML = "";
@@ -268,13 +269,13 @@ function createHeaderContent() {
         topImageContainer.addEventListener('long-press', function (e) {
             let deleteModal = document.querySelector('.delete-modal-wrapper');
             deleteModal.classList.toggle('modal--visible');
-            
+
 
             activityToRemove = activityKeys[i];
 
             // console.log(activities[activityToRemove].title)
             let goalToDelete = deleteModal.querySelector('.delete-goal-title');
-            if (goalToDelete ){
+            if (goalToDelete) {
                 goalToDelete.innerHTML = activities[activityToRemove].title;
             }
             // Hide the body's scroll bar, so only the modal's scroll is shown. Also helps to ensure mobile scrolling is on correct element
@@ -352,6 +353,7 @@ const activities = JSON.parse(window.localStorage.getItem('active-activities')) 
     "reading": {
         title: "Read every day",
         icon: "./color-icons/reading.png",
+        lastChecked: getCurrentDate()
     },
 }
 const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sept", "Oct", "Nov", "Dec"]
@@ -359,16 +361,37 @@ let activityKeys = Object.keys(activities);
 // LOAD THE DAYS FROM STORAGE
 let activeActivity = window.localStorage.getItem('active-activity-daily-calendar') || 'reading';
 let dayBegan = window.localStorage.getItem("start-day-daily-calenar");
+let lastNotification = window.localStorage.getItem("last-notification-date");
 if (!dayBegan) {
     dayBegan = getCurrentDate();
     saveInLocal('start-day-daily-calenar', dayBegan)
 }
+
+
+// I will need to set notifications for each activity
+// 1. On create
+// 2. On click, we it to now. 
+
+if (!lastNotification) {
+    lastNotification = getCurrentDate();
+    saveInLocal('last-notification-date', lastNotification)
+}
+
+// Check time
+let daySaved = window.localStorage.getItem("current-day") || getCurrentDate();
+if (daySaved != getCurrentDate()) {
+    daySaved = getCurrentDate()
+}
+window.localStorage.setItem("current-day", daySaved);
 
 let activeStates = JSON.parse(window.localStorage.getItem('active-states-daily-calendar')) || createActiveStates(activityKeys);
 saveInLocal('active-states-daily-calendar', JSON.stringify(activeStates))
 saveInLocal('active-activity-daily-calendar', activeActivity);
 let activityToRemove = '';
 
+// setInterval(function () {
+ 
+// }, 60000);
 
 
 window.addEventListener('load', (event) => {
