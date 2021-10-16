@@ -28,7 +28,7 @@ function handleResize(numCols, setNumCols, setNumRows,  numCells) {
 
 }
 function Gridgoal( {completedTotal} ) {
-    const [numCells, setNumCells] = useState('10000');
+    const [numCells, setNumCells] = useState('12000');
     const [numCols, setNumCols] = useState(1);
     const [numRows, setNumRows] = useState(1);
 

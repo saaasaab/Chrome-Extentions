@@ -13,10 +13,10 @@
     },
     {
         "id":2,
-        "title": "Eat only 10,000 Calories",
-        "value": 10000,
+        "title": "Eat only 12,000 Calories",
+        "value": 12000,
         "totalCompleted": 2200,
-        "remainingTime": 6.3,
+        "remainingTime": 6.0,
         "totalTime": 7,
         "dueDate":"Due: March 7th, 2021",
 

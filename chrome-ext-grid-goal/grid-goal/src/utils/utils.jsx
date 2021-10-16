@@ -25,9 +25,11 @@ export const getGridDims= (value) => {
     // The value is entered as a string
 
     let allowedColumnNums = [1, 2, 3, 4, 5, 10, 20, 25, 30, 40, 50, 60, 70, 75, 100];
+    let gridsizeToMultiplier={
 
+    }
     let num = value.replace(/,/g, "");
-    const gridMultiplier = num > 1000 ? Math.ceil(num / 1000) : 1;
+    const gridMultiplier = num > 200 ? Math.ceil(num / 200) : 1;
     num = Math.ceil(num / gridMultiplier);
 
 

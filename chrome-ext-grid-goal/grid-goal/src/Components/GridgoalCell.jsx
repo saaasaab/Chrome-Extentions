@@ -5,7 +5,7 @@ function GridgoalCell({ index, multiplier, numCells, completedTotal }) {
         <>
             {index < numCells ?
            
-                <div className={`grid-goal-cell ${index < completedTotal/multiplier ? "active-grid-cell":""}`} >
+                <div className={`grid-goal-cell ${index <= completedTotal/multiplier ? "active-grid-cell":""}`} >
                     {numberWithCommas((index + 1) * multiplier)}
                 </div> : <></>
             }
