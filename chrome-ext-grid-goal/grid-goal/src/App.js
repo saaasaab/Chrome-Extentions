@@ -1,23 +1,25 @@
-import logo from './logo.svg';
+import Navbar from "./Components/Navbar";
+import ActiveGridGoal from "./Components/ActiveGridGoal";
+import Gridgoal from "./Components/Gridgoal"
 import './App.css';
+
+
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Navbar/>
+      <div className="page-content">
+        <div className="active-grid-goals-container">
+          <ActiveGridGoal isActive={true}/>
+          <ActiveGridGoal isActive={true}/>
+          <ActiveGridGoal isActive={false}/>
+          <ActiveGridGoal isActive={false}/>
+        </div>
+    
+        <Gridgoal/>
+       
+      </div>
     </div>
   );
 }
