@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import addIcon from '../assets/add-amount.png';
-import { getGridDims } from '../utils/utils';
+import { getGridDims, mapNumber } from '../utils/utils';
 import GridgoalCell from '../Components/GridgoalCell';
 
 function setCellSize(boxW, numCols) {
@@ -13,23 +13,22 @@ function handleResize(numCols, setNumCols, setNumRows,  numCells) {
     }
     
     let gridDims = gridContainer.getBoundingClientRect();
-    console.log();
     
     let gridWidth = gridDims.width;
     let gridHeight = gridDims.height;
-    let gridArea = gridWidth*gridHeight
 
 
-    let cellSize = Math.max(20,(gridWidth - 5 * (numCols - 1)) / numCols);  
+    let cellSize = Math.max(30,(gridWidth - 5 * (numCols - 1)) / numCols);  
 
     let root = document.documentElement;
-    
-    console.log(gridDims,cellSize,gridWidth,numCols,numCols)
+    let fontSize = mapNumber(gridDims[2], 0, 900, 20, 10)
+
+    root.style.setProperty('--cell-font-size', fontSize + "px");
     root.style.setProperty('--cell-width', cellSize + "px");
 
 }
-function Gridgoal() {
-    const [numCells, setNumCells] = useState('939');
+function Gridgoal( {completedTotal} ) {
+    const [numCells, setNumCells] = useState('10000');
     const [numCols, setNumCols] = useState(1);
     const [numRows, setNumRows] = useState(1);
 
@@ -64,9 +63,9 @@ function Gridgoal() {
             </div>
             <div className="grid-goal-body-content-container">
                 <div className="grid-goal-body-content">
-                    {[...Array(Number(numCells)).keys()].map((numCell) => (
+                    {[...Array(Number(numCells / multiplier)).keys()].map((numCell) => (
                         
-                        <GridgoalCell key={numCell} index={numCell} multiplier={multiplier} numCells={ numCells}/>
+                        <GridgoalCell key={numCell} index={numCell} multiplier={multiplier} numCells={ numCells} completedTotal={completedTotal}/>
                     ))}
                 </div>
             </div>

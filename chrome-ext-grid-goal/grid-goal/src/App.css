@@ -7,6 +7,7 @@
   --green-bar: #479355;
 
   --cell-width: 5px;
+  --cell-font-size: 12px;
 }
 * {
   margin: 0;
@@ -219,9 +220,13 @@
   height: var(--cell-width);
   background: rgb(235, 235, 235);
   border-radius: 1px;
-  font-size: 10px;
+  font-size: var(--cell-font-size);
   text-align: center;
   line-height: var(--cell-width);
+}
+
+.active-grid-cell{
+  background: #9BFFFF;
 }
 
 /* CELL END*/

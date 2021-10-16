@@ -1,17 +1,26 @@
 import React, { useState, useEffect } from 'react';
 import workoutIcon from '../assets/workout.png'
 import newGridgoal from '../assets/newGridGoal.png'
+import {numberWithCommas} from '../utils/utils'
 
-function ActiveGridGoal(props) {
-    let [isActive, setIsActive] = useState(props.isActive);
+function ActiveGridGoal({ goalData }) {
+    // let [isActive, setIsActive] = useState(props.isActive);
+    // let [goalData, setgoalData] = useState(goalData);
+    // let [isActive, setIsActive] = useState(false);
 
+    const [daysRemaining, setDaysRemaining] = useState("");
+    const [hoursRemaining, setHoursRemaining] = useState("");
+   
 
     useEffect(() => {
-        setIsActive(props.isActive)
-    }, [props])
+        setDaysRemaining(Math.floor(goalData.remainingTime));
+        setHoursRemaining(Math.round((goalData.remainingTime-Math.floor(goalData.remainingTime))*24));
+ 
+        // setIsActive(goalData.status)
+    }, [goalData])
     return (
         <>
-            {isActive ?
+            {goalData.status ?
 
                 <div className="active-grid-goal-container">
                     <div className="grid-goal-header">
@@ -20,17 +29,17 @@ function ActiveGridGoal(props) {
                         </div>
                         <div className="name-date-container">
                             <div className="grid-goal-name">
-                                Workout 30 times
+                             {goalData.title}
                     </div>
                             <div className="grid-goal-due-date">
-                                Due: March 7th, 2021
+                            {goalData.dueDate} 
                     </div>
                         </div>
                     </div>
                     <div className="grid-goal-progress-bars-container">
                         <div className="progress-container">
                             <div className="time-remaining-text">
-                                Remaining Time: 3 days, 5 hrs
+                                Remaining Time: {daysRemaining} days, {hoursRemaining} hrs
                     </div>
                             <div className="time-remaining-bar">
 
@@ -39,7 +48,7 @@ function ActiveGridGoal(props) {
                         <div className="progress-container">
                             <div className="completed-text-container">
                                 <div className="completed-out-of">
-                                    Completed: 19 out of 30
+                                    Completed: {numberWithCommas(goalData.totalCompleted)} out of {numberWithCommas(goalData.value)}
                         </div>
                                 <div className="completed-percent">
                                     65%

@@ -1,0 +1,28 @@
+[
+    {
+        "id":1,
+        "title": "Workout 30 Times",
+        "value": 30,
+        "totalCompleted": 21,
+        "remainingTime": 3.9,
+        "totalTime": 30,
+        "dueDate":"Due: March 7th, 2021",
+
+        "icon": "/assets/workout.png",
+        "status": true
+    },
+    {
+        "id":2,
+        "title": "Eat only 10,000 Calories",
+        "value": 10000,
+        "totalCompleted": 2200,
+        "remainingTime": 6.3,
+        "totalTime": 7,
+        "dueDate":"Due: March 7th, 2021",
+
+        "icon": "workout",
+        "status": true
+    }
+
+    
+]
