@@ -8,25 +8,28 @@ function setCellSize(boxW, numCols) {
 }
 function handleResize(numCols, setNumCols, setNumRows,  numCells) {
     let gridContainer = document.querySelector('.grid-goal-body-content')
-    if(!gridContainer)return
+    if(!gridContainer){
+        return
+    }
     
-    gridContainer.getBoundingClientRect();
+    let gridDims = gridContainer.getBoundingClientRect();
     console.log();
     
-    let gridWidth = gridContainer.width;
-    let gridHeight = gridContainer.height;
+    let gridWidth = gridDims.width;
+    let gridHeight = gridDims.height;
     let gridArea = gridWidth*gridHeight
 
 
-    let cellSize = (gridWidth - 5 * (numCols - 1)) / numCols;  
+    let cellSize = Math.max(20,(gridWidth - 5 * (numCols - 1)) / numCols);  
 
     let root = document.documentElement;
     
+    console.log(gridDims,cellSize,gridWidth,numCols,numCols)
     root.style.setProperty('--cell-width', cellSize + "px");
 
 }
 function Gridgoal() {
-    const [numCells, setNumCells] = useState('99');
+    const [numCells, setNumCells] = useState('939');
     const [numCols, setNumCols] = useState(1);
     const [numRows, setNumRows] = useState(1);
 
@@ -61,10 +64,9 @@ function Gridgoal() {
             </div>
             <div className="grid-goal-body-content-container">
                 <div className="grid-goal-body-content">
-                    {[...Array(numCells).keys()].map((numCell) => (
-                        <GridgoalCell key={numCell} index={numCell} multiplier={multiplier} numCells={ numCells}/>
+                    {[...Array(Number(numCells)).keys()].map((numCell) => (
                         
-                      
+                        <GridgoalCell key={numCell} index={numCell} multiplier={multiplier} numCells={ numCells}/>
                     ))}
                 </div>
             </div>

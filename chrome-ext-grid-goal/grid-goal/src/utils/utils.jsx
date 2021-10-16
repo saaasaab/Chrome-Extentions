@@ -21,7 +21,7 @@ export const randomGoals = (arr, n) => {
     return result;
 };
 
-export const getGridDims = (value) => {
+export const getGridDims= (value) => {
     // The value is entered as a string
 
     let allowedColumnNums = [1, 2, 3, 4, 5, 10, 20, 25, 30, 40, 50, 60, 70, 75, 100];
@@ -29,7 +29,10 @@ export const getGridDims = (value) => {
     let num = value.replace(/,/g, "");
     const gridMultiplier = num > 1000 ? Math.ceil(num / 1000) : 1;
     num = Math.ceil(num / gridMultiplier);
+
+
     let ratio = 1/1.3;
+    
     let x = Math.sqrt(num / ratio);
 
     const closest = allowedColumnNums.reduce((prev, curr) =>
@@ -39,3 +42,15 @@ export const getGridDims = (value) => {
     let y = Math.ceil(num / closest);
     return [closest, y, num, gridMultiplier];
 };
+
+
+export const getGridDims_new = (value, boxW, boxH) => {
+    let allowedColumnNums = [1, 2, 3, 4, 5, 10, 20, 25, 30, 40, 50, 60, 70, 75, 100];
+    const gridMultiplier = value > 1000 ? Math.ceil(value / 1000) : 1;
+    
+
+
+    let ratio = boxW/boxH;
+    
+    let x = Math.sqrt(value / ratio);
+}
