@@ -9,7 +9,9 @@
         "dueDate":"Due: March 7th, 2021",
 
         "icon": "/assets/workout.png",
-        "status": true
+        "status": true,
+        "multiplier": 1,
+        "numCells":30
     },
     {
         "id":2,
@@ -21,7 +23,9 @@
         "dueDate":"Due: March 7th, 2021",
 
         "icon": "workout",
-        "status": true
+        "status": true,
+        "multiplier": 60,
+        "numCells":200
     }
 
     

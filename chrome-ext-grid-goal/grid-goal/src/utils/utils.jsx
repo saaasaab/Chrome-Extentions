@@ -21,6 +21,12 @@ export const randomGoals = (arr, n) => {
     return result;
 };
 
+export const getGridMultiplier = (num) =>{
+    // The value is entered as a string
+    const gridMultiplier = num > 200 ? Math.ceil(num / 200) : 1;
+    return gridMultiplier
+}
+
 export const getGridDims= (value) => {
     // The value is entered as a string
 

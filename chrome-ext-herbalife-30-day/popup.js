@@ -57,7 +57,7 @@ function removeGoal(action) {
         saveInLocal('active-states-hl', JSON.stringify(activeStates));
         saveInLocal('active-activities', JSON.stringify(activities));
 
-        console.log(activities, activeStates)
+
 
 
         //Refresh the pages icons 
@@ -416,7 +416,6 @@ let activeStates = JSON.parse(window.localStorage.getItem('active-states-hl')) |
 saveInLocal('active-states-hl', JSON.stringify(activeStates))
 // saveInLocal('active-activity', activeActivity);
 
-console.log(activeStates)
 let activityToRemove = '';
 
 window.addEventListener('load', (event) => {

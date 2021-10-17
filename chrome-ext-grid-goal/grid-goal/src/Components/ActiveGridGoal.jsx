@@ -3,7 +3,7 @@ import workoutIcon from '../assets/workout.png'
 import newGridgoal from '../assets/newGridGoal.png'
 import {numberWithCommas} from '../utils/utils'
 
-function ActiveGridGoal({ goalData }) {
+function ActiveGridGoal({ goalData, onclick }) {
     // let [isActive, setIsActive] = useState(props.isActive);
     // let [goalData, setgoalData] = useState(goalData);
     // let [isActive, setIsActive] = useState(false);
@@ -11,7 +11,6 @@ function ActiveGridGoal({ goalData }) {
     const [daysRemaining, setDaysRemaining] = useState("");
     const [hoursRemaining, setHoursRemaining] = useState("");
    
-
     useEffect(() => {
         setDaysRemaining(Math.floor(goalData.remainingTime));
         setHoursRemaining(Math.round((goalData.remainingTime-Math.floor(goalData.remainingTime))*24));
@@ -22,7 +21,7 @@ function ActiveGridGoal({ goalData }) {
         <>
             {goalData.status ?
 
-                <div className="active-grid-goal-container">
+                <div className="active-grid-goal-container" onClick={()=> onclick(goalData)}>
                     <div className="grid-goal-header">
                         <div className="grid-goal-icon">
                             <img src={workoutIcon} />

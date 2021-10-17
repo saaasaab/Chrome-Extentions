@@ -28,7 +28,6 @@ const addSubmitRemoveListener = function (element){
     let buttons = element.querySelectorAll('.button');
     buttons.forEach((button)=>{
         button.addEventListener("click", function (e) {
-            console.log(button.dataset.removeGoal)
             removeGoal(button.dataset.removeGoal);
 
         })
