@@ -240,7 +240,9 @@
   justify-content: space-between;
   align-items: center;
 }
-
+input:focus, textarea {
+  outline: none !important;
+}
 
 .form-inline input.text-input {
   width: 100%;

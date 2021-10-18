@@ -25,7 +25,7 @@ function Form({ submitForm }) {
         <>
 
             <div className="add-amount-container">
-                <form className={"form-inline"} onSubmit={e => { handleSubmit(e) }}>
+                <form className={"form-inline"} onSubmit={e => { handleSubmit(e) }} autoComplete="off">
                     <div className={"add-amount-field"}>
                      
                         <input

@@ -22,20 +22,20 @@ function App() {
   };
 
   const [goalDatas, setGoalDatas] = useState(goals);
+  const [scapegoat, setScapegoat] = useState(0);
   const [selectedGoal, setSelectedGoal] = useState(goals[0]);
-  
+  // const [isInitialRender, setIsInitialRender] = useState(true);
+
   useEffect(() => {
     // This is a proxy for a database query
+
     let filteredGoals = [...goals];
     for (let i = filteredGoals.length; i < 4; i++) {
       filteredGoals.push(defaultActivity)
     }
     setGoalDatas(filteredGoals);
    
-  }, [selectedGoal]);
-
-
-
+  }, [selectedGoal, goals]);
 
   return (
     <div className="App">
