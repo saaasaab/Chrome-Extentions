@@ -44,11 +44,17 @@ function Gridgoal({ selectedGoal }) {
     const [formData, setFormData] = useState([]);
 
     const submitForm = (log) => {
-      setFormData(log);
-      selectedGoal.totalCompleted += Number(log);
+        let tempLog = log;
+        if (log == formData) {
+            tempLog++;
+        }
 
-      setGoal(selectedGoal)
-      console.log(selectedGoal)
+        setFormData(tempLog);
+        selectedGoal.totalCompleted += Number(log);
+        localStorage.setItem(`gridgoal-activity-${selectedGoal.id}`, selectedGoal.totalCompleted);
+    
+        setGoal(selectedGoal)
+
 
     };
 
@@ -77,7 +83,7 @@ function Gridgoal({ selectedGoal }) {
 
                 <Form submitForm={submitForm} />
 
-                
+
             </div>
             <div className="grid-goal-body-content-container">
                 <div className="grid-goal-body-content">
