@@ -11,8 +11,6 @@ function Form({ submitForm }) {
     const handleSubmit = (e) => {
         e.preventDefault();
         e.target[1].value=""
-        // e.current.value = ""
-        console.log(fieldValue)
         submitForm(fieldValue);
     }
 
@@ -22,7 +20,6 @@ function Form({ submitForm }) {
         setFieldValue(text)
         
     }
-
 
     return (
         <>
@@ -39,6 +36,7 @@ function Form({ submitForm }) {
                         <input
                             className="text-input"
                             name="number"
+                            pattern="[+-]?\d+(?:[.,]\d+)?"
                             placeholder='ADD AMOUNT'
                             required
                             
