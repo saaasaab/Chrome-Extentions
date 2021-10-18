@@ -190,8 +190,7 @@
 }
 .plus-icon {
 }
-.add-amount-field {
-}
+
 
 .grid-goal-body-content-container {
   margin: 20px 30px;
@@ -232,3 +231,44 @@
 }
 
 /* CELL END*/
+
+
+/* FORM BEGIN*/
+.add-amount-field{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+.form-inline input.text-input {
+  width: 100%;
+  font-size: 24px;
+  line-height: 24px;
+
+  margin: 5px 0px 5px 0px;
+  padding: 10px;
+  background-color: #fff;
+  /* border: 1px solid #ddd; */
+  text-align: right;
+}
+
+.form-inline .plus-icon {
+
+  background-image: url("./assets/add-amount.png");
+  background-color: white;
+
+  cursor: pointer;
+
+  height: 40px;
+  width: 56px;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.form-inline button:hover {
+  background-color: royalblue;
+}
+
+/* FORM END */
