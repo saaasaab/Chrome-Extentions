@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import Navbar from "./Components/Navbar";
 import ActiveGridGoal from "./Components/ActiveGridGoal";
 import Gridgoal from "./Components/Gridgoal"
-import activeGoals from "./data/activeGoals.json";
+import goals from "./data/goals.json";
 import defaultActivity from "./data/defaultActivity.json"
 import { getGridMultiplier } from './utils/utils'
 import './App.css';
@@ -21,17 +21,16 @@ function App() {
     // e is the event object that returned
   };
 
-  const [activeGoalData, setActiveGoalData] = useState(activeGoals);
-  const [selectedGoal, setSelectedGoal] = useState(activeGoals[0]);
-
+  const [goalDatas, setGoalDatas] = useState(goals);
+  const [selectedGoal, setSelectedGoal] = useState(goals[0]);
   
   useEffect(() => {
     // This is a proxy for a database query
-    let filteredActiveGoals = [...activeGoals];
-    for (let i = filteredActiveGoals.length; i < 4; i++) {
-      filteredActiveGoals.push(defaultActivity)
+    let filteredGoals = [...goals];
+    for (let i = filteredGoals.length; i < 4; i++) {
+      filteredGoals.push(defaultActivity)
     }
-    setActiveGoalData(filteredActiveGoals);
+    setGoalDatas(filteredGoals);
    
   }, [selectedGoal]);
 
@@ -44,10 +43,10 @@ function App() {
       <div className="page-content">
         <div className="active-grid-goals-container">
           {
-            activeGoalData.map(((goalData, i) => <ActiveGridGoal key={i} onclick={handleClick} goalData={goalData} />))
+            goalDatas.map(((goalData, i) => <ActiveGridGoal key={i} onclick={handleClick} goalData={goalData} />))
           }
         </div>
-        <Gridgoal selectedGoal={selectedGoal} />
+        <Gridgoal selectedGoal={selectedGoal} setGoalDatas={setGoalDatas} goalDatas={goalDatas}/>
 
       </div>
     </div>

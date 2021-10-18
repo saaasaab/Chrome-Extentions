@@ -35,12 +35,10 @@ function handleResize(goal) {
 
 
 }
-function Gridgoal({ selectedGoal }) {
+function Gridgoal({ selectedGoal, setGoalDatas, goalDatas}) {
 
     const [goal, setGoal] = useState(selectedGoal);
     const [numCells, setNumCells] = useState(String(goal.numCells));
-
-
     const [formData, setFormData] = useState([]);
 
     const submitForm = (log) => {
@@ -54,6 +52,18 @@ function Gridgoal({ selectedGoal }) {
         localStorage.setItem(`gridgoal-activity-${selectedGoal.id}`, selectedGoal.totalCompleted);
     
         setGoal(selectedGoal)
+        
+        let goalIndex=-1;
+        for(let i = 0; i < goalDatas.length; i++){
+            console.log(selectedGoal.id, goalDatas[i].id)
+            if (selectedGoal.id == goalDatas[i].id ){
+                goalIndex=i;
+            }
+        }
+        console.log(`goalDatas`, goalDatas,goalDatas[goalIndex],goalIndex)
+
+        goalDatas[goalIndex]["totalCompleted"] = selectedGoal.totalCompleted
+        setGoalDatas(goalDatas);
 
 
     };
