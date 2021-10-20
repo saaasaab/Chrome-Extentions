@@ -5,9 +5,6 @@ import { getGridDims, mapNumber, getNumColumns, listAllResizeEventListeners } fr
 import GridgoalCell from './GridgoalCell';
 import Form from "./Form";
 
-function setCellSize(boxW, numCols) {
-
-}
 function handleResize(goal) {
     let gridContainer = document.querySelector('.grid-goal-body-content')
     if (!gridContainer || !goal) {
@@ -31,10 +28,8 @@ function handleResize(goal) {
 
     root.style.setProperty('--cell-font-size', fontSize + "px");
     root.style.setProperty('--cell-width', cellSize + "px");
-
-
-
 }
+
 function Gridgoal({ selectedGoal, setGoalDatas, goalDatas}) {
 
     const [goal, setGoal] = useState(selectedGoal);

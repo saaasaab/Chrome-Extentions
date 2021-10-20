@@ -31,15 +31,13 @@ function Form({ submitForm }) {
                         <input
                         className="submit-button plus-icon"
                         type='submit'
-                        value=' '
-                    />
+                        value=' '/>
                         <input
                             className="text-input"
                             name="number"
                             pattern="[+-]?\d+(?:[.,]\d+)?"
                             placeholder='ADD AMOUNT'
                             required
-                            
                             onChange={e => reSetNumber(e)}
                         />
                     </div>

@@ -1,11 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import '../styles/modal.css';
 
-function Modal() {
+function Modal({ submitNewGoalForm }) {
     const addOpenModalListener = function (element) {
-        console.log(`element`, element)
+
         element.addEventListener("click", function (e) {
-            
+
             // alternate way to populate modal, dynamically loading the src tag:
             // data-url='' in the html element being clicked on, same one with 'data-modal-event', just add this additional data-url attribute
             // and class='modal-embed-src' plus an empty src tag: src='' in the modal content
@@ -54,11 +54,40 @@ function Modal() {
     // Close the modal when the user clicks the close button or somewhere outside of the main modal content
     document.querySelectorAll(".modal__wrapper").forEach(addCloseModalListener);
 
-    // Emptying out the modal's src tag if it is using the dynamic loading method
-    // This will also cause video playback to stop upon modal close, which is a desired outcome, rather than have multiple videos playing sound, hidden in the background
-    const modalEmbeddedSrc = document.querySelector(".modal-embed-src");
-    if (modalEmbeddedSrc) {
-        modalEmbeddedSrc.src = "";
+
+    const [verb, setVerb] = useState("");
+    const [number, setNumber] = useState("");
+    const [noun, setNoun] = useState("");
+
+
+
+    const handleSubmit = (e) => {
+
+        e.preventDefault();
+        
+
+        
+        submitNewGoalForm([verb, number, noun]);
+        setVerb("")
+        setNumber("")
+        setNoun("")
+        e.target.reset()
+        console.log(e.target)
+        document.querySelectorAll(".modal--visible").forEach((el) => {
+            el.classList.remove("modal--visible");
+        });
+    }
+
+    const reSetVerb = (e) => {
+        setVerb(e.target.value)
+    }
+
+    const reSetNumber = (e) => {
+        setNumber(e.target.value)
+    }
+
+    const reSetNoun = (e) => {
+        setNoun(e.target.value)
     }
 
 
@@ -74,7 +103,41 @@ function Modal() {
                                 alt="Close This Modal"
                             />
                         </div>
-                        <h1>Modal Number One</h1>
+
+                        <h1>Own Your 2021</h1>
+                        <form className={"form-inline"} onSubmit={e => { handleSubmit(e) }}>
+                            <div className={"input-row"}>
+                                <input
+                                    className="text-input"
+                                    name="verb"
+                                    placeholder='Verb'
+                                    required
+                                    value={verb}
+                                    onChange={e => reSetVerb(e)}
+                                />
+                                <input
+                                    className="text-input"
+                                    name="number"
+                                    placeholder='Number'
+                                    required
+                                    value={number}
+                                    onChange={e => reSetNumber(e)}
+                                />
+                                <input
+                                    className="text-input"
+                                    name="noun"
+                                    placeholder='Noun'
+                                    required
+                                    value={noun}
+                                    onChange={e => reSetNoun(e)}
+                                />
+                            </div>
+                            <input
+                                className="submit-button"
+                                type='submit'
+                                value='Create Goal Sheet'
+                            />
+                        </form>
                     </div>
                 </div>
             </div>

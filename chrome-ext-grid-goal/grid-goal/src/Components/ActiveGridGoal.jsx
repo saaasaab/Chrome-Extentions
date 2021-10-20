@@ -9,24 +9,15 @@ function ActiveGridGoal({ goalData, onclick }) {
     // let [goalData, setgoalData] = useState(goalData);
     // let [isActive, setIsActive] = useState(false);
 
-
-    const [modalIsOpen, setModalIsOpen] = useState(false);
-
-    const setModalIsOpenToTrue = () => {
-        setModalIsOpen(true)
-    }
-
-    const setModalIsOpenToFalse = () => {
-        setModalIsOpen(false)
-    }
-
+   
     const createNewGoal = () => {
         console.log("Create NEW GOAL")
-        setModalIsOpen(true);
+        
     }
 
     const [daysRemaining, setDaysRemaining] = useState("");
     const [hoursRemaining, setHoursRemaining] = useState("");
+    const [newGoalForm, submitNewGoalForm]= useState('');
 
     useEffect(() => {
         setDaysRemaining(Math.floor(goalData.remainingTime));
@@ -85,7 +76,8 @@ function ActiveGridGoal({ goalData, onclick }) {
                         <img src={newGridgoal} />
                     </div>
                 </div>
-                <Modal dataModalEvent={"placeholder"}/>
+                
+                <Modal submitNewGoalForm={submitNewGoalForm}dataModalEvent={"placeholder"}/>
                 </>
 
             }
