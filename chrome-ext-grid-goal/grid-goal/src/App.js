@@ -5,7 +5,6 @@ import ActiveGridGoal from "./Components/ActiveGridGoal";
 import Gridgoal from "./Components/Gridgoal"
 import goals from "./data/goals.json";
 import defaultActivity from "./data/defaultActivity.json"
-import { getGridMultiplier } from './utils/utils'
 import './App.css';
 
 
@@ -22,7 +21,6 @@ function App() {
   };
 
   const [goalDatas, setGoalDatas] = useState(goals);
-  const [scapegoat, setScapegoat] = useState(0);
   const [selectedGoal, setSelectedGoal] = useState(goals[0]);
   // const [isInitialRender, setIsInitialRender] = useState(true);
 

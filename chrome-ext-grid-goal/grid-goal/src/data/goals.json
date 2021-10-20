@@ -7,7 +7,6 @@
         "remainingTime": 3.9,
         "totalTime": 30,
         "dueDate":"Due: March 7th, 2021",
-
         "icon": "/assets/workout.png",
         "status": true,
         "multiplier": 1,
@@ -21,7 +20,6 @@
         "remainingTime": 6.0,
         "totalTime": 7,
         "dueDate":"Due: March 7th, 2021",
-
         "icon": "workout",
         "status": true,
         "multiplier": 60,
@@ -37,7 +35,6 @@
         "remainingTime": 7.0,
         "totalTime": 7,
         "dueDate":"Due: October 25th, 2021",
-
         "icon": "workout",
         "status": true,
         "multiplier": 5,

@@ -8,6 +8,8 @@
 
   --cell-width: 5px;
   --cell-font-size: 12px;
+
+  --completion-width: 0;
 }
 * {
   margin: 0;
@@ -47,6 +49,7 @@
   width: 300px;
   border-radius: 10px;
   padding-bottom: 10px;
+  cursor: pointer;
 }
 .active-grid-goal-container.empty {
   height: 166px;
@@ -128,7 +131,7 @@
 }
 .completed-bar {
   height: 5px;
-  width: 80%;
+  width:var(--completion-width);
   background-color: var(--green-bar);
 }
 
