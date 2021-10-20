@@ -105,7 +105,7 @@ function Modal({ submitNewGoalForm }) {
                         </div>
 
                         <h1>Own Your 2021</h1>
-                        <form className={"form-inline"} onSubmit={e => { handleSubmit(e) }}>
+                        <form className={"new-goal-form"} onSubmit={e => { handleSubmit(e) }}>
                             <div className={"input-row"}>
                                 <input
                                     className="text-input"

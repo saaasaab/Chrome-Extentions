@@ -3,26 +3,26 @@
       .modal__wrapper {
         align-items: center;
         background-color: rgba(0, 0, 0, 0.5);
-        bottom: 0;
         display: flex;
         justify-content: center;
-        left: 0;
         opacity: 0;
         overflow: auto;
         position: fixed;
         right: 0;
         top: 0;
+        left: 0;
+        bottom: 0;
         visibility: hidden;
         z-index: 100;
       }
     
       .modal__overflow-wrapper {
         align-items: center;
-        bottom: 0;
+        
         display: flex;
         justify-content: center;
+        bottom: 0;
         left: 0;
-        /* overflow: auto; */
         position: absolute;
         right: 0;
         top: 0;
@@ -69,6 +69,9 @@
         overflow: auto;
         padding: 2.25rem;
         position: relative;
+
+        width: 50%;
+        height: 30%;
       }
     
       [data-modal-event],
@@ -96,3 +99,51 @@
           margin: 4rem 0 0;
         }
       }
+
+      .new-goal-form{
+        display: flex;
+        flex-direction: column;
+      }
+
+
+
+.input-row {
+    display: flex;
+    gap: 20px;
+   
+    /* height: 20px; */
+  }
+  
+  .text-input {
+  }
+  
+  .new-goal-form {
+    width: 100%;
+    display: inline-block;
+  }
+  
+  .new-goal-form input {
+    width: 100%;
+    font-size: 14px;
+    vertical-align: middle;
+    margin: 15px 0px 5px 0px;
+    padding: 10px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+  }
+  
+  .new-goal-form button {
+    width: 45%;
+    background-color: dodgerblue;
+    border: 1px solid #ddd;
+    color: white;
+    cursor: pointer;
+  }
+  
+  .new-goal-form button:hover {
+    background-color: royalblue;
+  }
+  
+  .submit-button {
+    width: 100%;
+  }
