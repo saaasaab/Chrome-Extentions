@@ -54,7 +54,7 @@ let a = 1;
           status: true,
           title: `${verb} ${number} ${noun}`,
           totalCompleted: 0,
-          totalTime: 8,
+          totalTime: 7,
           value: number
         }
       )

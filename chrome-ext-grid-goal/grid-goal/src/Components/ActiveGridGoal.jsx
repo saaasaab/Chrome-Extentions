@@ -55,9 +55,7 @@ function ActiveGridGoal({ goalData, onclick, submitNewGoalForm, setIncomingGoalF
                             <div className="time-remaining-text">
                                 Remaining Time: {daysRemaining} days, {hoursRemaining} hrs
                     </div>
-                    {console.log((1-remainingTime/86400 / goalData.totalTime) * 100 + "%" )}
                             <div className="time-remaining-bar" style={{ width: (1-remainingTime/86400 / goalData.totalTime) * 100 + "%" }}>
-
                             </div>
                         </div>
                         <div className="progress-container">
