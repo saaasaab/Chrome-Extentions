@@ -17,20 +17,20 @@ function ActiveGridGoal({ goalData, onclick, submitNewGoalForm, setIncomingGoalF
     const [endHour, setEndHour] = useState(0);
     const [endMonth, setEndMonth] = useState(0);
     const [remainingTime, setRemainingTime] = useState(0);
-    const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun","Jul", "Aug", "Sept", "Oct", "Nov", "Dec"];
+    const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sept", "Oct", "Nov", "Dec"];
 
     useEffect(() => {
         let endDate = new Date(goalData.dueDate);
         let now = new Date();
-        let timeLeft = ( endDate.getTime() - now.getTime())/1000
+        let timeLeft = (endDate.getTime() - now.getTime()) / 1000
         setEndMonth(monthNames[endDate.getMonth()])
         setEndHour(endDate.getHours())
         setEndDay(endDate.getDate())
 
-        setRemainingTime(timeLeft )
+        setRemainingTime(timeLeft)
 
-        setDaysRemaining(Math.floor(timeLeft/86400));
-        setHoursRemaining(Math.round((timeLeft/86400 - Math.floor(timeLeft/86400)) * 24));
+        setDaysRemaining(Math.floor(timeLeft / 86400));
+        setHoursRemaining(Math.round((timeLeft / 86400 - Math.floor(timeLeft / 86400)) * 24));
     }, [goalData])
     return (
         <>
@@ -46,7 +46,7 @@ function ActiveGridGoal({ goalData, onclick, submitNewGoalForm, setIncomingGoalF
                                 {goalData.title}
                             </div>
                             <div className="grid-goal-due-date">
-                                Due: {endMonth } {endDay}
+                                Due: {endMonth} {endDay}
                             </div>
                         </div>
                     </div>
@@ -55,7 +55,7 @@ function ActiveGridGoal({ goalData, onclick, submitNewGoalForm, setIncomingGoalF
                             <div className="time-remaining-text">
                                 Remaining Time: {daysRemaining} days, {hoursRemaining} hrs
                     </div>
-                            <div className="time-remaining-bar" style={{ width: (1-remainingTime/86400 / goalData.totalTime) * 100 + "%" }}>
+                            <div className="time-remaining-bar" style={{ width: (1 - remainingTime / 86400 / goalData.totalTime) * 100 + "%" }}>
                             </div>
                         </div>
                         <div className="progress-container">
@@ -64,8 +64,8 @@ function ActiveGridGoal({ goalData, onclick, submitNewGoalForm, setIncomingGoalF
                                     Completed: {numberWithCommas(goalData.totalCompleted)} out of {numberWithCommas(goalData.value)}
                                 </div>
                                 <div className="completed-percent">
-                                    {Math.round(goalData.totalCompleted / goalData.value* 100) + "%"}
-                        </div>
+                                    {Math.round(goalData.totalCompleted / goalData.value * 100) + "%"}
+                                </div>
                             </div>
 
                             <div className="completed-bar" style={{ width: goalData.totalCompleted / goalData.value * 100 + "%" }}>
@@ -78,13 +78,13 @@ function ActiveGridGoal({ goalData, onclick, submitNewGoalForm, setIncomingGoalF
 
                 :
                 <>
-                <div className="active-grid-goal-container empty" data-modal-event="placeholder" >
-                    <div className="add-new-gridgoal">
-                        <img src={newGridgoal} />
+                    <div className="active-grid-goal-container empty" data-modal-event="placeholder" >
+                        <div className="add-new-gridgoal">
+                            <img src={newGridgoal} />
+                        </div>
                     </div>
-                </div>
 
-                <Modal submitNewGoalForm={submitNewGoalForm} dataModalEvent={"placeholder"} setIncomingGoalFormData={setIncomingGoalFormData}/>
+                    <Modal submitNewGoalForm={submitNewGoalForm} dataModalEvent={"placeholder"} setIncomingGoalFormData={setIncomingGoalFormData} />
                 </>
 
             }

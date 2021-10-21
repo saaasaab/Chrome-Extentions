@@ -3,12 +3,10 @@ import React, { useState, useEffect } from "react";
 import Navbar from "./Components/Navbar";
 import ActiveGridGoal from "./Components/ActiveGridGoal";
 import Gridgoal from "./Components/Gridgoal"
-import goals from "./data/goals.json";
+import goalsExample from "./data/goalsExample.json";
 import defaultActivity from "./data/defaultActivity.json"
-import { mapNumber } from "./utils/utils"
+import { saveToLocal, numberWithCommas } from "./utils/utils"
 import './App.css';
-
-
 
 
 function App() {
@@ -21,57 +19,84 @@ function App() {
     // e is the event object that returned
   };
 
-  const [goalDatas, setGoalDatas] = useState(goals);
-  const [selectedGoal, setSelectedGoal] = useState(goals[0]);
+  const [goalDatas, setGoalDatas] = useState(() => {
+    // getting stored value
+    const gs = JSON.parse(localStorage.getItem("grid-goal-activity-data")) || goalsExample;
+    return gs;
+  })
+
+  const [filteredGoals, setFilteredGoals] = useState(() => {
+    // 
+    let gs = [...goalDatas];
+    for (let i = gs.length; i < 4; i++) {
+      gs.push(defaultActivity)
+    }
+    return gs;
+  });;
+
+
+
+  const [selectedGoal, setSelectedGoal] = useState(goalDatas[0]);
   const [newGoalForm, submitNewGoalForm] = useState('');
-  const [incomingGoalFormData, setIncomingGoalFormData]= useState(false);
+  const [incomingGoalFormData, setIncomingGoalFormData] = useState(false);
   // const [isInitialRender, setIsInitialRender] = useState(true);
 
-  useEffect(() => {
-    // This is a proxy for a database query
-    let filteredGoals = [...goals];
-    for (let i = filteredGoals.length; i < 4; i++) {
-      filteredGoals.push(defaultActivity)
-    }
-let a = 1;
-    setGoalDatas(filteredGoals);
-
-  }, [selectedGoal, goals]);
+  // useEffect(() => {
+  //   // This is a proxy for a database query
+  // }, [selectedGoal, goalDatas]);
 
   useEffect(() => {
     if (newGoalForm != "" && incomingGoalFormData) {
       const verb = newGoalForm[0];
       const number = Number(newGoalForm[1]);
       const noun = newGoalForm[2];
-      const multiplier = number >= 200 ? Math.ceil(number/200): 1;
-      goals.push(
-        {
-          dueDate: "Wed Oct 27 2021 19:00:00 GMT-0700",
-          icon: "workout",
-          id: 4,
-          multiplier: multiplier,
-          numCells: Math.ceil(Number(number)/multiplier),
-          status: true,
-          title: `${verb} ${number} ${noun}`,
-          totalCompleted: 0,
-          totalTime: 7,
-          value: number
-        }
-      )
-      console.log(goals)
+      const multiplier = number >= 200 ? Math.ceil(number / 200) : 1;
+      let goals = [...goalDatas];
+
+      let newGoal =   {
+        dueDate: "Wed Oct 27 2021 19:00:00 GMT-0700",
+        icon: "workout",
+        id: goals.length + 1,
+        multiplier: multiplier,
+        numCells: Math.ceil(Number(number) / multiplier),
+        status: true,
+        title: `${verb} ${numberWithCommas(number)} ${noun}`,
+        totalCompleted: 0,
+        totalTime: 7,
+        value: number
+      }
+      goals.push(newGoal)
+
+      saveToLocal("grid-goal-activity-data", goals);
       setGoalDatas(goals);
+
+
+      let gs = [...goals];
+      for (let i = gs.length; i < 4; i++) {
+        gs.push(defaultActivity)
+      }
+
+      setSelectedGoal(newGoal)//THis is hilarious. I thought about fixing this earlier but didn't. It ended up causing a bug that took 20 minutes to fix
+      setFilteredGoals(gs)
       setIncomingGoalFormData(false)
+
     }
   }, [newGoalForm])
+
+
   return (
     <div className="App">
       <Navbar />
       <div className="page-content">
         <div className="active-grid-goals-container">
           {
-            goalDatas.map(((goalData, i) => <ActiveGridGoal key={i} onclick={handleClick} goalData={goalData} submitNewGoalForm={submitNewGoalForm} setIncomingGoalFormData={setIncomingGoalFormData}/>))
+
+            filteredGoals.map(((goalData, i) =>
+              <ActiveGridGoal key={i} onclick={handleClick} goalData={goalData} submitNewGoalForm={submitNewGoalForm} setIncomingGoalFormData={setIncomingGoalFormData} />
+            ))
           }
         </div>
+          {console.log(selectedGoal)}
         <Gridgoal selectedGoal={selectedGoal} setGoalDatas={setGoalDatas} goalDatas={goalDatas} />
 
       </div>

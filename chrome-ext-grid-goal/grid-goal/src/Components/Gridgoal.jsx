@@ -4,14 +4,13 @@ import React, { useState, useEffect } from "react";
 import { getGridDims, mapNumber, getNumColumns, listAllResizeEventListeners } from '../utils/utils';
 import GridgoalCell from './GridgoalCell';
 import Form from "./Form";
+import {saveToLocal} from '../utils/utils'
 
 function handleResize(goal) {
     let gridContainer = document.querySelector('.grid-goal-body-content')
     if (!gridContainer || !goal) {
         return
     }
-
-    // window.removeEventListener('resize', () => { handleResize(goal)} );
 
     let gridDims = gridContainer.getBoundingClientRect();
     let gridWidth = gridDims.width;
@@ -20,20 +19,19 @@ function handleResize(goal) {
     let numCols = getNumColumns(goal.numCells, gridWidth, gridHeight - gridHeight * .2)
     // let numCols = 20;
     // console.log(numCols)
-    let cellSize = Math.max(30, (gridWidth - 5 * (numCols - 1)) / numCols);
+    let cellSize = Math.max(25, (gridWidth - 5 * (numCols - 1)) / numCols);
     // cellSize = Math.min(cellSize,100)
-
     let root = document.documentElement;
-    let fontSize = mapNumber(goal.numCells, 0, 400, 20, 10)
+    let fontSize = mapNumber(goal.numCells, 0, 100, 40, 10)
 
     root.style.setProperty('--cell-font-size', fontSize + "px");
     root.style.setProperty('--cell-width', cellSize + "px");
 }
 
-function Gridgoal({ selectedGoal, setGoalDatas, goalDatas}) {
+function Gridgoal({ selectedGoal, setGoalDatas, goalDatas }) {
 
     const [goal, setGoal] = useState(selectedGoal);
-    const [numCells, setNumCells] = useState(String(goal.numCells));
+    const [numCells, setNumCells] = useState(goal ? String(goal.numCells): 0);
     const [formData, setFormData] = useState([]);
 
     const submitForm = (log) => {
@@ -56,45 +54,37 @@ function Gridgoal({ selectedGoal, setGoalDatas, goalDatas}) {
             }
         }
 
-        goalDatas[goalIndex]["totalCompleted"] = selectedGoal.totalCompleted
+        goalDatas[goalIndex]["totalCompleted"] = selectedGoal.totalCompleted;
         setGoalDatas(goalDatas);
 
-
+        saveToLocal("grid-goal-activity-data", goalDatas);
     };
 
     useEffect(() => {
-        setNumCells(String(selectedGoal.value));
-        setGoal(selectedGoal)
-
+        setNumCells(selectedGoal?String(selectedGoal.value):0);
+        handleResize(selectedGoal)
+        handleResize(selectedGoal)
         window.addEventListener('resize', () => { handleResize(selectedGoal) });
         // console.log( listAllResizeEventListeners())
 
     }, [selectedGoal])
 
-
-    handleResize(selectedGoal)
-
-
-
-
     return (
         <div className="grid-goal-container">
             <div className="grid-goal-header-container">
                 <div className="grid-goal-title">
-                    {goal.title}
-                    {/* Only Eat 10,000 Calories */}
+                    {console.log(selectedGoal)}
+                    {selectedGoal?selectedGoal.title:"Click the '+' to create your first Grid Goal"}
                 </div>
-
-                <Form submitForm={submitForm} />
-
+                {goalDatas.length>0?
+                <Form submitForm={submitForm} />:<></>}
 
             </div>
             <div className="grid-goal-body-content-container">
                 <div className="grid-goal-body-content">
-                    {/* {console.log(goal)} */}
-                    {[...Array(selectedGoal.numCells).keys()].map((numCell) => (
+                    {goalDatas.length>0?[...Array(selectedGoal.numCells).keys()].map((numCell) => (
                         <GridgoalCell key={numCell} index={numCell} multiplier={selectedGoal.multiplier} numCells={selectedGoal.numCells} completedTotal={selectedGoal.totalCompleted} total={selectedGoal.value}/>
-                    ))}
+                    )):<></>}
                 </div>
             </div>
         </div>

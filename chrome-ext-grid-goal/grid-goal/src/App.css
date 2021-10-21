@@ -227,6 +227,8 @@
   font-size: var(--cell-font-size);
   text-align: center;
   line-height: var(--cell-width);
+  /* inline-size: calc(var(--cell-width) - 2px); */
+  /* overflow-wrap: break-word; */
 }
 
 .active-grid-cell{
