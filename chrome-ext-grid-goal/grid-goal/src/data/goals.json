@@ -6,7 +6,7 @@
         "totalCompleted": 21,
         "remainingTime": 3.9,
         "totalTime": 30,
-        "dueDate":"Due: March 7th, 2021",
+        "dueDate":"Wed Oct 27 2021 19:00:00 GMT-0700",
         "icon": "/assets/workout.png",
         "status": true,
         "multiplier": 1,
@@ -18,14 +18,13 @@
         "value": 12000,
         "totalCompleted": 2200,
         "remainingTime": 6.0,
-        "totalTime": 7,
-        "dueDate":"Due: March 7th, 2021",
+        "totalTime": 30,
+        "dueDate":"Wed Nov 14 2021 12:00:00 GMT-0700",
         "icon": "workout",
         "status": true,
         "multiplier": 60,
         "numCells":200
     }
-
     ,
     {
         "id":3,
@@ -33,13 +32,11 @@
         "value": 1000,
         "totalCompleted": 0,
         "remainingTime": 7.0,
-        "totalTime": 7,
-        "dueDate":"Due: October 25th, 2021",
+        "totalTime": 30,
+        "dueDate":"Wed Oct 31 2021 11:00:00 GMT-0700",
         "icon": "workout",
         "status": true,
         "multiplier": 5,
         "numCells":200
     }
-
-    
 ]

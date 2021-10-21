@@ -44,6 +44,7 @@ function Gridgoal({ selectedGoal, setGoalDatas, goalDatas}) {
 
         setFormData(tempLog);
         selectedGoal.totalCompleted += Number(log);
+        selectedGoal.totalCompleted= Math.min(selectedGoal.totalCompleted,selectedGoal.value)
         localStorage.setItem(`gridgoal-activity-${selectedGoal.id}`, selectedGoal.totalCompleted);
     
         setGoal(selectedGoal)

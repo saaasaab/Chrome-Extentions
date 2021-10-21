@@ -4,25 +4,33 @@ import newGridgoal from '../assets/newGridGoal.png'
 import { numberWithCommas } from '../utils/utils';
 import Modal from './Modal';
 
-function ActiveGridGoal({ goalData, onclick }) {
+function ActiveGridGoal({ goalData, onclick, submitNewGoalForm, setIncomingGoalFormData }) {
     // let [isActive, setIsActive] = useState(props.isActive);
     // let [goalData, setgoalData] = useState(goalData);
     // let [isActive, setIsActive] = useState(false);
 
-   
-    const createNewGoal = () => {
-        console.log("Create NEW GOAL")
-        
-    }
 
     const [daysRemaining, setDaysRemaining] = useState("");
     const [hoursRemaining, setHoursRemaining] = useState("");
-    const [newGoalForm, submitNewGoalForm]= useState('');
+
+    const [endDay, setEndDay] = useState(0);
+    const [endHour, setEndHour] = useState(0);
+    const [endMonth, setEndMonth] = useState(0);
+    const [remainingTime, setRemainingTime] = useState(0);
+    const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun","Jul", "Aug", "Sept", "Oct", "Nov", "Dec"];
 
     useEffect(() => {
-        setDaysRemaining(Math.floor(goalData.remainingTime));
-        setHoursRemaining(Math.round((goalData.remainingTime - Math.floor(goalData.remainingTime)) * 24));
+        let endDate = new Date(goalData.dueDate);
+        let now = new Date();
+        let timeLeft = ( endDate.getTime() - now.getTime())/1000
+        setEndMonth(monthNames[endDate.getMonth()])
+        setEndHour(endDate.getHours())
+        setEndDay(endDate.getDate())
 
+        setRemainingTime(timeLeft )
+
+        setDaysRemaining(Math.floor(timeLeft/86400));
+        setHoursRemaining(Math.round((timeLeft/86400 - Math.floor(timeLeft/86400)) * 24));
     }, [goalData])
     return (
         <>
@@ -38,7 +46,7 @@ function ActiveGridGoal({ goalData, onclick }) {
                                 {goalData.title}
                             </div>
                             <div className="grid-goal-due-date">
-                                {goalData.dueDate}
+                                Due: {endMonth } {endDay}
                             </div>
                         </div>
                     </div>
@@ -47,7 +55,8 @@ function ActiveGridGoal({ goalData, onclick }) {
                             <div className="time-remaining-text">
                                 Remaining Time: {daysRemaining} days, {hoursRemaining} hrs
                     </div>
-                            <div className="time-remaining-bar">
+                    {console.log((1-remainingTime/86400 / goalData.totalTime) * 100 + "%" )}
+                            <div className="time-remaining-bar" style={{ width: (1-remainingTime/86400 / goalData.totalTime) * 100 + "%" }}>
 
                             </div>
                         </div>
@@ -57,7 +66,7 @@ function ActiveGridGoal({ goalData, onclick }) {
                                     Completed: {numberWithCommas(goalData.totalCompleted)} out of {numberWithCommas(goalData.value)}
                                 </div>
                                 <div className="completed-percent">
-                                    65%
+                                    {Math.round(goalData.totalCompleted / goalData.value* 100) + "%"}
                         </div>
                             </div>
 
@@ -71,13 +80,13 @@ function ActiveGridGoal({ goalData, onclick }) {
 
                 :
                 <>
-                <div className="active-grid-goal-container empty" data-modal-event="placeholder" onClick={createNewGoal}>
+                <div className="active-grid-goal-container empty" data-modal-event="placeholder" >
                     <div className="add-new-gridgoal">
                         <img src={newGridgoal} />
                     </div>
                 </div>
-                
-                <Modal submitNewGoalForm={submitNewGoalForm}dataModalEvent={"placeholder"}/>
+
+                <Modal submitNewGoalForm={submitNewGoalForm} dataModalEvent={"placeholder"} setIncomingGoalFormData={setIncomingGoalFormData}/>
                 </>
 
             }

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import '../styles/modal.css';
 
-function Modal({ submitNewGoalForm }) {
+function Modal({ submitNewGoalForm, setIncomingGoalFormData }) {
     const addOpenModalListener = function (element) {
 
         element.addEventListener("click", function (e) {
@@ -68,11 +68,12 @@ function Modal({ submitNewGoalForm }) {
 
         
         submitNewGoalForm([verb, number, noun]);
+        setIncomingGoalFormData(true);
         setVerb("")
         setNumber("")
         setNoun("")
         e.target.reset()
-        console.log(e.target)
+ 
         document.querySelectorAll(".modal--visible").forEach((el) => {
             el.classList.remove("modal--visible");
         });
