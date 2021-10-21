@@ -5,6 +5,7 @@ import ActiveGridGoal from "./Components/ActiveGridGoal";
 import Gridgoal from "./Components/Gridgoal"
 import goals from "./data/goals.json";
 import defaultActivity from "./data/defaultActivity.json"
+import { mapNumber } from "./utils/utils"
 import './App.css';
 
 
@@ -39,18 +40,17 @@ let a = 1;
 
   useEffect(() => {
     if (newGoalForm != "" && incomingGoalFormData) {
-      console.log(newGoalForm, goals)
       const verb = newGoalForm[0];
-      const number = newGoalForm[1];
+      const number = Number(newGoalForm[1]);
       const noun = newGoalForm[2];
-
+      const multiplier = number >= 200 ? Math.ceil(number/200): 1;
       goals.push(
         {
           dueDate: "Wed Oct 27 2021 19:00:00 GMT-0700",
           icon: "workout",
           id: 4,
-          multiplier: 5,
-          numCells: 200,
+          multiplier: multiplier,
+          numCells: Math.ceil(Number(number)/multiplier),
           status: true,
           title: `${verb} ${number} ${noun}`,
           totalCompleted: 0,
@@ -58,6 +58,7 @@ let a = 1;
           value: number
         }
       )
+      console.log(goals)
       setGoalDatas(goals);
       setIncomingGoalFormData(false)
     }

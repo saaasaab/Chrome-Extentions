@@ -93,7 +93,7 @@ function Gridgoal({ selectedGoal, setGoalDatas, goalDatas}) {
                 <div className="grid-goal-body-content">
                     {/* {console.log(goal)} */}
                     {[...Array(selectedGoal.numCells).keys()].map((numCell) => (
-                        <GridgoalCell key={numCell} index={numCell} multiplier={selectedGoal.multiplier} numCells={selectedGoal.numCells} completedTotal={selectedGoal.totalCompleted} />
+                        <GridgoalCell key={numCell} index={numCell} multiplier={selectedGoal.multiplier} numCells={selectedGoal.numCells} completedTotal={selectedGoal.totalCompleted} total={selectedGoal.value}/>
                     ))}
                 </div>
             </div>
