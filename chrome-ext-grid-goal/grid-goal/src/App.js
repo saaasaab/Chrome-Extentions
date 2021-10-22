@@ -50,19 +50,24 @@ function App() {
       const verb = newGoalForm[0];
       const number = Number(newGoalForm[1]);
       const noun = newGoalForm[2];
+      const duration = Number(newGoalForm[3]);
       const multiplier = number >= 200 ? Math.ceil(number / 200) : 1;
       let goals = [...goalDatas];
 
-      let newGoal =   {
-        dueDate: "Wed Oct 27 2021 19:00:00 GMT-0700",
-        icon: "workout",
+      let today = new Date();
+      let endDate = new Date(today.setDate(today.getDate() + duration)).toString();
+
+
+      let newGoal = {
         id: goals.length + 1,
+        dueDate: endDate,
+        icon: "workout",
         multiplier: multiplier,
         numCells: Math.ceil(Number(number) / multiplier),
         status: true,
-        title: `${verb} ${numberWithCommas(number)} ${noun}`,
+        title: `${verb} ${numberWithCommas(number)} ${noun} in ${duration} days`,
         totalCompleted: 0,
-        totalTime: 7,
+        totalTime: duration,
         value: number
       }
       goals.push(newGoal)
@@ -96,7 +101,7 @@ function App() {
             ))
           }
         </div>
-          {console.log(selectedGoal)}
+        {console.log(selectedGoal)}
         <Gridgoal selectedGoal={selectedGoal} setGoalDatas={setGoalDatas} goalDatas={goalDatas} />
 
       </div>

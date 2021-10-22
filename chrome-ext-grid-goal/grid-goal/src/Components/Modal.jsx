@@ -58,6 +58,7 @@ function Modal({ submitNewGoalForm, setIncomingGoalFormData }) {
     const [verb, setVerb] = useState("");
     const [number, setNumber] = useState("");
     const [noun, setNoun] = useState("");
+    const [duration, setDuration] = useState("");
 
 
 
@@ -67,11 +68,12 @@ function Modal({ submitNewGoalForm, setIncomingGoalFormData }) {
         
 
         
-        submitNewGoalForm([verb, number, noun]);
+        submitNewGoalForm([verb, number, noun, duration]);
         setIncomingGoalFormData(true);
         setVerb("")
         setNumber("")
         setNoun("")
+        setDuration("")
         e.target.reset()
  
         document.querySelectorAll(".modal--visible").forEach((el) => {
@@ -89,6 +91,10 @@ function Modal({ submitNewGoalForm, setIncomingGoalFormData }) {
 
     const reSetNoun = (e) => {
         setNoun(e.target.value)
+    }
+
+    const reSetDuration = (e) => {
+        setDuration(e.target.value)
     }
 
 
@@ -131,6 +137,14 @@ function Modal({ submitNewGoalForm, setIncomingGoalFormData }) {
                                     required
                                     value={noun}
                                     onChange={e => reSetNoun(e)}
+                                />
+                                 <input
+                                    className="text-input"
+                                    name="duration"
+                                    placeholder='Duration'
+                                    required
+                                    value={duration}
+                                    onChange={e => reSetDuration(e)}
                                 />
                             </div>
                             <input
