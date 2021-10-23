@@ -20,7 +20,7 @@ function Modal({ submitNewGoalForm, setIncomingGoalFormData }) {
         setNoun("")
         setDuration("")
         e.target.reset()
- 
+
         document.querySelectorAll(".modal--visible").forEach((el) => {
             el.classList.remove("modal--visible");
         });
@@ -84,14 +84,28 @@ function Modal({ submitNewGoalForm, setIncomingGoalFormData }) {
                                     value={noun}
                                     onChange={e => reSetNoun(e)}
                                 />
-                                 <input
+
+                                <select className="text-input"
+                                        name="duration"
+                                        placeholder='Duration'
+                                        pattern="[+-]?\d+(?:[.,]\d+)?"
+                                        required
+                                        value={duration}
+                                        onChange={e => reSetDuration(e)}>
+                                    <option value="1">1 Day</option>
+                                    <option value="7">7 Days</option>
+                                </select>
+
+
+                                {/* <input
                                     className="text-input"
                                     name="duration"
                                     placeholder='Duration'
+                                    pattern="[+-]?\d+(?:[.,]\d+)?"
                                     required
                                     value={duration}
                                     onChange={e => reSetDuration(e)}
-                                />
+                                /> */}
                             </div>
                             <input
                                 className="submit-button"
@@ -99,6 +113,8 @@ function Modal({ submitNewGoalForm, setIncomingGoalFormData }) {
                                 value='Create Goal Sheet'
                             />
                         </form>
+                        <h1 className="preview-text">{verb!=""?verb: "_____"} {number!=""?number: "_____"} {noun!=""?noun: "_____"} in {duration!=""?duration: "_____"} {duration>1?"days":"day"}</h1>
+
                     </div>
                 </div>
             </div>
