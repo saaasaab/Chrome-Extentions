@@ -44,6 +44,7 @@ function App() {
   const [deleteGridgoalID, setDeleteGridgoalID] = useState('');
   const [incomingGoalFormData, setIncomingGoalFormData] = useState(false);
   const [runModals, setRunModals] = useState(false);
+  const [formFill,setFormFill] = useState('')
 
   // const [isInitialRender, setIsInitialRender] = useState(true);
 
@@ -60,6 +61,9 @@ function App() {
     setRunModals(false)
   }, [runModals])
 
+  useEffect(()=>{
+
+  },[formFill])
 
 
   useEffect(() => {
@@ -146,7 +150,7 @@ function App() {
           }
 
         </div>
-        <Gridgoal selectedGoal={selectedGoal} setGoalDatas={setGoalDatas} goalDatas={goalDatas} />
+        <Gridgoal selectedGoal={selectedGoal} setGoalDatas={setGoalDatas} goalDatas={goalDatas} setFormFill={setFormFill}/>
 
       </div>
       <Modal submitNewGoalForm={submitNewGoalForm} dataModalEvent={"new-grid-goal"} setIncomingGoalFormData={setIncomingGoalFormData} />

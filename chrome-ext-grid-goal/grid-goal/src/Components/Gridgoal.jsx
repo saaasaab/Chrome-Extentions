@@ -28,7 +28,7 @@ function handleResize(goal) {
     root.style.setProperty('--cell-width', cellSize + "px");
 }
 
-function Gridgoal({ selectedGoal, setGoalDatas, goalDatas }) {
+function Gridgoal({ selectedGoal, setGoalDatas, goalDatas, setFormFill }) {
 
     const [goal, setGoal] = useState(selectedGoal);
     const [numCells, setNumCells] = useState(goal ? String(goal.numCells): 0);
@@ -58,6 +58,7 @@ function Gridgoal({ selectedGoal, setGoalDatas, goalDatas }) {
         setGoalDatas(goalDatas);
 
         saveToLocal("grid-goal-activity-data", goalDatas);
+        setFormFill(Date.now());
     };
 
     useEffect(() => {

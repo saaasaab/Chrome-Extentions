@@ -84,7 +84,7 @@ function Modal({ submitNewGoalForm, setIncomingGoalFormData }) {
                                     value={noun}
                                     onChange={e => reSetNoun(e)}
                                 />
-
+                                
                                 <select className="text-input"
                                         name="duration"
                                         placeholder='Duration'
@@ -94,6 +94,10 @@ function Modal({ submitNewGoalForm, setIncomingGoalFormData }) {
                                         onChange={e => reSetDuration(e)}>
                                     <option value="1">1 Day</option>
                                     <option value="7">7 Days</option>
+                                    <option value="31">1 Month</option>
+                                    <option value="90">3 Months</option>
+                                    <option value="180">6 Months</option>
+                                    <option value="365">1 Year</option>
                                 </select>
 
 

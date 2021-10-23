@@ -10,6 +10,7 @@
   --cell-font-size: 12px;
 
   --completion-width: 0;
+  --time-width: 0;
 }
 * {
   margin: 0;
@@ -118,8 +119,9 @@
 }
 .time-remaining-bar {
   height: 5px;
-  width: 60%;
+  width: var(--time-width);
   background-color: var(--red-bar);
+  /* transition: 1s; */
 }
 .completed-text-container {
   display: flex;
@@ -138,11 +140,18 @@
   height: 5px;
   width:var(--completion-width);
   background-color: var(--green-bar);
+  transition: 1s;
 }
 
 .grid-goal-delete img{
   width:20px;
   height: 20px;
+  opacity: .1;
+}
+.grid-goal-delete img:hover{
+
+  opacity: 1;
+  transition: .5s;
 }
 
 /* ACTIVE GRID GOAL ELEMENT END */
@@ -189,6 +198,7 @@
   font-size: 40px;
   font-weight: 400;
   color: var(--grey-dark-text);
+  
 }
 .add-amount-container {
   display: flex;
@@ -239,10 +249,12 @@
   line-height: var(--cell-width);
   /* inline-size: calc(var(--cell-width) - 2px); */
   /* overflow-wrap: break-word; */
+  transition: .5s;
 }
 
 .active-grid-cell{
   background: #9BFFFF;
+  transition: .5s;
 }
 
 /* CELL END*/
