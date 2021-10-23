@@ -50,6 +50,7 @@
   border-radius: 10px;
   padding-bottom: 10px;
   cursor: pointer;
+  padding-bottom: 10px;
 }
 .active-grid-goal-container.empty {
   height: 166px;
@@ -79,6 +80,10 @@
   flex-direction: column;
   gap: 7px;
 }
+.grid-goal-toprow{
+  display: flex;
+  flex-direction: row;
+}
 .grid-goal-name {
   color: var(--blue-text);
   font-size: 1.2em;
@@ -97,7 +102,7 @@
   flex-direction: column;
   padding-left: 15px;
   padding-right: 15px;
-  gap: 10px;
+
   font-size: 0.8em;
 }
 .progress-container {
@@ -135,6 +140,11 @@
   background-color: var(--green-bar);
 }
 
+.grid-goal-delete img{
+  width:20px;
+  height: 20px;
+}
+
 /* ACTIVE GRID GOAL ELEMENT END */
 
 /* PAGE CONTENT BEGIN */
@@ -159,7 +169,7 @@
 
 /* GRID GOAL CONTAINER BEGIN */
 .grid-goal-container {
-  margin: 20px 50px;
+  margin: 20px 50px 0 50px;
   width: 80%;
   height: auto;
   background: white;

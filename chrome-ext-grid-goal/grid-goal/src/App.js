@@ -4,8 +4,11 @@ import Navbar from "./Components/Navbar";
 import ActiveGridGoal from "./Components/ActiveGridGoal";
 import Gridgoal from "./Components/Gridgoal"
 import goalsExample from "./data/goalsExample.json";
-import defaultActivity from "./data/defaultActivity.json"
-import { saveToLocal, numberWithCommas } from "./utils/utils"
+import defaultActivity from "./data/defaultActivity.json";
+import { saveToLocal, numberWithCommas } from "./utils/utils";
+import { addOpenModalListener, addCloseModalListener } from "./utils/initModal";
+import Modal from './Components/Modal';
+
 import './App.css';
 
 
@@ -38,12 +41,54 @@ function App() {
 
   const [selectedGoal, setSelectedGoal] = useState(goalDatas[0]);
   const [newGoalForm, submitNewGoalForm] = useState('');
+  const [deleteGridgoalID, setDeleteGridgoalID] = useState('');
   const [incomingGoalFormData, setIncomingGoalFormData] = useState(false);
+  const [runModals, setRunModals] = useState(false);
+
   // const [isInitialRender, setIsInitialRender] = useState(true);
 
   // useEffect(() => {
   //   // This is a proxy for a database query
   // }, [selectedGoal, goalDatas]);
+
+  useEffect(() => {
+    // if (runModals) {
+    document.querySelectorAll("[data-modal-event]").forEach(addOpenModalListener);
+    // Close the modal when the user clicks the close button or somewhere outside of the main modal content
+    document.querySelectorAll(".modal__wrapper").forEach(addCloseModalListener);
+    // }
+    setRunModals(false)
+  }, [runModals])
+
+
+
+  useEffect(() => {
+    if (deleteGridgoalID != "") {
+
+      let goals = [...goalDatas];
+
+      let removedArray = goals.filter(el => el.id != deleteGridgoalID);
+
+      saveToLocal("grid-goal-activity-data", removedArray);
+      setGoalDatas(removedArray);
+
+
+      let gs = [...removedArray];
+      for (let i = gs.length; i < 4; i++) {
+        gs.push(defaultActivity)
+      }
+
+      // setSelectedGoal(newGoal)//THis is hilarious. I thought about fixing this earlier but didn't. It ended up causing a bug that took 20 minutes to fix
+      setFilteredGoals(gs)
+      setDeleteGridgoalID("");
+      setRunModals(true);
+
+
+      // document.querySelectorAll("[data-modal-event]").forEach(addOpenModalListener);
+      // Close the modal when the user clicks the close button or somewhere outside of the main modal content
+
+    }
+  }, [deleteGridgoalID, goalDatas])
 
   useEffect(() => {
     if (newGoalForm != "" && incomingGoalFormData) {
@@ -59,7 +104,7 @@ function App() {
 
 
       let newGoal = {
-        id: goals.length + 1,
+        id: Date.now(),
         dueDate: endDate,
         icon: "workout",
         multiplier: multiplier,
@@ -95,16 +140,17 @@ function App() {
       <div className="page-content">
         <div className="active-grid-goals-container">
           {
-
             filteredGoals.map(((goalData, i) =>
-              <ActiveGridGoal key={i} onclick={handleClick} goalData={goalData} submitNewGoalForm={submitNewGoalForm} setIncomingGoalFormData={setIncomingGoalFormData} />
+              <ActiveGridGoal key={i} onclick={handleClick} goalData={goalData} submitNewGoalForm={submitNewGoalForm} setIncomingGoalFormData={setIncomingGoalFormData} setDeleteGridgoalID={setDeleteGridgoalID} />
             ))
           }
+
         </div>
-        {console.log(selectedGoal)}
         <Gridgoal selectedGoal={selectedGoal} setGoalDatas={setGoalDatas} goalDatas={goalDatas} />
 
       </div>
+      <Modal submitNewGoalForm={submitNewGoalForm} dataModalEvent={"new-grid-goal"} setIncomingGoalFormData={setIncomingGoalFormData} />
+
     </div>
   );
 }

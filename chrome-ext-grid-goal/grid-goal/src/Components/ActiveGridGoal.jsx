@@ -3,8 +3,9 @@ import workoutIcon from '../assets/workout.png'
 import newGridgoal from '../assets/newGridGoal.png'
 import { numberWithCommas } from '../utils/utils';
 import Modal from './Modal';
+import bin from '../assets/bin.png'
 
-function ActiveGridGoal({ goalData, onclick, submitNewGoalForm, setIncomingGoalFormData }) {
+function ActiveGridGoal({ goalData, onclick, submitNewGoalForm, setIncomingGoalFormData, setDeleteGridgoalID }) {
     // let [isActive, setIsActive] = useState(props.isActive);
     // let [goalData, setgoalData] = useState(goalData);
     // let [isActive, setIsActive] = useState(false);
@@ -42,9 +43,15 @@ function ActiveGridGoal({ goalData, onclick, submitNewGoalForm, setIncomingGoalF
                             <img src={workoutIcon} />
                         </div>
                         <div className="name-date-container">
-                            <div className="grid-goal-name">
-                                {goalData.title}
+                            <div className="grid-goal-toprow">
+                                <div className="grid-goal-name">
+                                    {goalData.title}
+                                </div>
+                                <div className="grid-goal-delete" onClick={() => setDeleteGridgoalID(goalData.id)}>
+                                    <img src={bin} />
+                                </div>
                             </div>
+
                             <div className="grid-goal-due-date">
                                 Due: {endMonth} {endDay}
                             </div>
@@ -55,7 +62,7 @@ function ActiveGridGoal({ goalData, onclick, submitNewGoalForm, setIncomingGoalF
                             <div className="time-remaining-text">
                                 Remaining Time: {daysRemaining} days, {hoursRemaining} hrs
                     </div>
-                            <div className="time-remaining-bar" style={{ width: (Math.max(0,1 - remainingTime / 86400 / goalData.totalTime) * 100) + "%" }}>
+                            <div className="time-remaining-bar" style={{ width: (Math.max(0, 1 - remainingTime / 86400 / goalData.totalTime) * 100) + "%" }}>
                             </div>
                         </div>
                         <div className="progress-container">
@@ -74,17 +81,18 @@ function ActiveGridGoal({ goalData, onclick, submitNewGoalForm, setIncomingGoalF
                         </div>
 
                     </div>
+
+                    
                 </div>
 
                 :
                 <>
-                    <div className="active-grid-goal-container empty" data-modal-event="placeholder" >
+                    <div className="active-grid-goal-container empty" data-modal-event="new-grid-goal" >
                         <div className="add-new-gridgoal">
                             <img src={newGridgoal} />
                         </div>
                     </div>
-
-                    <Modal submitNewGoalForm={submitNewGoalForm} dataModalEvent={"placeholder"} setIncomingGoalFormData={setIncomingGoalFormData} />
+                    {/* <Modal submitNewGoalForm={submitNewGoalForm} dataModalEvent={"placeholder"} setIncomingGoalFormData={setIncomingGoalFormData} /> */}
                 </>
 
             }

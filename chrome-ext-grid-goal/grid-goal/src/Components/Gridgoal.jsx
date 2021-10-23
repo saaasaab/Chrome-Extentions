@@ -73,7 +73,6 @@ function Gridgoal({ selectedGoal, setGoalDatas, goalDatas }) {
         <div className="grid-goal-container">
             <div className="grid-goal-header-container">
                 <div className="grid-goal-title">
-                    {console.log(selectedGoal)}
                     {selectedGoal?selectedGoal.title:"Click the '+' to create your first Grid Goal"}
                 </div>
                 {goalDatas.length>0?
