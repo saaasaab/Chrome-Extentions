@@ -22,7 +22,8 @@ function handleResize(goal) {
     let cellSize = Math.max(25, (gridWidth - 5 * (numCols - 1)) / numCols);
     // cellSize = Math.min(cellSize,100)
     let root = document.documentElement;
-    let fontSize = mapNumber(goal.numCells, 0, 100, 40, 10)
+    console.log(`goal.numCells`, goal.numCells)
+    let fontSize = mapNumber(goal.numCells, 0, 200, 40, 10)
 
     root.style.setProperty('--cell-font-size', fontSize + "px");
     root.style.setProperty('--cell-width', cellSize + "px");

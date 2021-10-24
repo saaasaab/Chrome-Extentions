@@ -296,8 +296,5 @@ input:focus, textarea {
   background-repeat: no-repeat;
 }
 
-.form-inline button:hover {
-  background-color: royalblue;
-}
 
 /* FORM END */

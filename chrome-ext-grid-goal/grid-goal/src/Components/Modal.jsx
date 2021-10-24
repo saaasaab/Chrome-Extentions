@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState} from 'react';
 import { numberWithCommas } from '../utils/utils'
 
 import { exampleGoals } from '../data/exampleGoals.js'
@@ -60,6 +60,8 @@ function Modal({ submitNewGoalForm, setIncomingGoalFormData }) {
     const reSetDurationExample = (e) => {
         setDuration(e)
     }
+  
+
 
 
     return (
@@ -98,25 +100,24 @@ function Modal({ submitNewGoalForm, setIncomingGoalFormData }) {
                                 <input
                                     className="text-input"
                                     name="noun"
-                                    placeholder='Item/Set'
+                                    placeholder='Activity'
                                     required
                                     value={noun}
                                     onChange={e => reSetNoun(e)}
                                 />
-
                                 <select className="text-input"
                                     name="duration"
                                     placeholder='Duration'
                                     pattern="[+-]?\d+(?:[.,]\d+)?"
                                     required
-                                    defaultValue={'DEFAULT'}
+                                    // defaultValue={'DEFAULT'}
                                     // defaultValue=""
-                                    // value={duration}
+                                    value={duration}
                                     onChange={e => reSetDuration(e)}>
-                                    <option value="DEFAULT" disabled> -- select an duration --</option>
+                                    <option value="" disabled> -- select an duration --</option>
                                     <option value="1">1 Day</option>
                                     <option value="7">7 Days</option>
-                                    <option value="31">1 Month</option>
+                                    <option value="30">1 Month</option>
                                     <option value="90">3 Months</option>
                                     <option value="180">6 Months</option>
                                     <option value="365">1 Year</option>
@@ -133,14 +134,21 @@ function Modal({ submitNewGoalForm, setIncomingGoalFormData }) {
                                     onChange={e => reSetDuration(e)}
                                 /> */}
                             </div>
+                            <div className="submit-button-container">
                             <input
                                 className="submit-button"
                                 type='submit'
                                 value='Create Goal Sheet'
                             />
+                            </div>
+                            
                         </form>
-                        <h1 className="preview-text">{verb !== "" ? verb : "_____"} {number !== "" ? numberWithCommas(number) : "_____"} {noun !== "" ? noun : "_____"} in {duration !== "" ? duration : "_____"} {duration > 1 ? "days" : "day"}</h1>
+                        <h1 className="preview-text">{verb !== "" ? verb : "_____"} {number !== "" ? numberWithCommas(number) : "_____"} {noun !== "" ? noun : "_____"} in {duration !== "" ? duration : "_____"} {duration === 1 ? "day" : "days"}</h1>
                         <div className="example-goals">
+                            <div className="example-goal-title">
+                                <div>Outcome</div>
+                                <div>Example Grid Goal</div>
+                            </div>
                             {
                                 exampleGoals.map(
                                     (exampleGoal, i) =>
@@ -152,7 +160,7 @@ function Modal({ submitNewGoalForm, setIncomingGoalFormData }) {
 
                                         }}>
                                             <div className="example-outcome">{exampleGoal.outcome}</div>
-                                            <div className="example-grid-goal"> {exampleGoal.verb} {numberWithCommas(exampleGoal.number)} {exampleGoal.noun} in {exampleGoal.duration}</div>
+                                            <div className="example-grid-goal"> {exampleGoal.verb} {numberWithCommas(exampleGoal.number)} {exampleGoal.noun} in {exampleGoal.duration} {exampleGoal.duration > 1 ? "days" : "day"} </div>
 
                                         </div>
                                 )

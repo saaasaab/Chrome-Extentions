@@ -74,6 +74,7 @@ function App() {
       let removedArray = goals.filter(el => el.id !== deleteGridgoalID);
 
       saveToLocal("grid-goal-activity-data", removedArray);
+
       setGoalDatas(removedArray);
 
 
@@ -82,7 +83,14 @@ function App() {
         gs.push(defaultActivity)
       }
 
+
       // setSelectedGoal(newGoal)//THis is hilarious. I thought about fixing this earlier but didn't. It ended up causing a bug that took 20 minutes to fix
+      // setSelectedGoal(gs[0])
+
+      if( gs.filter(el=> el.id !== -1).length === 0){
+        setSelectedGoal()
+      }
+      
       setFilteredGoals(gs)
       setDeleteGridgoalID("");
       setRunModals(true);

@@ -1,6 +1,6 @@
 export const exampleGoals =[ 
     {
-        "outcome":"Train for a marathons",
+        "outcome":"Train for a marathon",
         "verb"  :"Run",
         "number":"500",
         "noun"  :"Miles",
@@ -53,7 +53,7 @@ export const exampleGoals =[
         "verb"  :"Work through",
         "number":"2000",
         "noun"  :"Math Problems",
-        "duration": "7 Days"
+        "duration": "7"
     },
     {
         "outcome":"Become a writer",
