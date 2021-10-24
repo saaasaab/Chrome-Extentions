@@ -1,6 +1,5 @@
 import React from 'react'
 import { useState } from 'react';
-import addIcon from '../assets/add-amount.png';
 import { numberWithCommas } from '../utils/utils';
 
 
@@ -23,7 +22,7 @@ function Form({ submitForm }) {
         let text = ""
         text = e.target.value
 
-        e.target.value = text=="-"?text:numberWithCommas(formattedNumberToString(e.target.value))
+        e.target.value = text==="-"?text:numberWithCommas(formattedNumberToString(e.target.value))
         setFieldValue(text)
         
     }

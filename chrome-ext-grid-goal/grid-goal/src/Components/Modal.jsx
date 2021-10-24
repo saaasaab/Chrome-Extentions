@@ -98,7 +98,7 @@ function Modal({ submitNewGoalForm, setIncomingGoalFormData }) {
                                 <input
                                     className="text-input"
                                     name="noun"
-                                    placeholder='Activity'
+                                    placeholder='Item/Set'
                                     required
                                     value={noun}
                                     onChange={e => reSetNoun(e)}
@@ -139,7 +139,7 @@ function Modal({ submitNewGoalForm, setIncomingGoalFormData }) {
                                 value='Create Goal Sheet'
                             />
                         </form>
-                        <h1 className="preview-text">{verb != "" ? verb : "_____"} {number != "" ? numberWithCommas(number) : "_____"} {noun != "" ? noun : "_____"} in {duration != "" ? duration : "_____"} {duration > 1 ? "days" : "day"}</h1>
+                        <h1 className="preview-text">{verb !== "" ? verb : "_____"} {number !== "" ? numberWithCommas(number) : "_____"} {noun !== "" ? noun : "_____"} in {duration !== "" ? duration : "_____"} {duration > 1 ? "days" : "day"}</h1>
                         <div className="example-goals">
                             {
                                 exampleGoals.map(

@@ -67,11 +67,11 @@ function App() {
 
 
   useEffect(() => {
-    if (deleteGridgoalID != "") {
+    if (deleteGridgoalID !== "") {
 
       let goals = [...goalDatas];
 
-      let removedArray = goals.filter(el => el.id != deleteGridgoalID);
+      let removedArray = goals.filter(el => el.id !== deleteGridgoalID);
 
       saveToLocal("grid-goal-activity-data", removedArray);
       setGoalDatas(removedArray);
@@ -95,7 +95,7 @@ function App() {
   }, [deleteGridgoalID, goalDatas])
 
   useEffect(() => {
-    if (newGoalForm != "" && incomingGoalFormData) {
+    if (newGoalForm !== "" && incomingGoalFormData) {
       const verb = newGoalForm[0];
       const number = Number(newGoalForm[1]);
       const noun = newGoalForm[2];
@@ -135,7 +135,7 @@ function App() {
       setIncomingGoalFormData(false)
 
     }
-  }, [newGoalForm])
+  }, [newGoalForm, goalDatas, incomingGoalFormData])
 
 
   return (

@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import workoutIcon from '../assets/workout.png'
 import newGridgoal from '../assets/newGridGoal.png'
 import { numberWithCommas } from '../utils/utils';
-import Modal from './Modal';
 import bin from '../assets/bin.png'
 
 function ActiveGridGoal({ goalData, onclick, submitNewGoalForm, setIncomingGoalFormData, setDeleteGridgoalID }) {
@@ -15,17 +14,18 @@ function ActiveGridGoal({ goalData, onclick, submitNewGoalForm, setIncomingGoalF
     const [hoursRemaining, setHoursRemaining] = useState("");
 
     const [endDay, setEndDay] = useState(0);
-    const [endHour, setEndHour] = useState(0);
+    // const [endHour, setEndHour] = useState(0);
     const [endMonth, setEndMonth] = useState(0);
     const [remainingTime, setRemainingTime] = useState(0);
-    const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sept", "Oct", "Nov", "Dec"];
 
     useEffect(() => {
+        const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sept", "Oct", "Nov", "Dec"];
+
         let endDate = new Date(goalData.dueDate);
         let now = new Date();
         let timeLeft = (endDate.getTime() - now.getTime()) / 1000
         setEndMonth(monthNames[endDate.getMonth()])
-        setEndHour(endDate.getHours())
+        // setEndHour(endDate.getHours())
         setEndDay(endDate.getDate())
 
         setRemainingTime(timeLeft)
@@ -40,7 +40,7 @@ function ActiveGridGoal({ goalData, onclick, submitNewGoalForm, setIncomingGoalF
                 <div className="active-grid-goal-container" onClick={() => onclick(goalData)}>
                     <div className="grid-goal-header">
                         <div className="grid-goal-icon">
-                            <img src={workoutIcon} />
+                            <img src={workoutIcon} alt="grid"/>
                         </div>
                         <div className="name-date-container">
                             <div className="grid-goal-toprow">
@@ -48,7 +48,7 @@ function ActiveGridGoal({ goalData, onclick, submitNewGoalForm, setIncomingGoalF
                                     {goalData.title}
                                 </div>
                                 <div className="grid-goal-delete" onClick={() => setDeleteGridgoalID(goalData.id)}>
-                                    <img src={bin} />
+                                    <img src={bin} alt="delete grid goal"/>
                                 </div>
                             </div>
 
@@ -82,14 +82,14 @@ function ActiveGridGoal({ goalData, onclick, submitNewGoalForm, setIncomingGoalF
 
                     </div>
 
-                    
+
                 </div>
 
                 :
                 <>
                     <div className="active-grid-goal-container empty" data-modal-event="new-grid-goal" >
                         <div className="add-new-gridgoal">
-                            <img src={newGridgoal} />
+                            <img src={newGridgoal} alt="add goal"/>
                         </div>
                     </div>
                     {/* <Modal submitNewGoalForm={submitNewGoalForm} dataModalEvent={"placeholder"} setIncomingGoalFormData={setIncomingGoalFormData} /> */}

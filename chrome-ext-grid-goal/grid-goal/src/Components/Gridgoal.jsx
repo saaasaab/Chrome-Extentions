@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 
 
-import { getGridDims, mapNumber, getNumColumns, listAllResizeEventListeners } from '../utils/utils';
+import { mapNumber, getNumColumns } from '../utils/utils';
 import GridgoalCell from './GridgoalCell';
 import Form from "./Form";
 import {saveToLocal} from '../utils/utils'
@@ -30,13 +30,13 @@ function handleResize(goal) {
 
 function Gridgoal({ selectedGoal, setGoalDatas, goalDatas, setFormFill }) {
 
-    const [goal, setGoal] = useState(selectedGoal);
-    const [numCells, setNumCells] = useState(goal ? String(goal.numCells): 0);
+    // const [goal, setGoal] = useState(selectedGoal);
+    // const [numCells, setNumCells] = useState(goal ? String(goal.numCells): 0);
     const [formData, setFormData] = useState([]);
 
     const submitForm = (log) => {
         let tempLog = log;
-        if (log == formData) {
+        if (log === formData) {
             tempLog++;
         }
 
@@ -45,11 +45,11 @@ function Gridgoal({ selectedGoal, setGoalDatas, goalDatas, setFormFill }) {
         selectedGoal.totalCompleted= Math.max(0,Math.min(selectedGoal.totalCompleted,selectedGoal.value))
         localStorage.setItem(`gridgoal-activity-${selectedGoal.id}`, selectedGoal.totalCompleted);
     
-        setGoal(selectedGoal)
+        // setGoal(selectedGoal)
         
         let goalIndex=-1;
         for(let i = 0; i < goalDatas.length; i++){
-            if (selectedGoal.id == goalDatas[i].id ){
+            if (selectedGoal.id === goalDatas[i].id ){
                 goalIndex=i;
             }
         }
@@ -62,7 +62,7 @@ function Gridgoal({ selectedGoal, setGoalDatas, goalDatas, setFormFill }) {
     };
 
     useEffect(() => {
-        setNumCells(selectedGoal?String(selectedGoal.value):0);
+        // setNumCells(selectedGoal?String(selectedGoal.value):0);
         handleResize(selectedGoal)
         handleResize(selectedGoal)
         window.addEventListener('resize', () => { handleResize(selectedGoal) });
