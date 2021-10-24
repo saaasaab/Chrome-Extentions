@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { numberWithCommas } from '../utils/utils'
+
+import { exampleGoals } from '../data/exampleGoals.js'
 import '../styles/modal.css';
 
 function Modal({ submitNewGoalForm, setIncomingGoalFormData }) {
@@ -44,6 +46,22 @@ function Modal({ submitNewGoalForm, setIncomingGoalFormData }) {
     }
 
 
+    const reSetVerbExample = (e) => {
+        setVerb(e)
+    }
+    const reSetNumberExample = (e) => {
+        setNumber(e)
+    }
+
+    const reSetNounExample = (e) => {
+        setNoun(e)
+    }
+
+    const reSetDurationExample = (e) => {
+        setDuration(e)
+    }
+
+
     return (
         <section className="section__modal">
             <div className="modal__wrapper js-modal--new-grid-goal">
@@ -63,7 +81,7 @@ function Modal({ submitNewGoalForm, setIncomingGoalFormData }) {
                                 <input
                                     className="text-input"
                                     name="verb"
-                                    placeholder='Verb'
+                                    placeholder='Action'
                                     required
                                     value={verb}
                                     onChange={e => reSetVerb(e)}
@@ -71,7 +89,7 @@ function Modal({ submitNewGoalForm, setIncomingGoalFormData }) {
                                 <input
                                     className="text-input"
                                     name="number"
-                                    placeholder='Number'
+                                    placeholder='Number of Times'
                                     pattern="[+-]?\d+(?:[.,]\d+)?"
                                     required
                                     value={number}
@@ -80,19 +98,22 @@ function Modal({ submitNewGoalForm, setIncomingGoalFormData }) {
                                 <input
                                     className="text-input"
                                     name="noun"
-                                    placeholder='Noun'
+                                    placeholder='Activity'
                                     required
                                     value={noun}
                                     onChange={e => reSetNoun(e)}
                                 />
 
                                 <select className="text-input"
-                                        name="duration"
-                                        placeholder='Duration'
-                                        pattern="[+-]?\d+(?:[.,]\d+)?"
-                                        required
-                                        value={duration}
-                                        onChange={e => reSetDuration(e)}>
+                                    name="duration"
+                                    placeholder='Duration'
+                                    pattern="[+-]?\d+(?:[.,]\d+)?"
+                                    required
+                                    defaultValue={'DEFAULT'}
+                                    // defaultValue=""
+                                    // value={duration}
+                                    onChange={e => reSetDuration(e)}>
+                                    <option value="DEFAULT" disabled> -- select an duration --</option>
                                     <option value="1">1 Day</option>
                                     <option value="7">7 Days</option>
                                     <option value="31">1 Month</option>
@@ -118,8 +139,25 @@ function Modal({ submitNewGoalForm, setIncomingGoalFormData }) {
                                 value='Create Goal Sheet'
                             />
                         </form>
-                        <h1 className="preview-text">{verb!=""?verb: "_____"} {number!=""?numberWithCommas(number): "_____"} {noun!=""?noun: "_____"} in {duration!=""?duration: "_____"} {duration>1?"days":"day"}</h1>
+                        <h1 className="preview-text">{verb != "" ? verb : "_____"} {number != "" ? numberWithCommas(number) : "_____"} {noun != "" ? noun : "_____"} in {duration != "" ? duration : "_____"} {duration > 1 ? "days" : "day"}</h1>
+                        <div className="example-goals">
+                            {
+                                exampleGoals.map(
+                                    (exampleGoal, i) =>
+                                        <div key={i} className="example-container" onClick={e => {
+                                            reSetVerbExample(exampleGoal.verb)
+                                            reSetNumberExample(exampleGoal.number)
+                                            reSetNounExample(exampleGoal.noun)
+                                            reSetDurationExample(exampleGoal.duration)
 
+                                        }}>
+                                            <div className="example-outcome">{exampleGoal.outcome}</div>
+                                            <div className="example-grid-goal"> {exampleGoal.verb} {numberWithCommas(exampleGoal.number)} {exampleGoal.noun} in {exampleGoal.duration}</div>
+
+                                        </div>
+                                )
+                            }
+                        </div>
                     </div>
                 </div>
             </div>

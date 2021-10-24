@@ -300,10 +300,4 @@ input:focus, textarea {
   background-color: royalblue;
 }
 
-.preview-text{
-  padding-top: 50px;
-  font-size: 50px;
-  width: 100%;
-  text-align: center;
-}
 /* FORM END */

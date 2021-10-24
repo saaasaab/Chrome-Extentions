@@ -72,7 +72,7 @@
         position: relative;
 
         width: 50%;
-        height: 30%;
+        height: 70%;
       }
     
       [data-modal-event],
@@ -148,3 +148,21 @@
   .submit-button {
     width: 100%;
   }
+
+.preview-text{
+  padding-top: 50px;
+  font-size: 36px;
+  width: 100%;
+  text-align: center;
+}
+
+.example-goals{
+  padding-top: 30px;
+}
+.example-container{
+  display: flex;
+  padding: 5px 100px;
+  justify-content: space-between;
+  align-items: center;
+
+}

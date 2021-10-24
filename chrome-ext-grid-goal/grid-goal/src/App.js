@@ -144,9 +144,9 @@ function App() {
       <div className="page-content">
         <div className="active-grid-goals-container">
           {
-            filteredGoals.map(((goalData, i) =>
+            filteredGoals.map((goalData, i) =>
               <ActiveGridGoal key={i} onclick={handleClick} goalData={goalData} submitNewGoalForm={submitNewGoalForm} setIncomingGoalFormData={setIncomingGoalFormData} setDeleteGridgoalID={setDeleteGridgoalID} />
-            ))
+            )
           }
 
         </div>
