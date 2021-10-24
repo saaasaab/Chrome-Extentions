@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { numberWithCommas } from '../utils/utils'
 import '../styles/modal.css';
 
 function Modal({ submitNewGoalForm, setIncomingGoalFormData }) {
@@ -57,7 +58,7 @@ function Modal({ submitNewGoalForm, setIncomingGoalFormData }) {
                         </div>
 
                         <h1>Own Your 2021</h1>
-                        <form className={"new-goal-form"} onSubmit={e => { handleSubmit(e) }}>
+                        <form className={"new-goal-form"} onSubmit={e => { handleSubmit(e) }} autoComplete="off">
                             <div className={"input-row"}>
                                 <input
                                     className="text-input"
@@ -84,7 +85,7 @@ function Modal({ submitNewGoalForm, setIncomingGoalFormData }) {
                                     value={noun}
                                     onChange={e => reSetNoun(e)}
                                 />
-                                
+
                                 <select className="text-input"
                                         name="duration"
                                         placeholder='Duration'
@@ -117,7 +118,7 @@ function Modal({ submitNewGoalForm, setIncomingGoalFormData }) {
                                 value='Create Goal Sheet'
                             />
                         </form>
-                        <h1 className="preview-text">{verb!=""?verb: "_____"} {number!=""?number: "_____"} {noun!=""?noun: "_____"} in {duration!=""?duration: "_____"} {duration>1?"days":"day"}</h1>
+                        <h1 className="preview-text">{verb!=""?verb: "_____"} {number!=""?numberWithCommas(number): "_____"} {noun!=""?noun: "_____"} in {duration!=""?duration: "_____"} {duration>1?"days":"day"}</h1>
 
                     </div>
                 </div>

@@ -123,7 +123,7 @@
     display: inline-block;
   }
   
-  .new-goal-form input {
+  .new-goal-form input, .new-goal-form select {
     width: 100%;
     font-size: 14px;
     vertical-align: middle;
