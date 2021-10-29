@@ -125,7 +125,8 @@ function App() {
         title: `${verb} ${numberWithCommas(number)} ${noun} in ${duration} days`,
         totalCompleted: 0,
         totalTime: duration,
-        value: number
+        value: number,
+        progress:{...[...Array(duration).keys()].map((elem,i) => (elem,0))}
       }
       goals.push(newGoal)
 

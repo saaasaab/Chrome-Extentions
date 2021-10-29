@@ -6,5 +6,6 @@
 "totalTime": 1,
 "dueDate":"Due: March 7th, 2025",
 "icon": "workout",
-"status": false
+"status": false,
+"progress":{}
 }

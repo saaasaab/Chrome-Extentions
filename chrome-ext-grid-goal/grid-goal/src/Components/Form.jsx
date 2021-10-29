@@ -21,7 +21,6 @@ function Form({ submitForm }) {
     const reSetNumber = (e) => {
         let text = ""
         text = e.target.value
-
         e.target.value = text==="-"?text:numberWithCommas(formattedNumberToString(e.target.value))
         setFieldValue(text)
         

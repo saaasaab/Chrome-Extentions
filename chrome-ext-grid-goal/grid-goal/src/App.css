@@ -57,6 +57,7 @@
   height: 166px;
   border: dashed black 1px;
   background: #f6f6f6;
+  height: 16vh !important;
 }
 .add-new-gridgoal {
   width: 100%;

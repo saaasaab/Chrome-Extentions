@@ -22,8 +22,7 @@ function handleResize(goal) {
     let cellSize = Math.max(25, (gridWidth - 5 * (numCols - 1)) / numCols);
     // cellSize = Math.min(cellSize,100)
     let root = document.documentElement;
-    console.log(`goal.numCells`, goal.numCells)
-    let fontSize = mapNumber(goal.numCells, 0, 200, 40, 10)
+    let fontSize = mapNumber(goal.numCells, 0, 200, 40, 10);
 
     root.style.setProperty('--cell-font-size', fontSize + "px");
     root.style.setProperty('--cell-width', cellSize + "px");
@@ -44,7 +43,21 @@ function Gridgoal({ selectedGoal, setGoalDatas, goalDatas, setFormFill }) {
         setFormData(tempLog);
         selectedGoal.totalCompleted += Number(log);
         selectedGoal.totalCompleted= Math.max(0,Math.min(selectedGoal.totalCompleted,selectedGoal.value))
-        localStorage.setItem(`gridgoal-activity-${selectedGoal.id}`, selectedGoal.totalCompleted);
+
+
+        let now = new Date();
+        let endDate = new Date(selectedGoal.dueDate);
+        let daysLeft = (endDate.getTime() - now.getTime()) / 1000 / 86400;
+        let totalDays = selectedGoal.totalTime;
+        // let dayNum = daysLeft
+        let dayNum = Math.floor(totalDays-daysLeft);
+        
+        selectedGoal.progress[dayNum] += Number(log);
+
+
+
+        // Why am I using this?
+        // localStorage.setItem(`gridgoal-activity-${selectedGoal.id}`, selectedGoal.totalCompleted);
     
         // setGoal(selectedGoal)
         
@@ -55,7 +68,10 @@ function Gridgoal({ selectedGoal, setGoalDatas, goalDatas, setFormFill }) {
             }
         }
 
-        goalDatas[goalIndex]["totalCompleted"] = selectedGoal.totalCompleted;
+        let totalcompleted = Object.keys(selectedGoal.progress).map(elem=>selectedGoal.progress[elem]).reduce((partial_sum, a) => partial_sum + a,0);
+
+
+        goalDatas[goalIndex]["totalCompleted"] = totalcompleted;
         setGoalDatas(goalDatas);
 
         saveToLocal("grid-goal-activity-data", goalDatas);
