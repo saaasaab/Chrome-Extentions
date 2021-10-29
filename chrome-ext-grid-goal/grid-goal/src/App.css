@@ -258,6 +258,30 @@
   transition: .5s;
 }
 
+.active-grid-cell-0{
+  background-color: #1fdab2;
+}
+.active-grid-cell-1{
+  background-color: #dcd321;
+}
+.active-grid-cell-2{
+  background-color: #8e391f;
+}
+.active-grid-cell-3{
+  background-color: #4f9ac2;
+}
+.active-grid-cell-4{
+  background-color: #4d0ed4;
+}
+.active-grid-cell-5{
+  background-color: #43ba45;
+}
+.active-grid-cell-6{
+  background-color: #1e8d95;
+}
+
+
+
 /* CELL END*/
 
 

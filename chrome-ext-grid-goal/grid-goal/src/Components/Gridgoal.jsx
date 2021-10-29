@@ -114,11 +114,12 @@ function Gridgoal({ selectedGoal, setGoalDatas, goalDatas, setFormFill }) {
                         let day = 0;
                         for (let i = 0; i <cumulativeSumLength; i++ ){
                             if(counter < cumulativeSum[i]){
-                                day = 0;
+                                day = i;
+                                break;
                             }
                         }
 
-                        console.log(day)
+                        console.log(day);
                         // setCurrentSum(progressArray[currentSumIndex]);
                         // console.log(`object`, currentSum)
                        
@@ -134,7 +135,7 @@ function Gridgoal({ selectedGoal, setGoalDatas, goalDatas, setFormFill }) {
                             numCells={selectedGoal.numCells}
                             completedTotal={selectedGoal.totalCompleted}
                             total={selectedGoal.value}
-                            color="blue"
+                            day={day}
                         />)
 
                     }) : <></>}
