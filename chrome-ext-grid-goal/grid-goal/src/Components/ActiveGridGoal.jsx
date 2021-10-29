@@ -62,6 +62,7 @@ function ActiveGridGoal({ goalData, onclick, submitNewGoalForm, setIncomingGoalF
                             <div className="time-remaining-text">
                                 Remaining Time: {daysRemaining} days, {hoursRemaining} hrs
                     </div>
+                            
                             <div className="time-remaining-bar" style={{ width: (Math.max(0, 1 - remainingTime / 86400 / goalData.totalTime) * 100) + "%" }}>
                             </div>
                         </div>

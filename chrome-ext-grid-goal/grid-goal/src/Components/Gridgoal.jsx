@@ -17,8 +17,7 @@ function handleResize(goal) {
     let gridHeight = gridDims.height;
 
     let numCols = getNumColumns(goal.numCells, gridWidth, gridHeight - gridHeight * .2)
-    // let numCols = 20;
-    // console.log(numCols)
+
     let cellSize = Math.max(25, (gridWidth - 5 * (numCols - 1)) / numCols);
     // cellSize = Math.min(cellSize,100)
     let root = document.documentElement;
@@ -43,20 +42,18 @@ function Gridgoal({ selectedGoal, setGoalDatas, goalDatas, setFormFill }) {
         }
 
         setFormData(tempLog);
-        selectedGoal.totalCompleted += Number(log);
-        selectedGoal.totalCompleted = Math.max(0, Math.min(selectedGoal.totalCompleted, selectedGoal.value))
 
+        selectedGoal.totalCompleted += Number(log);
+
+        selectedGoal.totalCompleted = Math.max(0, Math.min(selectedGoal.totalCompleted, selectedGoal.value))
 
         let now = new Date();
         let endDate = new Date(selectedGoal.dueDate);
-        let daysLeft = (endDate.getTime() - now.getTime()) / 1000 / 86400;
+        let daysLeft = Math.floor((endDate.getTime() - now.getTime()) / 1000 / 86400);
         let totalDays = selectedGoal.totalTime;
         // let dayNum = daysLeft
         let dayNum = Math.floor(totalDays - daysLeft);
-
         selectedGoal.progress[dayNum] += Number(log);
-
-
 
         // Why am I using this?
         // localStorage.setItem(`gridgoal-activity-${selectedGoal.id}`, selectedGoal.totalCompleted);
@@ -70,6 +67,7 @@ function Gridgoal({ selectedGoal, setGoalDatas, goalDatas, setFormFill }) {
             }
         }
 
+        
         let totalcompleted = Object.keys(selectedGoal.progress).map(elem => selectedGoal.progress[elem]).reduce((partial_sum, a) => partial_sum + a, 0);
 
 
@@ -85,7 +83,6 @@ function Gridgoal({ selectedGoal, setGoalDatas, goalDatas, setFormFill }) {
         handleResize(selectedGoal)
         handleResize(selectedGoal)
         window.addEventListener('resize', () => { handleResize(selectedGoal) });
-        // console.log( listAllResizeEventListeners())
 
     }, [selectedGoal])
 
@@ -103,6 +100,7 @@ function Gridgoal({ selectedGoal, setGoalDatas, goalDatas, setFormFill }) {
                 <div className="grid-goal-body-content">
                     {goalDatas.length > 0 ? [...Array(selectedGoal.numCells).keys()].map(function(numCell){
                         let progress = selectedGoal.progress;
+
                         let counter = numCell* selectedGoal.multiplier;
 
                         
@@ -118,10 +116,7 @@ function Gridgoal({ selectedGoal, setGoalDatas, goalDatas, setFormFill }) {
                                 break;
                             }
                         }
-
-                        console.log(day);
                         // setCurrentSum(progressArray[currentSumIndex]);
-                        // console.log(`object`, currentSum)
                        
                         
                         // let totalcompleted = .map(elem => progress[elem]).reduce((partial_sum, a) => partial_sum + a, 0);
