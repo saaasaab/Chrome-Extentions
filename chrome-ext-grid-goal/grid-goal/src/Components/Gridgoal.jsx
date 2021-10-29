@@ -4,7 +4,7 @@ import React, { useState, useEffect } from "react";
 import { mapNumber, getNumColumns } from '../utils/utils';
 import GridgoalCell from './GridgoalCell';
 import Form from "./Form";
-import {saveToLocal} from '../utils/utils'
+import { saveToLocal } from '../utils/utils'
 
 function handleResize(goal) {
     let gridContainer = document.querySelector('.grid-goal-body-content')
@@ -33,6 +33,8 @@ function Gridgoal({ selectedGoal, setGoalDatas, goalDatas, setFormFill }) {
     // const [goal, setGoal] = useState(selectedGoal);
     // const [numCells, setNumCells] = useState(goal ? String(goal.numCells): 0);
     const [formData, setFormData] = useState([]);
+    const [currentSum, setCurrentSum] = useState(0);
+    const [currentSumIndex, setCurrentSumIndex] = useState(0);
 
     const submitForm = (log) => {
         let tempLog = log;
@@ -42,7 +44,7 @@ function Gridgoal({ selectedGoal, setGoalDatas, goalDatas, setFormFill }) {
 
         setFormData(tempLog);
         selectedGoal.totalCompleted += Number(log);
-        selectedGoal.totalCompleted= Math.max(0,Math.min(selectedGoal.totalCompleted,selectedGoal.value))
+        selectedGoal.totalCompleted = Math.max(0, Math.min(selectedGoal.totalCompleted, selectedGoal.value))
 
 
         let now = new Date();
@@ -50,25 +52,25 @@ function Gridgoal({ selectedGoal, setGoalDatas, goalDatas, setFormFill }) {
         let daysLeft = (endDate.getTime() - now.getTime()) / 1000 / 86400;
         let totalDays = selectedGoal.totalTime;
         // let dayNum = daysLeft
-        let dayNum = Math.floor(totalDays-daysLeft);
-        
+        let dayNum = Math.floor(totalDays - daysLeft);
+
         selectedGoal.progress[dayNum] += Number(log);
 
 
 
         // Why am I using this?
         // localStorage.setItem(`gridgoal-activity-${selectedGoal.id}`, selectedGoal.totalCompleted);
-    
+
         // setGoal(selectedGoal)
-        
-        let goalIndex=-1;
-        for(let i = 0; i < goalDatas.length; i++){
-            if (selectedGoal.id === goalDatas[i].id ){
-                goalIndex=i;
+
+        let goalIndex = -1;
+        for (let i = 0; i < goalDatas.length; i++) {
+            if (selectedGoal.id === goalDatas[i].id) {
+                goalIndex = i;
             }
         }
 
-        let totalcompleted = Object.keys(selectedGoal.progress).map(elem=>selectedGoal.progress[elem]).reduce((partial_sum, a) => partial_sum + a,0);
+        let totalcompleted = Object.keys(selectedGoal.progress).map(elem => selectedGoal.progress[elem]).reduce((partial_sum, a) => partial_sum + a, 0);
 
 
         goalDatas[goalIndex]["totalCompleted"] = totalcompleted;
@@ -91,17 +93,51 @@ function Gridgoal({ selectedGoal, setGoalDatas, goalDatas, setFormFill }) {
         <div className="grid-goal-container">
             <div className="grid-goal-header-container">
                 <div className="grid-goal-title">
-                    {selectedGoal?selectedGoal.title:"Click the '+' to create your first Grid Goal"}
+                    {selectedGoal ? selectedGoal.title : "Click the '+' to create your first Grid Goal"}
                 </div>
-                {goalDatas.length>0?
-                <Form submitForm={submitForm} />:<></>}
+                {goalDatas.length > 0 ?
+                    <Form submitForm={submitForm} /> : <></>}
 
             </div>
             <div className="grid-goal-body-content-container">
                 <div className="grid-goal-body-content">
-                    {goalDatas.length>0?[...Array(selectedGoal.numCells).keys()].map((numCell) => (
-                        <GridgoalCell key={numCell} index={numCell} multiplier={selectedGoal.multiplier} numCells={selectedGoal.numCells} completedTotal={selectedGoal.totalCompleted} total={selectedGoal.value}/>
-                    )):<></>}
+                    {goalDatas.length > 0 ? [...Array(selectedGoal.numCells).keys()].map(function(numCell){
+                        let progress = selectedGoal.progress;
+                        let counter = numCell* selectedGoal.multiplier;
+
+                        
+                        // if the the current counter is less than the the sum, set the opacity to the keyof the progress object
+                        let progressArray =  Object.keys(progress).map(elem => progress[elem]);
+                        let cumulativeSum = progressArray.map((sum => value => sum += value)(0));
+                        let cumulativeSumLength=cumulativeSum.length;
+
+                        let day = 0;
+                        for (let i = 0; i <cumulativeSumLength; i++ ){
+                            if(counter < cumulativeSum[i]){
+                                day = 0;
+                            }
+                        }
+
+                        console.log(day)
+                        // setCurrentSum(progressArray[currentSumIndex]);
+                        // console.log(`object`, currentSum)
+                       
+                        
+                        // let totalcompleted = .map(elem => progress[elem]).reduce((partial_sum, a) => partial_sum + a, 0);
+                        // This is where I left off. Its supposed to break so it errors. 
+                        
+                        return(
+                        <GridgoalCell
+                            key={numCell}
+                            index={numCell}
+                            multiplier={selectedGoal.multiplier}
+                            numCells={selectedGoal.numCells}
+                            completedTotal={selectedGoal.totalCompleted}
+                            total={selectedGoal.value}
+                            color="blue"
+                        />)
+
+                    }) : <></>}
                 </div>
             </div>
         </div>
