@@ -42,19 +42,26 @@ function Gridgoal({ selectedGoal, setGoalDatas, goalDatas, setFormFill }) {
         }
 
         setFormData(tempLog);
-
-        selectedGoal.totalCompleted += Number(log);
-
-        selectedGoal.totalCompleted = Math.max(0, Math.min(selectedGoal.totalCompleted, selectedGoal.value))
-
         let now = new Date();
         let endDate = new Date(selectedGoal.dueDate);
         let daysLeft = Math.floor((endDate.getTime() - now.getTime()) / 1000 / 86400);
         let totalDays = selectedGoal.totalTime;
         // let dayNum = daysLeft
         let dayNum = Math.floor(totalDays - daysLeft);
+
+        let todaysTotal = selectedGoal.progress[dayNum];
+        console.log(log)
+        if(Number(log) < 0){
+            log = Math.max(-1*selectedGoal.progress[dayNum],log)
+        }
+        console.log(log,-1*selectedGoal.progress[dayNum])
         selectedGoal.progress[dayNum] += Number(log);
 
+        selectedGoal.totalCompleted += Number(log);
+        selectedGoal.totalCompleted = Math.max(0, Math.min(selectedGoal.totalCompleted, selectedGoal.value))
+
+        
+     
         // Why am I using this?
         // localStorage.setItem(`gridgoal-activity-${selectedGoal.id}`, selectedGoal.totalCompleted);
 
@@ -69,11 +76,11 @@ function Gridgoal({ selectedGoal, setGoalDatas, goalDatas, setFormFill }) {
 
         
         let totalcompleted = Object.keys(selectedGoal.progress).map(elem => selectedGoal.progress[elem]).reduce((partial_sum, a) => partial_sum + a, 0);
+        totalcompleted = Math.max(0, Math.min(totalcompleted,selectedGoal.value));
+        selectedGoal.totalCompleted = totalcompleted;
+        goalDatas[goalIndex]["totalCompleted"] = Math.max(0, Math.min(totalcompleted,selectedGoal.value));
 
-
-        goalDatas[goalIndex]["totalCompleted"] = totalcompleted;
         setGoalDatas(goalDatas);
-
         saveToLocal("grid-goal-activity-data", goalDatas);
         setFormFill(Date.now());
     };

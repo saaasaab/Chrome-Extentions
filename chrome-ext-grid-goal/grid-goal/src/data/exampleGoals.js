@@ -45,7 +45,6 @@ export const exampleGoals = [
         "noun": "People",
         "duration": "90"
     },
-
     {
         "outcome": "Gain more influencers",
         "verb": "Post",
@@ -169,8 +168,6 @@ export const exampleGoals = [
         "noun": "Miles",
         "duration": "180"
     },
-
-    
 
     {
         "outcome": "Write a book",
