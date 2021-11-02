@@ -114,7 +114,8 @@ function App() {
       let today = new Date();
       let endDate = new Date(today.setDate(today.getDate() + duration)).toString();
 
-
+      let emptyProgress = {...[...Array(duration).keys()].map((elem) => (elem))}
+      Object.keys(emptyProgress).forEach(v => emptyProgress[v] = 0)
       let newGoal = {
         id: Date.now(),
         dueDate: endDate,
@@ -126,15 +127,20 @@ function App() {
         totalCompleted: 0,
         totalTime: duration,
         value: number,
-        progress:{...[...Array(duration).keys()].map((elem,i) => (elem,0))}
+        progress:emptyProgress
+        // progress:{...[...Array(duration).keys()].map((elem) => (elem,0))}
+     
       }
+    
       goals.push(newGoal)
 
       saveToLocal("grid-goal-activity-data", goals);
       setGoalDatas(goals);
 
 
+
       let gs = [...goals];
+
       for (let i = gs.length; i < 4; i++) {
         gs.push(defaultActivity)
       }

@@ -32,8 +32,8 @@ function Gridgoal({ selectedGoal, setGoalDatas, goalDatas, setFormFill }) {
     // const [goal, setGoal] = useState(selectedGoal);
     // const [numCells, setNumCells] = useState(goal ? String(goal.numCells): 0);
     const [formData, setFormData] = useState([]);
-    const [currentSum, setCurrentSum] = useState(0);
-    const [currentSumIndex, setCurrentSumIndex] = useState(0);
+    // const [currentSum, setCurrentSum] = useState(0);
+    // const [currentSumIndex, setCurrentSumIndex] = useState(0);
 
     const submitForm = (log) => {
         let tempLog = log;
@@ -49,12 +49,11 @@ function Gridgoal({ selectedGoal, setGoalDatas, goalDatas, setFormFill }) {
         // let dayNum = daysLeft
         let dayNum = Math.floor(totalDays - daysLeft);
 
-        let todaysTotal = selectedGoal.progress[dayNum];
+        // let todaysTotal = selectedGoal.progress[dayNum];
         console.log(log)
         if(Number(log) < 0){
             log = Math.max(-1*selectedGoal.progress[dayNum],log)
         }
-        console.log(log,-1*selectedGoal.progress[dayNum])
         selectedGoal.progress[dayNum] += Number(log);
 
         selectedGoal.totalCompleted += Number(log);
