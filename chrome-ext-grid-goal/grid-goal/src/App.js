@@ -25,8 +25,30 @@ function App() {
   const [goalDatas, setGoalDatas] = useState(() => {
     // getting stored value
     const gs = JSON.parse(localStorage.getItem("grid-goal-activity-data")) || goalsExample;
+
+    gs.forEach(g=>{
+      if(!("progress" in g)){
+        // Set the progress to an empty object
+        let emptyProgress = {...[...Array(g.totalTime).keys()].map((elem) => (elem))}
+        Object.keys(emptyProgress).forEach(v => emptyProgress[v] = 0);
+        g['progress']=emptyProgress;
+
+        // Set today's day number as the total amount
+        let now = new Date();
+        let endDate = new Date(g.dueDate);
+        let daysLeft = Math.floor((endDate.getTime() - now.getTime()) / 1000 / 86400);
+        let totalDays = g.totalTime;
+        // let dayNum = daysLeft
+        let dayNum = Math.floor(totalDays - daysLeft);
+        g['progress'][dayNum] = g.totalCompleted;
+
+      }
+    });
+    saveToLocal("grid-goal-activity-data", gs);
+    
     return gs;
   })
+  
 
   const [filteredGoals, setFilteredGoals] = useState(() => {
     // 
@@ -136,8 +158,6 @@ function App() {
 
       saveToLocal("grid-goal-activity-data", goals);
       setGoalDatas(goals);
-
-
 
       let gs = [...goals];
 

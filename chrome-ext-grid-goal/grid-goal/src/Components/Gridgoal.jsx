@@ -4,7 +4,7 @@ import React, { useState, useEffect } from "react";
 import { mapNumber, getNumColumns } from '../utils/utils';
 import GridgoalCell from './GridgoalCell';
 import Form from "./Form";
-import { saveToLocal } from '../utils/utils'
+import { saveToLocal,  numberWithCommas} from '../utils/utils'
 
 function handleResize(goal) {
     let gridContainer = document.querySelector('.grid-goal-body-content')
@@ -23,7 +23,11 @@ function handleResize(goal) {
     let root = document.documentElement;
     let fontSize = mapNumber(goal.numCells, 0, 200, 40, 10);
 
+
+    let gridGoalName = mapNumber()
+
     root.style.setProperty('--cell-font-size', fontSize + "px");
+    root.style.setProperty('--grid-goal-name', gridGoalName + "px");
     root.style.setProperty('--cell-width', cellSize + "px");
 }
 
@@ -32,6 +36,7 @@ function Gridgoal({ selectedGoal, setGoalDatas, goalDatas, setFormFill }) {
     // const [goal, setGoal] = useState(selectedGoal);
     // const [numCells, setNumCells] = useState(goal ? String(goal.numCells): 0);
     const [formData, setFormData] = useState([]);
+    const [perDayText, setPerDayText]= useState('');
     // const [currentSum, setCurrentSum] = useState(0);
     // const [currentSumIndex, setCurrentSumIndex] = useState(0);
 
@@ -90,18 +95,38 @@ function Gridgoal({ selectedGoal, setGoalDatas, goalDatas, setFormFill }) {
         handleResize(selectedGoal)
         window.addEventListener('resize', () => { handleResize(selectedGoal) });
 
+        if(selectedGoal){
+            let verbNumberNoun= selectedGoal.title.split(`in ${selectedGoal.totalTime} day`)[0]
+            console.log(verbNumberNoun)
+            let verb = verbNumberNoun.split(` ${numberWithCommas(selectedGoal.value)} `)[0]
+            let noun = verbNumberNoun.split(` ${numberWithCommas(selectedGoal.value)} `)[1]
+            
+            let now = new Date();
+            let endDate = new Date(selectedGoal.dueDate);
+            let daysLeft = Math.floor((endDate.getTime() - now.getTime()) / 1000 / 86400);
+            let perDayValue = (selectedGoal.value - selectedGoal.totalCompleted)/daysLeft
+
+            perDayValue = perDayValue < 1 ? Number.parseFloat(perDayValue).toFixed(1) :Math.round(perDayValue);    
+
+            let daytext = `${verb} ${perDayValue} ${noun} per day to complete your Grid Goal`;
+            setPerDayText(daytext )
+        }
+        
     }, [selectedGoal])
 
     return (
         <div className="grid-goal-container">
+            <div>
             <div className="grid-goal-header-container">
+
                 <div className="grid-goal-title">
                     {selectedGoal ? selectedGoal.title : "Click the '+' to create your first Grid Goal"}
                 </div>
                 {goalDatas.length > 0 ?
                     <Form submitForm={submitForm} /> : <></>}
-
             </div>
+            </div>
+            <h4 className="preview-text-per-basis">{ perDayText}</h4>
             <div className="grid-goal-body-content-container">
                 <div className="grid-goal-body-content">
                     {goalDatas.length > 0 ? [...Array(selectedGoal.numCells).keys()].map(function(numCell){

@@ -1,14 +1,11 @@
-let a = [{
+[{
     "id": 1635480463712,
-    "dueDate":
-        "Sat Nov 19 2021 21:07:43 GMT-0800 (Pacific Standard Time)",
-    "icon":
-        "workout",
+    "dueDate": "Sat Nov 19 2021 21:07:43 GMT-0800 (Pacific Standard Time)",
+    "icon": "workout",
     "multiplier": 2,
     "numCells": 183,
     "status": true,
-    "title":
-        "Give 365 Compliments in 30 days",
+    "title": "Give 365 Compliments in 30 days",
     "totalCompleted": 310,
     "totalTime": 30,
     "value": 365,
@@ -46,15 +43,12 @@ let a = [{
     }
 }, {
     "id": 1635576127626,
-    "dueDate":
-        "Sun Nov 28 2021 23:42:07 GMT-0800 (Pacific Standard Time)",
-    "icon":
-        "workout",
+    "dueDate": "Sun Nov 28 2021 23:42:07 GMT-0800 (Pacific Standard Time)",
+    "icon": "workout",
     "multiplier": 1,
     "numCells": 30,
     "status": true,
-    "title":
-        "Work on startup for 30 hours in 30 days",
+    "title": "Work on startup for 30 hours in 30 days",
     "totalCompleted": 10,
     "totalTime": 30,
     "value": 30,
@@ -92,23 +86,20 @@ let a = [{
     }
 }, {
     "id": 1635576993345,
-    "dueDate":
-        "Thu Jan 27 2022 23:56:33 GMT-0800 (Pacific Standard Time)",
-    "icon":
-        "workout",
+    "dueDate": "Thu Jan 27 2022 23:56:33 GMT-0800 (Pacific Standard Time)",
+    "icon": "workout",
     "multiplier": 1,
     "numCells": 50,
     "status": true,
-    "title":
-        "Write 50 Articles in 90 days",
+    "title": "Write 50 Articles in 90 days",
     "totalCompleted": 20,
     "totalTime": 90,
     "value": 50,
     "progress": {
-        "0": 20,
+        "0": 0,
         "1": 0,
         "2": 0,
-        "3": 0,
+        "3": 20,
         "4": 0,
         "5": 0,
         "6": 0,
