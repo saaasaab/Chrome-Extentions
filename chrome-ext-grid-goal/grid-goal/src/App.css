@@ -28,19 +28,27 @@
 /* NAV BAR BEGIN */
 .navbar {
   height: 75px;
-  width: 100%;
+  display: flex;
+  
   background-color: white;
-  display: grid;
-  grid-template-columns: 200px 8fr;
+  
 }
 
 .navbar .logo {
   margin: auto;
   font-size: 2em;
   color: #699ee7;
+  max-width: 200px;
 }
 .rest-of-navbar {
-  width: auto;
+  width: 75vw;
+}
+.user-profile{
+  background-color: #e16552;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  margin: auto auto;
 }
 /* NAV BAR END */
 

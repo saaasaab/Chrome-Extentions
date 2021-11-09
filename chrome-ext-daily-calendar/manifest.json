@@ -3,7 +3,7 @@
   
     "name": "Daily Calendar",
     "description": "Do something every day",
-    "version": "1.0.0",
+    "version": "1.0.5",
     "icons": { "128": "icon_128.png" },
     "browser_action": {
       "default_icon": "icon.png"
@@ -14,7 +14,5 @@
         ]
     },
     "permissions": [
-        "storage",
-        "notifications"
     ]
   }

@@ -1,8 +1,5 @@
 export const addOpenModalListener = function (element) {
-    
-
     let classes = [...element.classList];
-
     if (!(classes.includes("open-modal-added"))) {
         element.classList.add('open-modal-added');
         element.addEventListener("click", function (e) {
@@ -11,8 +8,6 @@ export const addOpenModalListener = function (element) {
             // data-url='' in the html element being clicked on, same one with 'data-modal-event', just add this additional data-url attribute
             // and class='modal-embed-src' plus an empty src tag: src='' in the modal content
             // this is primarily used for modals with pdfs, videos, or any slow loading content
-
-
             if (element.getAttribute("data-modal-event")) {
 
                 // Add the visible class for both the mobile and desktop versions

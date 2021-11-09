@@ -8,6 +8,7 @@ import defaultActivity from "./data/defaultActivity.json";
 import { saveToLocal, numberWithCommas } from "./utils/utils";
 import { addOpenModalListener, addCloseModalListener } from "./utils/initModal";
 import Modal from './Components/Modal';
+import Login from './Components/Login';
 
 import './App.css';
 
@@ -189,6 +190,7 @@ function App() {
 
       </div>
       <Modal submitNewGoalForm={submitNewGoalForm} dataModalEvent={"new-grid-goal"} setIncomingGoalFormData={setIncomingGoalFormData} />
+    
 
     </div>
   );
