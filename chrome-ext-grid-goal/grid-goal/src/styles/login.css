@@ -1,10 +1,10 @@
 .login-modal {
     position: absolute;
     top: 0;
-    right: 85px;
+    right: 10%;
     height: 80%;
     width: 600px;
-    background: #254d20d4;
+    background: #696969;
 
     display: flex;
     align-items: center;
@@ -28,18 +28,25 @@
     height: 75px;
     width:300px;
     text-align: center;
-    font-size: 18px;
+    font-size: 20px;
     opacity: .7;
+    transition: .3s;
 }
-
+.login-input:hover{
+    transform: scale(1.05);
+}
 .login-input:active, .login-input:focus{
-    background: blue;
+    background: #5e95e2;
+    color: white;
 }
 
+ .login-input:active::placeholder, .login-input:focus::placeholder{
+    color: rgb(255, 255, 255);
+}
 
 .login-submit{
     height: 75px;
     width:300px;
     text-align: center;
-    font-size: 18px;
+    font-size: 22px;
 }

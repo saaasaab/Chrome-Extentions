@@ -3,37 +3,37 @@
         "id":1,
         "title": "Workout 30 Times",
         "value": 30,
-        "totalCompleted": 21,
-        "totalTime": 30,
-        "dueDate":"Wed Oct 27 2021 19:00:00 GMT-0700",
+        "total_completed": 21,
+        "total_time": 30,
+        "due_date":"Wed Oct 27 2021 19:00:00 GMT-0700",
         "icon": "/assets/workout.png",
         "status": true,
         "multiplier": 1,
-        "numCells":30
+        "num_cells":30
     },
     {
         "id":2,
         "title": "Eat only 12,000 Calories",
         "value": 12000,
-        "totalCompleted": 2200,
-        "totalTime": 30,
-        "dueDate":"Wed Nov 14 2021 12:00:00 GMT-0700",
+        "total_completed": 2200,
+        "total_time": 30,
+        "due_date":"Wed Nov 14 2021 12:00:00 GMT-0700",
         "icon": "workout",
         "status": true,
         "multiplier": 60,
-        "numCells":200
+        "num_cells":200
     }
     ,
     {
         "id":3,
         "title": "Do 1,000 Pushups",
         "value": 1000,
-        "totalCompleted": 0,
-        "totalTime": 30,
-        "dueDate":"Wed Oct 31 2021 11:00:00 GMT-0700",
+        "total_completed": 0,
+        "total_time": 30,
+        "due_date":"Wed Oct 31 2021 11:00:00 GMT-0700",
         "icon": "workout",
         "status": true,
         "multiplier": 5,
-        "numCells":200
+        "num_cells":200
     }
 ]

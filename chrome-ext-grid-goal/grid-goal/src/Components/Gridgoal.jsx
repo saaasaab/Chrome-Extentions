@@ -16,12 +16,12 @@ function handleResize(goal) {
     let gridWidth = gridDims.width;
     let gridHeight = gridDims.height;
 
-    let numCols = getNumColumns(goal.numCells, gridWidth, gridHeight - gridHeight * .2)
+    let numCols = getNumColumns(goal.num_cells, gridWidth, gridHeight - gridHeight * .2)
 
     let cellSize = Math.max(25, (gridWidth - 5 * (numCols - 1)) / numCols);
     // cellSize = Math.min(cellSize,100)
     let root = document.documentElement;
-    let fontSize = mapNumber(goal.numCells, 0, 200, 40, 10);
+    let fontSize = mapNumber(goal.num_cells, 0, 200, 40, 10);
 
 
     let gridGoalName = mapNumber()
@@ -34,7 +34,7 @@ function handleResize(goal) {
 function Gridgoal({ selectedGoal, setGoalDatas, goalDatas, setFormFill }) {
 
     // const [goal, setGoal] = useState(selectedGoal);
-    // const [numCells, setNumCells] = useState(goal ? String(goal.numCells): 0);
+    // const [num_cells, setnum_cells] = useState(goal ? String(goal.num_cells): 0);
     const [formData, setFormData] = useState([]);
     const [perDayText, setPerDayText]= useState('');
     // const [currentSum, setCurrentSum] = useState(0);
@@ -48,26 +48,26 @@ function Gridgoal({ selectedGoal, setGoalDatas, goalDatas, setFormFill }) {
 
         setFormData(tempLog);
         let now = new Date();
-        let endDate = new Date(selectedGoal.dueDate);
+        let endDate = new Date(selectedGoal.due_date);
         let daysLeft = Math.floor((endDate.getTime() - now.getTime()) / 1000 / 86400);
-        let totalDays = selectedGoal.totalTime;
+        let totalDays = selectedGoal.total_time;
         // let dayNum = daysLeft
         let dayNum = Math.floor(totalDays - daysLeft);
 
         // let todaysTotal = selectedGoal.progress[dayNum];
-        console.log(log)
+
         if(Number(log) < 0){
             log = Math.max(-1*selectedGoal.progress[dayNum],log)
         }
         selectedGoal.progress[dayNum] += Number(log);
 
-        selectedGoal.totalCompleted += Number(log);
-        selectedGoal.totalCompleted = Math.max(0, Math.min(selectedGoal.totalCompleted, selectedGoal.value))
+        selectedGoal.total_completed += Number(log);
+        selectedGoal.total_completed = Math.max(0, Math.min(selectedGoal.total_completed, selectedGoal.value))
 
         
      
         // Why am I using this?
-        // localStorage.setItem(`gridgoal-activity-${selectedGoal.id}`, selectedGoal.totalCompleted);
+        // localStorage.setItem(`gridgoal-activity-${selectedGoal.id}`, selectedGoal.total_completed);
 
         // setGoal(selectedGoal)
 
@@ -79,10 +79,10 @@ function Gridgoal({ selectedGoal, setGoalDatas, goalDatas, setFormFill }) {
         }
 
         
-        let totalcompleted = Object.keys(selectedGoal.progress).map(elem => selectedGoal.progress[elem]).reduce((partial_sum, a) => partial_sum + a, 0);
-        totalcompleted = Math.max(0, Math.min(totalcompleted,selectedGoal.value));
-        selectedGoal.totalCompleted = totalcompleted;
-        goalDatas[goalIndex]["totalCompleted"] = Math.max(0, Math.min(totalcompleted,selectedGoal.value));
+        let total_completed = Object.keys(selectedGoal.progress).map(elem => selectedGoal.progress[elem]).reduce((partial_sum, a) => partial_sum + a, 0);
+        total_completed = Math.max(0, Math.min(total_completed,selectedGoal.value));
+        selectedGoal.total_completed = total_completed;
+        goalDatas[goalIndex]["total_completed"] = Math.max(0, Math.min(total_completed,selectedGoal.value));
 
         setGoalDatas(goalDatas);
         saveToLocal("grid-goal-activity-data", goalDatas);
@@ -90,21 +90,20 @@ function Gridgoal({ selectedGoal, setGoalDatas, goalDatas, setFormFill }) {
     };
 
     useEffect(() => {
-        // setNumCells(selectedGoal?String(selectedGoal.value):0);
+        // setnum_cells(selectedGoal?String(selectedGoal.value):0);
         handleResize(selectedGoal)
         handleResize(selectedGoal)
         window.addEventListener('resize', () => { handleResize(selectedGoal) });
 
         if(selectedGoal){
-            let verbNumberNoun= selectedGoal.title.split(`in ${selectedGoal.totalTime} day`)[0]
-            console.log(verbNumberNoun)
+            let verbNumberNoun= selectedGoal.title.split(`in ${selectedGoal.total_time} day`)[0]
             let verb = verbNumberNoun.split(` ${numberWithCommas(selectedGoal.value)} `)[0]
             let noun = verbNumberNoun.split(` ${numberWithCommas(selectedGoal.value)} `)[1]
             
             let now = new Date();
-            let endDate = new Date(selectedGoal.dueDate);
+            let endDate = new Date(selectedGoal.due_date);
             let daysLeft = Math.floor((endDate.getTime() - now.getTime()) / 1000 / 86400);
-            let perDayValue = (selectedGoal.value - selectedGoal.totalCompleted)/daysLeft
+            let perDayValue = (selectedGoal.value - selectedGoal.total_completed)/daysLeft
 
             perDayValue = perDayValue < 1 ? Number.parseFloat(perDayValue).toFixed(1) :Math.round(perDayValue);    
 
@@ -129,7 +128,8 @@ function Gridgoal({ selectedGoal, setGoalDatas, goalDatas, setFormFill }) {
             <h4 className="preview-text-per-basis">{ perDayText}</h4>
             <div className="grid-goal-body-content-container">
                 <div className="grid-goal-body-content">
-                    {goalDatas.length > 0 ? [...Array(selectedGoal.numCells).keys()].map(function(numCell){
+                    
+                    {goalDatas.length > 0 ? [...Array(selectedGoal.num_cells).keys()].map(function(numCell){
                         let progress = selectedGoal.progress;
 
                         let counter = numCell* selectedGoal.multiplier;
@@ -150,7 +150,7 @@ function Gridgoal({ selectedGoal, setGoalDatas, goalDatas, setFormFill }) {
                         // setCurrentSum(progressArray[currentSumIndex]);
                        
                         
-                        // let totalcompleted = .map(elem => progress[elem]).reduce((partial_sum, a) => partial_sum + a, 0);
+                        // let total_completed = .map(elem => progress[elem]).reduce((partial_sum, a) => partial_sum + a, 0);
                         // This is where I left off. Its supposed to break so it errors. 
                         
                         return(
@@ -158,8 +158,8 @@ function Gridgoal({ selectedGoal, setGoalDatas, goalDatas, setFormFill }) {
                             key={numCell}
                             index={numCell}
                             multiplier={selectedGoal.multiplier}
-                            numCells={selectedGoal.numCells}
-                            completedTotal={selectedGoal.totalCompleted}
+                            num_cells={selectedGoal.num_cells}
+                            completedTotal={selectedGoal.total_completed}
                             total={selectedGoal.value}
                             day={day}
                         />)

@@ -1,10 +1,10 @@
 {"id":-1,
 "title": "DEFAULT",
 "value": 1,
-"totalCompleted": 1,
+"total_completed": 1,
 "remainingTime": 1,
-"totalTime": 1,
-"dueDate":"Due: March 7th, 2025",
+"total_time": 1,
+"due_date":"Due: March 7th, 2025",
 "icon": "workout",
 "status": false,
 "progress":{}

@@ -21,7 +21,7 @@ function ActiveGridGoal({ goalData, onclick, submitNewGoalForm, setIncomingGoalF
     useEffect(() => {
         const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sept", "Oct", "Nov", "Dec"];
 
-        let endDate = new Date(goalData.dueDate);
+        let endDate = new Date(goalData.due_date);
         let now = new Date();
         let timeLeft = (endDate.getTime() - now.getTime()) / 1000
         setEndMonth(monthNames[endDate.getMonth()])
@@ -63,20 +63,20 @@ function ActiveGridGoal({ goalData, onclick, submitNewGoalForm, setIncomingGoalF
                                 Remaining Time: {daysRemaining} days, {hoursRemaining} hrs
                     </div>
                             
-                            <div className="time-remaining-bar" style={{ width: (Math.max(0, 1 - remainingTime / 86400 / goalData.totalTime) * 100) + "%" }}>
+                            <div className="time-remaining-bar" style={{ width: (Math.max(0, 1 - remainingTime / 86400 / goalData.total_time) * 100) + "%" }}>
                             </div>
                         </div>
                         <div className="progress-container">
                             <div className="completed-text-container">
                                 <div className="completed-out-of">
-                                    Completed: {numberWithCommas(goalData.totalCompleted)} out of {numberWithCommas(goalData.value)}
+                                    Completed: {numberWithCommas(goalData.total_completed)} out of {numberWithCommas(goalData.value)}
                                 </div>
                                 <div className="completed-percent">
-                                    {Math.round(goalData.totalCompleted / goalData.value * 100) + "%"}
+                                    {Math.round(goalData.total_completed / goalData.value * 100) + "%"}
                                 </div>
                             </div>
 
-                            <div className="completed-bar" style={{ width: goalData.totalCompleted / goalData.value * 100 + "%" }}>
+                            <div className="completed-bar" style={{ width: goalData.total_completed / goalData.value * 100 + "%" }}>
 
                             </div>
                         </div>

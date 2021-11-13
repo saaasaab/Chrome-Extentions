@@ -8,7 +8,6 @@ import defaultActivity from "./data/defaultActivity.json";
 import { saveToLocal, numberWithCommas } from "./utils/utils";
 import { addOpenModalListener, addCloseModalListener } from "./utils/initModal";
 import Modal from './Components/Modal';
-import Login from './Components/Login';
 
 import './App.css';
 
@@ -30,18 +29,18 @@ function App() {
     gs.forEach(g=>{
       if(!("progress" in g)){
         // Set the progress to an empty object
-        let emptyProgress = {...[...Array(g.totalTime).keys()].map((elem) => (elem))}
+        let emptyProgress = {...[...Array(g.total_time).keys()].map((elem) => (elem))}
         Object.keys(emptyProgress).forEach(v => emptyProgress[v] = 0);
         g['progress']=emptyProgress;
 
         // Set today's day number as the total amount
         let now = new Date();
-        let endDate = new Date(g.dueDate);
+        let endDate = new Date(g.due_date);
         let daysLeft = Math.floor((endDate.getTime() - now.getTime()) / 1000 / 86400);
-        let totalDays = g.totalTime;
+        let totalDays = g.total_time;
         // let dayNum = daysLeft
         let dayNum = Math.floor(totalDays - daysLeft);
-        g['progress'][dayNum] = g.totalCompleted;
+        g['progress'][dayNum] = g.total_completed;
 
       }
     });
@@ -67,7 +66,10 @@ function App() {
   const [deleteGridgoalID, setDeleteGridgoalID] = useState('');
   const [incomingGoalFormData, setIncomingGoalFormData] = useState(false);
   const [runModals, setRunModals] = useState(false);
-  const [formFill,setFormFill] = useState('')
+  const [formFill,setFormFill] = useState('');
+
+  const [incomingGoalsDBData, setIncomingGoalsDBData] = useState(false);
+  const [ goalsDBData, setGoalsDBData] = useState('');
 
   // const [isInitialRender, setIsInitialRender] = useState(true);
 
@@ -90,6 +92,27 @@ function App() {
 
 
   useEffect(() => {
+    if (goalsDBData !== "" && incomingGoalsDBData) {
+ 
+      let goals = [...goalsDBData];
+      saveToLocal("grid-goal-activity-data", goals);
+      
+      setGoalDatas(goals);
+
+      let gs = [...goals];
+
+      for (let i = gs.length; i < 4; i++) { // Change the number of open grid goals to 6
+        gs.push(defaultActivity)
+      }
+
+      setSelectedGoal(gs[0]);//This is hilarious. I thought about fixing this earlier but didn't. It ended up causing a bug that took 20 minutes to fix
+      setFilteredGoals(gs);
+      setIncomingGoalsDBData(false);
+    }
+  }, [incomingGoalsDBData])
+  
+
+  useEffect(() => {
     if (deleteGridgoalID !== "") {
 
       let goals = [...goalDatas];
@@ -106,10 +129,6 @@ function App() {
         gs.push(defaultActivity)
       }
 
-
-      // setSelectedGoal(newGoal)//THis is hilarious. I thought about fixing this earlier but didn't. It ended up causing a bug that took 20 minutes to fix
-      // setSelectedGoal(gs[0])
-
       if( gs.filter(el=> el.id !== -1).length === 0){
         setSelectedGoal()
       }
@@ -117,11 +136,6 @@ function App() {
       setFilteredGoals(gs)
       setDeleteGridgoalID("");
       setRunModals(true);
-
-
-      // document.querySelectorAll("[data-modal-event]").forEach(addOpenModalListener);
-      // Close the modal when the user clicks the close button or somewhere outside of the main modal content
-
     }
   }, [deleteGridgoalID, goalDatas])
 
@@ -141,14 +155,14 @@ function App() {
       Object.keys(emptyProgress).forEach(v => emptyProgress[v] = 0)
       let newGoal = {
         id: Date.now(),
-        dueDate: endDate,
+        due_date: endDate,
         icon: "workout",
         multiplier: multiplier,
-        numCells: Math.ceil(Number(number) / multiplier),
+        num_cells: Math.ceil(Number(number) / multiplier),
         status: true,
         title: `${verb} ${numberWithCommas(number)} ${noun} in ${duration} days`,
-        totalCompleted: 0,
-        totalTime: duration,
+        total_completed: 0,
+        total_time: duration,
         value: number,
         progress:emptyProgress
         // progress:{...[...Array(duration).keys()].map((elem) => (elem,0))}
@@ -176,7 +190,7 @@ function App() {
 
   return (
     <div className="App">
-      <Navbar />
+      <Navbar setIncomingGoalsDBData={setIncomingGoalsDBData} setGoalsDBData={setGoalsDBData}/>
       <div className="page-content">
         <div className="active-grid-goals-container">
           {
