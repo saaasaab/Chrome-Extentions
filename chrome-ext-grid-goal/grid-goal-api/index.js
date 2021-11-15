@@ -45,23 +45,6 @@ app.use(bodyParser.urlencoded({ extended: true }))
 connection.init();
 routes.configure(app);
 
-// app.post('/login', (req, res) => {
-//     try {
-//         const sqlQuery= "SELECT active_goals FROM users where password = (?)";
-//         console.log(req.body)
-//         db.query(sqlQuery,(err,result)=>{
-            
-
-//         })
-//         //Send the the userdata regardless of the login creds
-//         res.send(userData)
-//     }
-//     catch {
-//         res.send(500);
-//     }
-
-// })
-
 app.listen(3001, () => {
     console.log("running on port 3001");
 });

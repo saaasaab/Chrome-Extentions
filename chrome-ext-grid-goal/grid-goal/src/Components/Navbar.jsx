@@ -9,18 +9,8 @@ function Navbar( {setIncomingGoalsDBData, setGoalsDBData} ) {
 
     const  submitForm = (e) =>{
         setOpenLogin(!openLogin);
-
-        axios.post('http://localhost:3001/login', 
-            {
-                "username": e[0],
-                "password": e[1]
-            }
-          
-        ).then((response) => {
-            // For some reason, "setGoalsDBData" has to come before "setIncomingGoalsDBData"
-            setGoalsDBData(response.data);
-            setIncomingGoalsDBData(true);
-        })
+        setGoalsDBData(e);
+        setIncomingGoalsDBData(true);
     }
 
 

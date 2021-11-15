@@ -47,6 +47,7 @@ function ActiveGridGoal({ goalData, onclick, submitNewGoalForm, setIncomingGoalF
                                 <div className="grid-goal-name">
                                     {goalData.title}
                                 </div>
+                                
                                 <div className="grid-goal-delete" onClick={() => setDeleteGridgoalID(goalData.id)}>
                                     <img src={bin} alt="delete grid goal"/>
                                 </div>

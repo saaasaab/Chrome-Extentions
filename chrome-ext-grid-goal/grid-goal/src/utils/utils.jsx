@@ -71,3 +71,7 @@ export const getGridDims = (value) => {
   export function saveToLocal(storageKey, data) {
     localStorage.setItem(storageKey, JSON.stringify(data))
   }
+
+  export function getFromLocal(storageKey, defaultValue) {
+    return JSON.parse( localStorage.getItem(storageKey)) || defaultValue;
+  }

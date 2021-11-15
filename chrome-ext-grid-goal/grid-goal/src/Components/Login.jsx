@@ -1,20 +1,57 @@
 import React, { useState } from 'react';
 import "../styles/login.css";
-
-function Login( { submitForm }) {
+import axios from 'axios';
+import { saveToLocal } from '../utils/utils';
+function Login({ submitForm }) {
 
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
 
 
+
+    const getActiveGoals = (id) => {
+        axios.post('http://localhost:3001/all-goals-by-id',
+            {
+                "username": username,
+                "user_id": id
+            }
+        ).then((response) => {
+
+            submitForm(response.data);
+        })
+    }
     const handleSubmit = (e) => {
 
         e.preventDefault();
-        submitForm([username,password]);
-        // submitNewGoalForm([verb, number, noun, duration]);
-        // setIncomingGoalFormData(true);
-        setUsername("");
-        setPassword("");
+
+        // setOpenLogin(!openLogin);
+        axios.post('http://localhost:3001/login',
+            {
+                "username": username,
+                "password": password
+            }
+        ).then((response) => {
+            saveToLocal("user_id", response.data)
+            if (response.data !== -1) {
+                getActiveGoals(response.data)
+                // setIncomingGoalFormData(true);
+                setUsername("");
+                setPassword("");
+            }
+            else {
+                // console.log(`response.data`, response.data)
+            }
+
+        })
+
+
+
+
+        // submitForm([username,password]);
+        // // submitNewGoalForm([verb, number, noun, duration]);
+        // // setIncomingGoalFormData(true);
+        // setUsername("");
+        // setPassword("");
 
         e.target.reset()
 

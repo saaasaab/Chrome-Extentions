@@ -1,44 +1,66 @@
 
-function getActiveGoalIds(connection, username, password) {
-	const query = `
-    SELECT active_goals FROM users where username = ? AND password = ?	
+function getActiveGoalIds(connection, id, username) {
+    const query = `
+    SELECT active_goals FROM users where id = ? and username = ?	
 	`;
-	return connection.q(query, [username, password]);
+    return connection.q(query, [id, username]);
 }
-
+function authenticateClient(connection, username, password) {
+    const query = `
+    SELECT id FROM users where username = ? AND password = ?	
+	`;
+    return connection.q(query, [username, password]);
+}
 
 function getActiveGoals(connection, active_goals) {
-    if(active_goals==="") return ""
-	const query = `
+    if (active_goals === "") return ""
+    const query = `
     SELECT * FROM goals WHERE id IN (?)
 	`;
-	return connection.q(query, [active_goals]);
+    return connection.q(query, [active_goals]);
 }
 
-function createGoal(con, goalData){
+function updateGoalsById(connection, user_id, id, total_completed, progress) {
+    
+    const query = `
+    UPDATE goals SET total_completed = ?, progress = ? WHERE (id = ?);
+    `;
+
+    return connection.q(query, [total_completed, progress, id]);
+}
+
+function createGoal(connection, user_id, new_goal) {
+
+    let { id,due_date,icon,multiplier,num_cells,status,title,total_time,value,total_completed,progress } = new_goal;
 
     const query = `
     INSERT INTO goals (
-        due_date, 
-        icon, 
-        multiplier, 
-        num_cells, 
-        status, 
-        title, 
-        total_time, 
-        value, 
-        total_completed,
-        progress
-         ) VALUES (
-    "Sun May 08 2022 00:23:25 GMT-0700 (Pacific Daylight Time)",
-    "workout",
-    25,200,true,
-    "Give 5,000 Dollars in 180 days",723,180,5000,'{"0": 0,"1": 0,"2": 0,"3": 0,"4": 0,"5": 0,"6": 0}');
-    `
+        id,due_date,icon,multiplier,num_cells,status,title,total_time,value,total_completed,progress
+         ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+    `;
+    return connection.q(query, [
+        id,due_date,icon,multiplier,num_cells,status,title,total_time,value,total_completed,JSON.stringify(progress)]);
 }
 
 
+function getGoalIds(connection,user_id){
+    const query = `SELECT active_goals FROM users WHERE id = ?`;
+    return connection.q(query, [user_id]);
+}
+
+function updateGoalIds(connection,user_id,updateGoalIds){
+    const query = `UPDATE users SET active_goals = ?WHERE (id = ?);`;
+    return connection.q(query, [updateGoalIds, user_id]);
+}
+
+
+
 module.exports = {
-	getActiveGoals,
-    getActiveGoalIds
+    getActiveGoals,
+    getActiveGoalIds,
+    authenticateClient,
+    updateGoalsById,
+    createGoal,
+    getGoalIds,
+    updateGoalIds
 };
