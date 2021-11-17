@@ -1,3 +1,4 @@
+const e = require("cors");
 const authQueries = require("./auth-queries");
 const connection = require("./connection");
 
@@ -122,10 +123,40 @@ async function createNewGoal(req, res) {
     res.sendStatus(500);
   }
 }
+
+
+async function createAccount(req, res){
+  try {
+    let { username, password } = req.body;
+    const con = await connection.start();
+  
+    const userNameAvailable = await authQueries. getUsernameId(con, username);
+    if(userNameAvailable.length == 0){
+      const createUserAccount = await authQueries.createUserAccount(con, username, password);
+      const userID = await authQueries. getUsernameId(con, username);
+
+      con.release();
+      res.json({added:true, id:userID[0].id});
+    }
+    else{
+      con.release();
+      res.json({added:false});
+  
+    }
+
+  }
+
+  catch (e) {
+    console.log(e)
+    res.sendStatus(500);
+  }
+}
+
 module.exports = {
   getLogin,
   getAllActiveGoalsByUserID,
   updateGoalsById,
   createNewGoal,
-  removeGoalId
+  removeGoalId,
+  createAccount
 };

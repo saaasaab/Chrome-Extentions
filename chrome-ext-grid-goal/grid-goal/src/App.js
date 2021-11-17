@@ -108,6 +108,7 @@ function App() {
 
   const [incomingGoalsDBData, setIncomingGoalsDBData] = useState(false);
   const [goalsDBData, setGoalsDBData] = useState('');
+  const [loggedIn, setLoggedIn] = useState('false');
 
   // const [isInitialRender, setIsInitialRender] = useState(true);
 
@@ -237,7 +238,7 @@ function App() {
 
   const addCreateGoal = (new_goal) => {
     const user_id = getFromLocal("user_id", -1)
-    
+
     axios.post('http://localhost:3001/create-new-goal',
       {
         "user_id": user_id,
@@ -250,7 +251,7 @@ function App() {
 
   return (
     <div className="App">
-      <Navbar setIncomingGoalsDBData={setIncomingGoalsDBData} setGoalsDBData={setGoalsDBData} />
+      <Navbar setIncomingGoalsDBData={setIncomingGoalsDBData} setGoalsDBData={setGoalsDBData} setLoggedIn={setLoggedIn} loggedIn={loggedIn}/>
       <div className="page-content">
         <div className="active-grid-goals-container">
           {

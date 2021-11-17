@@ -20,5 +20,9 @@ module.exports = {
 		app.post("/remove-goal-id", function (req, res) {
 			Auth.removeGoalId(req, res);
 		});
+
+		app.post("/create-account", function (req, res) {
+			Auth.createAccount(req, res);
+		});
 	}
 }

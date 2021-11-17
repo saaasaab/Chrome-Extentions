@@ -4,12 +4,19 @@ import axios from 'axios';
 import { saveToLocal } from "../utils/utils";
 
 // import Axios from 'Ax'
-function Navbar( {setIncomingGoalsDBData, setGoalsDBData} ) {
+function Navbar({ setIncomingGoalsDBData, setGoalsDBData, setLoggedIn, loggedIn }) {
     const [openLogin, setOpenLogin] = useState(false);
+    const [openUser, setOpenUser] = useState(false);
 
-    const  submitForm = (e) =>{
+    const submitForm = (e) => {
         setOpenLogin(!openLogin);
         setGoalsDBData(e);
+        setIncomingGoalsDBData(true);
+    }
+
+    const createNewAccount = (e) => {
+        setOpenLogin(!openLogin);
+        setGoalsDBData([]);
         setIncomingGoalsDBData(true);
     }
 
@@ -20,13 +27,17 @@ function Navbar( {setIncomingGoalsDBData, setGoalsDBData} ) {
             <div className="logo">Grid Goal</div>
 
             <div className="rest-of-navbar"></div>
-            <div className="user-profile" onClick={() => {
+            {loggedIn ? <div className="login-icon" onClick={() => {
                 setOpenLogin(!openLogin);
             }
-            }></div>
+            }></div> : <div className="user-profile" onClick={() => {
+                setOpenUser(!openUser);
+            }
+            }></div>}
+
 
             {openLogin ?
-                <Login  submitForm={ submitForm} />
+                <Login submitForm={submitForm} setLoggedIn={setLoggedIn} loggedIn={loggedIn} createNewAccount={createNewAccount}/>
                 : <></>
             }
 
