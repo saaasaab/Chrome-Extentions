@@ -4,7 +4,7 @@ import axios from 'axios';
 import { saveToLocal } from "../utils/utils";
 
 // import Axios from 'Ax'
-function Navbar({ setIncomingGoalsDBData, setGoalsDBData, setLoggedIn, loggedIn }) {
+function Navbar({ setIncomingGoalsDBData, setGoalsDBData, setLoggedIn, loggedIn, setRunModals }) {
     const [openLogin, setOpenLogin] = useState(false);
     const [openUser, setOpenUser] = useState(false);
 
@@ -18,6 +18,7 @@ function Navbar({ setIncomingGoalsDBData, setGoalsDBData, setLoggedIn, loggedIn 
         setOpenLogin(!openLogin);
         setGoalsDBData([]);
         setIncomingGoalsDBData(true);
+        setRunModals(true);
     }
 
 

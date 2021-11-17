@@ -251,7 +251,7 @@ function App() {
 
   return (
     <div className="App">
-      <Navbar setIncomingGoalsDBData={setIncomingGoalsDBData} setGoalsDBData={setGoalsDBData} setLoggedIn={setLoggedIn} loggedIn={loggedIn}/>
+      <Navbar setIncomingGoalsDBData={setIncomingGoalsDBData} setGoalsDBData={setGoalsDBData} setLoggedIn={setLoggedIn} loggedIn={loggedIn} setRunModals={setRunModals}/>
       <div className="page-content">
         <div className="active-grid-goals-container">
           {
