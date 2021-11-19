@@ -24,3 +24,5 @@ yarn-debug.log*
 yarn-error.log*
 /node_modules/
 chrome-ext-grid-goal/grid-goal-api/node_modules
+grid-goal-ssh
+grid-goal-ssh.pub
