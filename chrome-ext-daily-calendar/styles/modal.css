@@ -61,6 +61,7 @@ label {
   cursor: pointer;
   filter: grayscale(100%);
 }
+
 #activity-description {
   margin: 20px 50%;
   transform: translate(-50%, 0);
