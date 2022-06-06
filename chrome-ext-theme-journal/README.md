@@ -1,0 +1,1 @@
+# chrome-ext-mortality a weekly journal that brings you one week closer to death
