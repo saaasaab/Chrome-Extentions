@@ -269,6 +269,33 @@ const demotivationalQuotes = [`Does anyone want to be in love so we can split re
 `If your coffee order is more than four words, you are part of the problem.`]
 
 
-let deMoElement = document.querySelector('.de-mo-quote');
-const deMoQuoteIndex = Math.floor(Math.random() * demotivationalQuotes.length)
-deMoElement.textContent = demotivationalQuotes[deMoQuoteIndex]
+function createDemotivation(){
+    const deMoQuoteIndex = Math.floor(Math.random() * demotivationalQuotes.length)
+    chrome.action.setBadgeText({ text: '' });
+
+    chrome.notifications.create({
+        type: 'basic',
+        iconUrl: 'meditate.png',
+        title: 'Time to Demotivate',
+        message: demotivationalQuotes[deMoQuoteIndex],
+        priority: 0,
+        // buttons: [
+        //     { title: 'Read the rest' }
+        // ],
+         requireInteraction: true
+    });
+
+}
+
+createDemotivation()
+setInterval(function () { // Set interval for checking
+    createDemotivation()
+}, 60000 * 60 * 4); // Repeat every 60000 milliseconds (1 minute)
+
+
+// chrome.notifications.onButtonClicked.addListener(
+//     (notificationId, buttonIndex) => {
+//         console.log(`object`, notificationId, buttonIndex);
+//         window.open('./popup.html');
+//     }
+// )

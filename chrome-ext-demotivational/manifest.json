@@ -1,9 +1,21 @@
 {
-    "name": "Demotivational",
+    "name": "Daily Downer",
     "description": "Somtimes we just need to be brought down",
     "version": "1.0",
     "manifest_version": 3,
     "action": {
         "default_popup": "popup.html"
+    },
+    "permissions": [
+        "notifications"
+      ],
+    "background": {
+        "service_worker": "background.js"
+    },
+    "icons": {
+        "16": "/meditate.png",
+        "32": "/meditate.png",
+        "48": "/meditate.png",
+        "128": "/meditate.png"
       }
-  }
+}

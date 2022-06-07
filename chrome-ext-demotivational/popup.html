@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,32 +8,44 @@
     <title>Demotivational</title>
     <script src="popup.js" defer></script>
     <style>
-        .demotivational-container{
+        .demotivational-container {
             width: 500px;
             height: 300px;
         }
-        
-        .de-mo-quote{
+
+        .de-mo-quote {
             font-size: 20px;
-            padding: 20px 30px;   
+            padding: 20px 30px;
         }
 
-        .de-mo-more{
+        .de-mo-more {
             position: absolute;
             bottom: 10px;
             left: 20px;
         }
+       
+        .de-mo-icon{
+            position: absolute;
+            bottom: 10px;
+            right: 20px;
+            height: 50px;
+        }
     </style>
 </head>
+
 <body>
     <div class="demotivational-container">
         <div class="de-mo-quote">
             “Every dead body on Mt. Everest was once a highly motivated person, so… maybe calm down.”
         </div>
 
-        <div class="de-mo-more">
-            Come back tomorrow for more demotivation
+        <div class="de-mo-footer"></div>
+            <div class="de-mo-more">
+                Come back later for more demotivation
+            </div>
+            <img class="de-mo-icon" src="./meditate.png" />
         </div>
     </div>
 </body>
+
 </html>
