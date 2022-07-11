@@ -1,0 +1,2283 @@
+/* THIS IS THE HU SECTION */
+#bl-beyondhu .language-list-item:nth-child(1){font-size: 0;} 
+#bl-beyondhu .language-list-item:nth-child(1):after {font-size: 18px; content:'Angol';}
+
+#bl-beyondhu .language-list-item:nth-child(2){font-size: 0;} 
+#bl-beyondhu .language-list-item:nth-child(2):after {font-size: 18px; content:'Francia';}
+
+#bl-beyondhu .language-list-item:nth-child(3){font-size: 0;} 
+#bl-beyondhu .language-list-item:nth-child(3):after {font-size: 18px; content:'Német';}
+
+#bl-beyondhu .language-list-item:nth-child(4){font-size: 0;} 
+#bl-beyondhu .language-list-item:nth-child(4):after {font-size: 18px; content:'Magyar';}
+
+#bl-beyondhu .language-list-item:nth-child(5){font-size: 0;} 
+#bl-beyondhu .language-list-item:nth-child(5):after {font-size: 18px; content:'Olasz';}
+
+#bl-beyondhu .language-list-item:nth-child(6){font-size: 0;} 
+#bl-beyondhu .language-list-item:nth-child(6):after {font-size: 18px; content:'Lengyel';}
+
+#bl-beyondhu .language-list-item:nth-child(7){font-size: 0;} 
+#bl-beyondhu .language-list-item:nth-child(7):after {font-size: 18px; content:'Portugál';}
+
+#bl-beyondhu .language-list-item:nth-child(8){font-size: 0;} 
+#bl-beyondhu .language-list-item:nth-child(8):after {font-size: 18px; content:'Román';}
+
+#bl-beyondhu .language-list-item:nth-child(9){font-size: 0;} 
+#bl-beyondhu .language-list-item:nth-child(9):after {font-size: 18px; content:'Szlovén';}
+
+#bl-beyondhu .language-list-item:nth-child(10){font-size: 0;} 
+#bl-beyondhu .language-list-item:nth-child(10):after {font-size: 18px; content:'Szlovák';}
+
+#bl-beyondhu .language-list-item:nth-child(11){font-size: 0;} 
+#bl-beyondhu .language-list-item:nth-child(11):after {font-size: 18px; content:'Spanyol';}
+
+#bl-beyondhu .language-list-item:nth-child(12){font-size: 0;} 
+#bl-beyondhu .language-list-item:nth-child(12):after {font-size: 18px; content:'Orosz';}
+
+#bl-beyondhu .language-list-item:nth-child(13){font-size: 0;} 
+#bl-beyondhu .language-list-item:nth-child(13):after {font-size: 18px; content:'Cseh';}
+
+.page-lang-hu .user-profile-main-content-inner  button.edit-button.no-style{font-size: 0;} 
+.page-lang-hu .user-profile-main-content-inner  button.edit-button.no-style:after {font-size: 14px; content:'Szerkesztés';}
+
+.page-lang-hu .user-profile-main-content-inner .card-title:nth-child(2) h3{font-size: 0;} 
+.page-lang-hu .user-profile-main-content-inner .card-title:nth-child(2) h3:after {font-size: 18px; content:'Általános információk';}
+
+.page-lang-hu .user-profile-main-content-inner .card-title:nth-child(4) h3{font-size: 0;} 
+.page-lang-hu .user-profile-main-content-inner .card-title:nth-child(4) h3:after {font-size: 18px; content:'Személyes információk';}
+
+.page-lang-hu .user-profile-main-content-inner .card-title:nth-child(6) h3{font-size: 0;} 
+.page-lang-hu .user-profile-main-content-inner .card-title:nth-child(6) h3:after {font-size: 18px; content:'Témák';}
+
+.page-lang-hu .profile-card-item:nth-child(2) h5{font-size: 0;} 
+.page-lang-hu .profile-card-item:nth-child(2) h5:after {font-size: 12px; content:'Önéletrajz';}
+
+.page-lang-hu .profile-card-item:nth-child(3) h5{font-size: 0;} 
+.page-lang-hu .profile-card-item:nth-child(3) h5:after {font-size: 12px; content:'Érdekességek';}
+
+.page-lang-hu div.profile-content-wrapper.user-profile-page.Apollo div:nth-child(7) h5{font-size: 0;} 
+.page-lang-hu div.profile-content-wrapper.user-profile-page.Apollo div:nth-child(7) h5:after {font-size: 12px; content:'Érdeklődési kör';}
+
+.page-lang-hu nav > div:nth-child(1) > a{font-size: 0 !important;} 
+.page-lang-hu nav > div:nth-child(1) > a:after {font-size: 13px; content:'Főoldal'; margin-top: -13px; background: none;}
+
+.page-lang-hu nav > div:nth-child(2) > a{font-size: 0 !important;} 
+.page-lang-hu nav > div:nth-child(2) > a:after {font-size: 13px; content:'Napirend'; margin-top: -13px; background: none;}
+
+.page-lang-hu nav > div:nth-child(3) > a{font-size: 0 !important;} 
+.page-lang-hu nav > div:nth-child(3) > a:after {font-size: 13px; content:'Termékek'; margin-top: -13px; background: none;}
+
+.page-lang-hu nav > div:nth-child(4) > a{font-size: 0 !important;} 
+.page-lang-hu nav > div:nth-child(4) > a:after {font-size: 10px; content:'ELŐADÓK'; margin-top: -13px; background: none;}
+
+.page-lang-hu .tablet-links .side-nav-link:nth-child(1) > a{font-size: 0;} 
+.page-lang-hu .tablet-links .side-nav-link:nth-child(1) > a:before {font-size: 13px; content:'Főoldal';}
+
+.page-lang-hu .tablet-links .side-nav-link:nth-child(2) > a{font-size: 0;} 
+.page-lang-hu .tablet-links .side-nav-link:nth-child(2) > a:before {font-size: 13px; content:'Napirend';}
+
+.page-lang-hu .tablet-links .side-nav-link:nth-child(3) > a{font-size: 0;} 
+.page-lang-hu .tablet-links .side-nav-link:nth-child(3) > a:before {font-size: 13px; content:'Termékek';}
+
+.page-lang-hu .tablet-links .side-nav-link:nth-child(4) > a{font-size: 0;} 
+.page-lang-hu .tablet-links .side-nav-link:nth-child(4) > a:before {font-size: 13px; content:'ELŐADÓK';}
+
+.page-lang-hu .profile-nav-language-container .profile-second-level-action:nth-child(1){font-size: 0;} 
+.page-lang-hu .profile-nav-language-container .profile-second-level-action:nth-child(1):after {font-size: 14px; content:'Előző oldal';}
+
+.page-lang-hu .profile-nav-language-container .profile-nav-language-item:nth-child(2){font-size: 0;} 
+.page-lang-hu .profile-nav-language-container .profile-nav-language-item:nth-child(2):after {font-size: 14px; content:'Angol';}
+
+.page-lang-hu .profile-nav-language-container .profile-nav-language-item:nth-child(3){font-size: 0;} 
+.page-lang-hu .profile-nav-language-container .profile-nav-language-item:nth-child(3):after {font-size: 14px; content:'Francia';}
+
+.page-lang-hu .profile-nav-language-container .profile-nav-language-item:nth-child(4){font-size: 0;} 
+.page-lang-hu .profile-nav-language-container .profile-nav-language-item:nth-child(4):after {font-size: 14px; content:'Német';}
+
+.page-lang-hu .profile-nav-language-container .profile-nav-language-item:nth-child(5){font-size: 0;} 
+.page-lang-hu .profile-nav-language-container .profile-nav-language-item:nth-child(5):after {font-size: 14px; content:'Magyar';}
+
+.page-lang-hu .profile-nav-language-container .profile-nav-language-item:nth-child(6){font-size: 0;} 
+.page-lang-hu .profile-nav-language-container .profile-nav-language-item:nth-child(6):after {font-size: 14px; content:'Olasz, ';}
+
+.page-lang-hu .profile-nav-language-container .profile-nav-language-item:nth-child(7){font-size: 0;} 
+.page-lang-hu .profile-nav-language-container .profile-nav-language-item:nth-child(7):after {font-size: 14px; content:'Lengyel';}
+
+.page-lang-hu .profile-nav-language-container .profile-nav-language-item:nth-child(8){font-size: 0;} 
+.page-lang-hu .profile-nav-language-container .profile-nav-language-item:nth-child(8):after {font-size: 14px; content:'Portugál';}
+
+.page-lang-hu .profile-nav-language-container .profile-nav-language-item:nth-child(9){font-size: 0;} 
+.page-lang-hu .profile-nav-language-container .profile-nav-language-item:nth-child(9):after {font-size: 14px; content:'Román';}
+
+.page-lang-hu .profile-nav-language-container .profile-nav-language-item:nth-child(10){font-size: 0;} 
+.page-lang-hu .profile-nav-language-container .profile-nav-language-item:nth-child(10):after {font-size: 14px; content:'Szlovén';}
+
+.page-lang-hu .profile-nav-language-container .profile-nav-language-item:nth-child(11){font-size: 0;} 
+.page-lang-hu .profile-nav-language-container .profile-nav-language-item:nth-child(11):after {font-size: 14px; content:'Szlovák';}
+
+.page-lang-hu .profile-nav-language-container .profile-nav-language-item:nth-child(12){font-size: 0;} 
+.page-lang-hu .profile-nav-language-container .profile-nav-language-item:nth-child(12):after {font-size: 14px; content:'Spanyol';}
+
+.page-lang-hu .profile-nav-language-container .profile-nav-language-item:nth-child(13){font-size: 0;} 
+.page-lang-hu .profile-nav-language-container .profile-nav-language-item:nth-child(13):after {font-size: 14px; content:'Orosz';}
+
+.page-lang-hu .profile-nav-language-container .profile-nav-language-item:nth-child(14){font-size: 0;} 
+.page-lang-hu .profile-nav-language-container .profile-nav-language-item:nth-child(14):after {font-size: 14px; content:'Cseh';}
+
+.page-lang-hu .profile-first-level-actions a + button + button{font-size: 0;} 
+.page-lang-hu .profile-first-level-actions a + button + button:before {font-size: 14px; content:'Magyar';}
+
+.page-lang-hu .countdown-container div:nth-child(1) .countdown-label{font-size: 0;} 
+.page-lang-hu .countdown-container div:nth-child(1) .countdown-label:after {font-size: 13px; content:'NAP';}
+
+.page-lang-hu .countdown-container div:nth-child(3) .countdown-label{font-size: 0;} 
+.page-lang-hu .countdown-container div:nth-child(3) .countdown-label:after {font-size: 13px; content:'ÓRA';}
+
+.page-lang-hu .countdown-container div:nth-child(5) .countdown-label{font-size: 0;} 
+.page-lang-hu .countdown-container div:nth-child(5) .countdown-label:after {font-size: 13px; content:'PERC';}
+
+.page-lang-hu .countdown-container div:nth-child(7) .countdown-label{font-size: 0;} 
+.page-lang-hu .countdown-container div:nth-child(7) .countdown-label:after {font-size: 13px; content:'MÁSODPERC';}
+
+#bl-beyondhu div.banner-title-container > p{font-size: 0;} 
+#bl-beyondhu div.banner-title-container > p:after {font-size: 14px; content:'KEZDÉS 2022. JÚNIUS 17. 02:00 GMT-7';}
+
+.page-lang-hu nav.footer-nav .footer-nav-item:nth-child(2){font-size: 0;} 
+.page-lang-hu nav.footer-nav .footer-nav-item:nth-child(2):after {font-size: 13px; content:'Adatvédelmi irányelvek';}
+
+.page-lang-hu nav.footer-nav .footer-nav-item:nth-child(1){font-size: 0;} 
+.page-lang-hu nav.footer-nav .footer-nav-item:nth-child(1):after {font-size: 13px; content:'Felhasználói Feltételek';}
+
+.page-lang-hu .tab-navigation li:nth-child(3) span{font-size: 0;} 
+.page-lang-hu .tab-navigation li:nth-child(3) span:after {font-size: 13px; content:'ELŐADÓK';}
+
+#bl-beyondhuhome #Speakers li:nth-child(2) div > p{font-size: 0;} 
+#bl-beyondhuhome #Speakers li:nth-child(2) div > p:after {font-size: 16px; line-height: 80%; content:'Dr Riggs has a strong interest in value-based healthcare and is passionate about supporting change for the benefit of all.';}
+
+#bl-beyondhuhome #Speakers li:nth-child(2) div > h5{font-size: 0;} 
+#bl-beyondhuhome #Speakers li:nth-child(2) div > h5:after {font-size: 18px; line-height: 80%; content:'VP, Education';}
+
+#bl-beyondhupagesspeakers li.speakers-column:nth-child(3) .speaker-about{font-size: 0;} 
+#bl-beyondhupagesspeakers li.speakers-column:nth-child(3) .speaker-about:after {font-size: 16px; line-height: 80%; content:'Dr Riggs has a strong interest in value-based healthcare and is passionate about supporting change for the benefit of all.';}
+
+#bl-beyondhupagesspeakers li.speakers-column:nth-child(3) h5.speaker-job-title{font-size: 0;} 
+#bl-beyondhupagesspeakers li.speakers-column:nth-child(3) h5.speaker-job-title:after {font-size: 18px; line-height: 80%; content:'VP, Education';}
+
+#bl-beyondhusessionb0eeb4b0ccb311ecaa967974d63c4741 .speaker:nth-child(14) .description{font-size: 0;} 
+#bl-beyondhusessionb0eeb4b0ccb311ecaa967974d63c4741 .speaker:nth-child(14) .description:after {font-size: 16px; line-height: 80%; content:'Dr Riggs has a strong interest in value-based healthcare and is passionate about supporting change for the benefit of all.';}
+
+#bl-beyondhusessionb0eeb4b0ccb311ecaa967974d63c4741 .speaker:nth-child(14) .speaker-job-title{font-size: 0;} 
+#bl-beyondhusessionb0eeb4b0ccb311ecaa967974d63c4741 .speaker:nth-child(14) .speaker-job-title:after {font-size: 18px; line-height: 80%; content:'VP, Education';}
+
+#bl-beyondhusessionb2414512ccb311ecaa967974d63c4741 .speaker:nth-child(6) .description{font-size: 0;} 
+#bl-beyondhusessionb2414512ccb311ecaa967974d63c4741 .speaker:nth-child(6) .description:after {font-size: 16px; line-height: 80%; content:'Dr Riggs has a strong interest in value-based healthcare and is passionate about supporting change for the benefit of all.';}
+
+#bl-beyondhusessionb2414512ccb311ecaa967974d63c4741 .speaker:nth-child(6) .speaker-job-title{font-size: 0;} 
+#bl-beyondhusessionb2414512ccb311ecaa967974d63c4741 .speaker:nth-child(6) .speaker-job-title:after {font-size: 18px; line-height: 80%; content:'VP, Education';}
+
+.page-lang-hu #Speakers > div > div.show-more-wrapper > button{font-size: 0;} 
+.page-lang-hu #Speakers > div > div.show-more-wrapper > button:after {font-size: 15px; content:'Bővebben';}
+
+.page-lang-hu #Speakers > div > div.show-more-wrapper > button.show-more-button-active{font-size: 0;} 
+.page-lang-hu #Speakers > div > div.show-more-wrapper > button.show-more-button-active:after {font-size: 15px; content:'Kevesebb';}
+
+#bl-beyondhusessions .agenda-session-card-buttons button.primary.with-svg.Apollo.evt-button{font-size: 0;} 
+#bl-beyondhusessions .agenda-session-card-buttons button.primary.with-svg.Apollo.evt-button:after {font-size: 15px; content:'Nézd meg most';}
+
+#bl-beyondhusessions .agenda-session-card-buttons button.secondary{font-size: 0;} 
+#bl-beyondhusessions .agenda-session-card-buttons button.secondary:after {font-size: 15px; content:'Hozzáad';}
+
+#bl-beyondhusessions div.agenda-broadcast-sessions.agenda-sessions-list div.tag-container-live.tag-container{font-size: 0;} 
+#bl-beyondhusessions div.agenda-broadcast-sessions.agenda-sessions-list div.tag-container-live.tag-container:after {font-size: 14px; content:'LIVE';}
+
+#bl-beyondhusessions div.sticky-component-wrapper ul.tab-navigation li:nth-child(1) > label > span{font-size: 0;} 
+#bl-beyondhusessions div.sticky-component-wrapper ul.tab-navigation li:nth-child(1) > label > span:after {font-size: 13px; content:'Áttekintés';}
+
+#bl-beyondhusessions div.session-stream-wrapper.Apollo.pre-live .live-in-card .live-in-card-text > p{font-size: 0;} 
+#bl-beyondhusessions div.session-stream-wrapper.Apollo.pre-live .live-in-card .live-in-card-text > p:after {font-size: 15px; content:'2022. JÚNIUS 17. 01:00 GMT-7';}
+
+#bl-beyondhusessions div.session-stream-wrapper.Apollo.pre-live .live-in-card .live-in-card-text > p{font-size: 0;} 
+#bl-beyondhusessions div.session-stream-wrapper.Apollo.pre-live .live-in-card .live-in-card-text > p:after {font-size: 15px; content:'2022. JÚNIUS 18. 01:00 GMT-7';}
+
+	/* THIS IS THE RO SECTION */
+#bl-beyondro .language-list-item:nth-child(1){font-size: 0;} 
+#bl-beyondro .language-list-item:nth-child(1):after {font-size: 18px; content:'Engleză';}
+
+#bl-beyondro .language-list-item:nth-child(2){font-size: 0;} 
+#bl-beyondro .language-list-item:nth-child(2):after {font-size: 18px; content:'Franceză';}
+
+#bl-beyondro .language-list-item:nth-child(3){font-size: 0;} 
+#bl-beyondro .language-list-item:nth-child(3):after {font-size: 18px; content:'Germană';}
+
+#bl-beyondro .language-list-item:nth-child(4){font-size: 0;} 
+#bl-beyondro .language-list-item:nth-child(4):after {font-size: 18px; content:'Maghiară';}
+
+#bl-beyondro .language-list-item:nth-child(5){font-size: 0;} 
+#bl-beyondro .language-list-item:nth-child(5):after {font-size: 18px; content:'Italiană';}
+
+#bl-beyondro .language-list-item:nth-child(6){font-size: 0;} 
+#bl-beyondro .language-list-item:nth-child(6):after {font-size: 18px; content:'Poloneză';}
+
+#bl-beyondro .language-list-item:nth-child(7){font-size: 0;} 
+#bl-beyondro .language-list-item:nth-child(7):after {font-size: 18px; content:'Portugheză';}
+
+#bl-beyondro .language-list-item:nth-child(8){font-size: 0;} 
+#bl-beyondro .language-list-item:nth-child(8):after {font-size: 18px; content:'Română';}
+
+#bl-beyondro .language-list-item:nth-child(9){font-size: 0;} 
+#bl-beyondro .language-list-item:nth-child(9):after {font-size: 18px; content:'Slovenă';}
+
+#bl-beyondro .language-list-item:nth-child(10){font-size: 0;} 
+#bl-beyondro .language-list-item:nth-child(10):after {font-size: 18px; content:'Slovacă';}
+
+#bl-beyondro .language-list-item:nth-child(11){font-size: 0;} 
+#bl-beyondro .language-list-item:nth-child(11):after {font-size: 18px; content:'Spaniolă';}
+
+#bl-beyondro .language-list-item:nth-child(12){font-size: 0;} 
+#bl-beyondro .language-list-item:nth-child(12):after {font-size: 18px; content:'Rusă';}
+
+#bl-beyondro .language-list-item:nth-child(13){font-size: 0;} 
+#bl-beyondro .language-list-item:nth-child(13):after {font-size: 18px; content:'Cehă';}
+
+.page-lang-ro .profile-first-level-actions button:nth-child(2) p{font-size: 0;} 
+.page-lang-ro .profile-first-level-actions button:nth-child(2) p:after {font-size: 14px; content:'Participare în persoană ';}
+
+.page-lang-ro .user-profile-main-content-inner  button.edit-button.no-style{font-size: 0;} 
+.page-lang-ro .user-profile-main-content-inner  button.edit-button.no-style:after {font-size: 14px; content:'Editare';}
+
+.page-lang-ro .user-profile-main-content-inner .card-title:nth-child(2) h3{font-size: 0;} 
+.page-lang-ro .user-profile-main-content-inner .card-title:nth-child(2) h3:after {font-size: 18px; content:'Informații generale ';}
+
+.page-lang-ro .user-profile-main-content-inner .card-title:nth-child(4) h3{font-size: 0;} 
+.page-lang-ro .user-profile-main-content-inner .card-title:nth-child(4) h3:after {font-size: 18px; content:'Despre';}
+
+.page-lang-ro .user-profile-main-content-inner .card-title:nth-child(6) h3{font-size: 0;} 
+.page-lang-ro .user-profile-main-content-inner .card-title:nth-child(6) h3:after {font-size: 18px; content:'Subiecte';}
+
+.page-lang-ro nav > div:nth-child(1) > a{font-size: 0 !important;} 
+.page-lang-ro nav > div:nth-child(1) > a:after {font-size: 13px; content:'ACASĂ'; margin-top: -13px; background: none;}
+
+.page-lang-ro nav > div:nth-child(2) > a{font-size: 0 !important;} 
+.page-lang-ro nav > div:nth-child(2) > a:after {font-size: 13px; content:'AGENDA'; margin-top: -13px; background: none;}
+
+.page-lang-ro nav > div:nth-child(3) > a{font-size: 0 !important;} 
+.page-lang-ro nav > div:nth-child(3) > a:after {font-size: 13px; content:'PRODUSE'; margin-top: -13px; background: none;}
+
+.page-lang-ro nav > div:nth-child(4) > a{font-size: 0 !important;} 
+.page-lang-ro nav > div:nth-child(4) > a:after {font-size: 10px; content:'SPEAKERI'; margin-top: -13px; background: none;}
+
+.page-lang-ro .tablet-links .side-nav-link:nth-child(1) > a{font-size: 0;} 
+.page-lang-ro .tablet-links .side-nav-link:nth-child(1) > a:before {font-size: 13px; content:'ACASĂ';}
+
+.page-lang-ro .tablet-links .side-nav-link:nth-child(2) > a{font-size: 0;} 
+.page-lang-ro .tablet-links .side-nav-link:nth-child(2) > a:before {font-size: 13px; content:'AGENDĂ';}
+
+.page-lang-ro .tablet-links .side-nav-link:nth-child(3) > a{font-size: 0;} 
+.page-lang-ro .tablet-links .side-nav-link:nth-child(3) > a:before {font-size: 13px; content:'PRODUSE';}
+
+.page-lang-ro .tablet-links .side-nav-link:nth-child(4) > a{font-size: 0;} 
+.page-lang-ro .tablet-links .side-nav-link:nth-child(4) > a:before {font-size: 13px; content:'SPEAKERI';}
+
+.page-lang-ro .profile-nav-language-container .profile-nav-language-item:nth-child(2){font-size: 0;} 
+.page-lang-ro .profile-nav-language-container .profile-nav-language-item:nth-child(2):after {font-size: 14px; content:'Engleză';}
+
+.page-lang-ro .profile-nav-language-container .profile-nav-language-item:nth-child(3){font-size: 0;} 
+.page-lang-ro .profile-nav-language-container .profile-nav-language-item:nth-child(3):after {font-size: 14px; content:'Franceză';}
+
+.page-lang-ro .profile-nav-language-container .profile-nav-language-item:nth-child(4){font-size: 0;} 
+.page-lang-ro .profile-nav-language-container .profile-nav-language-item:nth-child(4):after {font-size: 14px; content:'Germană';}
+
+.page-lang-ro .profile-nav-language-container .profile-nav-language-item:nth-child(5){font-size: 0;} 
+.page-lang-ro .profile-nav-language-container .profile-nav-language-item:nth-child(5):after {font-size: 14px; content:'Maghiară';}
+
+.page-lang-ro .profile-nav-language-container .profile-nav-language-item:nth-child(6){font-size: 0;} 
+.page-lang-ro .profile-nav-language-container .profile-nav-language-item:nth-child(6):after {font-size: 14px; content:'Italiană';}
+
+.page-lang-ro .profile-nav-language-container .profile-nav-language-item:nth-child(7){font-size: 0;} 
+.page-lang-ro .profile-nav-language-container .profile-nav-language-item:nth-child(7):after {font-size: 14px; content:'Poloneză';}
+
+.page-lang-ro .profile-nav-language-container .profile-nav-language-item:nth-child(8){font-size: 0;} 
+.page-lang-ro .profile-nav-language-container .profile-nav-language-item:nth-child(8):after {font-size: 14px; content:'Portugheză';}
+
+.page-lang-ro .profile-nav-language-container .profile-nav-language-item:nth-child(9){font-size: 0;} 
+.page-lang-ro .profile-nav-language-container .profile-nav-language-item:nth-child(9):after {font-size: 14px; content:'Română';}
+
+.page-lang-ro .profile-nav-language-container .profile-nav-language-item:nth-child(10){font-size: 0;} 
+.page-lang-ro .profile-nav-language-container .profile-nav-language-item:nth-child(10):after {font-size: 14px; content:'Slovenă';}
+
+.page-lang-ro .profile-nav-language-container .profile-nav-language-item:nth-child(11){font-size: 0;} 
+.page-lang-ro .profile-nav-language-container .profile-nav-language-item:nth-child(11):after {font-size: 14px; content:'Slovacă';}
+
+.page-lang-ro .profile-nav-language-container .profile-nav-language-item:nth-child(12){font-size: 0;} 
+.page-lang-ro .profile-nav-language-container .profile-nav-language-item:nth-child(12):after {font-size: 14px; content:'Spaniolă';}
+
+.page-lang-ro .profile-nav-language-container .profile-nav-language-item:nth-child(13){font-size: 0;} 
+.page-lang-ro .profile-nav-language-container .profile-nav-language-item:nth-child(13):after {font-size: 14px; content:'Rusă';}
+
+.page-lang-ro .profile-nav-language-container .profile-nav-language-item:nth-child(14){font-size: 0;} 
+.page-lang-ro .profile-nav-language-container .profile-nav-language-item:nth-child(14):after {font-size: 14px; content:'Cehă';}
+
+.page-lang-ro #profile-details-dropdown-container button:nth-child(2) > p{font-size: 0;} 
+.page-lang-ro #profile-details-dropdown-container button:nth-child(2) > p:after {font-size: 14px; content:'Participarea personală ';}
+
+.page-lang-ro .profile-first-level-actions a + button + button{font-size: 0;} 
+.page-lang-ro .profile-first-level-actions a + button + button:before {font-size: 14px; content:'Română';}
+
+.page-lang-ro .countdown-container div:nth-child(1) .countdown-label{font-size: 0;} 
+.page-lang-ro .countdown-container div:nth-child(1) .countdown-label:after {font-size: 13px; content:'ZILE';}
+
+.page-lang-ro .countdown-container div:nth-child(3) .countdown-label{font-size: 0;} 
+.page-lang-ro .countdown-container div:nth-child(3) .countdown-label:after {font-size: 13px; content:'ORE';}
+
+.page-lang-ro .countdown-container div:nth-child(5) .countdown-label{font-size: 0;} 
+.page-lang-ro .countdown-container div:nth-child(5) .countdown-label:after {font-size: 13px; content:'MINUTE';}
+
+.page-lang-ro .countdown-container div:nth-child(7) .countdown-label{font-size: 0;} 
+.page-lang-ro .countdown-container div:nth-child(7) .countdown-label:after {font-size: 13px; content:'SECUNDE';}
+
+#bl-beyondro div.banner-title-container > p{font-size: 0;} 
+#bl-beyondro div.banner-title-container > p:after {font-size: 14px; content:'ÎNCEPE LA DATA DE 17 IUNIE 2022, 10:00 GMT+1 ';}
+
+.page-lang-ro .person-details-description-show-more button{font-size: 0;} 
+.page-lang-ro .person-details-description-show-more button:after {font-size: 15px; content:'Arată-mi mai mult';}
+
+.page-lang-ro nav.footer-nav .footer-nav-item:nth-child(2){font-size: 0;} 
+.page-lang-ro nav.footer-nav .footer-nav-item:nth-child(2):after {font-size: 13px; content:'POLITICA DE CONFIDENȚIALITATE';}
+
+.page-lang-ro nav.footer-nav .footer-nav-item:nth-child(1){font-size: 0;} 
+.page-lang-ro nav.footer-nav .footer-nav-item:nth-child(1):after {font-size: 13px; content:'TERMENI ȘI CONDIȚII';}
+
+.page-lang-ro .tab-navigation li:nth-child(3) span{font-size: 0;} 
+.page-lang-ro .tab-navigation li:nth-child(3) span:after {font-size: 13px; content:'SPEAKERI';}
+
+#bl-beyondroregistration .registration-form-title{font-size: 0;} 
+#bl-beyondroregistration .registration-form-title:after {font-size: 40px; content:'Conectează-te';}
+
+#bl-beyondroregistration .registration-form-inner button.no-style.sign-in{font-size: 0;} 
+#bl-beyondroregistration .registration-form-inner button.no-style.sign-in:after {font-size: 14px; content:'DEJA ÎNREGISTRAT? CONECTEAZĂ-TE AICI. ';}
+
+#bl-beyondroregistration .evt-field-wrapper:nth-child(1) label{font-size: 0;} 
+#bl-beyondroregistration .evt-field-wrapper:nth-child(1) label:after {font-size: 16px; content:'PRENUME';}
+
+#bl-beyondroregistration .evt-field-wrapper:nth-child(2) label{font-size: 0;} 
+#bl-beyondroregistration .evt-field-wrapper:nth-child(2) label:after {font-size: 16px; content:'NUME';}
+
+#bl-beyondroregistration .registration-actions.primary button{font-size: 0;} 
+#bl-beyondroregistration .registration-actions.primary button:after {font-size: 15px; content:'PASUL URMĂTOR';}
+
+#bl-beyondroregistration .registration-form-inner.verification .registration-form-title{font-size: 0;} 
+#bl-beyondroregistration .registration-form-inner.verification .registration-form-title:after {font-size: 40px; content:'Conectează-te';}
+
+#bl-beyondroregistration .registration-form-inner.verification>p{font-size: 0;} 
+#bl-beyondroregistration .registration-form-inner.verification>p:after {font-size: 20px; content:'Introdu e-mailul cu care te-ai înscris și îți vom trimite un e-mail de confirmare. Dacă nu primești un e-mail, încearcă să te înregistrezi din nou.';}
+
+#bl-beyondroregistration .registration-form-inner.verification button.registration-button.primary.Apollo.evt-button{font-size: 0;} 
+#bl-beyondroregistration .registration-form-inner.verification button.registration-button.primary.Apollo.evt-button:after {font-size: 13px; content:'PASUL URMĂTOR';}
+
+#bl-beyondrohome #Speakers li:nth-child(2) div > p{font-size: 0;} 
+#bl-beyondrohome #Speakers li:nth-child(2) div > p:after {font-size: 16px; content:'Dr Riggs has a strong interest in value-based healthcare and is passionate about supporting change for the benefit of all.'; line-height: 80%;}
+
+#bl-beyondrohome #Speakers li:nth-child(2) div > h5{font-size: 0;} 
+#bl-beyondrohome #Speakers li:nth-child(2) div > h5:after {font-size: 18px; content:'VP, Education'; line-height: 80%;}
+
+#bl-beyondropagesspeakers li.speakers-column:nth-child(3) .speaker-about{font-size: 0;} 
+#bl-beyondropagesspeakers li.speakers-column:nth-child(3) .speaker-about:after {font-size: 16px; content:'Dr Riggs has a strong interest in value-based healthcare and is passionate about supporting change for the benefit of all.'; line-height: 80%;}
+
+#bl-beyondropagesspeakers li.speakers-column:nth-child(3) h5.speaker-job-title{font-size: 0;} 
+#bl-beyondropagesspeakers li.speakers-column:nth-child(3) h5.speaker-job-title:after {font-size: 18px; content:'VP, Education'; line-height: 80%;}
+
+#bl-beyondrosessionb0eeb4b0ccb311ecaa967974d63c4741 .speaker:nth-child(14) .description{font-size: 0;} 
+#bl-beyondrosessionb0eeb4b0ccb311ecaa967974d63c4741 .speaker:nth-child(14) .description:after {font-size: 16px; content:'Dr Riggs has a strong interest in value-based healthcare and is passionate about supporting change for the benefit of all.'; line-height: 80%;}
+
+#bl-beyondrosessionb0eeb4b0ccb311ecaa967974d63c4741 .speaker:nth-child(14) .speaker-job-title{font-size: 0;} 
+#bl-beyondrosessionb0eeb4b0ccb311ecaa967974d63c4741 .speaker:nth-child(14) .speaker-job-title:after {font-size: 18px; content:'VP, Education'; line-height: 80%;}
+
+#bl-beyondrosessionb2414512ccb311ecaa967974d63c4741 .speaker:nth-child(6) .description{font-size: 0;} 
+#bl-beyondrosessionb2414512ccb311ecaa967974d63c4741 .speaker:nth-child(6) .description:after {font-size: 16px; content:'Dr Riggs has a strong interest in value-based healthcare and is passionate about supporting change for the benefit of all.'; line-height: 80%;}
+
+#bl-beyondrosessionb2414512ccb311ecaa967974d63c4741 .speaker:nth-child(6) .speaker-job-title{font-size: 0;} 
+#bl-beyondrosessionb2414512ccb311ecaa967974d63c4741 .speaker:nth-child(6) .speaker-job-title:after {font-size: 18px; content:'VP, Education'; line-height: 80%;}
+
+.page-lang-ro #Speakers > div > div.show-more-wrapper > button{font-size: 0;} 
+.page-lang-ro #Speakers > div > div.show-more-wrapper > button:after {font-size: 15px; content:'Arată-mi mai mult';}
+
+.page-lang-ro #Speakers > div > div.show-more-wrapper > button.show-more-button-active{font-size: 0;} 
+.page-lang-ro #Speakers > div > div.show-more-wrapper > button.show-more-button-active:after {font-size: 15px; content:'ARATĂ-MI MAI PUȚIN';}
+
+#bl-beyondrosessions .agenda-session-card-buttons button.primary.with-svg.Apollo.evt-button{font-size: 0;} 
+#bl-beyondrosessions .agenda-session-card-buttons button.primary.with-svg.Apollo.evt-button:after {font-size: 15px; content:'Urmărește Acum';}
+
+#bl-beyondrosessions #Agenda > div.evt-title-1.marketing-registered-agenda-title{font-size: 0;} 
+#bl-beyondrosessions #Agenda > div.evt-title-1.marketing-registered-agenda-title:after {font-size: 40px; content:'AGENDĂ';}
+
+#bl-beyondrosessions .agenda-session-card-buttons button.secondary{font-size: 0;} 
+#bl-beyondrosessions .agenda-session-card-buttons button.secondary:after {font-size: 15px; content:'Adaugă';}
+
+#bl-beyondrosessions div.agenda-broadcast-sessions.agenda-sessions-list div.tag-container-live.tag-container{font-size: 0;} 
+#bl-beyondrosessions div.agenda-broadcast-sessions.agenda-sessions-list div.tag-container-live.tag-container:after {font-size: 14px; content:'LIVE';}
+
+#bl-beyondrosessions .agenda-session-card:nth-child(1) h4.agenda-session-card-title.stable.evt-heading-3{font-size: 0;} 
+#bl-beyondrosessions .agenda-session-card:nth-child(1) h4.agenda-session-card-title.stable.evt-heading-3:after {font-size: 25px; content:'Ziua 1 dōTERRA Convention 2022 ';}
+
+#bl-beyondrosessions .agenda-session-card:nth-child(2) h4.agenda-session-card-title.stable.evt-heading-3{font-size: 0;} 
+#bl-beyondrosessions .agenda-session-card:nth-child(2) h4.agenda-session-card-title.stable.evt-heading-3:after {font-size: 25px; content:'Ziua 2 dōTERRA Convention 2022';}
+
+#bl-beyondrosessions div.session-stream-wrapper.Apollo.pre-live button.primary.Apollo.evt-button{font-size: 0;} 
+#bl-beyondrosessions div.session-stream-wrapper.Apollo.pre-live button.primary.Apollo.evt-button:after {font-size: 15px; content:'Adaugă';}
+
+	/* THIS IS THE ES SECTION */
+#bl-beyondes .language-list-item:nth-child(1){font-size: 0;} 
+#bl-beyondes .language-list-item:nth-child(1):after {font-size: 18px; content:'Inglés';}
+
+#bl-beyondes .language-list-item:nth-child(2){font-size: 0;} 
+#bl-beyondes .language-list-item:nth-child(2):after {font-size: 18px; content:'Francés';}
+
+#bl-beyondes .language-list-item:nth-child(3){font-size: 0;} 
+#bl-beyondes .language-list-item:nth-child(3):after {font-size: 18px; content:'Alemán';}
+
+#bl-beyondes .language-list-item:nth-child(4){font-size: 0;} 
+#bl-beyondes .language-list-item:nth-child(4):after {font-size: 18px; content:'Húngaro';}
+
+#bl-beyondes .language-list-item:nth-child(5){font-size: 0;} 
+#bl-beyondes .language-list-item:nth-child(5):after {font-size: 18px; content:'Italiano';}
+
+#bl-beyondes .language-list-item:nth-child(6){font-size: 0;} 
+#bl-beyondes .language-list-item:nth-child(6):after {font-size: 18px; content:'Polaco';}
+
+#bl-beyondes .language-list-item:nth-child(7){font-size: 0;} 
+#bl-beyondes .language-list-item:nth-child(7):after {font-size: 18px; content:'Portugues';}
+
+#bl-beyondes .language-list-item:nth-child(8){font-size: 0;} 
+#bl-beyondes .language-list-item:nth-child(8):after {font-size: 18px; content:'Rumano';}
+
+#bl-beyondes .language-list-item:nth-child(9){font-size: 0;} 
+#bl-beyondes .language-list-item:nth-child(9):after {font-size: 18px; content:'Esloveno';}
+
+#bl-beyondes .language-list-item:nth-child(10){font-size: 0;} 
+#bl-beyondes .language-list-item:nth-child(10):after {font-size: 18px; content:'Eslovaco';}
+
+#bl-beyondes .language-list-item:nth-child(11){font-size: 0;} 
+#bl-beyondes .language-list-item:nth-child(11):after {font-size: 18px; content:'Español';}
+
+#bl-beyondes .language-list-item:nth-child(12){font-size: 0;} 
+#bl-beyondes .language-list-item:nth-child(12):after {font-size: 18px; content:'Ruso';}
+
+#bl-beyondes .language-list-item:nth-child(13){font-size: 0;} 
+#bl-beyondes .language-list-item:nth-child(13):after {font-size: 18px; content:'Checo';}
+
+.page-lang-es .profile-first-level-actions p.see-profile-label{font-size: 0;} 
+.page-lang-es .profile-first-level-actions p.see-profile-label:after {font-size: 12px; content:'Ver tu profil';}
+
+.page-lang-es .user-profile-main-content-inner  button.edit-button.no-style{font-size: 0;} 
+.page-lang-es .user-profile-main-content-inner  button.edit-button.no-style:after {font-size: 14px; content:'Información general';}
+
+.page-lang-es .user-profile-main-content-inner .card-title:nth-child(2) h3{font-size: 0;} 
+.page-lang-es .user-profile-main-content-inner .card-title:nth-child(2) h3:after {font-size: 18px; content:'Sobre';}
+
+.page-lang-es .user-profile-main-content-inner .card-title:nth-child(4) h3{font-size: 0;} 
+.page-lang-es .user-profile-main-content-inner .card-title:nth-child(4) h3:after {font-size: 18px; content:'Temas';}
+
+.page-lang-es .user-profile-main-content-inner .card-title:nth-child(6) h3{font-size: 0;} 
+.page-lang-es .user-profile-main-content-inner .card-title:nth-child(6) h3:after {font-size: 18px; content:'Compañía';}
+
+.page-lang-es .profile-card-item:nth-child(1) h5{font-size: 0;} 
+.page-lang-es .profile-card-item:nth-child(1) h5:after {font-size: 12px; content:'Biografía';}
+
+.page-lang-es .profile-card-item:nth-child(2) h5{font-size: 0;} 
+.page-lang-es .profile-card-item:nth-child(2) h5:after {font-size: 12px; content:'Biografía';}
+
+.page-lang-es .profile-card-item:nth-child(3) h5{font-size: 0;} 
+.page-lang-es .profile-card-item:nth-child(3) h5:after {font-size: 12px; content:'Hecho de la diversión';}
+
+.page-lang-es div.profile-card.general-profile-card > div.general-info h5{font-size: 0;} 
+.page-lang-es div.profile-card.general-profile-card > div.general-info h5:after {font-size: 12px; content:'Correo electrónico';}
+
+.page-lang-es nav > div:nth-child(1) > a{font-size: 0 !important;} 
+.page-lang-es nav > div:nth-child(1) > a:after {font-size: 13px; content:'Inicio'; margin-top: -13px; background: none;}
+
+.page-lang-es nav > div:nth-child(4) > a{font-size: 0 !important;} 
+.page-lang-es nav > div:nth-child(4) > a:after {font-size: 10px; content:'Ponentes'; margin-top: -13px; background: none;}
+
+.page-lang-es .tablet-links .side-nav-link:nth-child(1) > a{font-size: 0;} 
+.page-lang-es .tablet-links .side-nav-link:nth-child(1) > a:before {font-size: 13px; content:'Inicio';}
+
+.page-lang-es .tablet-links .side-nav-link:nth-child(4) > a{font-size: 0;} 
+.page-lang-es .tablet-links .side-nav-link:nth-child(4) > a:before {font-size: 13px; content:'Ponentes';}
+
+.page-lang-es .profile-nav-language-container .profile-nav-language-item:nth-child(2){font-size: 0;} 
+.page-lang-es .profile-nav-language-container .profile-nav-language-item:nth-child(2):after {font-size: 14px; content:'Inglés';}
+
+.page-lang-es .profile-nav-language-container .profile-nav-language-item:nth-child(3){font-size: 0;} 
+.page-lang-es .profile-nav-language-container .profile-nav-language-item:nth-child(3):after {font-size: 14px; content:'Francés';}
+
+.page-lang-es .profile-nav-language-container .profile-nav-language-item:nth-child(4){font-size: 0;} 
+.page-lang-es .profile-nav-language-container .profile-nav-language-item:nth-child(4):after {font-size: 14px; content:'Alemán';}
+
+.page-lang-es .profile-nav-language-container .profile-nav-language-item:nth-child(5){font-size: 0;} 
+.page-lang-es .profile-nav-language-container .profile-nav-language-item:nth-child(5):after {font-size: 14px; content:'Húngaro';}
+
+.page-lang-es .profile-nav-language-container .profile-nav-language-item:nth-child(6){font-size: 0;} 
+.page-lang-es .profile-nav-language-container .profile-nav-language-item:nth-child(6):after {font-size: 14px; content:'Italiano';}
+
+.page-lang-es .profile-nav-language-container .profile-nav-language-item:nth-child(7){font-size: 0;} 
+.page-lang-es .profile-nav-language-container .profile-nav-language-item:nth-child(7):after {font-size: 14px; content:'Polaco';}
+
+.page-lang-es .profile-nav-language-container .profile-nav-language-item:nth-child(8){font-size: 0;} 
+.page-lang-es .profile-nav-language-container .profile-nav-language-item:nth-child(8):after {font-size: 14px; content:'Portugues';}
+
+.page-lang-es .profile-nav-language-container .profile-nav-language-item:nth-child(9){font-size: 0;} 
+.page-lang-es .profile-nav-language-container .profile-nav-language-item:nth-child(9):after {font-size: 14px; content:'Rumano';}
+
+.page-lang-es .profile-nav-language-container .profile-nav-language-item:nth-child(10){font-size: 0;} 
+.page-lang-es .profile-nav-language-container .profile-nav-language-item:nth-child(10):after {font-size: 14px; content:'Esloveno';}
+
+.page-lang-es .profile-nav-language-container .profile-nav-language-item:nth-child(11){font-size: 0;} 
+.page-lang-es .profile-nav-language-container .profile-nav-language-item:nth-child(11):after {font-size: 14px; content:'Eslovaco';}
+
+.page-lang-es .profile-nav-language-container .profile-nav-language-item:nth-child(12){font-size: 0;} 
+.page-lang-es .profile-nav-language-container .profile-nav-language-item:nth-child(12):after {font-size: 14px; content:'Español';}
+
+.page-lang-es .profile-nav-language-container .profile-nav-language-item:nth-child(13){font-size: 0;} 
+.page-lang-es .profile-nav-language-container .profile-nav-language-item:nth-child(13):after {font-size: 14px; content:'Ruso';}
+
+.page-lang-es .profile-nav-language-container .profile-nav-language-item:nth-child(14){font-size: 0;} 
+.page-lang-es .profile-nav-language-container .profile-nav-language-item:nth-child(14):after {font-size: 14px; content:'Checo';}
+
+.page-lang-es .profile-first-level-actions a + button + button{font-size: 0;} 
+.page-lang-es .profile-first-level-actions a + button + button:before {font-size: 14px; content:'Español';}
+
+#bl-beyondes div.banner-title-container > p{font-size: 0;} 
+#bl-beyondes div.banner-title-container > p:after {font-size: 14px; content:'En directo en 10 dias';}
+
+.page-lang-es .person-details-modal-content .tag-container-speaker.tag-container span{font-size: 0;} 
+.page-lang-es .person-details-modal-content .tag-container-speaker.tag-container span:after {font-size: 14px; content:'Ponente';}
+
+.page-lang-es .tab-navigation li:nth-child(3) span{font-size: 0;} 
+.page-lang-es .tab-navigation li:nth-child(3) span:after {font-size: 13px; content:'Ponentes';}
+
+#bl-beyondeshome #Speakers li:nth-child(2) div > p{font-size: 0;} 
+#bl-beyondeshome #Speakers li:nth-child(2) div > p:after {font-size: 16px; content:'Dr Riggs has a strong interest in value-based healthcare and is passionate about supporting change for the benefit of all.';line-height: 80%;}
+
+#bl-beyondeshome #Speakers li:nth-child(2) div > h5{font-size: 0;} 
+#bl-beyondeshome #Speakers li:nth-child(2) div > h5:after {font-size: 18px; content:'VP, Education';line-height: 80%;}
+
+#bl-beyondespagesspeakers li.speakers-column:nth-child(3) .speaker-about{font-size: 0;} 
+#bl-beyondespagesspeakers li.speakers-column:nth-child(3) .speaker-about:after {font-size: 16px; content:'Dr Riggs has a strong interest in value-based healthcare and is passionate about supporting change for the benefit of all.';line-height: 80%;}
+
+#bl-beyondespagesspeakers li.speakers-column:nth-child(3) h5.speaker-job-title{font-size: 0;} 
+#bl-beyondespagesspeakers li.speakers-column:nth-child(3) h5.speaker-job-title:after {font-size: 18px; content:'VP, Education';line-height: 80%;}
+
+#bl-beyondessessionb0eeb4b0ccb311ecaa967974d63c4741 .speaker:nth-child(14) .description{font-size: 0;} 
+#bl-beyondessessionb0eeb4b0ccb311ecaa967974d63c4741 .speaker:nth-child(14) .description:after {font-size: 16px; content:'Dr Riggs has a strong interest in value-based healthcare and is passionate about supporting change for the benefit of all.';line-height: 80%;}
+
+#bl-beyondessessionb0eeb4b0ccb311ecaa967974d63c4741 .speaker:nth-child(14) .speaker-job-title{font-size: 0;} 
+#bl-beyondessessionb0eeb4b0ccb311ecaa967974d63c4741 .speaker:nth-child(14) .speaker-job-title:after {font-size: 18px; content:'VP, Education';line-height: 80%;}
+
+#bl-beyondessessionb2414512ccb311ecaa967974d63c4741 .speaker:nth-child(6) .description{font-size: 0;} 
+#bl-beyondessessionb2414512ccb311ecaa967974d63c4741 .speaker:nth-child(6) .description:after {font-size: 16px; content:'Dr Riggs has a strong interest in value-based healthcare and is passionate about supporting change for the benefit of all.';line-height: 80%;}
+
+#bl-beyondessessionb2414512ccb311ecaa967974d63c4741 .speaker:nth-child(6) .speaker-job-title{font-size: 0;} 
+#bl-beyondessessionb2414512ccb311ecaa967974d63c4741 .speaker:nth-child(6) .speaker-job-title:after {font-size: 18px; content:'VP, Education';line-height: 80%;}
+
+.page-lang-es #Speakers > div > div.show-more-wrapper > button{font-size: 0;} 
+.page-lang-es #Speakers > div > div.show-more-wrapper > button:after {font-size: 15px; content:'Ver mas';}
+
+.page-lang-es #Speakers > div > div.show-more-wrapper > button.show-more-button-active{font-size: 0;} 
+.page-lang-es #Speakers > div > div.show-more-wrapper > button.show-more-button-active:after {font-size: 15px; content:'Ver menos';}
+
+#bl-beyondessessions .agenda-session-card-buttons button.primary.with-svg.Apollo.evt-button{font-size: 0;} 
+#bl-beyondessessions .agenda-session-card-buttons button.primary.with-svg.Apollo.evt-button:after {font-size: 15px; content:'Ver ahora';}
+
+#bl-beyondessessions div.agenda-broadcast-sessions.agenda-sessions-list div.tag-container-live.tag-container{font-size: 0;} 
+#bl-beyondessessions div.agenda-broadcast-sessions.agenda-sessions-list div.tag-container-live.tag-container:after {font-size: 14px; content:'LIVE';}
+
+#bl-beyondessessions .agenda-inline-days button.session-day-button:nth-child(2){font-size: 0;} 
+#bl-beyondessessions .agenda-inline-days button.session-day-button:nth-child(2):after {font-size: 15px; content:'Junio 17';}
+
+#bl-beyondessessions .agenda-inline-days button.session-day-button:nth-child(3){font-size: 0;} 
+#bl-beyondessessions .agenda-inline-days button.session-day-button:nth-child(3):after {font-size: 15px; content:'Junio 18';}
+
+#bl-beyondessessions div.session-stream-wrapper.Apollo.pre-live .live-in-card .live-in-card-text > p{font-size: 0;} 
+#bl-beyondessessions div.session-stream-wrapper.Apollo.pre-live .live-in-card .live-in-card-text > p:after {font-size: 15px; content:'Junio 17, 2022, 1:00 AM PDT';}
+
+#bl-beyondessessions div.session-stream-wrapper.Apollo.pre-live .live-in-card .live-in-card-text > p{font-size: 0;} 
+#bl-beyondessessions div.session-stream-wrapper.Apollo.pre-live .live-in-card .live-in-card-text > p:after {font-size: 15px; content:'Junio 18, 2022, 1:00 AM PDT';}
+
+	/* THIS IS THE SL SECTION */
+#bl-beyondsl .language-list-item:nth-child(1){font-size: 0;} 
+#bl-beyondsl .language-list-item:nth-child(1):after {font-size: 18px; content:'Angleščina';}
+
+#bl-beyondsl .language-list-item:nth-child(2){font-size: 0;} 
+#bl-beyondsl .language-list-item:nth-child(2):after {font-size: 18px; content:'Francosko';}
+
+#bl-beyondsl .language-list-item:nth-child(3){font-size: 0;} 
+#bl-beyondsl .language-list-item:nth-child(3):after {font-size: 18px; content:'Nemško';}
+
+#bl-beyondsl .language-list-item:nth-child(4){font-size: 0;} 
+#bl-beyondsl .language-list-item:nth-child(4):after {font-size: 18px; content:'Madžarska';}
+
+#bl-beyondsl .language-list-item:nth-child(5){font-size: 0;} 
+#bl-beyondsl .language-list-item:nth-child(5):after {font-size: 18px; content:'Italijan';}
+
+#bl-beyondsl .language-list-item:nth-child(6){font-size: 0;} 
+#bl-beyondsl .language-list-item:nth-child(6):after {font-size: 18px; content:'Lak';}
+
+#bl-beyondsl .language-list-item:nth-child(7){font-size: 0;} 
+#bl-beyondsl .language-list-item:nth-child(7):after {font-size: 18px; content:'Portugacija';}
+
+#bl-beyondsl .language-list-item:nth-child(8){font-size: 0;} 
+#bl-beyondsl .language-list-item:nth-child(8):after {font-size: 18px; content:'Romoanian';}
+
+#bl-beyondsl .language-list-item:nth-child(9){font-size: 0;} 
+#bl-beyondsl .language-list-item:nth-child(9):after {font-size: 18px; content:'Slovaški';}
+
+#bl-beyondsl .language-list-item:nth-child(10){font-size: 0;} 
+#bl-beyondsl .language-list-item:nth-child(10):after {font-size: 18px; content:'Slovak';}
+
+#bl-beyondsl .language-list-item:nth-child(11){font-size: 0;} 
+#bl-beyondsl .language-list-item:nth-child(11):after {font-size: 18px; content:'Španski';}
+
+#bl-beyondsl .language-list-item:nth-child(12){font-size: 0;} 
+#bl-beyondsl .language-list-item:nth-child(12):after {font-size: 18px; content:'Rusko';}
+
+#bl-beyondsl .language-list-item:nth-child(13){font-size: 0;} 
+#bl-beyondsl .language-list-item:nth-child(13):after {font-size: 18px; content:'Češko';}
+
+.page-lang-sl .header-call-to-action{font-size: 0;} 
+.page-lang-sl .header-call-to-action:after {font-size: 15px; content:'Prijaviti';}
+
+.page-lang-sl nav > div:nth-child(4) > a{font-size: 0 !important;} 
+.page-lang-sl nav > div:nth-child(4) > a:after {font-size: 10px; content:'Govorniki'; margin-top: -13px; background: none;}
+
+.page-lang-sl .tablet-links .side-nav-link:nth-child(4) > a{font-size: 0;} 
+.page-lang-sl .tablet-links .side-nav-link:nth-child(4) > a:before {font-size: 13px; content:'Govorniki';}
+
+.page-lang-sl .profile-nav-language-container .profile-nav-language-item:nth-child(2){font-size: 0;} 
+.page-lang-sl .profile-nav-language-container .profile-nav-language-item:nth-child(2):after {font-size: 14px; content:'Angleščina';}
+
+.page-lang-sl .profile-nav-language-container .profile-nav-language-item:nth-child(3){font-size: 0;} 
+.page-lang-sl .profile-nav-language-container .profile-nav-language-item:nth-child(3):after {font-size: 14px; content:'Francosko';}
+
+.page-lang-sl .profile-nav-language-container .profile-nav-language-item:nth-child(4){font-size: 0;} 
+.page-lang-sl .profile-nav-language-container .profile-nav-language-item:nth-child(4):after {font-size: 14px; content:'Nemško';}
+
+.page-lang-sl .profile-nav-language-container .profile-nav-language-item:nth-child(5){font-size: 0;} 
+.page-lang-sl .profile-nav-language-container .profile-nav-language-item:nth-child(5):after {font-size: 14px; content:'Madžarska';}
+
+.page-lang-sl .profile-nav-language-container .profile-nav-language-item:nth-child(6){font-size: 0;} 
+.page-lang-sl .profile-nav-language-container .profile-nav-language-item:nth-child(6):after {font-size: 14px; content:'Italijan';}
+
+.page-lang-sl .profile-nav-language-container .profile-nav-language-item:nth-child(7){font-size: 0;} 
+.page-lang-sl .profile-nav-language-container .profile-nav-language-item:nth-child(7):after {font-size: 14px; content:'Lak';}
+
+.page-lang-sl .profile-nav-language-container .profile-nav-language-item:nth-child(8){font-size: 0;} 
+.page-lang-sl .profile-nav-language-container .profile-nav-language-item:nth-child(8):after {font-size: 14px; content:'Portugacija';}
+
+.page-lang-sl .profile-nav-language-container .profile-nav-language-item:nth-child(9){font-size: 0;} 
+.page-lang-sl .profile-nav-language-container .profile-nav-language-item:nth-child(9):after {font-size: 14px; content:'Romoanian';}
+
+.page-lang-sl .profile-nav-language-container .profile-nav-language-item:nth-child(10){font-size: 0;} 
+.page-lang-sl .profile-nav-language-container .profile-nav-language-item:nth-child(10):after {font-size: 14px; content:'Slovaški';}
+
+.page-lang-sl .profile-nav-language-container .profile-nav-language-item:nth-child(11){font-size: 0;} 
+.page-lang-sl .profile-nav-language-container .profile-nav-language-item:nth-child(11):after {font-size: 14px; content:'Slovak';}
+
+.page-lang-sl .profile-nav-language-container .profile-nav-language-item:nth-child(12){font-size: 0;} 
+.page-lang-sl .profile-nav-language-container .profile-nav-language-item:nth-child(12):after {font-size: 14px; content:'Španski';}
+
+.page-lang-sl .profile-nav-language-container .profile-nav-language-item:nth-child(13){font-size: 0;} 
+.page-lang-sl .profile-nav-language-container .profile-nav-language-item:nth-child(13):after {font-size: 14px; content:'Rusko';}
+
+.page-lang-sl .profile-nav-language-container .profile-nav-language-item:nth-child(14){font-size: 0;} 
+.page-lang-sl .profile-nav-language-container .profile-nav-language-item:nth-child(14):after {font-size: 14px; content:'Češko';}
+
+.page-lang-sl .profile-first-level-actions a + button + button{font-size: 0;} 
+.page-lang-sl .profile-first-level-actions a + button + button:before {font-size: 14px; content:'Slovaški';}
+
+.page-lang-sl .countdown-container div:nth-child(5) .countdown-label{font-size: 0;} 
+.page-lang-sl .countdown-container div:nth-child(5) .countdown-label:after {font-size: 13px; content:'MINUTE';}
+
+#bl-beyondslhome li.sponsor-card:nth-child(1) h3.sponsor-card-title.stable.evt-heading-3{font-size: 0;} 
+#bl-beyondslhome li.sponsor-card:nth-child(1) h3.sponsor-card-title.stable.evt-heading-3:after {font-size: 25px; content:'IZVEDI VEČ';}
+
+.page-lang-sl .tab-navigation li:nth-child(3) span{font-size: 0;} 
+.page-lang-sl .tab-navigation li:nth-child(3) span:after {font-size: 13px; content:'Govorniki';}
+
+#bl-beyondslregistration .registration-form-inner button.no-style.sign-in{font-size: 0;} 
+#bl-beyondslregistration .registration-form-inner button.no-style.sign-in:after {font-size: 14px; content:'že registrirani? Prijavite se tukaj';}
+
+#bl-beyondslhome #Speakers li:nth-child(2) div > p{font-size: 0;} 
+#bl-beyondslhome #Speakers li:nth-child(2) div > p:after {font-size: 16px; content:'Dr Riggs has a strong interest in value-based healthcare and is passionate about supporting change for the benefit of all.';line-height: 80%;}
+
+#bl-beyondslhome #Speakers li:nth-child(2) div > h5{font-size: 0;} 
+#bl-beyondslhome #Speakers li:nth-child(2) div > h5:after {font-size: 18px; content:'VP, Education';line-height: 80%;}
+
+#bl-beyondslpagesspeakers li.speakers-column:nth-child(3) .speaker-about{font-size: 0;} 
+#bl-beyondslpagesspeakers li.speakers-column:nth-child(3) .speaker-about:after {font-size: 16px; content:'Dr Riggs has a strong interest in value-based healthcare and is passionate about supporting change for the benefit of all.';line-height: 80%;}
+
+#bl-beyondslpagesspeakers li.speakers-column:nth-child(3) h5.speaker-job-title{font-size: 0;} 
+#bl-beyondslpagesspeakers li.speakers-column:nth-child(3) h5.speaker-job-title:after {font-size: 18px; content:'VP, Education';line-height: 80%;}
+
+#bl-beyondslsessionb0eeb4b0ccb311ecaa967974d63c4741 .speaker:nth-child(14) .description{font-size: 0;} 
+#bl-beyondslsessionb0eeb4b0ccb311ecaa967974d63c4741 .speaker:nth-child(14) .description:after {font-size: 16px; content:'Dr Riggs has a strong interest in value-based healthcare and is passionate about supporting change for the benefit of all.';line-height: 80%;}
+
+#bl-beyondslsessionb0eeb4b0ccb311ecaa967974d63c4741 .speaker:nth-child(14) .speaker-job-title{font-size: 0;} 
+#bl-beyondslsessionb0eeb4b0ccb311ecaa967974d63c4741 .speaker:nth-child(14) .speaker-job-title:after {font-size: 18px; content:'VP, Education';line-height: 80%;}
+
+#bl-beyondslsessionb2414512ccb311ecaa967974d63c4741 .speaker:nth-child(6) .description{font-size: 0;} 
+#bl-beyondslsessionb2414512ccb311ecaa967974d63c4741 .speaker:nth-child(6) .description:after {font-size: 16px; content:'Dr Riggs has a strong interest in value-based healthcare and is passionate about supporting change for the benefit of all.';line-height: 80%;}
+
+#bl-beyondslsessionb2414512ccb311ecaa967974d63c4741 .speaker:nth-child(6) .speaker-job-title{font-size: 0;} 
+#bl-beyondslsessionb2414512ccb311ecaa967974d63c4741 .speaker:nth-child(6) .speaker-job-title:after {font-size: 18px; content:'VP, Education';line-height: 80%;}
+
+#bl-beyondslsessions .agenda-session-card-buttons button.primary.with-svg.Apollo.evt-button{font-size: 0;} 
+#bl-beyondslsessions .agenda-session-card-buttons button.primary.with-svg.Apollo.evt-button:after {font-size: 15px; content:'Glej sedaj';}
+
+#bl-beyondslsessions div.agenda-broadcast-sessions.agenda-sessions-list div.tag-container-live.tag-container{font-size: 0;} 
+#bl-beyondslsessions div.agenda-broadcast-sessions.agenda-sessions-list div.tag-container-live.tag-container:after {font-size: 14px; content:'LIVE';}
+
+	/* THIS IS THE PL SECTION */
+#bl-beyondpl .language-list-item:nth-child(1){font-size: 0;} 
+#bl-beyondpl .language-list-item:nth-child(1):after {font-size: 18px; content:'Angielski ';}
+
+#bl-beyondpl .language-list-item:nth-child(2){font-size: 0;} 
+#bl-beyondpl .language-list-item:nth-child(2):after {font-size: 18px; content:'Francuski';}
+
+#bl-beyondpl .language-list-item:nth-child(3){font-size: 0;} 
+#bl-beyondpl .language-list-item:nth-child(3):after {font-size: 18px; content:'Niemiecki';}
+
+#bl-beyondpl .language-list-item:nth-child(4){font-size: 0;} 
+#bl-beyondpl .language-list-item:nth-child(4):after {font-size: 18px; content:'Węgierski';}
+
+#bl-beyondpl .language-list-item:nth-child(5){font-size: 0;} 
+#bl-beyondpl .language-list-item:nth-child(5):after {font-size: 18px; content:'Włoski';}
+
+#bl-beyondpl .language-list-item:nth-child(6){font-size: 0;} 
+#bl-beyondpl .language-list-item:nth-child(6):after {font-size: 18px; content:'Polski';}
+
+#bl-beyondpl .language-list-item:nth-child(7){font-size: 0;} 
+#bl-beyondpl .language-list-item:nth-child(7):after {font-size: 18px; content:'Portugalski';}
+
+#bl-beyondpl .language-list-item:nth-child(8){font-size: 0;} 
+#bl-beyondpl .language-list-item:nth-child(8):after {font-size: 18px; content:'Rumuński';}
+
+#bl-beyondpl .language-list-item:nth-child(9){font-size: 0;} 
+#bl-beyondpl .language-list-item:nth-child(9):after {font-size: 18px; content:'Słoweński';}
+
+#bl-beyondpl .language-list-item:nth-child(10){font-size: 0;} 
+#bl-beyondpl .language-list-item:nth-child(10):after {font-size: 18px; content:'Słowacki';}
+
+#bl-beyondpl .language-list-item:nth-child(11){font-size: 0;} 
+#bl-beyondpl .language-list-item:nth-child(11):after {font-size: 18px; content:'Hiszpański ';}
+
+#bl-beyondpl .language-list-item:nth-child(12){font-size: 0;} 
+#bl-beyondpl .language-list-item:nth-child(12):after {font-size: 18px; content:'Rosyjski';}
+
+#bl-beyondpl .language-list-item:nth-child(13){font-size: 0;} 
+#bl-beyondpl .language-list-item:nth-child(13):after {font-size: 18px; content:'Czeski';}
+
+.page-lang-pl .user-profile-main-content-inner  button.edit-button.no-style{font-size: 0;} 
+.page-lang-pl .user-profile-main-content-inner  button.edit-button.no-style:after {font-size: 14px; content:'Edytuj';}
+
+.page-lang-pl .user-profile-main-content-inner .card-title:nth-child(2) h3{font-size: 0;} 
+.page-lang-pl .user-profile-main-content-inner .card-title:nth-child(2) h3:after {font-size: 18px; content:'Informacje ogólne ';}
+
+.page-lang-pl .user-profile-main-content-inner .card-title:nth-child(4) h3{font-size: 0;} 
+.page-lang-pl .user-profile-main-content-inner .card-title:nth-child(4) h3:after {font-size: 18px; content:'O Tobie';}
+
+.page-lang-pl .user-profile-main-content-inner .card-title:nth-child(6) h3{font-size: 0;} 
+.page-lang-pl .user-profile-main-content-inner .card-title:nth-child(6) h3:after {font-size: 18px; content:'Zagadnienia';}
+
+.page-lang-pl #profile-details-dropdown-container button:nth-child(4){font-size: 0;} 
+.page-lang-pl #profile-details-dropdown-container button:nth-child(4):after {font-size: 14px; content:'Niemiecki';}
+
+.page-lang-pl nav > div:nth-child(1) > a{font-size: 0 !important;} 
+.page-lang-pl nav > div:nth-child(1) > a:after {font-size: 13px; content:'STRONA GŁÓWNA'; margin-top: -13px; background: none;}
+
+.page-lang-pl nav > div:nth-child(2) > a{font-size: 0 !important;} 
+.page-lang-pl nav > div:nth-child(2) > a:after {font-size: 13px; content:'Program wydarzenia'; margin-top: -13px; background: none;}
+
+.page-lang-pl nav > div:nth-child(4) > a{font-size: 0 !important;} 
+.page-lang-pl nav > div:nth-child(4) > a:after {font-size: 10px; content:'MÓWCY'; margin-top: -13px; background: none;}
+
+.page-lang-pl .tablet-links .side-nav-link:nth-child(1) > a{font-size: 0;} 
+.page-lang-pl .tablet-links .side-nav-link:nth-child(1) > a:before {font-size: 13px; content:'STRONA GŁÓWNA';}
+
+.page-lang-pl .tablet-links .side-nav-link:nth-child(2) > a{font-size: 0;} 
+.page-lang-pl .tablet-links .side-nav-link:nth-child(2) > a:before {font-size: 13px; content:'Program wydarzenia';}
+
+.page-lang-pl .tablet-links .side-nav-link:nth-child(4) > a{font-size: 0;} 
+.page-lang-pl .tablet-links .side-nav-link:nth-child(4) > a:before {font-size: 13px; content:'MÓWCY';}
+
+.page-lang-pl .profile-nav-language-container .profile-second-level-action:nth-child(1){font-size: 0;} 
+.page-lang-pl .profile-nav-language-container .profile-second-level-action:nth-child(1):after {font-size: 14px; content:'Powrót';}
+
+.page-lang-pl .profile-nav-language-container .profile-nav-language-item:nth-child(2){font-size: 0;} 
+.page-lang-pl .profile-nav-language-container .profile-nav-language-item:nth-child(2):after {font-size: 14px; content:'Angielski ';}
+
+.page-lang-pl .profile-nav-language-container .profile-nav-language-item:nth-child(3){font-size: 0;} 
+.page-lang-pl .profile-nav-language-container .profile-nav-language-item:nth-child(3):after {font-size: 14px; content:'Francuski';}
+
+.page-lang-pl .profile-nav-language-container .profile-nav-language-item:nth-child(4){font-size: 0;} 
+.page-lang-pl .profile-nav-language-container .profile-nav-language-item:nth-child(4):after {font-size: 14px; content:'Niemiecki';}
+
+.page-lang-pl .profile-nav-language-container .profile-nav-language-item:nth-child(5){font-size: 0;} 
+.page-lang-pl .profile-nav-language-container .profile-nav-language-item:nth-child(5):after {font-size: 14px; content:'Węgierski';}
+
+.page-lang-pl .profile-nav-language-container .profile-nav-language-item:nth-child(6){font-size: 0;} 
+.page-lang-pl .profile-nav-language-container .profile-nav-language-item:nth-child(6):after {font-size: 14px; content:'Włoski';}
+
+.page-lang-pl .profile-nav-language-container .profile-nav-language-item:nth-child(7){font-size: 0;} 
+.page-lang-pl .profile-nav-language-container .profile-nav-language-item:nth-child(7):after {font-size: 14px; content:'Polski';}
+
+.page-lang-pl .profile-nav-language-container .profile-nav-language-item:nth-child(8){font-size: 0;} 
+.page-lang-pl .profile-nav-language-container .profile-nav-language-item:nth-child(8):after {font-size: 14px; content:'Portugalski';}
+
+.page-lang-pl .profile-nav-language-container .profile-nav-language-item:nth-child(9){font-size: 0;} 
+.page-lang-pl .profile-nav-language-container .profile-nav-language-item:nth-child(9):after {font-size: 14px; content:'Rumuński';}
+
+.page-lang-pl .profile-nav-language-container .profile-nav-language-item:nth-child(10){font-size: 0;} 
+.page-lang-pl .profile-nav-language-container .profile-nav-language-item:nth-child(10):after {font-size: 14px; content:'Słoweński';}
+
+.page-lang-pl .profile-nav-language-container .profile-nav-language-item:nth-child(11){font-size: 0;} 
+.page-lang-pl .profile-nav-language-container .profile-nav-language-item:nth-child(11):after {font-size: 14px; content:'Słowacki';}
+
+.page-lang-pl .profile-nav-language-container .profile-nav-language-item:nth-child(12){font-size: 0;} 
+.page-lang-pl .profile-nav-language-container .profile-nav-language-item:nth-child(12):after {font-size: 14px; content:'Hiszpański ';}
+
+.page-lang-pl .profile-nav-language-container .profile-nav-language-item:nth-child(13){font-size: 0;} 
+.page-lang-pl .profile-nav-language-container .profile-nav-language-item:nth-child(13):after {font-size: 14px; content:'Rosyjski';}
+
+.page-lang-pl .profile-nav-language-container .profile-nav-language-item:nth-child(14){font-size: 0;} 
+.page-lang-pl .profile-nav-language-container .profile-nav-language-item:nth-child(14):after {font-size: 14px; content:'Czeski';}
+
+.page-lang-pl .profile-first-level-actions a + button + button{font-size: 0;} 
+.page-lang-pl .profile-first-level-actions a + button + button:before {font-size: 14px; content:'Polski';}
+
+.page-lang-pl .tab-navigation li:nth-child(3) span{font-size: 0;} 
+.page-lang-pl .tab-navigation li:nth-child(3) span:after {font-size: 13px; content:'MÓWCY';}
+
+#bl-beyondplregistration .registration-form-title{font-size: 0;} 
+#bl-beyondplregistration .registration-form-title:after {font-size: 40px; content:'Zarejestruj się ';}
+
+#bl-beyondplregistration .registration-form-inner button.no-style.sign-in{font-size: 0;} 
+#bl-beyondplregistration .registration-form-inner button.no-style.sign-in:after {font-size: 14px; content:'Już zarejestrowany? Zaloguj się tutaj ';}
+
+#bl-beyondplregistration .registration-actions.primary button{font-size: 0;} 
+#bl-beyondplregistration .registration-actions.primary button:after {font-size: 15px; content:'Dalej';}
+
+#bl-beyondplregistration .registration-form-inner.verification .registration-form-title{font-size: 0;} 
+#bl-beyondplregistration .registration-form-inner.verification .registration-form-title:after {font-size: 40px; content:'Zarejestruj się ';}
+
+#bl-beyondplregistration .registration-form-inner.verification button.registration-button.primary.Apollo.evt-button{font-size: 0;} 
+#bl-beyondplregistration .registration-form-inner.verification button.registration-button.primary.Apollo.evt-button:after {font-size: 13px; content:'Wyślij';}
+
+#bl-beyondplhome #Speakers li:nth-child(2) div > p{font-size: 0;} 
+#bl-beyondplhome #Speakers li:nth-child(2) div > p:after {font-size: 16px; content:'Dr Riggs has a strong interest in value-based healthcare and is passionate about supporting change for the benefit of all.';line-height: 80%;}
+
+#bl-beyondplhome #Speakers li:nth-child(2) div > h5{font-size: 0;} 
+#bl-beyondplhome #Speakers li:nth-child(2) div > h5:after {font-size: 18px; content:'VP, Education';line-height: 80%;}
+
+#bl-beyondplpagesspeakers li.speakers-column:nth-child(3) .speaker-about{font-size: 0;} 
+#bl-beyondplpagesspeakers li.speakers-column:nth-child(3) .speaker-about:after {font-size: 16px; content:'Dr Riggs has a strong interest in value-based healthcare and is passionate about supporting change for the benefit of all.';line-height: 80%;}
+
+#bl-beyondplpagesspeakers li.speakers-column:nth-child(3) h5.speaker-job-title{font-size: 0;} 
+#bl-beyondplpagesspeakers li.speakers-column:nth-child(3) h5.speaker-job-title:after {font-size: 18px; content:'VP, Education';line-height: 80%;}
+
+#bl-beyondplsessionb0eeb4b0ccb311ecaa967974d63c4741 .speaker:nth-child(14) .description{font-size: 0;} 
+#bl-beyondplsessionb0eeb4b0ccb311ecaa967974d63c4741 .speaker:nth-child(14) .description:after {font-size: 16px; content:'Dr Riggs has a strong interest in value-based healthcare and is passionate about supporting change for the benefit of all.';line-height: 80%;}
+
+#bl-beyondplsessionb0eeb4b0ccb311ecaa967974d63c4741 .speaker:nth-child(14) .speaker-job-title{font-size: 0;} 
+#bl-beyondplsessionb0eeb4b0ccb311ecaa967974d63c4741 .speaker:nth-child(14) .speaker-job-title:after {font-size: 18px; content:'VP, Education';line-height: 80%;}
+
+#bl-beyondplsessionb2414512ccb311ecaa967974d63c4741 .speaker:nth-child(6) .description{font-size: 0;} 
+#bl-beyondplsessionb2414512ccb311ecaa967974d63c4741 .speaker:nth-child(6) .description:after {font-size: 16px; content:'Dr Riggs has a strong interest in value-based healthcare and is passionate about supporting change for the benefit of all.';line-height: 80%;}
+
+#bl-beyondplsessionb2414512ccb311ecaa967974d63c4741 .speaker:nth-child(6) .speaker-job-title{font-size: 0;} 
+#bl-beyondplsessionb2414512ccb311ecaa967974d63c4741 .speaker:nth-child(6) .speaker-job-title:after {font-size: 18px; content:'VP, Education';line-height: 80%;}
+
+.page-lang-pl #Speakers > div > div.show-more-wrapper > button{font-size: 0;} 
+.page-lang-pl #Speakers > div > div.show-more-wrapper > button:after {font-size: 15px; content:'Pokaż więcej ';}
+
+.page-lang-pl #Speakers > div > div.show-more-wrapper > button.show-more-button-active{font-size: 0;} 
+.page-lang-pl #Speakers > div > div.show-more-wrapper > button.show-more-button-active:after {font-size: 15px; content:'Pokaż mniej';}
+
+#bl-beyondplsessions .agenda-session-card-buttons button.primary.with-svg.Apollo.evt-button{font-size: 0;} 
+#bl-beyondplsessions .agenda-session-card-buttons button.primary.with-svg.Apollo.evt-button:after {font-size: 15px; content:'Oglądaj teraz';}
+
+#bl-beyondplsessions #Agenda > div.evt-title-1.marketing-registered-agenda-title{font-size: 0;} 
+#bl-beyondplsessions #Agenda > div.evt-title-1.marketing-registered-agenda-title:after {font-size: 40px; content:'Program wydarzenia';}
+
+#bl-beyondplsessions div.agenda-broadcast-sessions.agenda-sessions-list div.tag-container-live.tag-container{font-size: 0;} 
+#bl-beyondplsessions div.agenda-broadcast-sessions.agenda-sessions-list div.tag-container-live.tag-container:after {font-size: 14px; content:'LIVE';}
+
+#bl-beyondplsessions .agenda-session-card:nth-child(1) h4.agenda-session-card-title.stable.evt-heading-3{font-size: 0;} 
+#bl-beyondplsessions .agenda-session-card:nth-child(1) h4.agenda-session-card-title.stable.evt-heading-3:after {font-size: 25px; content:'Convention dōTERRA 2022 dzień pierwszy ';}
+
+#bl-beyondplsessions .agenda-session-card:nth-child(2) h4.agenda-session-card-title.stable.evt-heading-3{font-size: 0;} 
+#bl-beyondplsessions .agenda-session-card:nth-child(2) h4.agenda-session-card-title.stable.evt-heading-3:after {font-size: 25px; content:'Convention dōTERRA 2022 dzień drugi';}
+
+#bl-beyondplsessions .agenda-session-card:nth-child(1) .agenda-session-card-timestamp.evt-caption-1{font-size: 0;} 
+#bl-beyondplsessions .agenda-session-card:nth-child(1) .agenda-session-card-timestamp.evt-caption-1:after {font-size: 14px; content:' 17 czerwca 2022 r., 10:00 AM GMT+1 ';}
+
+#bl-beyondplsessions .agenda-session-card:nth-child(2) .agenda-session-card-timestamp.evt-caption-1{font-size: 0;} 
+#bl-beyondplsessions .agenda-session-card:nth-child(2) .agenda-session-card-timestamp.evt-caption-1:after {font-size: 14px; content:' 18 czerwca 2022 r., 10:00 AM GMT+1 ';}
+
+#bl-beyondplsessions div.sticky-component-wrapper ul.tab-navigation li:nth-child(1) > label > span{font-size: 0;} 
+#bl-beyondplsessions div.sticky-component-wrapper ul.tab-navigation li:nth-child(1) > label > span:after {font-size: 13px; content:'Podsumowanie';}
+
+#bl-beyondplsessions div.sticky-component-wrapper ul.tab-navigation li:nth-child(2) > label > span{font-size: 0;} 
+#bl-beyondplsessions div.sticky-component-wrapper ul.tab-navigation li:nth-child(2) > label > span:after {font-size: 13px; content:'Program wydarzenia';}
+
+#bl-beyondplsessions div.sticky-component-wrapper ul.tab-navigation li:nth-child(3) > label > span{font-size: 0;} 
+#bl-beyondplsessions div.sticky-component-wrapper ul.tab-navigation li:nth-child(3) > label > span:after {font-size: 13px; content:'MÓWCY';}
+
+#bl-beyondplsessions div.session-stream-wrapper.Apollo.pre-live .live-in-card .live-in-card-text > p{font-size: 0;} 
+#bl-beyondplsessions div.session-stream-wrapper.Apollo.pre-live .live-in-card .live-in-card-text > p:after {font-size: 15px; content:'17 czerwca 2022 r., 10:00 AM GMT+1 ';}
+
+#bl-beyondplsessions div.session-stream-wrapper.Apollo.pre-live .live-in-card .live-in-card-text > p{font-size: 0;} 
+#bl-beyondplsessions div.session-stream-wrapper.Apollo.pre-live .live-in-card .live-in-card-text > p:after {font-size: 15px; content:'18 czerwca 2022 r., 10:00 AM GMT+1 ';}
+
+	/* THIS IS THE PT SECTION */
+#bl-beyondpt .language-list-item:nth-child(1){font-size: 0;} 
+#bl-beyondpt .language-list-item:nth-child(1):after {font-size: 18px; content:'Inglês';}
+
+#bl-beyondpt .language-list-item:nth-child(2){font-size: 0;} 
+#bl-beyondpt .language-list-item:nth-child(2):after {font-size: 18px; content:'Francês';}
+
+#bl-beyondpt .language-list-item:nth-child(3){font-size: 0;} 
+#bl-beyondpt .language-list-item:nth-child(3):after {font-size: 18px; content:'Alemão';}
+
+#bl-beyondpt .language-list-item:nth-child(4){font-size: 0;} 
+#bl-beyondpt .language-list-item:nth-child(4):after {font-size: 18px; content:'Húngaro';}
+
+#bl-beyondpt .language-list-item:nth-child(5){font-size: 0;} 
+#bl-beyondpt .language-list-item:nth-child(5):after {font-size: 18px; content:'Italiano';}
+
+#bl-beyondpt .language-list-item:nth-child(6){font-size: 0;} 
+#bl-beyondpt .language-list-item:nth-child(6):after {font-size: 18px; content:'Polones';}
+
+#bl-beyondpt .language-list-item:nth-child(7){font-size: 0;} 
+#bl-beyondpt .language-list-item:nth-child(7):after {font-size: 18px; content:'Português';}
+
+#bl-beyondpt .language-list-item:nth-child(8){font-size: 0;} 
+#bl-beyondpt .language-list-item:nth-child(8):after {font-size: 18px; content:'Romeno';}
+
+#bl-beyondpt .language-list-item:nth-child(9){font-size: 0;} 
+#bl-beyondpt .language-list-item:nth-child(9):after {font-size: 18px; content:'Esloveno';}
+
+#bl-beyondpt .language-list-item:nth-child(10){font-size: 0;} 
+#bl-beyondpt .language-list-item:nth-child(10):after {font-size: 18px; content:'Eslovaco';}
+
+#bl-beyondpt .language-list-item:nth-child(11){font-size: 0;} 
+#bl-beyondpt .language-list-item:nth-child(11):after {font-size: 18px; content:'Espanhol';}
+
+#bl-beyondpt .language-list-item:nth-child(12){font-size: 0;} 
+#bl-beyondpt .language-list-item:nth-child(12):after {font-size: 18px; content:'Russo';}
+
+#bl-beyondpt .language-list-item:nth-child(13){font-size: 0;} 
+#bl-beyondpt .language-list-item:nth-child(13):after {font-size: 18px; content:'Tcheco';}
+
+.page-lang-pt .profile-first-level-actions button:nth-child(2) p{font-size: 0;} 
+.page-lang-pt .profile-first-level-actions button:nth-child(2) p:after {font-size: 14px; content:'Participante ao vivo';}
+
+.page-lang-pt .user-profile-main-content-inner  button.edit-button.no-style{font-size: 0;} 
+.page-lang-pt .user-profile-main-content-inner  button.edit-button.no-style:after {font-size: 14px; content:'Editar';}
+
+.page-lang-pt .user-profile-main-content-inner .card-title:nth-child(2) h3{font-size: 0;} 
+.page-lang-pt .user-profile-main-content-inner .card-title:nth-child(2) h3:after {font-size: 18px; content:'Informação Geral';}
+
+.page-lang-pt .user-profile-main-content-inner .card-title:nth-child(4) h3{font-size: 0;} 
+.page-lang-pt .user-profile-main-content-inner .card-title:nth-child(4) h3:after {font-size: 18px; content:'Sobre';}
+
+.page-lang-pt .user-profile-main-content-inner .card-title:nth-child(6) h3{font-size: 0;} 
+.page-lang-pt .user-profile-main-content-inner .card-title:nth-child(6) h3:after {font-size: 18px; content:'Interesses';}
+
+.page-lang-pt nav > div:nth-child(1) > a{font-size: 0 !important;} 
+.page-lang-pt nav > div:nth-child(1) > a:after {font-size: 13px; content:'PÁGINA INICIAL'; margin-top: -13px; background: none;}
+
+.page-lang-pt nav > div:nth-child(2) > a{font-size: 0 !important;} 
+.page-lang-pt nav > div:nth-child(2) > a:after {font-size: 13px; content:'AGENDA'; margin-top: -13px; background: none;}
+
+.page-lang-pt nav > div:nth-child(3) > a{font-size: 0 !important;} 
+.page-lang-pt nav > div:nth-child(3) > a:after {font-size: 13px; content:'PRODUTOS'; margin-top: -13px; background: none;}
+
+.page-lang-pt nav > div:nth-child(4) > a{font-size: 0 !important;} 
+.page-lang-pt nav > div:nth-child(4) > a:after {font-size: 10px; content:'ORADORES'; margin-top: -13px; background: none;}
+
+.page-lang-pt .tablet-links .side-nav-link:nth-child(1) > a{font-size: 0;} 
+.page-lang-pt .tablet-links .side-nav-link:nth-child(1) > a:before {font-size: 13px; content:'PÁGINA INICIAL';}
+
+.page-lang-pt .tablet-links .side-nav-link:nth-child(2) > a{font-size: 0;} 
+.page-lang-pt .tablet-links .side-nav-link:nth-child(2) > a:before {font-size: 13px; content:'AGENDA';}
+
+.page-lang-pt .tablet-links .side-nav-link:nth-child(3) > a{font-size: 0;} 
+.page-lang-pt .tablet-links .side-nav-link:nth-child(3) > a:before {font-size: 13px; content:'PRODUTOS';}
+
+.page-lang-pt .tablet-links .side-nav-link:nth-child(4) > a{font-size: 0;} 
+.page-lang-pt .tablet-links .side-nav-link:nth-child(4) > a:before {font-size: 13px; content:'ORADORES';}
+
+.page-lang-pt .profile-nav-language-container .profile-nav-language-item:nth-child(2){font-size: 0;} 
+.page-lang-pt .profile-nav-language-container .profile-nav-language-item:nth-child(2):after {font-size: 14px; content:'Inglês';}
+
+.page-lang-pt .profile-nav-language-container .profile-nav-language-item:nth-child(3){font-size: 0;} 
+.page-lang-pt .profile-nav-language-container .profile-nav-language-item:nth-child(3):after {font-size: 14px; content:'Francês';}
+
+.page-lang-pt .profile-nav-language-container .profile-nav-language-item:nth-child(4){font-size: 0;} 
+.page-lang-pt .profile-nav-language-container .profile-nav-language-item:nth-child(4):after {font-size: 14px; content:'Alemão';}
+
+.page-lang-pt .profile-nav-language-container .profile-nav-language-item:nth-child(5){font-size: 0;} 
+.page-lang-pt .profile-nav-language-container .profile-nav-language-item:nth-child(5):after {font-size: 14px; content:'Húngaro';}
+
+.page-lang-pt .profile-nav-language-container .profile-nav-language-item:nth-child(6){font-size: 0;} 
+.page-lang-pt .profile-nav-language-container .profile-nav-language-item:nth-child(6):after {font-size: 14px; content:'Italiano';}
+
+.page-lang-pt .profile-nav-language-container .profile-nav-language-item:nth-child(7){font-size: 0;} 
+.page-lang-pt .profile-nav-language-container .profile-nav-language-item:nth-child(7):after {font-size: 14px; content:'Polones';}
+
+.page-lang-pt .profile-nav-language-container .profile-nav-language-item:nth-child(8){font-size: 0;} 
+.page-lang-pt .profile-nav-language-container .profile-nav-language-item:nth-child(8):after {font-size: 14px; content:'Português';}
+
+.page-lang-pt .profile-nav-language-container .profile-nav-language-item:nth-child(9){font-size: 0;} 
+.page-lang-pt .profile-nav-language-container .profile-nav-language-item:nth-child(9):after {font-size: 14px; content:'Romeno';}
+
+.page-lang-pt .profile-nav-language-container .profile-nav-language-item:nth-child(10){font-size: 0;} 
+.page-lang-pt .profile-nav-language-container .profile-nav-language-item:nth-child(10):after {font-size: 14px; content:'Esloveno';}
+
+.page-lang-pt .profile-nav-language-container .profile-nav-language-item:nth-child(11){font-size: 0;} 
+.page-lang-pt .profile-nav-language-container .profile-nav-language-item:nth-child(11):after {font-size: 14px; content:'Eslovaco';}
+
+.page-lang-pt .profile-nav-language-container .profile-nav-language-item:nth-child(12){font-size: 0;} 
+.page-lang-pt .profile-nav-language-container .profile-nav-language-item:nth-child(12):after {font-size: 14px; content:'Espanhol';}
+
+.page-lang-pt .profile-nav-language-container .profile-nav-language-item:nth-child(13){font-size: 0;} 
+.page-lang-pt .profile-nav-language-container .profile-nav-language-item:nth-child(13):after {font-size: 14px; content:'Russo';}
+
+.page-lang-pt .profile-nav-language-container .profile-nav-language-item:nth-child(14){font-size: 0;} 
+.page-lang-pt .profile-nav-language-container .profile-nav-language-item:nth-child(14):after {font-size: 14px; content:'Tcheco';}
+
+.page-lang-pt .profile-first-level-actions a + button + button{font-size: 0;} 
+.page-lang-pt .profile-first-level-actions a + button + button:before {font-size: 14px; content:'Português';}
+
+#bl-beyondpt p.evt-caption-1.banner-starts-on{font-size: 0;} 
+#bl-beyondpt p.evt-caption-1.banner-starts-on:after {font-size: 14px; content:'COMEÇA A 17 DE JUNHO DE 2022 10:00 GMT+1';}
+
+#bl-beyondpthome p.evt-caption-1.banner-starts-on{font-size: 0;} 
+#bl-beyondpthome p.evt-caption-1.banner-starts-on:after {font-size: 14px; content:'COMEÇA A 17 DE JUNHO DE 2022 10:00 GMT+1';}
+
+.page-lang-pt .tab-navigation li:nth-child(3) span{font-size: 0;} 
+.page-lang-pt .tab-navigation li:nth-child(3) span:after {font-size: 13px; content:'ORADORES';}
+
+#bl-beyondptregistration .registration-form-inner button.no-style.sign-in{font-size: 0;} 
+#bl-beyondptregistration .registration-form-inner button.no-style.sign-in:after {font-size: 14px; content:'JÁ REGISTADO?';}
+
+#bl-beyondptregistration .registration-actions.primary button{font-size: 0;} 
+#bl-beyondptregistration .registration-actions.primary button:after {font-size: 15px; content:'SEGUINTE';}
+
+#bl-beyondptregistration .registration-form-inner.verification>p{font-size: 0;} 
+#bl-beyondptregistration .registration-form-inner.verification>p:after {font-size: 20px; content:'Digite o e-mail com o qual se inscreveu e enviaremos um e-mail de confirmação. Se não receber um e-mail, tente registrar-se novamente.';}
+
+#bl-beyondpthome #Speakers li:nth-child(2) div > p{font-size: 0;} 
+#bl-beyondpthome #Speakers li:nth-child(2) div > p:after {font-size: 16px; content:'Dr Riggs has a strong interest in value-based healthcare and is passionate about supporting change for the benefit of all.';line-height: 80%;}
+
+#bl-beyondpthome #Speakers li:nth-child(2) div > h5{font-size: 0;} 
+#bl-beyondpthome #Speakers li:nth-child(2) div > h5:after {font-size: 18px; content:'VP, Education';line-height: 80%;}
+
+#bl-beyondptpagesspeakers li.speakers-column:nth-child(3) .speaker-about{font-size: 0;} 
+#bl-beyondptpagesspeakers li.speakers-column:nth-child(3) .speaker-about:after {font-size: 16px; content:'Dr Riggs has a strong interest in value-based healthcare and is passionate about supporting change for the benefit of all.';line-height: 80%;}
+
+#bl-beyondptpagesspeakers li.speakers-column:nth-child(3) h5.speaker-job-title{font-size: 0;} 
+#bl-beyondptpagesspeakers li.speakers-column:nth-child(3) h5.speaker-job-title:after {font-size: 18px; content:'VP, Education';line-height: 80%;}
+
+#bl-beyondptsessionb0eeb4b0ccb311ecaa967974d63c4741 .speaker:nth-child(14) .description{font-size: 0;} 
+#bl-beyondptsessionb0eeb4b0ccb311ecaa967974d63c4741 .speaker:nth-child(14) .description:after {font-size: 16px; content:'Dr Riggs has a strong interest in value-based healthcare and is passionate about supporting change for the benefit of all.';line-height: 80%;}
+
+#bl-beyondptsessionb0eeb4b0ccb311ecaa967974d63c4741 .speaker:nth-child(14) .speaker-job-title{font-size: 0;} 
+#bl-beyondptsessionb0eeb4b0ccb311ecaa967974d63c4741 .speaker:nth-child(14) .speaker-job-title:after {font-size: 18px; content:'VP, Education';line-height: 80%;}
+
+#bl-beyondptsessionb2414512ccb311ecaa967974d63c4741 .speaker:nth-child(6) .description{font-size: 0;} 
+#bl-beyondptsessionb2414512ccb311ecaa967974d63c4741 .speaker:nth-child(6) .description:after {font-size: 16px; content:'Dr Riggs has a strong interest in value-based healthcare and is passionate about supporting change for the benefit of all.';line-height: 80%;}
+
+#bl-beyondptsessionb2414512ccb311ecaa967974d63c4741 .speaker:nth-child(6) .speaker-job-title{font-size: 0;} 
+#bl-beyondptsessionb2414512ccb311ecaa967974d63c4741 .speaker:nth-child(6) .speaker-job-title:after {font-size: 18px; content:'VP, Education';line-height: 80%;}
+
+.page-lang-pt #Speakers > div > div.show-more-wrapper > button{font-size: 0;} 
+.page-lang-pt #Speakers > div > div.show-more-wrapper > button:after {font-size: 15px; content:'MOSTRAR MAIS';}
+
+.page-lang-pt #Speakers > div > div.show-more-wrapper > button.show-more-button-active{font-size: 0;} 
+.page-lang-pt #Speakers > div > div.show-more-wrapper > button.show-more-button-active:after {font-size: 15px; content:'MOSTRAR MENOS';}
+
+#bl-beyondptsessions .agenda-session-card-buttons button.primary.with-svg.Apollo.evt-button{font-size: 0;} 
+#bl-beyondptsessions .agenda-session-card-buttons button.primary.with-svg.Apollo.evt-button:after {font-size: 15px; content:'Ver agora';}
+
+#bl-beyondptsessions #Agenda > div.evt-title-1.marketing-registered-agenda-title{font-size: 0;} 
+#bl-beyondptsessions #Agenda > div.evt-title-1.marketing-registered-agenda-title:after {font-size: 40px; content:'AGENDA';}
+
+#bl-beyondptsessions div.agenda-broadcast-sessions.agenda-sessions-list div.tag-container-live.tag-container{font-size: 0;} 
+#bl-beyondptsessions div.agenda-broadcast-sessions.agenda-sessions-list div.tag-container-live.tag-container:after {font-size: 14px; content:'LIVE';}
+
+#bl-beyondptsessions .agenda-session-card:nth-child(1) h4.agenda-session-card-title.stable.evt-heading-3{font-size: 0;} 
+#bl-beyondptsessions .agenda-session-card:nth-child(1) h4.agenda-session-card-title.stable.evt-heading-3:after {font-size: 25px; content:'Convenção dōTERRA 2022 Dia 1';}
+
+#bl-beyondptsessions .agenda-session-card:nth-child(2) h4.agenda-session-card-title.stable.evt-heading-3{font-size: 0;} 
+#bl-beyondptsessions .agenda-session-card:nth-child(2) h4.agenda-session-card-title.stable.evt-heading-3:after {font-size: 25px; content:'Convenção dōTERRA 2022 Dia 2';}
+
+#bl-beyondptsessions .agenda-inline-days button.session-day-button:nth-child(2){font-size: 0;} 
+#bl-beyondptsessions .agenda-inline-days button.session-day-button:nth-child(2):after {font-size: 15px; content:'17 JUNHO';}
+
+#bl-beyondptsessions .agenda-inline-days button.session-day-button:nth-child(3){font-size: 0;} 
+#bl-beyondptsessions .agenda-inline-days button.session-day-button:nth-child(3):after {font-size: 15px; content:'18 JUNHO';}
+
+	/* THIS IS THE FR SECTION */
+#bl-beyondfr .language-list-item:nth-child(1){font-size: 0;} 
+#bl-beyondfr .language-list-item:nth-child(1):after {font-size: 18px; content:'Anglais';}
+
+#bl-beyondfr .language-list-item:nth-child(2){font-size: 0;} 
+#bl-beyondfr .language-list-item:nth-child(2):after {font-size: 18px; content:'Français';}
+
+#bl-beyondfr .language-list-item:nth-child(3){font-size: 0;} 
+#bl-beyondfr .language-list-item:nth-child(3):after {font-size: 18px; content:'Allemand';}
+
+#bl-beyondfr .language-list-item:nth-child(4){font-size: 0;} 
+#bl-beyondfr .language-list-item:nth-child(4):after {font-size: 18px; content:'Hongrois';}
+
+#bl-beyondfr .language-list-item:nth-child(5){font-size: 0;} 
+#bl-beyondfr .language-list-item:nth-child(5):after {font-size: 18px; content:'Italien';}
+
+#bl-beyondfr .language-list-item:nth-child(6){font-size: 0;} 
+#bl-beyondfr .language-list-item:nth-child(6):after {font-size: 18px; content:'Polonais';}
+
+#bl-beyondfr .language-list-item:nth-child(7){font-size: 0;} 
+#bl-beyondfr .language-list-item:nth-child(7):after {font-size: 18px; content:'Portuguais';}
+
+#bl-beyondfr .language-list-item:nth-child(8){font-size: 0;} 
+#bl-beyondfr .language-list-item:nth-child(8):after {font-size: 18px; content:'Roumain';}
+
+#bl-beyondfr .language-list-item:nth-child(9){font-size: 0;} 
+#bl-beyondfr .language-list-item:nth-child(9):after {font-size: 18px; content:'Slovène';}
+
+#bl-beyondfr .language-list-item:nth-child(10){font-size: 0;} 
+#bl-beyondfr .language-list-item:nth-child(10):after {font-size: 18px; content:'Slovaque';}
+
+#bl-beyondfr .language-list-item:nth-child(11){font-size: 0;} 
+#bl-beyondfr .language-list-item:nth-child(11):after {font-size: 18px; content:'Espagnol';}
+
+#bl-beyondfr .language-list-item:nth-child(12){font-size: 0;} 
+#bl-beyondfr .language-list-item:nth-child(12):after {font-size: 18px; content:'Russe';}
+
+#bl-beyondfr .language-list-item:nth-child(13){font-size: 0;} 
+#bl-beyondfr .language-list-item:nth-child(13):after {font-size: 18px; content:'Ttchèque';}
+
+.page-lang-fr .user-profile-main-content-inner  button.edit-button.no-style{font-size: 0;} 
+.page-lang-fr .user-profile-main-content-inner  button.edit-button.no-style:after {font-size: 14px; content:'Modifier';}
+
+.page-lang-fr .user-profile-main-content-inner .card-title:nth-child(2) h3{font-size: 0;} 
+.page-lang-fr .user-profile-main-content-inner .card-title:nth-child(2) h3:after {font-size: 18px; content:'Informations générales';}
+
+.page-lang-fr .user-profile-main-content-inner .card-title:nth-child(4) h3{font-size: 0;} 
+.page-lang-fr .user-profile-main-content-inner .card-title:nth-child(4) h3:after {font-size: 18px; content:'À propos';}
+
+.page-lang-fr .user-profile-main-content-inner .card-title:nth-child(6) h3{font-size: 0;} 
+.page-lang-fr .user-profile-main-content-inner .card-title:nth-child(6) h3:after {font-size: 18px; content:'Intérêts';}
+
+.page-lang-fr div.profile-card.general-profile-card > div.general-info h5{font-size: 0;} 
+.page-lang-fr div.profile-card.general-profile-card > div.general-info h5:after {font-size: 12px; content:'Adresse mail';}
+
+.page-lang-fr nav > div:nth-child(1) > a{font-size: 0 !important;} 
+.page-lang-fr nav > div:nth-child(1) > a:after {font-size: 13px; content:'Accueil'; margin-top: -13px; background: none;}
+
+.page-lang-fr nav > div:nth-child(2) > a{font-size: 0 !important;} 
+.page-lang-fr nav > div:nth-child(2) > a:after {font-size: 13px; content:'Agenda'; margin-top: -13px; background: none;}
+
+.page-lang-fr nav > div:nth-child(3) > a{font-size: 0 !important;} 
+.page-lang-fr nav > div:nth-child(3) > a:after {font-size: 13px; content:'Produits'; margin-top: -13px; background: none;}
+
+.page-lang-fr nav > div:nth-child(4) > a{font-size: 0 !important;} 
+.page-lang-fr nav > div:nth-child(4) > a:after {font-size: 10px; content:'Conférenciers'; margin-top: -13px; background: none;}
+
+.page-lang-fr .tablet-links .side-nav-link:nth-child(1) > a{font-size: 0;} 
+.page-lang-fr .tablet-links .side-nav-link:nth-child(1) > a:before {font-size: 13px; content:'Accueil';}
+
+.page-lang-fr .tablet-links .side-nav-link:nth-child(2) > a{font-size: 0;} 
+.page-lang-fr .tablet-links .side-nav-link:nth-child(2) > a:before {font-size: 13px; content:'Agenda';}
+
+.page-lang-fr .tablet-links .side-nav-link:nth-child(3) > a{font-size: 0;} 
+.page-lang-fr .tablet-links .side-nav-link:nth-child(3) > a:before {font-size: 13px; content:'Produits';}
+
+.page-lang-fr .tablet-links .side-nav-link:nth-child(4) > a{font-size: 0;} 
+.page-lang-fr .tablet-links .side-nav-link:nth-child(4) > a:before {font-size: 13px; content:'Conférenciers';}
+
+.page-lang-fr .profile-nav-language-container .profile-nav-language-item:nth-child(2){font-size: 0;} 
+.page-lang-fr .profile-nav-language-container .profile-nav-language-item:nth-child(2):after {font-size: 14px; content:'Anglais';}
+
+.page-lang-fr .profile-nav-language-container .profile-nav-language-item:nth-child(3){font-size: 0;} 
+.page-lang-fr .profile-nav-language-container .profile-nav-language-item:nth-child(3):after {font-size: 14px; content:'Français';}
+
+.page-lang-fr .profile-nav-language-container .profile-nav-language-item:nth-child(4){font-size: 0;} 
+.page-lang-fr .profile-nav-language-container .profile-nav-language-item:nth-child(4):after {font-size: 14px; content:'Allemand';}
+
+.page-lang-fr .profile-nav-language-container .profile-nav-language-item:nth-child(5){font-size: 0;} 
+.page-lang-fr .profile-nav-language-container .profile-nav-language-item:nth-child(5):after {font-size: 14px; content:'Hongrois';}
+
+.page-lang-fr .profile-nav-language-container .profile-nav-language-item:nth-child(6){font-size: 0;} 
+.page-lang-fr .profile-nav-language-container .profile-nav-language-item:nth-child(6):after {font-size: 14px; content:'Italien';}
+
+.page-lang-fr .profile-nav-language-container .profile-nav-language-item:nth-child(7){font-size: 0;} 
+.page-lang-fr .profile-nav-language-container .profile-nav-language-item:nth-child(7):after {font-size: 14px; content:'Polonais';}
+
+.page-lang-fr .profile-nav-language-container .profile-nav-language-item:nth-child(8){font-size: 0;} 
+.page-lang-fr .profile-nav-language-container .profile-nav-language-item:nth-child(8):after {font-size: 14px; content:'Portuguais';}
+
+.page-lang-fr .profile-nav-language-container .profile-nav-language-item:nth-child(9){font-size: 0;} 
+.page-lang-fr .profile-nav-language-container .profile-nav-language-item:nth-child(9):after {font-size: 14px; content:'Roumain';}
+
+.page-lang-fr .profile-nav-language-container .profile-nav-language-item:nth-child(10){font-size: 0;} 
+.page-lang-fr .profile-nav-language-container .profile-nav-language-item:nth-child(10):after {font-size: 14px; content:'Slovène';}
+
+.page-lang-fr .profile-nav-language-container .profile-nav-language-item:nth-child(11){font-size: 0;} 
+.page-lang-fr .profile-nav-language-container .profile-nav-language-item:nth-child(11):after {font-size: 14px; content:'Slovaque';}
+
+.page-lang-fr .profile-nav-language-container .profile-nav-language-item:nth-child(12){font-size: 0;} 
+.page-lang-fr .profile-nav-language-container .profile-nav-language-item:nth-child(12):after {font-size: 14px; content:'Espagnol';}
+
+.page-lang-fr .profile-nav-language-container .profile-nav-language-item:nth-child(13){font-size: 0;} 
+.page-lang-fr .profile-nav-language-container .profile-nav-language-item:nth-child(13):after {font-size: 14px; content:'Russe';}
+
+.page-lang-fr .profile-nav-language-container .profile-nav-language-item:nth-child(14){font-size: 0;} 
+.page-lang-fr .profile-nav-language-container .profile-nav-language-item:nth-child(14):after {font-size: 14px; content:'Ttchèque';}
+
+.page-lang-fr #profile-details-dropdown-container button:nth-child(2) > p{font-size: 0;} 
+.page-lang-fr #profile-details-dropdown-container button:nth-child(2) > p:after {font-size: 14px; content:'Participer en présentiel';}
+
+.page-lang-fr .profile-first-level-actions a + button + button{font-size: 0;} 
+.page-lang-fr .profile-first-level-actions a + button + button:before {font-size: 14px; content:'Français';}
+
+#bl-beyondfr .new-dropdown.language-dropdown span.new-dropdown-value{font-size: 0;} 
+#bl-beyondfr .new-dropdown.language-dropdown span.new-dropdown-value:after {font-size: 13px; content:'FR';}
+
+.page-lang-fr .countdown-container div:nth-child(3) .countdown-label{font-size: 0;} 
+.page-lang-fr .countdown-container div:nth-child(3) .countdown-label:after {font-size: 13px; content:'HEURES';}
+
+.page-lang-fr .person-details-modal-content .tag-container-speaker.tag-container span{font-size: 0;} 
+.page-lang-fr .person-details-modal-content .tag-container-speaker.tag-container span:after {font-size: 14px; content:'Conférencier';}
+
+.page-lang-fr nav.footer-nav .footer-nav-item:nth-child(1){font-size: 0;} 
+.page-lang-fr nav.footer-nav .footer-nav-item:nth-child(1):after {font-size: 13px; content:'Conditions Générales';}
+
+.page-lang-fr .tab-navigation li:nth-child(3) span{font-size: 0;} 
+.page-lang-fr .tab-navigation li:nth-child(3) span:after {font-size: 10px; content:'Conférenciers';}
+
+#bl-beyondfrregistration .registration-form-title{font-size: 0;} 
+#bl-beyondfrregistration .registration-form-title:after {font-size: 40px; content:'Inscription';}
+
+#bl-beyondfrregistration .registration-form-inner button.no-style.sign-in{font-size: 0;} 
+#bl-beyondfrregistration .registration-form-inner button.no-style.sign-in:after {font-size: 14px; content:'Déjà inscris ? S\'identifier ici';}
+
+#bl-beyondfrregistration .evt-field-wrapper:nth-child(3) label{font-size: 0;} 
+#bl-beyondfrregistration .evt-field-wrapper:nth-child(3) label:after {font-size: 16px; content:'Adresse mail';}
+
+#bl-beyondfrregistration .registration-actions.primary button{font-size: 0;} 
+#bl-beyondfrregistration .registration-actions.primary button:after {font-size: 15px; content:'Suivant';}
+
+#bl-beyondfrregistration .registration-form-inner.verification .registration-form-title{font-size: 0;} 
+#bl-beyondfrregistration .registration-form-inner.verification .registration-form-title:after {font-size: 40px; content:'Identification';}
+
+#bl-beyondfrregistration .registration-form-inner.verification>p{font-size: 0;} 
+#bl-beyondfrregistration .registration-form-inner.verification>p:after {font-size: 20px; content:'Entrez le mail avec lequel vous vous êtes inscrits et nous vous enverrons un mail de confirmation. Si vous ne recevez pas de mail, essayez de vous re-connecter.';}
+
+#bl-beyondfrregistration .registration-form-inner.verification .evt-field-wrapper:nth-child(1) label{font-size: 0;} 
+#bl-beyondfrregistration .registration-form-inner.verification .evt-field-wrapper:nth-child(1) label:after {font-size: 16px; content:'Adresse mail';}
+
+#bl-beyondfrregistration .registration-form-inner.verification button.registration-button.primary.Apollo.evt-button{font-size: 0;} 
+#bl-beyondfrregistration .registration-form-inner.verification button.registration-button.primary.Apollo.evt-button:after {font-size: 13px; content:'Confirmer';}
+
+.page-lang-fr #Speakers .evt-body-text-1.speakers-description p{font-size: 0;} 
+.page-lang-fr #Speakers .evt-body-text-1.speakers-description p:after {font-size: 18px; content:'Jetez un coup d\'œil à certains de nos intervenants pleins de motivation et d\'expérience qui vous plongeront dans le monde merveilleux des huiles essentielles.';}
+
+#bl-beyondfrhome #Speakers li:nth-child(2) div > p{font-size: 0;} 
+#bl-beyondfrhome #Speakers li:nth-child(2) div > p:after {font-size: 16px; content:'Dr Riggs has a strong interest in value-based healthcare and is passionate about supporting change for the benefit of all.';line-height: 80%;}
+
+#bl-beyondfrhome #Speakers li:nth-child(2) div > h5{font-size: 0;} 
+#bl-beyondfrhome #Speakers li:nth-child(2) div > h5:after {font-size: 18px; content:'VP, Education';line-height: 80%;}
+
+#bl-beyondfrpagesspeakers li.speakers-column:nth-child(3) .speaker-about{font-size: 0;} 
+#bl-beyondfrpagesspeakers li.speakers-column:nth-child(3) .speaker-about:after {font-size: 16px; content:'Dr Riggs has a strong interest in value-based healthcare and is passionate about supporting change for the benefit of all.';line-height: 80%;}
+
+#bl-beyondfrpagesspeakers li.speakers-column:nth-child(3) h5.speaker-job-title{font-size: 0;} 
+#bl-beyondfrpagesspeakers li.speakers-column:nth-child(3) h5.speaker-job-title:after {font-size: 18px; content:'VP, Education';line-height: 80%;}
+
+#bl-beyondfrsessionb0eeb4b0ccb311ecaa967974d63c4741 .speaker:nth-child(14) .description{font-size: 0;} 
+#bl-beyondfrsessionb0eeb4b0ccb311ecaa967974d63c4741 .speaker:nth-child(14) .description:after {font-size: 16px; content:'Dr Riggs has a strong interest in value-based healthcare and is passionate about supporting change for the benefit of all.';line-height: 80%;}
+
+#bl-beyondfrsessionb0eeb4b0ccb311ecaa967974d63c4741 .speaker:nth-child(14) .speaker-job-title{font-size: 0;} 
+#bl-beyondfrsessionb0eeb4b0ccb311ecaa967974d63c4741 .speaker:nth-child(14) .speaker-job-title:after {font-size: 18px; content:'VP, Education';line-height: 80%;}
+
+#bl-beyondfrsessionb2414512ccb311ecaa967974d63c4741 .speaker:nth-child(6) .description{font-size: 0;} 
+#bl-beyondfrsessionb2414512ccb311ecaa967974d63c4741 .speaker:nth-child(6) .description:after {font-size: 16px; content:'Dr Riggs has a strong interest in value-based healthcare and is passionate about supporting change for the benefit of all.';line-height: 80%;}
+
+#bl-beyondfrsessionb2414512ccb311ecaa967974d63c4741 .speaker:nth-child(6) .speaker-job-title{font-size: 0;} 
+#bl-beyondfrsessionb2414512ccb311ecaa967974d63c4741 .speaker:nth-child(6) .speaker-job-title:after {font-size: 18px; content:'VP, Education';line-height: 80%;}
+
+.page-lang-fr #Speakers > div > div.show-more-wrapper > button{font-size: 0;} 
+.page-lang-fr #Speakers > div > div.show-more-wrapper > button:after {font-size: 15px; content:'Afficher plus';}
+
+.page-lang-fr #Speakers > div > div.show-more-wrapper > button.show-more-button-active{font-size: 0;} 
+.page-lang-fr #Speakers > div > div.show-more-wrapper > button.show-more-button-active:after {font-size: 15px; content:'Afficher moins';}
+
+#bl-beyondfrsessions .agenda-session-card-buttons button.primary.with-svg.Apollo.evt-button{font-size: 0;} 
+#bl-beyondfrsessions .agenda-session-card-buttons button.primary.with-svg.Apollo.evt-button:before {font-size: 15px; content:'Regarder maintenant';}
+
+#bl-beyondfrsessions #Agenda > div.evt-title-1.marketing-registered-agenda-title{font-size: 0;} 
+#bl-beyondfrsessions #Agenda > div.evt-title-1.marketing-registered-agenda-title:after {font-size: 40px; content:'Agenda';}
+
+#bl-beyondfrsessions div.agenda-broadcast-sessions.agenda-sessions-list div.tag-container-live.tag-container{font-size: 0;} 
+#bl-beyondfrsessions div.agenda-broadcast-sessions.agenda-sessions-list div.tag-container-live.tag-container:after {font-size: 14px; content:'LIVE';}
+
+#bl-beyondfrsessions div.sticky-component-wrapper ul.tab-navigation li:nth-child(2) > label > span{font-size: 0;} 
+#bl-beyondfrsessions div.sticky-component-wrapper ul.tab-navigation li:nth-child(2) > label > span:after {font-size: 13px; content:'Agenda';}
+
+	/* THIS IS THE SK SECTION */
+#bl-beyondsk .language-list-item:nth-child(1){font-size: 0;} 
+#bl-beyondsk .language-list-item:nth-child(1):after {font-size: 18px; content:'Anglický';}
+
+#bl-beyondsk .language-list-item:nth-child(2){font-size: 0;} 
+#bl-beyondsk .language-list-item:nth-child(2):after {font-size: 18px; content:'Francúzsky';}
+
+#bl-beyondsk .language-list-item:nth-child(3){font-size: 0;} 
+#bl-beyondsk .language-list-item:nth-child(3):after {font-size: 18px; content:'Nemecký';}
+
+#bl-beyondsk .language-list-item:nth-child(4){font-size: 0;} 
+#bl-beyondsk .language-list-item:nth-child(4):after {font-size: 18px; content:'Maďarský';}
+
+#bl-beyondsk .language-list-item:nth-child(5){font-size: 0;} 
+#bl-beyondsk .language-list-item:nth-child(5):after {font-size: 18px; content:'Taliansky';}
+
+#bl-beyondsk .language-list-item:nth-child(6){font-size: 0;} 
+#bl-beyondsk .language-list-item:nth-child(6):after {font-size: 18px; content:'Poľský';}
+
+#bl-beyondsk .language-list-item:nth-child(7){font-size: 0;} 
+#bl-beyondsk .language-list-item:nth-child(7):after {font-size: 18px; content:'Portugalský';}
+
+#bl-beyondsk .language-list-item:nth-child(8){font-size: 0;} 
+#bl-beyondsk .language-list-item:nth-child(8):after {font-size: 18px; content:'Rumunský';}
+
+#bl-beyondsk .language-list-item:nth-child(9){font-size: 0;} 
+#bl-beyondsk .language-list-item:nth-child(9):after {font-size: 18px; content:'Slovinský';}
+
+#bl-beyondsk .language-list-item:nth-child(10){font-size: 0;} 
+#bl-beyondsk .language-list-item:nth-child(10):after {font-size: 18px; content:'Slovenský';}
+
+#bl-beyondsk .language-list-item:nth-child(11){font-size: 0;} 
+#bl-beyondsk .language-list-item:nth-child(11):after {font-size: 18px; content:'Španielsky';}
+
+#bl-beyondsk .language-list-item:nth-child(12){font-size: 0;} 
+#bl-beyondsk .language-list-item:nth-child(12):after {font-size: 18px; content:'Ruský';}
+
+#bl-beyondsk .language-list-item:nth-child(13){font-size: 0;} 
+#bl-beyondsk .language-list-item:nth-child(13):after {font-size: 18px; content:'Český';}
+
+.page-lang-sk .user-profile-main-content-inner  button.edit-button.no-style{font-size: 0;} 
+.page-lang-sk .user-profile-main-content-inner  button.edit-button.no-style:after {font-size: 14px; content:'UPRAVIŤ';}
+
+.page-lang-sk .user-profile-main-content-inner .card-title:nth-child(2) h3{font-size: 0;} 
+.page-lang-sk .user-profile-main-content-inner .card-title:nth-child(2) h3:after {font-size: 18px; content:'Základné informácie';}
+
+.page-lang-sk .user-profile-main-content-inner .card-title:nth-child(4) h3{font-size: 0;} 
+.page-lang-sk .user-profile-main-content-inner .card-title:nth-child(4) h3:after {font-size: 18px; content:'O vás';}
+
+.page-lang-sk .user-profile-main-content-inner .card-title:nth-child(6) h3{font-size: 0;} 
+.page-lang-sk .user-profile-main-content-inner .card-title:nth-child(6) h3:after {font-size: 18px; content:'Témy';}
+
+.page-lang-sk .profile-card-item:nth-child(1) h5{font-size: 0;} 
+.page-lang-sk .profile-card-item:nth-child(1) h5:after {font-size: 12px; content:'Záujmy';}
+
+.page-lang-sk .profile-card-item:nth-child(2) h5{font-size: 0;} 
+.page-lang-sk .profile-card-item:nth-child(2) h5:after {font-size: 12px; content:'Životopis';}
+
+.page-lang-sk nav > div:nth-child(1) > a{font-size: 0 !important;} 
+.page-lang-sk nav > div:nth-child(1) > a:after {font-size: 13px; content:'DOMOVSKÁ STRÁNKA'; margin-top: -13px; background: none;}
+
+.page-lang-sk nav > div:nth-child(2) > a{font-size: 0 !important;} 
+.page-lang-sk nav > div:nth-child(2) > a:after {font-size: 13px; content:'PROGRAM'; margin-top: -13px; background: none;}
+
+.page-lang-sk nav > div:nth-child(4) > a{font-size: 0 !important;} 
+.page-lang-sk nav > div:nth-child(4) > a:after {font-size: 10px; content:'REČNÍCI'; margin-top: -13px; background: none;}
+
+.page-lang-sk .tablet-links .side-nav-link:nth-child(1) > a{font-size: 0;} 
+.page-lang-sk .tablet-links .side-nav-link:nth-child(1) > a:before {font-size: 13px; content:'DOMOVSKÁ STRÁNKA';}
+
+.page-lang-sk .tablet-links .side-nav-link:nth-child(2) > a{font-size: 0;} 
+.page-lang-sk .tablet-links .side-nav-link:nth-child(2) > a:before {font-size: 13px; content:'PROGRAM';}
+
+.page-lang-sk .tablet-links .side-nav-link:nth-child(4) > a{font-size: 0;} 
+.page-lang-sk .tablet-links .side-nav-link:nth-child(4) > a:before {font-size: 13px; content:'REČNÍCI';}
+
+.page-lang-sk .profile-nav-language-container .profile-second-level-action:nth-child(1){font-size: 0;} 
+.page-lang-sk .profile-nav-language-container .profile-second-level-action:nth-child(1):after {font-size: 14px; content:'Naspäť';}
+
+.page-lang-sk .profile-nav-language-container .profile-nav-language-item:nth-child(2){font-size: 0;} 
+.page-lang-sk .profile-nav-language-container .profile-nav-language-item:nth-child(2):after {font-size: 14px; content:'Anglický';}
+
+.page-lang-sk .profile-nav-language-container .profile-nav-language-item:nth-child(3){font-size: 0;} 
+.page-lang-sk .profile-nav-language-container .profile-nav-language-item:nth-child(3):after {font-size: 14px; content:'Francúzsky';}
+
+.page-lang-sk .profile-nav-language-container .profile-nav-language-item:nth-child(4){font-size: 0;} 
+.page-lang-sk .profile-nav-language-container .profile-nav-language-item:nth-child(4):after {font-size: 14px; content:'Nemecký';}
+
+.page-lang-sk .profile-nav-language-container .profile-nav-language-item:nth-child(5){font-size: 0;} 
+.page-lang-sk .profile-nav-language-container .profile-nav-language-item:nth-child(5):after {font-size: 14px; content:'Maďarský';}
+
+.page-lang-sk .profile-nav-language-container .profile-nav-language-item:nth-child(6){font-size: 0;} 
+.page-lang-sk .profile-nav-language-container .profile-nav-language-item:nth-child(6):after {font-size: 14px; content:'Taliansky';}
+
+.page-lang-sk .profile-nav-language-container .profile-nav-language-item:nth-child(7){font-size: 0;} 
+.page-lang-sk .profile-nav-language-container .profile-nav-language-item:nth-child(7):after {font-size: 14px; content:'Poľský';}
+
+.page-lang-sk .profile-nav-language-container .profile-nav-language-item:nth-child(8){font-size: 0;} 
+.page-lang-sk .profile-nav-language-container .profile-nav-language-item:nth-child(8):after {font-size: 14px; content:'Portugalský';}
+
+.page-lang-sk .profile-nav-language-container .profile-nav-language-item:nth-child(9){font-size: 0;} 
+.page-lang-sk .profile-nav-language-container .profile-nav-language-item:nth-child(9):after {font-size: 14px; content:'Rumunský';}
+
+.page-lang-sk .profile-nav-language-container .profile-nav-language-item:nth-child(10){font-size: 0;} 
+.page-lang-sk .profile-nav-language-container .profile-nav-language-item:nth-child(10):after {font-size: 14px; content:'Slovinský';}
+
+.page-lang-sk .profile-nav-language-container .profile-nav-language-item:nth-child(11){font-size: 0;} 
+.page-lang-sk .profile-nav-language-container .profile-nav-language-item:nth-child(11):after {font-size: 14px; content:'Slovenský';}
+
+.page-lang-sk .profile-nav-language-container .profile-nav-language-item:nth-child(12){font-size: 0;} 
+.page-lang-sk .profile-nav-language-container .profile-nav-language-item:nth-child(12):after {font-size: 14px; content:'Španielsky';}
+
+.page-lang-sk .profile-nav-language-container .profile-nav-language-item:nth-child(13){font-size: 0;} 
+.page-lang-sk .profile-nav-language-container .profile-nav-language-item:nth-child(13):after {font-size: 14px; content:'Ruský';}
+
+.page-lang-sk .profile-nav-language-container .profile-nav-language-item:nth-child(14){font-size: 0;} 
+.page-lang-sk .profile-nav-language-container .profile-nav-language-item:nth-child(14):after {font-size: 14px; content:'Český';}
+
+.page-lang-sk .profile-first-level-actions a + button + button{font-size: 0;} 
+.page-lang-sk .profile-first-level-actions a + button + button:before {font-size: 14px; content:'Slovenský';}
+
+.page-lang-sk .tab-navigation li:nth-child(3) span{font-size: 0;} 
+.page-lang-sk .tab-navigation li:nth-child(3) span:after {font-size: 13px; content:'REČNÍCI';}
+
+#bl-beyondskregistration .registration-form-inner button.no-style.sign-in{font-size: 0;} 
+#bl-beyondskregistration .registration-form-inner button.no-style.sign-in:after {font-size: 14px; content:'UŽ STE SA ZAREGISTROVALI? PRIHLÁSTE SA TU';}
+
+#bl-beyondskregistration .evt-field-wrapper:nth-child(1) label{font-size: 0;} 
+#bl-beyondskregistration .evt-field-wrapper:nth-child(1) label:after {font-size: 16px; content:'MENO';}
+
+#bl-beyondskregistration .evt-field-wrapper:nth-child(2) label{font-size: 0;} 
+#bl-beyondskregistration .evt-field-wrapper:nth-child(2) label:after {font-size: 16px; content:'PRIEZVISKO';}
+
+#bl-beyondskregistration .registration-actions.primary button{font-size: 0;} 
+#bl-beyondskregistration .registration-actions.primary button:after {font-size: 15px; content:'ĎALEJ';}
+
+#bl-beyondskregistration .registration-form-inner.verification .registration-form-title{font-size: 0;} 
+#bl-beyondskregistration .registration-form-inner.verification .registration-form-title:after {font-size: 40px; content:'ĎALEJ';}
+
+#bl-beyondskregistration .registration-form-inner.verification button.registration-button.primary.Apollo.evt-button{font-size: 0;} 
+#bl-beyondskregistration .registration-form-inner.verification button.registration-button.primary.Apollo.evt-button:after {font-size: 13px; content:'SPRACOVAŤ';}
+
+#bl-beyondskhome #Speakers li:nth-child(2) div > p{font-size: 0;} 
+#bl-beyondskhome #Speakers li:nth-child(2) div > p:after {font-size: 16px; content:'Dr Riggs has a strong interest in value-based healthcare and is passionate about supporting change for the benefit of all.';line-height: 80%;}
+
+#bl-beyondskhome #Speakers li:nth-child(2) div > h5{font-size: 0;} 
+#bl-beyondskhome #Speakers li:nth-child(2) div > h5:after {font-size: 18px; content:'VP, Education';line-height: 80%;}
+
+#bl-beyondskpagesspeakers li.speakers-column:nth-child(3) .speaker-about{font-size: 0;} 
+#bl-beyondskpagesspeakers li.speakers-column:nth-child(3) .speaker-about:after {font-size: 16px; content:'Dr Riggs has a strong interest in value-based healthcare and is passionate about supporting change for the benefit of all.';line-height: 80%;}
+
+#bl-beyondskpagesspeakers li.speakers-column:nth-child(3) h5.speaker-job-title{font-size: 0;} 
+#bl-beyondskpagesspeakers li.speakers-column:nth-child(3) h5.speaker-job-title:after {font-size: 18px; content:'VP, Education';line-height: 80%;}
+
+#bl-beyondsksessionb0eeb4b0ccb311ecaa967974d63c4741 .speaker:nth-child(14) .description{font-size: 0;} 
+#bl-beyondsksessionb0eeb4b0ccb311ecaa967974d63c4741 .speaker:nth-child(14) .description:after {font-size: 16px; content:'Dr Riggs has a strong interest in value-based healthcare and is passionate about supporting change for the benefit of all.';line-height: 80%;}
+
+#bl-beyondsksessionb0eeb4b0ccb311ecaa967974d63c4741 .speaker:nth-child(14) .speaker-job-title{font-size: 0;} 
+#bl-beyondsksessionb0eeb4b0ccb311ecaa967974d63c4741 .speaker:nth-child(14) .speaker-job-title:after {font-size: 18px; content:'VP, Education';line-height: 80%;}
+
+#bl-beyondsksessionb2414512ccb311ecaa967974d63c4741 .speaker:nth-child(6) .description{font-size: 0;} 
+#bl-beyondsksessionb2414512ccb311ecaa967974d63c4741 .speaker:nth-child(6) .description:after {font-size: 16px; content:'Dr Riggs has a strong interest in value-based healthcare and is passionate about supporting change for the benefit of all.';line-height: 80%;}
+
+#bl-beyondsksessionb2414512ccb311ecaa967974d63c4741 .speaker:nth-child(6) .speaker-job-title{font-size: 0;} 
+#bl-beyondsksessionb2414512ccb311ecaa967974d63c4741 .speaker:nth-child(6) .speaker-job-title:after {font-size: 18px; content:'VP, Education';line-height: 80%;}
+
+.page-lang-sk #Speakers > div > div.show-more-wrapper > button{font-size: 0;} 
+.page-lang-sk #Speakers > div > div.show-more-wrapper > button:after {font-size: 15px; content:'UKÁZAŤ VIAC';}
+
+.page-lang-sk #Speakers > div > div.show-more-wrapper > button.show-more-button-active{font-size: 0;} 
+.page-lang-sk #Speakers > div > div.show-more-wrapper > button.show-more-button-active:after {font-size: 15px; content:'UKÁZAŤ MENEJ';}
+
+#bl-beyondsksessions .agenda-session-card-buttons button.primary.with-svg.Apollo.evt-button{font-size: 0;} 
+#bl-beyondsksessions .agenda-session-card-buttons button.primary.with-svg.Apollo.evt-button:after {font-size: 15px; content:'Sledovať teraz';}
+
+#bl-beyondsksessions #Agenda > div.evt-title-1.marketing-registered-agenda-title{font-size: 0;} 
+#bl-beyondsksessions #Agenda > div.evt-title-1.marketing-registered-agenda-title:after {font-size: 40px; content:'PROGRAM';}
+
+#bl-beyondsksessions div.agenda-broadcast-sessions.agenda-sessions-list div.tag-container-live.tag-container{font-size: 0;} 
+#bl-beyondsksessions div.agenda-broadcast-sessions.agenda-sessions-list div.tag-container-live.tag-container:after {font-size: 14px; content:'LIVE';}
+
+#bl-beyondsksessions .agenda-session-card:nth-child(1) h4.agenda-session-card-title.stable.evt-heading-3{font-size: 0;} 
+#bl-beyondsksessions .agenda-session-card:nth-child(1) h4.agenda-session-card-title.stable.evt-heading-3:after {font-size: 25px; content:'Convention doTERRA 2022 prvý deň';}
+
+#bl-beyondsksessions .agenda-session-card:nth-child(2) h4.agenda-session-card-title.stable.evt-heading-3{font-size: 0;} 
+#bl-beyondsksessions .agenda-session-card:nth-child(2) h4.agenda-session-card-title.stable.evt-heading-3:after {font-size: 25px; content:'Convention doTERRA 2022 druhý deň';}
+
+#bl-beyondsksessions .agenda-session-card:nth-child(1) .agenda-session-card-timestamp.evt-caption-1{font-size: 0;} 
+#bl-beyondsksessions .agenda-session-card:nth-child(1) .agenda-session-card-timestamp.evt-caption-1:after {font-size: 14px; content:'17. JÚN 2022, 10:00 SELČ';}
+
+#bl-beyondsksessions .agenda-session-card:nth-child(2) .agenda-session-card-timestamp.evt-caption-1{font-size: 0;} 
+#bl-beyondsksessions .agenda-session-card:nth-child(2) .agenda-session-card-timestamp.evt-caption-1:after {font-size: 14px; content:'18. JÚN 2022, 10:00 SELČ';}
+
+#bl-beyondsksessions .agenda-inline-days button.session-day-button:nth-child(2){font-size: 0;} 
+#bl-beyondsksessions .agenda-inline-days button.session-day-button:nth-child(2):after {font-size: 15px; content:'17. JÚN';}
+
+#bl-beyondsksessions .agenda-inline-days button.session-day-button:nth-child(3){font-size: 0;} 
+#bl-beyondsksessions .agenda-inline-days button.session-day-button:nth-child(3):after {font-size: 15px; content:'18. JÚN';}
+
+#bl-beyondsksessions div.sticky-component-wrapper ul.tab-navigation li:nth-child(3) > label > span{font-size: 0;} 
+#bl-beyondsksessions div.sticky-component-wrapper ul.tab-navigation li:nth-child(3) > label > span:after {font-size: 13px; content:'REČNÍCI';}
+
+#bl-beyondsksessions div.session-stream-wrapper.Apollo.pre-live .live-in-card .live-in-card-text > p{font-size: 0;} 
+#bl-beyondsksessions div.session-stream-wrapper.Apollo.pre-live .live-in-card .live-in-card-text > p:after {font-size: 15px; content:'17. JÚN 2022, 1:00 10:00 SELČ';}
+
+#bl-beyondsksessions div.session-stream-wrapper.Apollo.pre-live .live-in-card .live-in-card-text > p{font-size: 0;} 
+#bl-beyondsksessions div.session-stream-wrapper.Apollo.pre-live .live-in-card .live-in-card-text > p:after {font-size: 15px; content:'18. JÚN 2022, 10:00 SELČ';}
+
+	/* THIS IS THE DE SECTION */
+#bl-beyondde .language-list-item:nth-child(1){font-size: 0;} 
+#bl-beyondde .language-list-item:nth-child(1):after {font-size: 18px; content:'Englisch';}
+
+#bl-beyondde .language-list-item:nth-child(2){font-size: 0;} 
+#bl-beyondde .language-list-item:nth-child(2):after {font-size: 18px; content:'Französisch';}
+
+#bl-beyondde .language-list-item:nth-child(3){font-size: 0;} 
+#bl-beyondde .language-list-item:nth-child(3):after {font-size: 18px; content:'Deutsch';}
+
+#bl-beyondde .language-list-item:nth-child(4){font-size: 0;} 
+#bl-beyondde .language-list-item:nth-child(4):after {font-size: 18px; content:'Ungarisch';}
+
+#bl-beyondde .language-list-item:nth-child(5){font-size: 0;} 
+#bl-beyondde .language-list-item:nth-child(5):after {font-size: 18px; content:'Italienisch';}
+
+#bl-beyondde .language-list-item:nth-child(6){font-size: 0;} 
+#bl-beyondde .language-list-item:nth-child(6):after {font-size: 18px; content:'Polnisch';}
+
+#bl-beyondde .language-list-item:nth-child(7){font-size: 0;} 
+#bl-beyondde .language-list-item:nth-child(7):after {font-size: 18px; content:'Portugiesisch';}
+
+#bl-beyondde .language-list-item:nth-child(8){font-size: 0;} 
+#bl-beyondde .language-list-item:nth-child(8):after {font-size: 18px; content:'Rumänisch';}
+
+#bl-beyondde .language-list-item:nth-child(9){font-size: 0;} 
+#bl-beyondde .language-list-item:nth-child(9):after {font-size: 18px; content:'Slowenisch';}
+
+#bl-beyondde .language-list-item:nth-child(10){font-size: 0;} 
+#bl-beyondde .language-list-item:nth-child(10):after {font-size: 18px; content:'Slowakisch';}
+
+#bl-beyondde .language-list-item:nth-child(11){font-size: 0;} 
+#bl-beyondde .language-list-item:nth-child(11):after {font-size: 18px; content:'Spanisch';}
+
+#bl-beyondde .language-list-item:nth-child(12){font-size: 0;} 
+#bl-beyondde .language-list-item:nth-child(12):after {font-size: 18px; content:'Russisch';}
+
+#bl-beyondde .language-list-item:nth-child(13){font-size: 0;} 
+#bl-beyondde .language-list-item:nth-child(13):after {font-size: 18px; content:'Tschechisch';}
+
+.page-lang-de .profile-first-level-actions p.see-profile-label{font-size: 0;} 
+.page-lang-de .profile-first-level-actions p.see-profile-label:after {font-size: 12px; content:'Dein Profil';}
+
+.page-lang-de .user-profile-main-content-inner  button.edit-button.no-style{font-size: 0;} 
+.page-lang-de .user-profile-main-content-inner  button.edit-button.no-style:after {font-size: 14px; content:'Bearbeiten';}
+
+.page-lang-de .user-profile-main-content-inner .card-title:nth-child(2) h3{font-size: 0;} 
+.page-lang-de .user-profile-main-content-inner .card-title:nth-child(2) h3:after {font-size: 18px; content:'Allgemeine Informationen';}
+
+.page-lang-de .user-profile-main-content-inner .card-title:nth-child(4) h3{font-size: 0;} 
+.page-lang-de .user-profile-main-content-inner .card-title:nth-child(4) h3:after {font-size: 18px; content:'Über mich';}
+
+.page-lang-de .user-profile-main-content-inner .card-title:nth-child(6) h3{font-size: 0;} 
+.page-lang-de .user-profile-main-content-inner .card-title:nth-child(6) h3:after {font-size: 18px; content:'Themen';}
+
+.page-lang-de nav > div:nth-child(4) > a{font-size: 0 !important;} 
+.page-lang-de nav > div:nth-child(4) > a:after {font-size: 10px; content:'Referenten'; margin-top: -13px; background: none;}
+
+.page-lang-de .tablet-links .side-nav-link:nth-child(4) > a{font-size: 0;} 
+.page-lang-de .tablet-links .side-nav-link:nth-child(4) > a:before {font-size: 13px; content:'Referenten';}
+
+.page-lang-de .profile-nav-language-container .profile-second-level-action:nth-child(1){font-size: 0;} 
+.page-lang-de .profile-nav-language-container .profile-second-level-action:nth-child(1):after {font-size: 14px; content:'Zuruck';}
+
+.page-lang-de .profile-nav-language-container .profile-nav-language-item:nth-child(2){font-size: 0;} 
+.page-lang-de .profile-nav-language-container .profile-nav-language-item:nth-child(2):after {font-size: 14px; content:'Englisch';}
+
+.page-lang-de .profile-nav-language-container .profile-nav-language-item:nth-child(3){font-size: 0;} 
+.page-lang-de .profile-nav-language-container .profile-nav-language-item:nth-child(3):after {font-size: 14px; content:'Französisch';}
+
+.page-lang-de .profile-nav-language-container .profile-nav-language-item:nth-child(4){font-size: 0;} 
+.page-lang-de .profile-nav-language-container .profile-nav-language-item:nth-child(4):after {font-size: 14px; content:'Deutsch';}
+
+.page-lang-de .profile-nav-language-container .profile-nav-language-item:nth-child(5){font-size: 0;} 
+.page-lang-de .profile-nav-language-container .profile-nav-language-item:nth-child(5):after {font-size: 14px; content:'Ungarisch';}
+
+.page-lang-de .profile-nav-language-container .profile-nav-language-item:nth-child(6){font-size: 0;} 
+.page-lang-de .profile-nav-language-container .profile-nav-language-item:nth-child(6):after {font-size: 14px; content:'Italienisch';}
+
+.page-lang-de .profile-nav-language-container .profile-nav-language-item:nth-child(7){font-size: 0;} 
+.page-lang-de .profile-nav-language-container .profile-nav-language-item:nth-child(7):after {font-size: 14px; content:'Polnisch';}
+
+.page-lang-de .profile-nav-language-container .profile-nav-language-item:nth-child(8){font-size: 0;} 
+.page-lang-de .profile-nav-language-container .profile-nav-language-item:nth-child(8):after {font-size: 14px; content:'Portugiesisch';}
+
+.page-lang-de .profile-nav-language-container .profile-nav-language-item:nth-child(9){font-size: 0;} 
+.page-lang-de .profile-nav-language-container .profile-nav-language-item:nth-child(9):after {font-size: 14px; content:'Rumänisch';}
+
+.page-lang-de .profile-nav-language-container .profile-nav-language-item:nth-child(10){font-size: 0;} 
+.page-lang-de .profile-nav-language-container .profile-nav-language-item:nth-child(10):after {font-size: 14px; content:'Slowenisch';}
+
+.page-lang-de .profile-nav-language-container .profile-nav-language-item:nth-child(11){font-size: 0;} 
+.page-lang-de .profile-nav-language-container .profile-nav-language-item:nth-child(11):after {font-size: 14px; content:'Slowakisch';}
+
+.page-lang-de .profile-nav-language-container .profile-nav-language-item:nth-child(12){font-size: 0;} 
+.page-lang-de .profile-nav-language-container .profile-nav-language-item:nth-child(12):after {font-size: 14px; content:'Spanisch';}
+
+.page-lang-de .profile-nav-language-container .profile-nav-language-item:nth-child(13){font-size: 0;} 
+.page-lang-de .profile-nav-language-container .profile-nav-language-item:nth-child(13):after {font-size: 14px; content:'Russisch';}
+
+.page-lang-de .profile-nav-language-container .profile-nav-language-item:nth-child(14){font-size: 0;} 
+.page-lang-de .profile-nav-language-container .profile-nav-language-item:nth-child(14):after {font-size: 14px; content:'Tschechisch';}
+
+.page-lang-de .profile-first-level-actions a + button + button{font-size: 0;} 
+.page-lang-de .profile-first-level-actions a + button + button:before {font-size: 14px; content:'Deutsch';}
+
+.page-lang-de .countdown-container div:nth-child(3) .countdown-label{font-size: 0;} 
+.page-lang-de .countdown-container div:nth-child(3) .countdown-label:after {font-size: 13px; content:'STUNDEN';}
+
+.page-lang-de .countdown-container div:nth-child(5) .countdown-label{font-size: 0;} 
+.page-lang-de .countdown-container div:nth-child(5) .countdown-label:after {font-size: 13px; content:'MINUTEN';}
+
+#bl-beyondde div.banner-title-container > p{font-size: 0;} 
+#bl-beyondde div.banner-title-container > p:after {font-size: 14px; content:'Beginnt Am 17 Juni 2022, 10:00 BST';}
+
+#bl-beyondde p.evt-caption-1.banner-starts-on{font-size: 0;} 
+#bl-beyondde p.evt-caption-1.banner-starts-on:after {font-size: 14px; content:'Beginnt Am 17 Juni 2022, 10:00 BST';}
+
+#bl-beyonddehome p.evt-caption-1.banner-starts-on{font-size: 0;} 
+#bl-beyonddehome p.evt-caption-1.banner-starts-on:after {font-size: 14px; content:'Beginnt Am 17 Juni 2022, 10:00 BST';}
+
+.page-lang-de .person-details-modal-content .tag-container-speaker.tag-container span{font-size: 0;} 
+.page-lang-de .person-details-modal-content .tag-container-speaker.tag-container span:after {font-size: 14px; content:'Referent';}
+
+.page-lang-de .person-details-description-show-more button{font-size: 0;} 
+.page-lang-de .person-details-description-show-more button:after {font-size: 15px; content:'Mehr anzeigen';}
+
+#bl-beyonddehome li.sponsor-card:nth-child(1) h3.sponsor-card-title.stable.evt-heading-3{font-size: 0;} 
+#bl-beyonddehome li.sponsor-card:nth-child(1) h3.sponsor-card-title.stable.evt-heading-3:after {font-size: 25px; content:'Presidential Diamond +';}
+
+.page-lang-de nav.footer-nav .footer-nav-item:nth-child(2){font-size: 0;} 
+.page-lang-de nav.footer-nav .footer-nav-item:nth-child(2):after {font-size: 13px; content:'DATENSCHUTZBESTIMMUNGEN';}
+
+.page-lang-de .tab-navigation li:nth-child(3) span{font-size: 0;} 
+.page-lang-de .tab-navigation li:nth-child(3) span:after {font-size: 13px; content:'Referenten';}
+
+#bl-beyondderegistration .evt-field-wrapper:nth-child(1) label{font-size: 0;} 
+#bl-beyondderegistration .evt-field-wrapper:nth-child(1) label:after {font-size: 16px; content:'Vorname';}
+
+#bl-beyondderegistration .evt-field-wrapper:nth-child(2) label{font-size: 0;} 
+#bl-beyondderegistration .evt-field-wrapper:nth-child(2) label:after {font-size: 16px; content:'Nachname';}
+
+#bl-beyondderegistration .registration-actions.primary button{font-size: 0;} 
+#bl-beyondderegistration .registration-actions.primary button:after {font-size: 15px; content:'Weiter';}
+
+#bl-beyondderegistration .registration-form-inner.verification .registration-form-title{font-size: 0;} 
+#bl-beyondderegistration .registration-form-inner.verification .registration-form-title:after {font-size: 40px; content:'Weiter';}
+
+#bl-beyonddehome #Speakers li:nth-child(2) div > p{font-size: 0;} 
+#bl-beyonddehome #Speakers li:nth-child(2) div > p:after {font-size: 16px; content:'Dr Riggs has a strong interest in value-based healthcare and is passionate about supporting change for the benefit of all.';line-height: 80%;}
+
+#bl-beyonddehome #Speakers li:nth-child(2) div > h5{font-size: 0;} 
+#bl-beyonddehome #Speakers li:nth-child(2) div > h5:after {font-size: 18px; content:'VP, Education';line-height: 80%;}
+
+#bl-beyonddepagesspeakers li.speakers-column:nth-child(3) .speaker-about{font-size: 0;} 
+#bl-beyonddepagesspeakers li.speakers-column:nth-child(3) .speaker-about:after {font-size: 16px; content:'Dr Riggs has a strong interest in value-based healthcare and is passionate about supporting change for the benefit of all.';line-height: 80%;}
+
+#bl-beyonddepagesspeakers li.speakers-column:nth-child(3) h5.speaker-job-title{font-size: 0;} 
+#bl-beyonddepagesspeakers li.speakers-column:nth-child(3) h5.speaker-job-title:after {font-size: 18px; content:'VP, Education';line-height: 80%;}
+
+#bl-beyonddesessionb0eeb4b0ccb311ecaa967974d63c4741 .speaker:nth-child(14) .description{font-size: 0;} 
+#bl-beyonddesessionb0eeb4b0ccb311ecaa967974d63c4741 .speaker:nth-child(14) .description:after {font-size: 16px; content:'Dr Riggs has a strong interest in value-based healthcare and is passionate about supporting change for the benefit of all.';line-height: 80%;}
+
+#bl-beyonddesessionb0eeb4b0ccb311ecaa967974d63c4741 .speaker:nth-child(14) .speaker-job-title{font-size: 0;} 
+#bl-beyonddesessionb0eeb4b0ccb311ecaa967974d63c4741 .speaker:nth-child(14) .speaker-job-title:after {font-size: 18px; content:'VP, Education';line-height: 80%;}
+
+#bl-beyonddesessionb2414512ccb311ecaa967974d63c4741 .speaker:nth-child(6) .description{font-size: 0;} 
+#bl-beyonddesessionb2414512ccb311ecaa967974d63c4741 .speaker:nth-child(6) .description:after {font-size: 16px; content:'Dr Riggs has a strong interest in value-based healthcare and is passionate about supporting change for the benefit of all.';line-height: 80%;}
+
+#bl-beyonddesessionb2414512ccb311ecaa967974d63c4741 .speaker:nth-child(6) .speaker-job-title{font-size: 0;} 
+#bl-beyonddesessionb2414512ccb311ecaa967974d63c4741 .speaker:nth-child(6) .speaker-job-title:after {font-size: 18px; content:'VP, Education';line-height: 80%;}
+
+.page-lang-de #Speakers > div > div.show-more-wrapper > button{font-size: 0;} 
+.page-lang-de #Speakers > div > div.show-more-wrapper > button:after {font-size: 15px; content:'Mehr anzeigen';}
+
+.page-lang-de #Speakers > div > div.show-more-wrapper > button.show-more-button-active{font-size: 0;} 
+.page-lang-de #Speakers > div > div.show-more-wrapper > button.show-more-button-active:after {font-size: 15px; content:'Weniger anzeigen';}
+
+#bl-beyonddesessions .agenda-session-card-buttons button.primary.with-svg.Apollo.evt-button{font-size: 0;} 
+#bl-beyonddesessions .agenda-session-card-buttons button.primary.with-svg.Apollo.evt-button:before {font-size: 15px; content:'Jetzt schauen';}
+
+#bl-beyonddesessions div.agenda-broadcast-sessions.agenda-sessions-list div.tag-container-live.tag-container{font-size: 0;} 
+#bl-beyonddesessions div.agenda-broadcast-sessions.agenda-sessions-list div.tag-container-live.tag-container:after {font-size: 14px; content:'LIVE';}
+
+#bl-beyonddesessions div.session-stream-wrapper.Apollo.pre-live .live-in-card .live-in-card-text > p{font-size: 0;} 
+#bl-beyonddesessions div.session-stream-wrapper.Apollo.pre-live .live-in-card .live-in-card-text > p:after {font-size: 15px; content:'17 Juni 2022, 10:00 BST';}
+
+#bl-beyonddesessions div.session-stream-wrapper.Apollo.pre-live .live-in-card .live-in-card-text > p{font-size: 0;} 
+#bl-beyonddesessions div.session-stream-wrapper.Apollo.pre-live .live-in-card .live-in-card-text > p:after {font-size: 15px; content:'18 Juni 2022, 10:00 BST';}
+
+	/* THIS IS THE IT SECTION */
+#bl-beyondit .language-list-item:nth-child(1){font-size: 0;} 
+#bl-beyondit .language-list-item:nth-child(1):after {font-size: 18px; content:'Inglese';}
+
+#bl-beyondit .language-list-item:nth-child(2){font-size: 0;} 
+#bl-beyondit .language-list-item:nth-child(2):after {font-size: 18px; content:'Francese';}
+
+#bl-beyondit .language-list-item:nth-child(3){font-size: 0;} 
+#bl-beyondit .language-list-item:nth-child(3):after {font-size: 18px; content:'Tedesco';}
+
+#bl-beyondit .language-list-item:nth-child(4){font-size: 0;} 
+#bl-beyondit .language-list-item:nth-child(4):after {font-size: 18px; content:'Ungherese';}
+
+#bl-beyondit .language-list-item:nth-child(5){font-size: 0;} 
+#bl-beyondit .language-list-item:nth-child(5):after {font-size: 18px; content:'Italiano';}
+
+#bl-beyondit .language-list-item:nth-child(6){font-size: 0;} 
+#bl-beyondit .language-list-item:nth-child(6):after {font-size: 18px; content:'Polacco';}
+
+#bl-beyondit .language-list-item:nth-child(7){font-size: 0;} 
+#bl-beyondit .language-list-item:nth-child(7):after {font-size: 18px; content:'Portoghese';}
+
+#bl-beyondit .language-list-item:nth-child(8){font-size: 0;} 
+#bl-beyondit .language-list-item:nth-child(8):after {font-size: 18px; content:'Rumeno';}
+
+#bl-beyondit .language-list-item:nth-child(9){font-size: 0;} 
+#bl-beyondit .language-list-item:nth-child(9):after {font-size: 18px; content:'Sloveno';}
+
+#bl-beyondit .language-list-item:nth-child(10){font-size: 0;} 
+#bl-beyondit .language-list-item:nth-child(10):after {font-size: 18px; content:'Slovacco';}
+
+#bl-beyondit .language-list-item:nth-child(11){font-size: 0;} 
+#bl-beyondit .language-list-item:nth-child(11):after {font-size: 18px; content:'Spagnolo';}
+
+#bl-beyondit .language-list-item:nth-child(12){font-size: 0;} 
+#bl-beyondit .language-list-item:nth-child(12):after {font-size: 18px; content:'Russo';}
+
+#bl-beyondit .language-list-item:nth-child(13){font-size: 0;} 
+#bl-beyondit .language-list-item:nth-child(13):after {font-size: 18px; content:'Ceco';}
+
+.page-lang-it .profile-first-level-actions p.see-profile-label{font-size: 0;} 
+.page-lang-it .profile-first-level-actions p.see-profile-label:after {font-size: 12px; content:'Vedi il tuo profilo';}
+
+.page-lang-it .profile-first-level-actions button:nth-child(2) p{font-size: 0;} 
+.page-lang-it .profile-first-level-actions button:nth-child(2) p:after {font-size: 14px; content:'Partecipare di persona';}
+
+.page-lang-it .user-profile-main-content-inner  button.edit-button.no-style{font-size: 0;} 
+.page-lang-it .user-profile-main-content-inner  button.edit-button.no-style:after {font-size: 14px; content:'Modifica';}
+
+.page-lang-it .user-profile-main-content-inner .card-title:nth-child(2) h3{font-size: 0;} 
+.page-lang-it .user-profile-main-content-inner .card-title:nth-child(2) h3:after {font-size: 18px; content:'Informazioni generali';}
+
+.page-lang-it .user-profile-main-content-inner .card-title:nth-child(4) h3{font-size: 0;} 
+.page-lang-it .user-profile-main-content-inner .card-title:nth-child(4) h3:after {font-size: 18px; content:'Informazioni';}
+
+.page-lang-it .user-profile-main-content-inner .card-title:nth-child(6) h3{font-size: 0;} 
+.page-lang-it .user-profile-main-content-inner .card-title:nth-child(6) h3:after {font-size: 18px; content:'Interessi';}
+
+.page-lang-it .profile-card-item:nth-child(2) h5{font-size: 0;} 
+.page-lang-it .profile-card-item:nth-child(2) h5:after {font-size: 12px; content:'Biografia';}
+
+.page-lang-it nav > div:nth-child(1) > a{font-size: 0 !important;} 
+.page-lang-it nav > div:nth-child(1) > a:after {font-size: 13px; content:'Home'; margin-top: -13px; background: none;}
+
+.page-lang-it nav > div:nth-child(4) > a{font-size: 0 !important;} 
+.page-lang-it nav > div:nth-child(4) > a:after {font-size: 10px; content:'Relatori'; margin-top: -13px; background: none;}
+
+.page-lang-it .tablet-links .side-nav-link:nth-child(1) > a{font-size: 0;} 
+.page-lang-it .tablet-links .side-nav-link:nth-child(1) > a:before {font-size: 13px; content:'Home';}
+
+.page-lang-it .tablet-links .side-nav-link:nth-child(4) > a{font-size: 0;} 
+.page-lang-it .tablet-links .side-nav-link:nth-child(4) > a:before {font-size: 13px; content:'Relatori';}
+
+.page-lang-it .profile-nav-language-container .profile-nav-language-item:nth-child(2){font-size: 0;} 
+.page-lang-it .profile-nav-language-container .profile-nav-language-item:nth-child(2):after {font-size: 14px; content:'Inglese';}
+
+.page-lang-it .profile-nav-language-container .profile-nav-language-item:nth-child(3){font-size: 0;} 
+.page-lang-it .profile-nav-language-container .profile-nav-language-item:nth-child(3):after {font-size: 14px; content:'Francese';}
+
+.page-lang-it .profile-nav-language-container .profile-nav-language-item:nth-child(4){font-size: 0;} 
+.page-lang-it .profile-nav-language-container .profile-nav-language-item:nth-child(4):after {font-size: 14px; content:'Tedesco';}
+
+.page-lang-it .profile-nav-language-container .profile-nav-language-item:nth-child(5){font-size: 0;} 
+.page-lang-it .profile-nav-language-container .profile-nav-language-item:nth-child(5):after {font-size: 14px; content:'Ungherese';}
+
+.page-lang-it .profile-nav-language-container .profile-nav-language-item:nth-child(6){font-size: 0;} 
+.page-lang-it .profile-nav-language-container .profile-nav-language-item:nth-child(6):after {font-size: 14px; content:'Italiano';}
+
+.page-lang-it .profile-nav-language-container .profile-nav-language-item:nth-child(7){font-size: 0;} 
+.page-lang-it .profile-nav-language-container .profile-nav-language-item:nth-child(7):after {font-size: 14px; content:'Polacco';}
+
+.page-lang-it .profile-nav-language-container .profile-nav-language-item:nth-child(8){font-size: 0;} 
+.page-lang-it .profile-nav-language-container .profile-nav-language-item:nth-child(8):after {font-size: 14px; content:'Portoghese';}
+
+.page-lang-it .profile-nav-language-container .profile-nav-language-item:nth-child(9){font-size: 0;} 
+.page-lang-it .profile-nav-language-container .profile-nav-language-item:nth-child(9):after {font-size: 14px; content:'Rumeno';}
+
+.page-lang-it .profile-nav-language-container .profile-nav-language-item:nth-child(10){font-size: 0;} 
+.page-lang-it .profile-nav-language-container .profile-nav-language-item:nth-child(10):after {font-size: 14px; content:'Sloveno';}
+
+.page-lang-it .profile-nav-language-container .profile-nav-language-item:nth-child(11){font-size: 0;} 
+.page-lang-it .profile-nav-language-container .profile-nav-language-item:nth-child(11):after {font-size: 14px; content:'Slovacco';}
+
+.page-lang-it .profile-nav-language-container .profile-nav-language-item:nth-child(12){font-size: 0;} 
+.page-lang-it .profile-nav-language-container .profile-nav-language-item:nth-child(12):after {font-size: 14px; content:'Spagnolo';}
+
+.page-lang-it .profile-nav-language-container .profile-nav-language-item:nth-child(13){font-size: 0;} 
+.page-lang-it .profile-nav-language-container .profile-nav-language-item:nth-child(13):after {font-size: 14px; content:'Russo';}
+
+.page-lang-it .profile-nav-language-container .profile-nav-language-item:nth-child(14){font-size: 0;} 
+.page-lang-it .profile-nav-language-container .profile-nav-language-item:nth-child(14):after {font-size: 14px; content:'Ceco';}
+
+.page-lang-it .profile-first-level-actions a + button + button{font-size: 0;} 
+.page-lang-it .profile-first-level-actions a + button + button:before {font-size: 14px; content:'Italiano';}
+
+#bl-beyondit .new-dropdown.language-dropdown span.new-dropdown-value{font-size: 0;} 
+#bl-beyondit .new-dropdown.language-dropdown span.new-dropdown-value:after {font-size: 13px; content:'IT';}
+
+.page-lang-it nav.footer-nav .footer-nav-item:nth-child(2){font-size: 0;} 
+.page-lang-it nav.footer-nav .footer-nav-item:nth-child(2):after {font-size: 13px; content:'Politica sulla privacy';}
+
+.page-lang-it .tab-navigation li:nth-child(3) span{font-size: 0;} 
+.page-lang-it .tab-navigation li:nth-child(3) span:after {font-size: 13px; content:'Relatori';}
+
+#bl-beyonditregistration .registration-actions.primary button{font-size: 0;} 
+#bl-beyonditregistration .registration-actions.primary button:after {font-size: 15px; content:'Avanti';}
+
+#bl-beyonditregistration .registration-form-inner.verification .registration-form-title{font-size: 0;} 
+#bl-beyonditregistration .registration-form-inner.verification .registration-form-title:after {font-size: 40px; content:'Avanti';}
+
+#bl-beyondithome #Speakers li:nth-child(2) div > p{font-size: 0;} 
+#bl-beyondithome #Speakers li:nth-child(2) div > p:after {font-size: 16px; content:'Dr Riggs has a strong interest in value-based healthcare and is passionate about supporting change for the benefit of all.';line-height: 80%;}
+
+#bl-beyondithome #Speakers li:nth-child(2) div > h5{font-size: 0;} 
+#bl-beyondithome #Speakers li:nth-child(2) div > h5:after {font-size: 18px; content:'VP, Education';line-height: 80%;}
+
+#bl-beyonditpagesspeakers li.speakers-column:nth-child(3) .speaker-about{font-size: 0;} 
+#bl-beyonditpagesspeakers li.speakers-column:nth-child(3) .speaker-about:after {font-size: 16px; content:'Dr Riggs has a strong interest in value-based healthcare and is passionate about supporting change for the benefit of all.';line-height: 80%;}
+
+#bl-beyonditpagesspeakers li.speakers-column:nth-child(3) h5.speaker-job-title{font-size: 0;} 
+#bl-beyonditpagesspeakers li.speakers-column:nth-child(3) h5.speaker-job-title:after {font-size: 18px; content:'VP, Education';line-height: 80%;}
+
+#bl-beyonditsessionb0eeb4b0ccb311ecaa967974d63c4741 .speaker:nth-child(14) .description{font-size: 0;} 
+#bl-beyonditsessionb0eeb4b0ccb311ecaa967974d63c4741 .speaker:nth-child(14) .description:after {font-size: 16px; content:'Dr Riggs has a strong interest in value-based healthcare and is passionate about supporting change for the benefit of all.';line-height: 80%;}
+
+#bl-beyonditsessionb0eeb4b0ccb311ecaa967974d63c4741 .speaker:nth-child(14) .speaker-job-title{font-size: 0;} 
+#bl-beyonditsessionb0eeb4b0ccb311ecaa967974d63c4741 .speaker:nth-child(14) .speaker-job-title:after {font-size: 18px; content:'VP, Education';line-height: 80%;}
+
+#bl-beyonditsessionb2414512ccb311ecaa967974d63c4741 .speaker:nth-child(6) .description{font-size: 0;} 
+#bl-beyonditsessionb2414512ccb311ecaa967974d63c4741 .speaker:nth-child(6) .description:after {font-size: 16px; content:'Dr Riggs has a strong interest in value-based healthcare and is passionate about supporting change for the benefit of all.';line-height: 80%;}
+
+#bl-beyonditsessionb2414512ccb311ecaa967974d63c4741 .speaker:nth-child(6) .speaker-job-title{font-size: 0;} 
+#bl-beyonditsessionb2414512ccb311ecaa967974d63c4741 .speaker:nth-child(6) .speaker-job-title:after {font-size: 18px; content:'VP, Education';line-height: 80%;}
+
+#bl-beyonditsessions .agenda-session-card-buttons button.primary.with-svg.Apollo.evt-button{font-size: 0;} 
+#bl-beyonditsessions .agenda-session-card-buttons button.primary.with-svg.Apollo.evt-button:before {font-size: 15px; content:'Guardare adesso';}
+
+#bl-beyonditsessions div.agenda-broadcast-sessions.agenda-sessions-list div.tag-container-live.tag-container{font-size: 0;} 
+#bl-beyonditsessions div.agenda-broadcast-sessions.agenda-sessions-list div.tag-container-live.tag-container:after {font-size: 14px; content:'LIVE';}
+
+#bl-beyonditsessions .agenda-session-card:nth-child(1) h4.agenda-session-card-title.stable.evt-heading-3{font-size: 0;} 
+#bl-beyonditsessions .agenda-session-card:nth-child(1) h4.agenda-session-card-title.stable.evt-heading-3:after {font-size: 25px; content:'Primo Giorno della Convention doTERRA 2022';}
+
+#bl-beyonditsessions .agenda-session-card:nth-child(2) h4.agenda-session-card-title.stable.evt-heading-3{font-size: 0;} 
+#bl-beyonditsessions .agenda-session-card:nth-child(2) h4.agenda-session-card-title.stable.evt-heading-3:after {font-size: 25px; content:'Primo Giorno della Convention doTERRA 2022';}
+
+	/* THIS IS THE CS SECTION */
+#bl-beyondcs .language-list-item:nth-child(1){font-size: 0;} 
+#bl-beyondcs .language-list-item:nth-child(1):after {font-size: 18px; content:'Angličtina';}
+
+#bl-beyondcs .language-list-item:nth-child(2){font-size: 0;} 
+#bl-beyondcs .language-list-item:nth-child(2):after {font-size: 18px; content:'Francouzština';}
+
+#bl-beyondcs .language-list-item:nth-child(3){font-size: 0;} 
+#bl-beyondcs .language-list-item:nth-child(3):after {font-size: 18px; content:'Němčina';}
+
+#bl-beyondcs .language-list-item:nth-child(4){font-size: 0;} 
+#bl-beyondcs .language-list-item:nth-child(4):after {font-size: 18px; content:'Maďarština';}
+
+#bl-beyondcs .language-list-item:nth-child(5){font-size: 0;} 
+#bl-beyondcs .language-list-item:nth-child(5):after {font-size: 18px; content:'Italština';}
+
+#bl-beyondcs .language-list-item:nth-child(6){font-size: 0;} 
+#bl-beyondcs .language-list-item:nth-child(6):after {font-size: 18px; content:'Polština';}
+
+#bl-beyondcs .language-list-item:nth-child(7){font-size: 0;} 
+#bl-beyondcs .language-list-item:nth-child(7):after {font-size: 18px; content:'Portugalština';}
+
+#bl-beyondcs .language-list-item:nth-child(8){font-size: 0;} 
+#bl-beyondcs .language-list-item:nth-child(8):after {font-size: 18px; content:'Rumunština';}
+
+#bl-beyondcs .language-list-item:nth-child(9){font-size: 0;} 
+#bl-beyondcs .language-list-item:nth-child(9):after {font-size: 18px; content:'Slovinština';}
+
+#bl-beyondcs .language-list-item:nth-child(10){font-size: 0;} 
+#bl-beyondcs .language-list-item:nth-child(10):after {font-size: 18px; content:'Slovenština';}
+
+#bl-beyondcs .language-list-item:nth-child(11){font-size: 0;} 
+#bl-beyondcs .language-list-item:nth-child(11):after {font-size: 18px; content:'Španělština';}
+
+#bl-beyondcs .language-list-item:nth-child(12){font-size: 0;} 
+#bl-beyondcs .language-list-item:nth-child(12):after {font-size: 18px; content:'Ruština';}
+
+#bl-beyondcs .language-list-item:nth-child(13){font-size: 0;} 
+#bl-beyondcs .language-list-item:nth-child(13):after {font-size: 18px; content:'Čeština';}
+
+.page-lang-cs .user-profile-main-content-inner  button.edit-button.no-style{font-size: 0;} 
+.page-lang-cs .user-profile-main-content-inner  button.edit-button.no-style:after {font-size: 14px; content:'UPRAVIT';}
+
+.page-lang-cs .user-profile-main-content-inner .card-title:nth-child(2) h3{font-size: 0;} 
+.page-lang-cs .user-profile-main-content-inner .card-title:nth-child(2) h3:after {font-size: 18px; content:'Základní informace';}
+
+.page-lang-cs .user-profile-main-content-inner .card-title:nth-child(4) h3{font-size: 0;} 
+.page-lang-cs .user-profile-main-content-inner .card-title:nth-child(4) h3:after {font-size: 18px; content:'O vás';}
+
+.page-lang-cs .user-profile-main-content-inner .card-title:nth-child(6) h3{font-size: 0;} 
+.page-lang-cs .user-profile-main-content-inner .card-title:nth-child(6) h3:after {font-size: 18px; content:'Témata';}
+
+.page-lang-cs .profile-card-item:nth-child(2) h5{font-size: 0;} 
+.page-lang-cs .profile-card-item:nth-child(2) h5:after {font-size: 12px; content:'Životopis';}
+
+.page-lang-cs .header-call-to-action{font-size: 0;} 
+.page-lang-cs .header-call-to-action:after {font-size: 15px; content:'ZPRACOVAT';}
+
+.page-lang-cs nav > div:nth-child(1) > a{font-size: 0 !important;} 
+.page-lang-cs nav > div:nth-child(1) > a:after {font-size: 13px; content:'DOMOVSKÁ STRÁNKA'; margin-top: -13px; background: none;}
+
+.page-lang-cs nav > div:nth-child(2) > a{font-size: 0 !important;} 
+.page-lang-cs nav > div:nth-child(2) > a:after {font-size: 13px; content:'PROGRAM'; margin-top: -13px; background: none;}
+
+.page-lang-cs .tablet-links .side-nav-link:nth-child(1) > a{font-size: 0;} 
+.page-lang-cs .tablet-links .side-nav-link:nth-child(1) > a:before {font-size: 13px; content:'DOMOVSKÁ STRÁNKA';}
+
+.page-lang-cs .tablet-links .side-nav-link:nth-child(2) > a{font-size: 0;} 
+.page-lang-cs .tablet-links .side-nav-link:nth-child(2) > a:before {font-size: 13px; content:'PROGRAM';}
+
+.page-lang-cs .profile-nav-language-container .profile-second-level-action:nth-child(1){font-size: 0;} 
+.page-lang-cs .profile-nav-language-container .profile-second-level-action:nth-child(1):after {font-size: 14px; content:'Zpět';}
+
+.page-lang-cs .profile-nav-language-container .profile-nav-language-item:nth-child(2){font-size: 0;} 
+.page-lang-cs .profile-nav-language-container .profile-nav-language-item:nth-child(2):after {font-size: 14px; content:'Angličtina';}
+
+.page-lang-cs .profile-nav-language-container .profile-nav-language-item:nth-child(3){font-size: 0;} 
+.page-lang-cs .profile-nav-language-container .profile-nav-language-item:nth-child(3):after {font-size: 14px; content:'Francouzština';}
+
+.page-lang-cs .profile-nav-language-container .profile-nav-language-item:nth-child(4){font-size: 0;} 
+.page-lang-cs .profile-nav-language-container .profile-nav-language-item:nth-child(4):after {font-size: 14px; content:'Němčina';}
+
+.page-lang-cs .profile-nav-language-container .profile-nav-language-item:nth-child(5){font-size: 0;} 
+.page-lang-cs .profile-nav-language-container .profile-nav-language-item:nth-child(5):after {font-size: 14px; content:'Maďarština';}
+
+.page-lang-cs .profile-nav-language-container .profile-nav-language-item:nth-child(6){font-size: 0;} 
+.page-lang-cs .profile-nav-language-container .profile-nav-language-item:nth-child(6):after {font-size: 14px; content:'Italština';}
+
+.page-lang-cs .profile-nav-language-container .profile-nav-language-item:nth-child(7){font-size: 0;} 
+.page-lang-cs .profile-nav-language-container .profile-nav-language-item:nth-child(7):after {font-size: 14px; content:'Polština';}
+
+.page-lang-cs .profile-nav-language-container .profile-nav-language-item:nth-child(8){font-size: 0;} 
+.page-lang-cs .profile-nav-language-container .profile-nav-language-item:nth-child(8):after {font-size: 14px; content:'Portugalština';}
+
+.page-lang-cs .profile-nav-language-container .profile-nav-language-item:nth-child(9){font-size: 0;} 
+.page-lang-cs .profile-nav-language-container .profile-nav-language-item:nth-child(9):after {font-size: 14px; content:'Rumunština';}
+
+.page-lang-cs .profile-nav-language-container .profile-nav-language-item:nth-child(10){font-size: 0;} 
+.page-lang-cs .profile-nav-language-container .profile-nav-language-item:nth-child(10):after {font-size: 14px; content:'Slovinština';}
+
+.page-lang-cs .profile-nav-language-container .profile-nav-language-item:nth-child(11){font-size: 0;} 
+.page-lang-cs .profile-nav-language-container .profile-nav-language-item:nth-child(11):after {font-size: 14px; content:'Slovenština';}
+
+.page-lang-cs .profile-nav-language-container .profile-nav-language-item:nth-child(12){font-size: 0;} 
+.page-lang-cs .profile-nav-language-container .profile-nav-language-item:nth-child(12):after {font-size: 14px; content:'Španělština';}
+
+.page-lang-cs .profile-nav-language-container .profile-nav-language-item:nth-child(13){font-size: 0;} 
+.page-lang-cs .profile-nav-language-container .profile-nav-language-item:nth-child(13):after {font-size: 14px; content:'Ruština';}
+
+.page-lang-cs .profile-nav-language-container .profile-nav-language-item:nth-child(14){font-size: 0;} 
+.page-lang-cs .profile-nav-language-container .profile-nav-language-item:nth-child(14):after {font-size: 14px; content:'Čeština';}
+
+.page-lang-cs .profile-first-level-actions a + button + button{font-size: 0;} 
+.page-lang-cs .profile-first-level-actions a + button + button:before {font-size: 14px; content:'Čeština';}
+
+.page-lang-cs .countdown-container div:nth-child(1) .countdown-label{font-size: 0;} 
+.page-lang-cs .countdown-container div:nth-child(1) .countdown-label:after {font-size: 13px; content:'DNY';}
+
+.page-lang-cs .countdown-container div:nth-child(3) .countdown-label{font-size: 0;} 
+.page-lang-cs .countdown-container div:nth-child(3) .countdown-label:after {font-size: 13px; content:'HODINY';}
+
+.page-lang-cs .countdown-container div:nth-child(5) .countdown-label{font-size: 0;} 
+.page-lang-cs .countdown-container div:nth-child(5) .countdown-label:after {font-size: 13px; content:'MINUTY';}
+
+.page-lang-cs .countdown-container div:nth-child(7) .countdown-label{font-size: 0;} 
+.page-lang-cs .countdown-container div:nth-child(7) .countdown-label:after {font-size: 13px; content:'SEKUNDY';}
+
+#bl-beyondcsregistration .registration-form-inner button.no-style.sign-in{font-size: 0;} 
+#bl-beyondcsregistration .registration-form-inner button.no-style.sign-in:after {font-size: 14px; content:'UŽ JSTE SE ZAREGISTROVALI? PŘIHLASTE SE ZDE';}
+
+#bl-beyondcsregistration .registration-actions.primary button{font-size: 0;} 
+#bl-beyondcsregistration .registration-actions.primary button:after {font-size: 15px; content:'ZPRACOVAT';}
+
+#bl-beyondcsregistration .registration-form-inner.verification .registration-form-title{font-size: 0;} 
+#bl-beyondcsregistration .registration-form-inner.verification .registration-form-title:after {font-size: 40px; content:'ZPRACOVAT';}
+
+#bl-beyondcshome #Speakers li:nth-child(2) div > p{font-size: 0;} 
+#bl-beyondcshome #Speakers li:nth-child(2) div > p:after {font-size: 16px; content:'Dr Riggs has a strong interest in value-based healthcare and is passionate about supporting change for the benefit of all.';line-height: 80%;}
+
+#bl-beyondcshome #Speakers li:nth-child(2) div > h5{font-size: 0;} 
+#bl-beyondcshome #Speakers li:nth-child(2) div > h5:after {font-size: 18px; content:'VP, Education';line-height: 80%;}
+
+#bl-beyondcspagesspeakers li.speakers-column:nth-child(3) .speaker-about{font-size: 0;} 
+#bl-beyondcspagesspeakers li.speakers-column:nth-child(3) .speaker-about:after {font-size: 16px; content:'Dr Riggs has a strong interest in value-based healthcare and is passionate about supporting change for the benefit of all.';line-height: 80%;}
+
+#bl-beyondcspagesspeakers li.speakers-column:nth-child(3) h5.speaker-job-title{font-size: 0;} 
+#bl-beyondcspagesspeakers li.speakers-column:nth-child(3) h5.speaker-job-title:after {font-size: 18px; content:'VP, Education';line-height: 80%;}
+
+#bl-beyondcssessionb0eeb4b0ccb311ecaa967974d63c4741 .speaker:nth-child(14) .description{font-size: 0;} 
+#bl-beyondcssessionb0eeb4b0ccb311ecaa967974d63c4741 .speaker:nth-child(14) .description:after {font-size: 16px; content:'Dr Riggs has a strong interest in value-based healthcare and is passionate about supporting change for the benefit of all.';line-height: 80%;}
+
+#bl-beyondcssessionb0eeb4b0ccb311ecaa967974d63c4741 .speaker:nth-child(14) .speaker-job-title{font-size: 0;} 
+#bl-beyondcssessionb0eeb4b0ccb311ecaa967974d63c4741 .speaker:nth-child(14) .speaker-job-title:after {font-size: 18px; content:'VP, Education';line-height: 80%;}
+
+#bl-beyondcssessionb2414512ccb311ecaa967974d63c4741 .speaker:nth-child(6) .description{font-size: 0;} 
+#bl-beyondcssessionb2414512ccb311ecaa967974d63c4741 .speaker:nth-child(6) .description:after {font-size: 16px; content:'Dr Riggs has a strong interest in value-based healthcare and is passionate about supporting change for the benefit of all.';line-height: 80%;}
+
+#bl-beyondcssessionb2414512ccb311ecaa967974d63c4741 .speaker:nth-child(6) .speaker-job-title{font-size: 0;} 
+#bl-beyondcssessionb2414512ccb311ecaa967974d63c4741 .speaker:nth-child(6) .speaker-job-title:after {font-size: 18px; content:'VP, Education';line-height: 80%;}
+
+#bl-beyondcssessions .agenda-session-card-buttons button.primary.with-svg.Apollo.evt-button{font-size: 0;} 
+#bl-beyondcssessions .agenda-session-card-buttons button.primary.with-svg.Apollo.evt-button:after {font-size: 15px; content:'Sledovat nyní';}
+
+#bl-beyondcssessions #Agenda > div.evt-title-1.marketing-registered-agenda-title{font-size: 0;} 
+#bl-beyondcssessions #Agenda > div.evt-title-1.marketing-registered-agenda-title:after {font-size: 40px; content:'PROGRAM';}
+
+#bl-beyondcssessions div.agenda-broadcast-sessions.agenda-sessions-list div.tag-container-live.tag-container{font-size: 0;} 
+#bl-beyondcssessions div.agenda-broadcast-sessions.agenda-sessions-list div.tag-container-live.tag-container:after {font-size: 14px; content:'LIVE';}
+
+#bl-beyondcssessions .agenda-session-card:nth-child(1) h4.agenda-session-card-title.stable.evt-heading-3{font-size: 0;} 
+#bl-beyondcssessions .agenda-session-card:nth-child(1) h4.agenda-session-card-title.stable.evt-heading-3:after {font-size: 25px; content:'Convention doTERRA 2022 první den';}
+
+#bl-beyondcssessions .agenda-session-card:nth-child(2) h4.agenda-session-card-title.stable.evt-heading-3{font-size: 0;} 
+#bl-beyondcssessions .agenda-session-card:nth-child(2) h4.agenda-session-card-title.stable.evt-heading-3:after {font-size: 25px; content:'Convention doTERRA 2022 druhý den';}
+
+#bl-beyondcssessions .agenda-session-card:nth-child(1) .agenda-session-card-timestamp.evt-caption-1{font-size: 0;} 
+#bl-beyondcssessions .agenda-session-card:nth-child(1) .agenda-session-card-timestamp.evt-caption-1:after {font-size: 14px; content:'17. ČERVEN 2022, 01:00 GMT-7';}
+
+#bl-beyondcssessions .agenda-session-card:nth-child(2) .agenda-session-card-timestamp.evt-caption-1{font-size: 0;} 
+#bl-beyondcssessions .agenda-session-card:nth-child(2) .agenda-session-card-timestamp.evt-caption-1:after {font-size: 14px; content:'18. ČERVEN 2022, 01:00 GMT-7';}
+
+#bl-beyondcssessions .agenda-inline-days button.session-day-button:nth-child(2){font-size: 0;} 
+#bl-beyondcssessions .agenda-inline-days button.session-day-button:nth-child(2):after {font-size: 15px; content:'17. ČERVEN';}
+
+#bl-beyondcssessions .agenda-inline-days button.session-day-button:nth-child(3){font-size: 0;} 
+#bl-beyondcssessions .agenda-inline-days button.session-day-button:nth-child(3):after {font-size: 15px; content:'18. ČERVEN';}
+
+	/* THIS IS THE RU SECTION */
+#bl-beyondru .language-list-item:nth-child(1){font-size: 0;} 
+#bl-beyondru .language-list-item:nth-child(1):after {font-size: 18px; content:'Английский';}
+
+#bl-beyondru .language-list-item:nth-child(2){font-size: 0;} 
+#bl-beyondru .language-list-item:nth-child(2):after {font-size: 18px; content:'Французский';}
+
+#bl-beyondru .language-list-item:nth-child(3){font-size: 0;} 
+#bl-beyondru .language-list-item:nth-child(3):after {font-size: 18px; content:'Немецкий';}
+
+#bl-beyondru .language-list-item:nth-child(4){font-size: 0;} 
+#bl-beyondru .language-list-item:nth-child(4):after {font-size: 18px; content:'Венгерский';}
+
+#bl-beyondru .language-list-item:nth-child(5){font-size: 0;} 
+#bl-beyondru .language-list-item:nth-child(5):after {font-size: 18px; content:'Итальянский';}
+
+#bl-beyondru .language-list-item:nth-child(6){font-size: 0;} 
+#bl-beyondru .language-list-item:nth-child(6):after {font-size: 18px; content:'Польский';}
+
+#bl-beyondru .language-list-item:nth-child(7){font-size: 0;} 
+#bl-beyondru .language-list-item:nth-child(7):after {font-size: 18px; content:'Португальский';}
+
+#bl-beyondru .language-list-item:nth-child(8){font-size: 0;} 
+#bl-beyondru .language-list-item:nth-child(8):after {font-size: 18px; content:'Румынский';}
+
+#bl-beyondru .language-list-item:nth-child(9){font-size: 0;} 
+#bl-beyondru .language-list-item:nth-child(9):after {font-size: 18px; content:'Словенский';}
+
+#bl-beyondru .language-list-item:nth-child(10){font-size: 0;} 
+#bl-beyondru .language-list-item:nth-child(10):after {font-size: 18px; content:'Словацкий';}
+
+#bl-beyondru .language-list-item:nth-child(11){font-size: 0;} 
+#bl-beyondru .language-list-item:nth-child(11):after {font-size: 18px; content:'Испанский';}
+
+#bl-beyondru .language-list-item:nth-child(12){font-size: 0;} 
+#bl-beyondru .language-list-item:nth-child(12):after {font-size: 18px; content:'Русский';}
+
+#bl-beyondru .language-list-item:nth-child(13){font-size: 0;} 
+#bl-beyondru .language-list-item:nth-child(13):after {font-size: 18px; content:'Чешский';}
+
+.page-lang-ru .user-profile-main-content-inner  button.edit-button.no-style{font-size: 0;} 
+.page-lang-ru .user-profile-main-content-inner  button.edit-button.no-style:after {font-size: 14px; content:'Изменить';}
+
+.page-lang-ru .user-profile-main-content-inner .card-title:nth-child(2) h3{font-size: 0;} 
+.page-lang-ru .user-profile-main-content-inner .card-title:nth-child(2) h3:after {font-size: 18px; content:'Общая информация';}
+
+.page-lang-ru .user-profile-main-content-inner .card-title:nth-child(4) h3{font-size: 0;} 
+.page-lang-ru .user-profile-main-content-inner .card-title:nth-child(4) h3:after {font-size: 18px; content:'Информация обо мне ';}
+
+.page-lang-ru .user-profile-main-content-inner .card-title:nth-child(6) h3{font-size: 0;} 
+.page-lang-ru .user-profile-main-content-inner .card-title:nth-child(6) h3:after {font-size: 18px; content:'Темы';}
+
+.page-lang-ru .profile-card-item:nth-child(2) h5{font-size: 0;} 
+.page-lang-ru .profile-card-item:nth-child(2) h5:after {font-size: 12px; content:'Биография';}
+
+.page-lang-ru .profile-card-item:nth-child(3) h5{font-size: 0;} 
+.page-lang-ru .profile-card-item:nth-child(3) h5:after {font-size: 12px; content:'Интересный факт';}
+
+.page-lang-ru nav > div:nth-child(1) > a{font-size: 0 !important;} 
+.page-lang-ru nav > div:nth-child(1) > a:after {font-size: 13px; content:'ГЛАВНАЯ'; margin-top: -13px; background: none;}
+
+.page-lang-ru nav > div:nth-child(3) > a{font-size: 0 !important;} 
+.page-lang-ru nav > div:nth-child(3) > a:after {font-size: 13px; content:'ПРОДУКЦИЯ'; margin-top: -13px; background: none;}
+
+.page-lang-ru nav > div:nth-child(4) > a{font-size: 0 !important;} 
+.page-lang-ru nav > div:nth-child(4) > a:after {font-size: 10px; content:'СПИКЕРЫ'; margin-top: -13px; background: none;}
+
+.page-lang-ru .tablet-links .side-nav-link:nth-child(1) > a{font-size: 0;} 
+.page-lang-ru .tablet-links .side-nav-link:nth-child(1) > a:before {font-size: 13px; content:'ГЛАВНАЯ';}
+
+.page-lang-ru .tablet-links .side-nav-link:nth-child(3) > a{font-size: 0;} 
+.page-lang-ru .tablet-links .side-nav-link:nth-child(3) > a:before {font-size: 13px; content:'ПРОДУКЦИЯ';}
+
+.page-lang-ru .tablet-links .side-nav-link:nth-child(4) > a{font-size: 0;} 
+.page-lang-ru .tablet-links .side-nav-link:nth-child(4) > a:before {font-size: 13px; content:'СПИКЕРЫ';}
+
+.page-lang-ru .profile-nav-language-container .profile-second-level-action:nth-child(1){font-size: 0;} 
+.page-lang-ru .profile-nav-language-container .profile-second-level-action:nth-child(1):after {font-size: 14px; content:'НАЗАД';}
+
+.page-lang-ru .profile-nav-language-container .profile-nav-language-item:nth-child(2){font-size: 0;} 
+.page-lang-ru .profile-nav-language-container .profile-nav-language-item:nth-child(2):after {font-size: 14px; content:'Английский';}
+
+.page-lang-ru .profile-nav-language-container .profile-nav-language-item:nth-child(3){font-size: 0;} 
+.page-lang-ru .profile-nav-language-container .profile-nav-language-item:nth-child(3):after {font-size: 14px; content:'Французский';}
+
+.page-lang-ru .profile-nav-language-container .profile-nav-language-item:nth-child(4){font-size: 0;} 
+.page-lang-ru .profile-nav-language-container .profile-nav-language-item:nth-child(4):after {font-size: 14px; content:'Немецкий';}
+
+.page-lang-ru .profile-nav-language-container .profile-nav-language-item:nth-child(5){font-size: 0;} 
+.page-lang-ru .profile-nav-language-container .profile-nav-language-item:nth-child(5):after {font-size: 14px; content:'Венгерский';}
+
+.page-lang-ru .profile-nav-language-container .profile-nav-language-item:nth-child(6){font-size: 0;} 
+.page-lang-ru .profile-nav-language-container .profile-nav-language-item:nth-child(6):after {font-size: 14px; content:'Итальянский';}
+
+.page-lang-ru .profile-nav-language-container .profile-nav-language-item:nth-child(7){font-size: 0;} 
+.page-lang-ru .profile-nav-language-container .profile-nav-language-item:nth-child(7):after {font-size: 14px; content:'Польский';}
+
+.page-lang-ru .profile-nav-language-container .profile-nav-language-item:nth-child(8){font-size: 0;} 
+.page-lang-ru .profile-nav-language-container .profile-nav-language-item:nth-child(8):after {font-size: 14px; content:'Португальский';}
+
+.page-lang-ru .profile-nav-language-container .profile-nav-language-item:nth-child(9){font-size: 0;} 
+.page-lang-ru .profile-nav-language-container .profile-nav-language-item:nth-child(9):after {font-size: 14px; content:'Румынский';}
+
+.page-lang-ru .profile-nav-language-container .profile-nav-language-item:nth-child(10){font-size: 0;} 
+.page-lang-ru .profile-nav-language-container .profile-nav-language-item:nth-child(10):after {font-size: 14px; content:'Словенский';}
+
+.page-lang-ru .profile-nav-language-container .profile-nav-language-item:nth-child(11){font-size: 0;} 
+.page-lang-ru .profile-nav-language-container .profile-nav-language-item:nth-child(11):after {font-size: 14px; content:'Словацкий';}
+
+.page-lang-ru .profile-nav-language-container .profile-nav-language-item:nth-child(12){font-size: 0;} 
+.page-lang-ru .profile-nav-language-container .profile-nav-language-item:nth-child(12):after {font-size: 14px; content:'Испанский';}
+
+.page-lang-ru .profile-nav-language-container .profile-nav-language-item:nth-child(13){font-size: 0;} 
+.page-lang-ru .profile-nav-language-container .profile-nav-language-item:nth-child(13):after {font-size: 14px; content:'Русский';}
+
+.page-lang-ru .profile-nav-language-container .profile-nav-language-item:nth-child(14){font-size: 0;} 
+.page-lang-ru .profile-nav-language-container .profile-nav-language-item:nth-child(14):after {font-size: 14px; content:'Чешский';}
+
+.page-lang-ru .profile-first-level-actions a + button + button{font-size: 0;} 
+.page-lang-ru .profile-first-level-actions a + button + button:before {font-size: 14px; content:'РУССКИЙ';}
+
+.page-lang-ru .countdown-container div:nth-child(1) .countdown-label{font-size: 0;} 
+.page-lang-ru .countdown-container div:nth-child(1) .countdown-label:after {font-size: 13px; content:'ДНИ';}
+
+.page-lang-ru .countdown-container div:nth-child(3) .countdown-label{font-size: 0;} 
+.page-lang-ru .countdown-container div:nth-child(3) .countdown-label:after {font-size: 13px; content:'ЧАСЫ';}
+
+.page-lang-ru .countdown-container div:nth-child(5) .countdown-label{font-size: 0;} 
+.page-lang-ru .countdown-container div:nth-child(5) .countdown-label:after {font-size: 13px; content:'МИНУТЫ';}
+
+.page-lang-ru .countdown-container div:nth-child(7) .countdown-label{font-size: 0;} 
+.page-lang-ru .countdown-container div:nth-child(7) .countdown-label:after {font-size: 13px; content:'СЕКУНДЫ';}
+
+#bl-beyondru p.evt-caption-1.banner-starts-on{font-size: 0;} 
+#bl-beyondru p.evt-caption-1.banner-starts-on:after {font-size: 14px; content:'НАЧАЛО 17 ИЮНЯ 2022 г. в 03:00 GMT-6';}
+
+#bl-beyondruhome p.evt-caption-1.banner-starts-on{font-size: 0;} 
+#bl-beyondruhome p.evt-caption-1.banner-starts-on:after {font-size: 14px; content:'НАЧАЛО 17 ИЮНЯ 2022 г. в 03:00 GMT-6';}
+
+.page-lang-ru .tab-navigation li:nth-child(3) span{font-size: 0;} 
+.page-lang-ru .tab-navigation li:nth-child(3) span:after {font-size: 13px; content:'СПИКЕРЫ';}
+
+#bl-beyondruregistration .registration-form-inner button.no-style.sign-in{font-size: 0;} 
+#bl-beyondruregistration .registration-form-inner button.no-style.sign-in:after {font-size: 14px; content:'УЖЕ ЗАРЕГИСТРИРОВАНЫ? ВОЙТИ ЗДЕСЬ';}
+
+#bl-beyondruregistration .registration-actions.primary button{font-size: 0;} 
+#bl-beyondruregistration .registration-actions.primary button:after {font-size: 15px; content:'ДАЛЕЕ';}
+
+#bl-beyondruregistration .registration-form-inner.verification .registration-form-title{font-size: 0;} 
+#bl-beyondruregistration .registration-form-inner.verification .registration-form-title:after {font-size: 40px; content:'ДАЛЕЕ';}
+
+#bl-beyondruregistration .registration-form-inner.verification button.registration-button.primary.Apollo.evt-button{font-size: 0;} 
+#bl-beyondruregistration .registration-form-inner.verification button.registration-button.primary.Apollo.evt-button:after {font-size: 13px; content:'ОТПРАВИТЬ';}
+
+#bl-beyondruhome #Speakers li:nth-child(2) div > p{font-size: 0;} 
+#bl-beyondruhome #Speakers li:nth-child(2) div > p:after {font-size: 16px; content:'Dr Riggs has a strong interest in value-based healthcare and is passionate about supporting change for the benefit of all.';line-height: 80%;}
+
+#bl-beyondruhome #Speakers li:nth-child(2) div > h5{font-size: 0;} 
+#bl-beyondruhome #Speakers li:nth-child(2) div > h5:after {font-size: 18px; content:'VP, Education';line-height: 80%;}
+
+#bl-beyondrupagesspeakers li.speakers-column:nth-child(3) .speaker-about{font-size: 0;} 
+#bl-beyondrupagesspeakers li.speakers-column:nth-child(3) .speaker-about:after {font-size: 16px; content:'Dr Riggs has a strong interest in value-based healthcare and is passionate about supporting change for the benefit of all.';line-height: 80%;}
+
+#bl-beyondrupagesspeakers li.speakers-column:nth-child(3) h5.speaker-job-title{font-size: 0;} 
+#bl-beyondrupagesspeakers li.speakers-column:nth-child(3) h5.speaker-job-title:after {font-size: 18px; content:'VP, Education';line-height: 80%;}
+
+#bl-beyondrusessionb0eeb4b0ccb311ecaa967974d63c4741 .speaker:nth-child(14) .description{font-size: 0;} 
+#bl-beyondrusessionb0eeb4b0ccb311ecaa967974d63c4741 .speaker:nth-child(14) .description:after {font-size: 16px; content:'Dr Riggs has a strong interest in value-based healthcare and is passionate about supporting change for the benefit of all.';line-height: 80%;}
+
+#bl-beyondrusessionb0eeb4b0ccb311ecaa967974d63c4741 .speaker:nth-child(14) .speaker-job-title{font-size: 0;} 
+#bl-beyondrusessionb0eeb4b0ccb311ecaa967974d63c4741 .speaker:nth-child(14) .speaker-job-title:after {font-size: 18px; content:'VP, Education';line-height: 80%;}
+
+#bl-beyondrusessionb2414512ccb311ecaa967974d63c4741 .speaker:nth-child(6) .description{font-size: 0;} 
+#bl-beyondrusessionb2414512ccb311ecaa967974d63c4741 .speaker:nth-child(6) .description:after {font-size: 16px; content:'Dr Riggs has a strong interest in value-based healthcare and is passionate about supporting change for the benefit of all.';line-height: 80%;}
+
+#bl-beyondrusessionb2414512ccb311ecaa967974d63c4741 .speaker:nth-child(6) .speaker-job-title{font-size: 0;} 
+#bl-beyondrusessionb2414512ccb311ecaa967974d63c4741 .speaker:nth-child(6) .speaker-job-title:after {font-size: 18px; content:'VP, Education';line-height: 80%;}
+
+.page-lang-ru #Speakers > div > div.show-more-wrapper > button{font-size: 0;} 
+.page-lang-ru #Speakers > div > div.show-more-wrapper > button:after {font-size: 15px; content:'ПОКАЗАТЬ БОЛЬШЕ';}
+
+.page-lang-ru #Speakers > div > div.show-more-wrapper > button.show-more-button-active{font-size: 0;} 
+.page-lang-ru #Speakers > div > div.show-more-wrapper > button.show-more-button-active:after {font-size: 15px; content:'ПОКАЗАТЬ МЕНЬШЕ';}
+
+#bl-beyondrusessions .agenda-session-card-buttons button.secondary{font-size: 0;} 
+#bl-beyondrusessions .agenda-session-card-buttons button.secondary:after {font-size: 15px; content:'ДОБАВИТЬ';}
+
+#bl-beyondrusessions .agenda-filters .new-dropdown.filter-dropdown .new-dropdown-value{font-size: 0;} 
+#bl-beyondrusessions .agenda-filters .new-dropdown.filter-dropdown .new-dropdown-value:after {font-size: 13px; content:'ВЫБРАТЬ ЯЗЫК';}
+
+#bl-beyondrusessions div.agenda-broadcast-sessions.agenda-sessions-list div.tag-container-live.tag-container{font-size: 0;} 
+#bl-beyondrusessions div.agenda-broadcast-sessions.agenda-sessions-list div.tag-container-live.tag-container:after {font-size: 14px; content:'LIVE';}
+

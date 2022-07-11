@@ -284,13 +284,12 @@ function createDemotivation(){
         // ],
          requireInteraction: true
     });
-
 }
 
 createDemotivation()
 setInterval(function () { // Set interval for checking
     createDemotivation()
-}, 60000 * 60 * 4); // Repeat every 60000 milliseconds (1 minute)
+}, 60000 * 60 * 24); // Repeat every 60000 milliseconds (1 minute)
 
 
 // chrome.notifications.onButtonClicked.addListener(
