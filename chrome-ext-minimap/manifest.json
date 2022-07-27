@@ -1,0 +1,30 @@
+{
+    "name": "Minimap",
+    "description": "Creates a minimap of every site you're on",
+    "version": "1.0.0",
+    "manifest_version": 3,
+    "action": {
+        "default_popup": "popup.html"
+    },
+
+
+    "permissions": [
+        "activeTab",
+        "scripting",
+        "tabs",
+        "notifications"
+      
+    ],
+    "host_permissions": [
+        "<all_urls>"
+      ],
+    "background": {
+        "service_worker": "background.js"
+    },
+    "icons": {
+        "16": "/meditate.png",
+        "32": "/meditate.png",
+        "48": "/meditate.png",
+        "128": "/meditate.png"
+      }
+}

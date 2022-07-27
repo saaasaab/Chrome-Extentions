@@ -1,0 +1,64 @@
+:root {
+  --minimap-scape: 0.045;
+}
+.minimap-wrap {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100px;
+  height: 100%;
+  z-index: 100000;
+  opacity: 0;
+  transition: 0.3s ease-in-out;
+  /* background: blue; */
+}
+
+.minimap-wrap:hover {
+  opacity: 1;
+}
+
+.minimap-container {
+  transform-origin: top right;
+  position: fixed;
+  top: 0;
+  right: 1vw;
+
+  transform: translateY(2vh) scale(var(--minimap-scape));
+  opacity: 1;
+  width: 2000px;
+
+  /* pointer-events: none; */
+}
+
+.minimap-container * {
+  pointer-events: none !important;
+}
+
+.minimap-clicker {
+  transform-origin: top right;
+  position: fixed;
+  top: 0;
+  right: 1vw;
+  /* background: rgb(239, 239, 85); */
+
+  transform: translateY(2vh) scale(var(--minimap-scape));
+  opacity: 0.8;
+  width: 2000px;
+  pointer-events: none;
+
+  background: #38941e;
+  border-radius: 100px;
+
+  /* background: rgba(0, 0, 0, 0.173); */
+}
+
+.minimap-close-button {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  background: white;
+  border-radius: 20px;
+}

@@ -1,0 +1,170 @@
+function distroyMiniMapFromDOM() {
+    let minimapWrapper = document.querySelector(".minimap-wrap");
+    if (minimapWrapper) {
+        minimapWrapper.remove();
+    }
+}
+
+function takeScreenshot() {
+    console.log(`true`, true)
+    html2canvas(document.body).then(function (canvas) {
+
+        console.log(`canvas`, canvas)
+        return canvas
+    });
+}
+
+
+
+function createMiniMap() {
+    let wrap = document.createElement('div');
+    let container = document.createElement('div');
+    let clicker = document.createElement('div');
+    let closeButton = document.createElement('div');
+
+    // Get background darkness
+
+    let bodyBackgroundColor = document.body.style.backgroundColor || "rgb(255,255,255)";
+
+    var rgb = bodyBackgroundColor.match(/\d+/g);
+    let darnessSum = 0;
+
+    for (var i in rgb) {
+        darnessSum += +rgb[i]; // Forces the rgb value to be a number
+    }
+
+    let lightMode = true;
+    if (darnessSum < 200) {
+        lightMode = false;
+    }
+
+
+
+    var clone = document.querySelector('body').cloneNode(true);
+
+    let allCloneScripts = clone.querySelectorAll('script');
+    // let allCloneStyles = clone.querySelectorAll('style');
+    let allCloneImages = clone.querySelectorAll('img');
+    let allCloneVideos = clone.querySelectorAll('video');
+    // let allCloneLinks = clone.querySelectorAll('a');
+
+    allCloneScripts.forEach((el) => { el.remove() })
+    // allCloneStyles.forEach((el) => { el.remove() })
+
+    if (allCloneImages.length > 20) {
+        // allCloneImages.forEach((el) => { el.remove() })
+    }
+    allCloneVideos.forEach((el) => { el.remove() })
+    // allCloneLinks.forEach((el) => { el.remove() })
+
+    let pageH = document.body.clientHeight;
+    let documentHeight = document.body.offsetHeight
+    let windowH = window.innerHeight;
+    let windowW = window.innerWidth;
+    const mmWidthRatio = 2000 / windowW;
+
+
+    container.innerHTML = clone.innerHTML
+    container.className = "minimap-container";
+    clicker.className = "minimap-clicker";
+
+    clicker.style.height = windowH * mmWidthRatio + "px";
+
+    wrap.className = "minimap-wrap";
+
+    wrap.style.backgroundColor = lightMode ? "#d5d5d512" : "rgb(104, 104, 104, .7)"
+
+    closeButton.className = "minimap-close-button";
+    closeButton.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="white" viewBox="0 0 24 24" stroke="black" stroke-width="2">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" />
+</svg>`;
+
+    wrap.appendChild(container);
+    wrap.appendChild(clicker);
+    wrap.appendChild(closeButton);
+
+    document.body.appendChild(wrap);
+
+
+    addMinMapClick()
+}
+
+function addMinMapClick() {
+
+    let minimapWrapper = document.querySelector(".minimap-wrap");
+    let minimapContainer = document.querySelector(".minimap-container");
+    let minimapClicker = document.querySelector(".minimap-clicker");
+    let minimapCloseButton = document.querySelector('.minimap-close-button')
+
+    document.addEventListener("scroll", (e) => {
+
+        let documentHeight = document.body.offsetHeight
+        let windowH = window.innerHeight;
+        let windowW = window.innerWidth;
+
+        let windowY = window.pageYOffset
+
+
+        const mmWidthRatio = 2000 / windowW;
+        const mmSizeH = windowH / documentHeight;
+        const mmHeight = minimapContainer.getBoundingClientRect().height
+
+        let scale = .045;
+        minimapClicker.style.height = `${windowH * mmWidthRatio}px`;
+
+
+
+        minimapClicker.style.top = `${windowY / documentHeight * mmHeight}px`;
+    });
+
+
+
+    minimapCloseButton.addEventListener('click', (e) => {
+        minimapWrapper.remove()
+    })
+
+
+
+
+    minimapContainer.addEventListener('click', (e) => {
+        let mmHeight = e.path[0].offsetHeight;
+        let documentHeight = document.body.offsetHeight
+
+        let rect = e.path[0].getBoundingClientRect()
+
+        let clickY = e.clientY;
+
+        let scale = .045;
+
+        let windowH = window.innerHeight;
+
+        let jumpToPoint = (clickY - rect.top) / (mmHeight * scale) * documentHeight - windowH / 2;
+
+        window.scrollTo({
+            top: jumpToPoint,
+            left: 0,
+            behavior: 'smooth'
+        });
+    })
+}
+
+// create an Observer instance
+
+let originalDocumentSize = document.body.offsetHeight;
+const resizeObserver = new ResizeObserver((entries) => {
+
+    if (Math.abs(originalDocumentSize - document.body.offsetHeight) > 100) {
+        originalDocumentSize = document.body.offsetHeight;
+        distroyMiniMapFromDOM();
+        createMiniMap()
+
+    }
+})
+
+// start observing a DOM node
+resizeObserver.observe(document.body)
+
+
+
+
+createMiniMap()
