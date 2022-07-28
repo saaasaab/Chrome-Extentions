@@ -80,10 +80,12 @@ try {
         container.innerHTML = clone.innerHTML;
         container.className = "minimap-container";
         container.style.height = `${documentHeight}px`; //  * mmWidthRatio
+        container.style.width = `${windowW}px`; //  * mmWidthRatio
 
 
         clicker.className = "minimap-clicker";
         clicker.style.height = `${windowH}px`; // * mmWidthRatio
+        clicker.style.width = `${windowW}px`; //  * mmWidthRatio
 
         wrap.className = "minimap-wrap";
         wrap.style.backgroundColor = lightMode ? "#d5d5d512" : "rgb(104, 104, 104, .7)"

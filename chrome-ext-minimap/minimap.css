@@ -26,7 +26,7 @@
 
   transform: translateY(2vh) scale(var(--minimap-scape));
   opacity: 1;
-  width: var(--minimap-width);
+
   height: 100%;
   overflow: hidden;
   /* pointer-events: none; */
@@ -46,7 +46,7 @@
 
   transform: translateY(2vh) scale(var(--minimap-scape));
   opacity: 0.8;
-  width: var(--minimap-width);
+
   pointer-events: none;
 
   background: #00efff5e;
