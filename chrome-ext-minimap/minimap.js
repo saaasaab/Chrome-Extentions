@@ -1,7 +1,7 @@
 try {
     // GLOBAL VARIABLES 
     let originalDocumentSize = document.body.offsetHeight;
-
+    let scale = .09;
     function distroyMiniMapFromDOM() {
         try {
             let minimapWrapper = document.querySelector(".minimap-wrap");
@@ -88,7 +88,8 @@ try {
         clicker.style.width = `${windowW}px`; //  * mmWidthRatio
 
         wrap.className = "minimap-wrap";
-        wrap.style.backgroundColor = lightMode ? "#d5d5d512" : "rgb(104, 104, 104, .7)"
+        wrap.style.backgroundColor = lightMode ? "#d5d5d512" : "rgb(104, 104, 104, .7)" 
+        wrap.style.width = `${scale* windowW}px`; //  * mmWidthRatio
 
         closeButton.className = "minimap-close-button";
         closeButton.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="white" viewBox="0 0 24 24" stroke="black" stroke-width="2">
@@ -127,11 +128,7 @@ try {
             const mmWidthRatio = windowW / windowW;
 
             let windowScrollY = window.pageYOffset
-
-            // let scale = 0.09;
-            
-            // const mmSizeH = windowH / documentHeight;
-            const mmHeight = minimapContainer.getBoundingClientRect().height /// mmWidthRatio// * scale
+            const mmHeight = minimapContainer.getBoundingClientRect().height 
 
 
             minimapClicker.style.height = `${windowRatio * windowW }px`;
@@ -152,7 +149,7 @@ try {
 
             let mmHeight = e.path[0].offsetHeight  //* mmWidthRatio //* scaleo;
             
-            console.log(`mmHeight`, mmHeight)
+            
             let documentHeight = document.body.offsetHeight
             let rect = e.path[0].getBoundingClientRect()
             let clickY = e.clientY - rect.top;
