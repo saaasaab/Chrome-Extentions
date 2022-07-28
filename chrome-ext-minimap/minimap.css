@@ -1,5 +1,6 @@
 :root {
-  --minimap-scape: 0.045;
+  --minimap-scape: 0.09;
+  --minimap-width: 1000px
 }
 .minimap-wrap {
   position: fixed;
@@ -25,8 +26,9 @@
 
   transform: translateY(2vh) scale(var(--minimap-scape));
   opacity: 1;
-  width: 2000px;
+  width: var(--minimap-width);
   height: 100%;
+  overflow: hidden;
   /* pointer-events: none; */
 }
 
@@ -44,7 +46,7 @@
 
   transform: translateY(2vh) scale(var(--minimap-scape));
   opacity: 0.8;
-  width: 2000px;
+  width: var(--minimap-width);
   pointer-events: none;
 
   background: #00efff5e;
