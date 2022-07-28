@@ -145,18 +145,22 @@ try {
         minimapContainer.addEventListener('click', (e) => {
             let windowW = window.innerWidth;
             const mmWidthRatio = windowW / windowW;
-            // let scale = 0.09;
+            let scale = 0.09;
 
-            let mmHeight = e.path[0].offsetHeight  //* mmWidthRatio //* scaleo;
+            let mmHeight = e.path[0].offsetHeight  * scale//* mmWidthRatio //* scaleo;
             
+
             
             let documentHeight = document.body.offsetHeight
             let rect = e.path[0].getBoundingClientRect()
             let clickY = e.clientY - rect.top;
             
-
+            
             let windowH = window.innerHeight;
 
+            console.log(`clickY`, clickY)
+            console.log(`mmHeight`, mmHeight)
+            console.log(`windowH`, windowH)
 
             let jumpToPoint = (clickY) / (mmHeight) * documentHeight  - windowH / 2;
 

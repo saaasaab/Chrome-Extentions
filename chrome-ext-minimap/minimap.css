@@ -6,7 +6,6 @@
   position: fixed;
   top: 0;
   right: 0;
-  width: 100px;
   height: 100%;
   z-index: 100000;
   opacity: 0;
@@ -23,7 +22,6 @@
   position: fixed;
   top: 0;
   right: 1vw;
-
   transform: translateY(2vh) scale(var(--minimap-scape));
   opacity: 1;
 
