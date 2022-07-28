@@ -9,10 +9,7 @@
 
 
     "permissions": [
-        "activeTab",
-        "scripting",
-        "tabs",
-        "notifications"
+        "scripting"
       
     ],
     "host_permissions": [
@@ -22,9 +19,9 @@
         "service_worker": "background.js"
     },
     "icons": {
-        "16": "/meditate.png",
-        "32": "/meditate.png",
-        "48": "/meditate.png",
-        "128": "/meditate.png"
+        "16": "/icon.png",
+        "32":  "/icon.png",
+        "48": "/icon.png",
+        "128": "/icon.png"
       }
 }

@@ -26,3 +26,4 @@ yarn-error.log*
 chrome-ext-grid-goal/grid-goal-api/node_modules
 grid-goal-ssh
 grid-goal-ssh.pub
+chrome-ext-minimap.zip

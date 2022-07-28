@@ -26,12 +26,13 @@
   transform: translateY(2vh) scale(var(--minimap-scape));
   opacity: 1;
   width: 2000px;
-
+  height: 100%;
   /* pointer-events: none; */
 }
 
 .minimap-container * {
   pointer-events: none !important;
+  user-select: none !important;
 }
 
 .minimap-clicker {
@@ -46,9 +47,8 @@
   width: 2000px;
   pointer-events: none;
 
-  background: #38941e;
+  background: #00efff5e;
   border-radius: 100px;
-
   /* background: rgba(0, 0, 0, 0.173); */
 }
 
