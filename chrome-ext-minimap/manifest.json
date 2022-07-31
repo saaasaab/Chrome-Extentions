@@ -1,7 +1,7 @@
 {
     "name": "Minimap",
     "description": "Creates a minimap of every site you're on",
-    "version": "1.0.0",
+    "version": "1.2.0",
     "manifest_version": 3,
     "action": {
         "default_popup": "popup.html"

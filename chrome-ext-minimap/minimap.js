@@ -26,7 +26,7 @@ try {
 
 
     function createMiniMap() {
-        
+
         let wrap = document.createElement('div');
         let container = document.createElement('div');
         let clicker = document.createElement('div');
@@ -36,10 +36,10 @@ try {
 
         let bodyBackgroundColor = document.body.style.backgroundColor || "rgb(255,255,255)";
 
-        var rgb = bodyBackgroundColor.match(/\d+/g);
+        let rgb = bodyBackgroundColor.match(/\d+/g);
         let darnessSum = 0;
 
-        for (var i in rgb) {
+        for (let i in rgb) {
             darnessSum += +rgb[i]; // Forces the rgb value to be a number
         }
 
@@ -49,7 +49,7 @@ try {
         }
 
 
-        var clone = document.querySelector('body').cloneNode(true);
+        let clone = document.querySelector('body').cloneNode(true);
 
         let allCloneScripts = clone.querySelectorAll('script');
         // let allCloneStyles = clone.querySelectorAll('style');
@@ -68,28 +68,25 @@ try {
         // allCloneLinks.forEach((el) => { el.remove() })
 
         let documentHeight = document.documentElement.scrollHeight
-       
+
         let windowH = window.innerHeight;
         let windowW = window.innerWidth;
 
         let pageAspectRatio = documentHeight / windowW;
 
-
-        const mmWidthRatio = windowW / windowW;
-
         container.innerHTML = clone.innerHTML;
         container.className = "minimap-container";
-        container.style.height = `${documentHeight}px`; //  * mmWidthRatio
-        container.style.width = `${windowW}px`; //  * mmWidthRatio
+        container.style.height = `${documentHeight}px`;
+        container.style.width = `${windowW}px`;
 
 
         clicker.className = "minimap-clicker";
-        clicker.style.height = `${windowH}px`; // * mmWidthRatio
-        clicker.style.width = `${windowW}px`; //  * mmWidthRatio
+        clicker.style.height = `${windowH}px`;
+        clicker.style.width = `${windowW}px`;
 
         wrap.className = "minimap-wrap";
-        wrap.style.backgroundColor = lightMode ? "#d5d5d512" : "rgb(104, 104, 104, .7)" 
-        wrap.style.width = `${scale* windowW}px`; //  * mmWidthRatio
+        wrap.style.backgroundColor = lightMode ? "#e9e9e9e9" : "rgb(104, 104, 104, .7)"
+        wrap.style.width = `${scale * windowW}px`;
 
         closeButton.className = "minimap-close-button";
         closeButton.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="white" viewBox="0 0 24 24" stroke="black" stroke-width="2">
@@ -120,18 +117,17 @@ try {
 
 
             let documentHeight = document.documentElement.scrollHeight
-            
+
             let windowH = window.innerHeight;
             let windowW = window.innerWidth;
 
-            let windowRatio = windowH/windowW;
-            const mmWidthRatio = windowW / windowW;
+            let windowRatio = windowH / windowW;
 
             let windowScrollY = window.pageYOffset
-            const mmHeight = minimapContainer.getBoundingClientRect().height 
+            const mmHeight = minimapContainer.getBoundingClientRect().height
 
 
-            minimapClicker.style.height = `${windowRatio * windowW }px`;
+            minimapClicker.style.height = `${windowRatio * windowW}px`;
             minimapClicker.style.top = `${windowScrollY / documentHeight * mmHeight}px`;
         });
 
@@ -144,25 +140,31 @@ try {
 
         minimapContainer.addEventListener('click', (e) => {
             let windowW = window.innerWidth;
-            const mmWidthRatio = windowW / windowW;
-            let scale = 0.09;
-
-            let mmHeight = e.path[0].offsetHeight  * scale//* mmWidthRatio //* scaleo;
-            
-
-            
-            let documentHeight = document.body.offsetHeight
-            let rect = e.path[0].getBoundingClientRect()
-            let clickY = e.clientY - rect.top;
-            
-            
             let windowH = window.innerHeight;
 
-            console.log(`clickY`, clickY)
-            console.log(`mmHeight`, mmHeight)
-            console.log(`windowH`, windowH)
+            let scale = 0.09;
 
-            let jumpToPoint = (clickY) / (mmHeight) * documentHeight  - windowH / 2;
+            let mmHeight = e.path[0].offsetHeight * scale;
+
+            let htmlElement = document.documentElement;
+            let bodyElement = document.body;
+            let documentHeight = Math.max(
+                htmlElement.clientHeight, htmlElement.scrollHeight, htmlElement.offsetHeight,
+                bodyElement.scrollHeight, bodyElement.offsetHeight
+            );
+
+
+            let rect = e.path[0].getBoundingClientRect()
+            let clickY = e.clientY - rect.top;
+
+
+            let jumpToPoint = (clickY) / (mmHeight) * documentHeight - windowH / 2;
+
+            // console.log(`clickY`, clickY)
+            // console.log(`mmHeight`, mmHeight)
+            // console.log(`windowH`, windowH)
+            // console.log(`documentHeight`, documentHeight)
+            // console.log(`jumpToPoint`, jumpToPoint)
 
             window.scrollTo({
                 top: jumpToPoint,
@@ -177,14 +179,14 @@ try {
     try {
         // create an Observer instance
 
-        
+
         const resizeObserver = new ResizeObserver((entries) => {
 
-           
+
             if (Math.abs(originalDocumentSize - document.body.offsetHeight) > 1000) {
                 originalDocumentSize = document.body.offsetHeight;
-                // distroyMiniMapFromDOM();
-                // createMiniMap()
+                distroyMiniMapFromDOM();
+                createMiniMap()
 
 
             }
@@ -198,7 +200,10 @@ try {
     }
 
 
-    createMiniMap()
+    if (!document.querySelector(".minimap-wrap")) {
+        createMiniMap()
+    }
+
 
 
 } catch (error) {
