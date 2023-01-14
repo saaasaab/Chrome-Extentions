@@ -1,18 +1,14 @@
 {
-    "manifest_version": 2,
-  
-    "name": "Daily Calendar",
-    "description": "Do something every day",
-    "version": "1.0.5",
-    "icons": { "128": "icon_128.png" },
-    "browser_action": {
-      "default_icon": "icon.png"
-    },
-    "background": {
-        "scripts": [
-            "background.js"
-        ]
-    },
-    "permissions": [
-    ]
+  "manifest_version": 3,
+
+  "name": "Daily Calendar",
+  "description": "Do something every day",
+  "version": "1.2.0",
+  "icons": { "128": "icon_128.png" },
+  "action": {
+    "default_icon": "icon.png"
+  },
+  "background": {
+      "service_worker": "background.js"
   }
+}
