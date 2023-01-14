@@ -269,6 +269,14 @@ const demotivationalQuotes = [`Does anyone want to be in love so we can split re
 `If your coffee order is more than four words, you are part of the problem.`]
 
 
+
+let messageIndex;
+try {
+    messageIndex = JSON.parse(new URLSearchParams(location.search).get('index'));
+} catch (e) {}
+
+// simplify the displayed URL in the address bar
+
 let deMoElement = document.querySelector('.de-mo-quote');
-const deMoQuoteIndex = Math.floor(Math.random() * demotivationalQuotes.length)
+const deMoQuoteIndex = messageIndex ?? Math.floor(Math.random() * demotivationalQuotes.length)
 deMoElement.textContent = demotivationalQuotes[deMoQuoteIndex]

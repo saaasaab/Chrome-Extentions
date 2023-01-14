@@ -1,13 +1,16 @@
 {
     "name": "Daily Downer",
-    "description": "Somtimes we just need to be brought down",
-    "version": "1.0.1",
+    "description": "Sometimes we just need to be brought down",
+    "version": "1.0.2",
     "manifest_version": 3,
     "action": {
         "default_popup": "popup.html"
+
     },
     "permissions": [
-        "notifications"
+        "notifications",
+        "alarms",
+        "storage"
       ],
     "background": {
         "service_worker": "background.js"

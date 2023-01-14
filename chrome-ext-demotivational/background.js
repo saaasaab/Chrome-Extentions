@@ -269,32 +269,51 @@ const demotivationalQuotes = [`Does anyone want to be in love so we can split re
 `If your coffee order is more than four words, you are part of the problem.`]
 
 
-function createDemotivation(){
-    const deMoQuoteIndex = Math.floor(Math.random() * demotivationalQuotes.length)
-    chrome.action.setBadgeText({ text: '' });
+let dayRan = '';
+let messageIndex = '';
+const localStorageKey = 'demotivational-day';
 
-    chrome.notifications.create({
-        type: 'basic',
-        iconUrl: 'meditate.png',
-        title: 'Time to Demotivate',
-        message: demotivationalQuotes[deMoQuoteIndex],
-        priority: 0,
-        // buttons: [
-        //     { title: 'Read the rest' }
-        // ],
-         requireInteraction: true
+// Creates the alarm every 3 hours
+chrome.alarms.create("demotivation", {delayInMinutes: 0.05, periodInMinutes: 180});
+
+
+// Listen for the alarm. Right now there is only one. 
+chrome.alarms.onAlarm.addListener(() => {
+    const deMoQuoteIndex = Math.floor(Math.random() * demotivationalQuotes.length);
+    messageIndex = deMoQuoteIndex;
+
+    // Check that the alarm has not been run today.
+    chrome.storage.local.get(localStorageKey, (result) => {
+        if(Object.keys(result).length === 0){
+            dayRan='1970-01-01';
+        }
+        else{
+            dayRan = result[localStorageKey];
+        }
     });
-}
+    
+    let today = String(new Date().toISOString().slice(0, 10));
 
-createDemotivation()
-setInterval(function () { // Set interval for checking
-    createDemotivation()
-}, 60000 * 60 * 24); // Repeat every 60000 milliseconds (1 minute)
+    // Run the notification
+    if(today !== dayRan){
+        chrome.action.setBadgeText({ text: '' });
+       
+        chrome.notifications.create(
+            {
+                type: 'basic',
+                iconUrl: 'meditate.png',
+                title: 'Time to Demotivate',
+                message: demotivationalQuotes[deMoQuoteIndex],
+                priority: 0,
+                requireInteraction: true
+            });
+        chrome.storage.local.set({'demotivational-day': today});
+    }
+});
 
-
-// chrome.notifications.onButtonClicked.addListener(
-//     (notificationId, buttonIndex) => {
-//         console.log(`object`, notificationId, buttonIndex);
-//         window.open('./popup.html');
-//     }
-// )
+// On notification click, open the popup.html page and pass in the message's index
+chrome.notifications.onClicked.addListener(()=>{
+    chrome.tabs.create({
+        url: 'popup.html?index=' + messageIndex,
+    });
+});
