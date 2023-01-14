@@ -1,7 +1,7 @@
 {
     "name": "The Project Action Plan",
     "description": "If you don't write it down, it will not be done",
-    "version": "1.0.0",
+    "version": "1.0.2",
     "manifest_version": 3,
     "action": {
         "default_popup": "popup.html"
