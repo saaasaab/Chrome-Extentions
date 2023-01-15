@@ -4,46 +4,110 @@ const defaultPlans = [{
     due_date:'',
     completed: false,
     objectives:'',
-    notes: [],
+    notes: '',
     action_items:[
         {
             item:'',
-            due:''
-        }
+            due:'',
+            done: false
+        },
+        {
+            item:'',
+            due:'',
+            done: false
+        },
+        {
+            item:'',
+            due:'',
+            done: false
+        },
+        {
+            item:'',
+            due:'',
+            done: false
+        },
+        {
+            item:'',
+            due:'',
+            done: false
+        },
+        {
+            item:'',
+            due:'',
+            done: false
+        },
+        {
+            item:'',
+            due:'',
+            done: false
+        },
+        {
+            item:'',
+            due:'',
+            done: false
+        },
+        {
+            item:'',
+            due:'',
+            done: false
+        },
+        {
+            item:'',
+            due:'',
+            done: false
+        },
+        {
+            item:'',
+            due:'',
+            done: false
+        },
+        {
+            item:'',
+            due:'',
+            done: false
+        },
+        {
+            item:'',
+            due:'',
+            done: false
+        },
     ]
-}]
-const allPlans = JSON.parse(window.localStorage.getItem('ap-all-plans')) || defaultPlans;
+}];
+
+const allPlans = (JSON.parse(window.localStorage.getItem('ap-all-plans')) || defaultPlans);
+let activeIndex = 0;
+const actionItems = allPlans[activeIndex].action_items;
+
+
+actionItems?.sort((a,b) => Number(a.due) - Number(b.due));
 
 function saveInLocal(stateTitle, stateValues) {
     window.localStorage.setItem(stateTitle, JSON.stringify(stateValues));
 }
 
+
+
+
 function loadPreSetValues(){
-    console.log(`allPlans[activeIndex].title`, allPlans[activeIndex])
-    document.getElementById("ap-project-name").value = allPlans[activeIndex].title;
-    document.getElementById("ap-start-date").value = allPlans[activeIndex].start_date;
-    document.getElementById("ap-due-date").value = allPlans[activeIndex].due_date;
-    document.getElementById("ap-budget").value = allPlans[activeIndex].budget;
-    document.getElementById("ap-completed").checked = allPlans[activeIndex].completed;
-    document.getElementById("ap-project-objectives").value = allPlans[activeIndex].objectives;
+    const activePlan = allPlans[activeIndex];
+    document.getElementById("ap-project-name").value = activePlan.title;
+    document.getElementById("ap-start-date").value = activePlan.start_date;
+    document.getElementById("ap-due-date").value = activePlan.due_date;
+    document.getElementById("ap-budget").value = activePlan.budget;
+    document.getElementById("ap-completed").checked = activePlan.completed;
+    document.getElementById("ap-project-objectives").value = activePlan.objectives;
+    document.getElementById("ap-notes-and-ideas").value = activePlan.notes
 
-    
-
+    activePlan.action_items.forEach((item,i)=>{
+        document.getElementById(`ap-action-item-title-${i+1}`).value = activePlan.action_items[i].item;
+        document.getElementById(`ap-action-item-date-${i+1}`).value = activePlan.action_items[i].due;
+        document.getElementById(`ap-action-item-completed-${i+1}`).checked = activePlan.action_items[i].done;
+    })
 }
-
-
-// const dateControl = document.querySelector('input[type="date"]');
-// dateControl.value = '2017-06-01';
-// console.log(dateControl.value); // prints "2017-06-01"
-// console.log(dateControl.valueAsNumber); // prints 1496275200000, 
-
-
-let activeIndex = 0;
 
 function handleNameChange(e) {
     allPlans[activeIndex].title = e.target.value;
     saveInLocal('ap-all-plans',allPlans);
-    console.log(`allPlans`, allPlans)
 }
 function handleStartDateChange(e) {
     allPlans[activeIndex].start_date = e.target.value;
@@ -63,6 +127,24 @@ function handleCompletedChange(e) {
 }
 function handleObjectivesChange(e) {
     allPlans[activeIndex].objectives =e.target.value;
+    saveInLocal('ap-all-plans',allPlans);
+}
+function handleNotesChange(e) {
+    allPlans[activeIndex].notes =e.target.value;
+    saveInLocal('ap-all-plans',allPlans);
+}
+
+function handleActionTitleChange(e, i) {
+    
+    allPlans[activeIndex].action_items[i].item =e.target.value;
+    saveInLocal('ap-all-plans',allPlans);
+}
+function handleActionDateChange(e, i) {
+    allPlans[activeIndex].action_items[i].due =e.target.value;
+    saveInLocal('ap-all-plans',allPlans);
+}
+function handleActionCompleteChange(e, i) {
+    allPlans[activeIndex].action_items[i].done =e.target.checked;
     saveInLocal('ap-all-plans',allPlans);
 }
 
@@ -108,4 +190,15 @@ window.addEventListener('load', () => {
     document.getElementById("ap-budget").addEventListener("change", handleBudgetChange);
     document.getElementById("ap-completed").addEventListener("change", handleCompletedChange);
     document.getElementById("ap-project-objectives").addEventListener("change", handleObjectivesChange);
+    document.getElementById("ap-notes-and-ideas").addEventListener("change", handleNotesChange);
+
+    Array.from(Array(13).keys()).forEach((item,i)=>{
+        document.getElementById(`ap-action-item-title-${i+1}`).addEventListener('change',(e)=>{handleActionTitleChange(e,i)});
+        document.getElementById(`ap-action-item-date-${i+1}`).addEventListener('change',(e)=>{handleActionDateChange(e,i)});
+        document.getElementById(`ap-action-item-completed-${i+1}`).addEventListener('change',(e)=>{handleActionCompleteChange(e,i)});
+
+        // document.getElementById(`ap-action-item-date-${i+1}`).value = allPlans[activeIndex].action_items[i].due;
+        // document.getElementById(`ap-action-item-completed-${i+1}`).value = allPlans[activeIndex].action_items[i].done;
+    })
+
 });

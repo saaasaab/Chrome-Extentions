@@ -16,7 +16,11 @@
             
             font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
             background: var(--base);
+            max-height: 600px;
+            max-width: 800px;
         }
+
+        
         .action-plan-wrapper{
             width: 100%;
             color: var(--dark-blue);
@@ -44,7 +48,7 @@
         .ap-tab.active {
             border-bottom: none;
             background-color: #f1f1f1;
-            color: blue;
+            color: var(--dark-blue);
         }
 
         .ap-body {
@@ -70,10 +74,10 @@
             
         }
         .ap-project-left{
-            width: 50% ;
+            width: 40% ;
         }
         .ap-project-right{
-            width: 50%;
+            width: 60%;
         }
 
         
@@ -97,7 +101,7 @@
             padding: 0;
             background: var(--white);
             border: none;
-            font-size: calc(1.2*var(--spacing));
+            font-size: calc(1*var(--spacing));
         }
         #ap-project-objectives{
             width: 100%;
@@ -115,8 +119,9 @@
             padding: 0;
             background: var(--white);
             border: none;
-            font-size: calc(var(--spacing)*.7);
         }
+
+      
 
         .ap-section-budget{
             display: flex;
@@ -158,6 +163,7 @@
             font-size: calc(var(--spacing)*.5);
         }
         .ap-notes{
+            position: relative;
         }
         .ap-notes-header{
             
@@ -169,6 +175,11 @@
             line-height: calc(2*var(--spacing));
         }
         
+        input[type='checkbox']{
+            accent-color: var(--dark-blue);
+
+        }
+
         .ap-objectives{
         }
         .ap-action-items{
@@ -178,19 +189,57 @@
         }
         .ap-actions-col1{
             padding-left: 10px;
-            width: 70%;
+            width: 65%;
         }
        
         .ap-actions-col2{
-            width: 20%;
+            width: 28% ;
+            
         }
         .ap-actions-col3{
-            width: 10%;
+            width: 7%;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
         .ap-action-row{
             /* width: 100%; */
             display: flex;
-            gap: calc(var(--spacing)/1.5);
+            align-items: center;
+            justify-content: center;
+            gap: calc(var(--spacing)/2);
+        }
+
+        .ap-action-item-title{
+            background: var(--white);
+            border: none;
+            
+        }
+        .ap-compact-dotted.ap-actions-col1{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .ap-compact-dotted.ap-actions-col2{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .ap-compact-dotted.ap-actions-col3{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .ap-action-row input{
+            width: calc(100% - var(--spacing)/3);
+        }
+        .ap-action-item-date {
+            font-size: calc(var(--spacing)/3);;
+            height: calc(100% - var(--spacing)/4);;
+            background: var(--white);
+            border: none;
         }
 
         .ap-action-row-title{
@@ -199,10 +248,10 @@
             text-transform: capitalize;
             font-weight: 600;
             font-size: calc(var(--spacing)*.5);
+            cursor: pointer;
         }
 
-         
-
+        
         .row-half{
             height: calc(.5 * var(--spacing));
             box-sizing:border-box;
@@ -248,11 +297,24 @@
             position: relative;
             box-sizing:border-box;
             overflow:hidden;
+            pointer-events: none;
         }
         .ap-spaced-dotted:after {
             box-sizing:border-box;
             content:".......................................................................";
             letter-spacing: var(--spacing); /* Use letter-spacing to increase space between dots*/
+        }
+        #ap-notes-and-ideas{
+            position: absolute;
+            top: calc(2 * var(--spacing));
+            left: 0;
+            height: calc(11 * var(--spacing));;
+            width: 100%;
+            max-width: 100%;
+            resize: none;
+            border: none;
+            line-height: var(--spacing);
+            background: var(--white);
         }
 
     </style>
@@ -310,6 +372,7 @@
                     </div>
                     <div class="ap-notes">
                         <div class="ap-section-title-light row1point5">Notes & Ideas:</div>
+                        <textarea name="ap-notes-and-ideas" id="ap-notes-and-ideas"></textarea>
                         <div class="ap-spaced-dotted row1"></div>
                         <div class="ap-spaced-dotted row1"></div>
                         <div class="ap-spaced-dotted row1"></div>
@@ -334,73 +397,74 @@
                         <div class="ap-action-row row1">
                             <div class="ap-action-row-title ap-solid ap-actions-col1">Action Items:</div>
                             <div class="ap-action-row-title ap-solid ap-actions-col2">Due:</div>
-                            <div class="ap-action-row-title ap-solid ap-actions-col3">O</div>
+                            <div class="ap-action-row-title ap-solid ap-actions-col3">✓</div>
                         </div>
 
                         <div class="ap-action-row row1">
-                            <div class="ap-compact-dotted row1 ap-actions-col1"></div>
-                            <div class="ap-compact-dotted row1 ap-actions-col2"></div>
-                            <div class="ap-compact-dotted row1 ap-actions-col3"></div>
+                            <div class="ap-compact-dotted row1 ap-actions-col1"><input name="ap-action-item-title" id="ap-action-item-title-1" class="ap-action-item-title"/></div>
+                            <div class="ap-compact-dotted row1 ap-actions-col2"><input type="date" id="ap-action-item-date-1" class="ap-action-item-date" name="ap-action-item-date"></div>
+                            <div class="ap-compact-dotted row1 ap-actions-col3"><input type="checkbox" id="ap-action-item-completed-1" class="ap-action-item-completed" name="ap-action-item-completed" ></div>
+                        </div>
+                        
+                        <div class="ap-action-row row1">
+                            <div class="ap-compact-dotted row1 ap-actions-col1"><input name="ap-action-item-title" id="ap-action-item-title-2" class="ap-action-item-title"/></div>
+                            <div class="ap-compact-dotted row1 ap-actions-col2"><input type="date" id="ap-action-item-date-2" class="ap-action-item-date" name="ap-action-item-date"></div>
+                            <div class="ap-compact-dotted row1 ap-actions-col3"><input type="checkbox" id="ap-action-item-completed-2" class="ap-action-item-completed" name="ap-action-item-completed" ></div>
                         </div>
                         <div class="ap-action-row row1">
-                            <div class="ap-compact-dotted row1 ap-actions-col1"></div>
-                            <div class="ap-compact-dotted row1 ap-actions-col2"></div>
-                            <div class="ap-compact-dotted row1 ap-actions-col3"></div>
+                            <div class="ap-compact-dotted row1 ap-actions-col1"><input name="ap-action-item-title" id="ap-action-item-title-3" class="ap-action-item-title"/></div>
+                            <div class="ap-compact-dotted row1 ap-actions-col2"><input type="date" id="ap-action-item-date-3" class="ap-action-item-date" name="ap-action-item-date"></div>
+                            <div class="ap-compact-dotted row1 ap-actions-col3"><input type="checkbox" id="ap-action-item-completed-3" class="ap-action-item-completed" name="ap-action-item-completed" ></div>
                         </div>
                         <div class="ap-action-row row1">
-                            <div class="ap-compact-dotted row1 ap-actions-col1"></div>
-                            <div class="ap-compact-dotted row1 ap-actions-col2"></div>
-                            <div class="ap-compact-dotted row1 ap-actions-col3"></div>
+                            <div class="ap-compact-dotted row1 ap-actions-col1"><input name="ap-action-item-title" id="ap-action-item-title-4" class="ap-action-item-title"/></div>
+                            <div class="ap-compact-dotted row1 ap-actions-col2"><input type="date" id="ap-action-item-date-4" class="ap-action-item-date" name="ap-action-item-date"></div>
+                            <div class="ap-compact-dotted row1 ap-actions-col3"><input type="checkbox" id="ap-action-item-completed-4" class="ap-action-item-completed" name="ap-action-item-completed" ></div>
                         </div>
                         <div class="ap-action-row row1">
-                            <div class="ap-compact-dotted row1 ap-actions-col1"></div>
-                            <div class="ap-compact-dotted row1 ap-actions-col2"></div>
-                            <div class="ap-compact-dotted row1 ap-actions-col3"></div>
+                            <div class="ap-compact-dotted row1 ap-actions-col1"><input name="ap-action-item-title" id="ap-action-item-title-5" class="ap-action-item-title"/></div>
+                            <div class="ap-compact-dotted row1 ap-actions-col2"><input type="date" id="ap-action-item-date-5" class="ap-action-item-date" name="ap-action-item-date"></div>
+                            <div class="ap-compact-dotted row1 ap-actions-col3"><input type="checkbox" id="ap-action-item-completed-5" class="ap-action-item-completed" name="ap-action-item-completed" ></div>
                         </div>
                         <div class="ap-action-row row1">
-                            <div class="ap-compact-dotted row1 ap-actions-col1"></div>
-                            <div class="ap-compact-dotted row1 ap-actions-col2"></div>
-                            <div class="ap-compact-dotted row1 ap-actions-col3"></div>
+                            <div class="ap-compact-dotted row1 ap-actions-col1"><input name="ap-action-item-title" id="ap-action-item-title-6" class="ap-action-item-title"/></div>
+                            <div class="ap-compact-dotted row1 ap-actions-col2"><input type="date" id="ap-action-item-date-6" class="ap-action-item-date" name="ap-action-item-date"></div>
+                            <div class="ap-compact-dotted row1 ap-actions-col3"><input type="checkbox" id="ap-action-item-completed-6" class="ap-action-item-completed" name="ap-action-item-completed" ></div>
                         </div>
                         <div class="ap-action-row row1">
-                            <div class="ap-compact-dotted row1 ap-actions-col1"></div>
-                            <div class="ap-compact-dotted row1 ap-actions-col2"></div>
-                            <div class="ap-compact-dotted row1 ap-actions-col3"></div>
+                            <div class="ap-compact-dotted row1 ap-actions-col1"><input name="ap-action-item-title" id="ap-action-item-title-7" class="ap-action-item-title"/></div>
+                            <div class="ap-compact-dotted row1 ap-actions-col2"><input type="date" id="ap-action-item-date-7" class="ap-action-item-date" name="ap-action-item-date"></div>
+                            <div class="ap-compact-dotted row1 ap-actions-col3"><input type="checkbox" id="ap-action-item-completed-7" class="ap-action-item-completed" name="ap-action-item-completed" ></div>
                         </div>
                         <div class="ap-action-row row1">
-                            <div class="ap-compact-dotted row1 ap-actions-col1"></div>
-                            <div class="ap-compact-dotted row1 ap-actions-col2"></div>
-                            <div class="ap-compact-dotted row1 ap-actions-col3"></div>
+                            <div class="ap-compact-dotted row1 ap-actions-col1"><input name="ap-action-item-title" id="ap-action-item-title-8" class="ap-action-item-title"/></div>
+                            <div class="ap-compact-dotted row1 ap-actions-col2"><input type="date" id="ap-action-item-date-8" class="ap-action-item-date" name="ap-action-item-date"></div>
+                            <div class="ap-compact-dotted row1 ap-actions-col3"><input type="checkbox" id="ap-action-item-completed-8" class="ap-action-item-completed" name="ap-action-item-completed" ></div>
                         </div>
                         <div class="ap-action-row row1">
-                            <div class="ap-compact-dotted row1 ap-actions-col1"></div>
-                            <div class="ap-compact-dotted row1 ap-actions-col2"></div>
-                            <div class="ap-compact-dotted row1 ap-actions-col3"></div>
+                            <div class="ap-compact-dotted row1 ap-actions-col1"><input name="ap-action-item-title" id="ap-action-item-title-9" class="ap-action-item-title"/></div>
+                            <div class="ap-compact-dotted row1 ap-actions-col2"><input type="date" id="ap-action-item-date-9" class="ap-action-item-date" name="ap-action-item-date"></div>
+                            <div class="ap-compact-dotted row1 ap-actions-col3"><input type="checkbox" id="ap-action-item-completed-9" class="ap-action-item-completed" name="ap-action-item-completed" ></div>
                         </div>
                         <div class="ap-action-row row1">
-                            <div class="ap-compact-dotted row1 ap-actions-col1"></div>
-                            <div class="ap-compact-dotted row1 ap-actions-col2"></div>
-                            <div class="ap-compact-dotted row1 ap-actions-col3"></div>
+                            <div class="ap-compact-dotted row1 ap-actions-col1"><input name="ap-action-item-title" id="ap-action-item-title-10" class="ap-action-item-title"/></div>
+                            <div class="ap-compact-dotted row1 ap-actions-col2"><input type="date" id="ap-action-item-date-10" class="ap-action-item-date" name="ap-action-item-date"></div>
+                            <div class="ap-compact-dotted row1 ap-actions-col3"><input type="checkbox" id="ap-action-item-completed-10" class="ap-action-item-completed" name="ap-action-item-completed" ></div>
                         </div>
                         <div class="ap-action-row row1">
-                            <div class="ap-compact-dotted row1 ap-actions-col1"></div>
-                            <div class="ap-compact-dotted row1 ap-actions-col2"></div>
-                            <div class="ap-compact-dotted row1 ap-actions-col3"></div>
+                            <div class="ap-compact-dotted row1 ap-actions-col1"><input name="ap-action-item-title" id="ap-action-item-title-11" class="ap-action-item-title"/></div>
+                            <div class="ap-compact-dotted row1 ap-actions-col2"><input type="date" id="ap-action-item-date-11" class="ap-action-item-date" name="ap-action-item-date"></div>
+                            <div class="ap-compact-dotted row1 ap-actions-col3"><input type="checkbox" id="ap-action-item-completed-11" class="ap-action-item-completed" name="ap-action-item-completed" ></div>
                         </div>
                         <div class="ap-action-row row1">
-                            <div class="ap-compact-dotted row1 ap-actions-col1"></div>
-                            <div class="ap-compact-dotted row1 ap-actions-col2"></div>
-                            <div class="ap-compact-dotted row1 ap-actions-col3"></div>
+                            <div class="ap-compact-dotted row1 ap-actions-col1"><input name="ap-action-item-title" id="ap-action-item-title-12" class="ap-action-item-title"/></div>
+                            <div class="ap-compact-dotted row1 ap-actions-col2"><input type="date" id="ap-action-item-date-12" class="ap-action-item-date" name="ap-action-item-date"></div>
+                            <div class="ap-compact-dotted row1 ap-actions-col3"><input type="checkbox" id="ap-action-item-completed-12" class="ap-action-item-completed" name="ap-action-item-completed" ></div>
                         </div>
                         <div class="ap-action-row row1">
-                            <div class="ap-compact-dotted row1 ap-actions-col1"></div>
-                            <div class="ap-compact-dotted row1 ap-actions-col2"></div>
-                            <div class="ap-compact-dotted row1 ap-actions-col3"></div>
-                        </div>
-                        <div class="ap-action-row row1">
-                            <div class="ap-compact-dotted row1 ap-actions-col1"></div>
-                            <div class="ap-compact-dotted row1 ap-actions-col2"></div>
-                            <div class="ap-compact-dotted row1 ap-actions-col3"></div>
+                            <div class="ap-compact-dotted row1 ap-actions-col1"><input name="ap-action-item-title" id="ap-action-item-title-13" class="ap-action-item-title"/></div>
+                            <div class="ap-compact-dotted row1 ap-actions-col2"><input type="date" id="ap-action-item-date-13" class="ap-action-item-date" name="ap-action-item-date"></div>
+                            <div class="ap-compact-dotted row1 ap-actions-col3"><input type="checkbox" id="ap-action-item-completed-13" class="ap-action-item-completed" name="ap-action-item-completed" ></div>
                         </div>
                     </div>
                 </div>
