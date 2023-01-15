@@ -1,7 +1,7 @@
 {
     "name": "Daily Downer",
     "description": "Sometimes we just need to be brought down",
-    "version": "1.0.2",
+    "version": "1.3.0",
     "manifest_version": 3,
     "action": {
         "default_popup": "popup.html"

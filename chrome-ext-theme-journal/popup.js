@@ -24,7 +24,7 @@ function processForm() {
     createHeaderContent();
     // SAVE TO LOCAL
     saveInLocal('active-states-hl', JSON.stringify(activeStates));
-    saveInLocal('active-activities', JSON.stringify(activities));
+    saveInLocal('dc-active-activities', JSON.stringify(activities));
 
     // Remove the visible class for both the mobile and desktop versions
     document.querySelectorAll(".modal--visible").forEach((el) => {
@@ -53,7 +53,7 @@ function removeGoal(action) {
 
         // SAVE TO LOCAL
         saveInLocal('active-states-hl', JSON.stringify(activeStates));
-        saveInLocal('active-activities', JSON.stringify(activities));
+        saveInLocal('dc-active-activities', JSON.stringify(activities));
 
         //Refresh the pages icons 
         let pageContent = document.querySelector(".calendar-content")

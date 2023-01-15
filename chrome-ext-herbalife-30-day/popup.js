@@ -25,7 +25,7 @@ function processForm() {
     createHeaderContent();
     // SAVE TO LOCAL
     saveInLocal('active-states-hl', JSON.stringify(activeStates));
-    saveInLocal('active-activities', JSON.stringify(activities));
+    saveInLocal('dc-active-activities', JSON.stringify(activities));
 
     // Remove the visible class for both the mobile and desktop versions
     document.querySelectorAll(".modal--visible").forEach((el) => {
@@ -55,7 +55,7 @@ function removeGoal(action) {
 
         // SAVE TO LOCAL
         saveInLocal('active-states-hl', JSON.stringify(activeStates));
-        saveInLocal('active-activities', JSON.stringify(activities));
+        saveInLocal('dc-active-activities', JSON.stringify(activities));
 
 
 
@@ -395,7 +395,7 @@ const allActivities = {
     //     icon: "./icons/sleep.png",
     // },
 }
-// const activities = JSON.parse(window.localStorage.getItem('active-activities')) || {
+// const activities = JSON.parse(window.localStorage.getItem('dc-active-activities')) || {
 //     "jump-rope": {
 //         title: "Read every day",
 //         icon: "./icons/reading.png",
