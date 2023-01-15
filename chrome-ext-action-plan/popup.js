@@ -75,6 +75,7 @@ const defaultPlan = {
 };
 
 let allPlans = (JSON.parse(window.localStorage.getItem('ap-all-plans')) || [defaultPlan]);
+
 let activeIndex = 0;
 const actionItems = allPlans[activeIndex].action_items;
 
@@ -107,6 +108,7 @@ function loadPreSetValues(){
 
 function handleNameChange(e) {
     allPlans[activeIndex].title = e.target.value;
+
     const tab = document.querySelector(`#tab${activeIndex}`);
     tab.innerHTML = e.target.value;
 
@@ -144,24 +146,51 @@ function handleActionTitleChange(e, i) {
 function handleActionDateChange(e, i) {
     allPlans[activeIndex].action_items[i].due =e.target.value;
     saveInLocal('ap-all-plans',allPlans);
+    addConditionalFormatting()
 }
 function handleActionCompleteChange(e, i) {
     allPlans[activeIndex].action_items[i].done =e.target.checked;
     saveInLocal('ap-all-plans',allPlans);
 }
 
-function addTab(){
-    allPlans.push(defaultPlan);
-    saveInLocal('ap-all-plans',allPlans);
-    activeIndex = allPlans.length - 1;
+function resetTabs(){
     document.querySelector('.tab-header').innerHTML=`<img class="ap-add-tab" src="add-icon.svg" alt="Add new tab SVG" />`;
     
     allPlans.forEach((plan,i)=>{
         addTabsToPage(plan,i);
     });
+}
+function addTab(){
+    allPlans.push(defaultPlan);
+    saveInLocal('ap-all-plans',allPlans);
+    activeIndex = allPlans.length - 1;
+    resetTabs();
     addTabFunctionality()
     loadPreSetValues();
     activateHandlers();
+}
+
+function addConditionalFormatting() {
+    const tabs = document.querySelectorAll(".ap-action-item-date");
+    var todayDate = new Date().toISOString().slice(0, 10);
+
+    tabs.forEach(tab=>{
+        if(!tab.value){
+            tab.style.backgroundColor = "var(--white)"
+        }
+        // EXPIRED
+        else if(tab.value < todayDate){
+            tab.style.backgroundColor = "#ffe4e4"
+        }
+        // DUE
+        else if(tab.value === todayDate){
+            tab.style.backgroundColor = "#fdfdd1"
+        }
+        // UPCOMING
+        else if(tab.value > todayDate){
+            tab.style.backgroundColor = "#d4ffd4"
+        }
+    })
 }
 
 function addTabsToPage(plan, i){
@@ -188,20 +217,31 @@ function addTabFunctionality(){
             tabs.forEach(tab => {
                 tab.classList.remove("active");
             });
-                tab.classList.add("active");
+            tab.classList.add("active");
 
             const tabPanes = document.querySelectorAll(".tab-pane");
             tabPanes.forEach(tabPane => {
                 tabPane.classList.remove("active");
             });
 
+            addConditionalFormatting()
+
+
             // tabContent.classList.add("active");
         });
           
         tab.addEventListener('long-press', function (e) {
+            if(allPlans.length==1) return;
+            
             tab.remove();
             allPlans = allPlans.filter((plan,index) => index !== i)
+
             saveInLocal('ap-all-plans',allPlans);
+
+            resetTabs();
+            addTabFunctionality();
+
+            activeIndex = 0;
         });
     });
 
@@ -237,13 +277,14 @@ function  activateHandlers(){
 window.addEventListener('load', () => {
     // loads existing data from local storage.
     loadPreSetValues();
+
     activateHandlers()
     
     allPlans.forEach((plan,i)=>{
         addTabsToPage(plan,i);
     })
-    
 
     addTabFunctionality()
 
+    addConditionalFormatting()
 });
