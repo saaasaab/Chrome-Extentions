@@ -35,7 +35,6 @@
             border: 2px solid #ccc;
             background-color: white;
             padding: 5px;
-            margin: 0px 2px;
             border-radius: 2px 2px 0px 0px;
             cursor: pointer;
             font-size: 12px;
@@ -173,21 +172,36 @@
         .ap-objectives{
         }
         .ap-action-items{
-            display: flex;
+            /* display: flex; */
             width: 100%;
-            gap: calc(var(--spacing)/1.5);
+            /* gap: calc(var(--spacing)/1.5); */
         }
         .ap-actions-col1{
             padding-left: 10px;
-            width: 80%;
+            width: 70%;
         }
        
         .ap-actions-col2{
             width: 20%;
         }
         .ap-actions-col3{
-            /* width: 10%; */
+            width: 10%;
         }
+        .ap-action-row{
+            /* width: 100%; */
+            display: flex;
+            gap: calc(var(--spacing)/1.5);
+        }
+
+        .ap-action-row-title{
+            height: var(--spacing);
+            line-height: var(--spacing);
+            text-transform: capitalize;
+            font-weight: 600;
+            font-size: calc(var(--spacing)*.5);
+        }
+
+         
 
         .row-half{
             height: calc(.5 * var(--spacing));
@@ -229,14 +243,6 @@
             box-sizing:border-box;
             border-bottom: dotted 1px #757575;
         }
-        .ap-spaced-dotted{
-            /* Horizontal
-            background-image: linear-gradient(to right, black 33%, rgba(255,255,255,0) 0%);
-            background-position: bottom;
-            background-size:110px 3px;
-            background-repeat: repeat-x; */
-        }
-
 
         .ap-spaced-dotted {
             position: relative;
@@ -303,9 +309,7 @@
                         </div>
                     </div>
                     <div class="ap-notes">
-                        <!-- <div class="row-half"></div> -->
                         <div class="ap-section-title-light row1point5">Notes & Ideas:</div>
-                        <!-- <div class="ap-notes-header"> </div> -->
                         <div class="ap-spaced-dotted row1"></div>
                         <div class="ap-spaced-dotted row1"></div>
                         <div class="ap-spaced-dotted row1"></div>
@@ -318,9 +322,6 @@
                         <div class="ap-spaced-dotted row1"></div>
                         <div class="ap-spaced-dotted row1"></div>
                         <div class="ap-spaced-dotted row1"></div>
-                        <div class="ap-spaced-dotted row1"></div>
-
-
                     </div>
                 </div>
                 
@@ -330,21 +331,77 @@
                         <textarea name="Objectives" id="ap-project-objectives"></textarea>
                     </div>
                     <div class="ap-action-items">
-                        <div class="ap-actions-col1">
-                            <div class="ap-section-title row1 ap-solid">Action Items:</div>
-                            <div class="ap-compact-dotted row1"></div>
-                            <div class="ap-compact-dotted row1"></div>
-                            <div class="ap-compact-dotted row1"></div>
+                        <div class="ap-action-row row1">
+                            <div class="ap-action-row-title ap-solid ap-actions-col1">Action Items:</div>
+                            <div class="ap-action-row-title ap-solid ap-actions-col2">Due:</div>
+                            <div class="ap-action-row-title ap-solid ap-actions-col3">O</div>
                         </div>
-                        <div class="ap-actions-col2">
-                            <div class="ap-section-title row1 ap-solid">Due:</div>
-                            <div class="ap-compact-dotted row1"></div>
-                        </div>
-                        <!-- <div class="ap-actions-col3">
-                            <div class="ap-section-title row1 ap-solid">O</div>
-                            <div class="ap-compact-dotted row1"></div>
-                        </div> -->
 
+                        <div class="ap-action-row row1">
+                            <div class="ap-compact-dotted row1 ap-actions-col1"></div>
+                            <div class="ap-compact-dotted row1 ap-actions-col2"></div>
+                            <div class="ap-compact-dotted row1 ap-actions-col3"></div>
+                        </div>
+                        <div class="ap-action-row row1">
+                            <div class="ap-compact-dotted row1 ap-actions-col1"></div>
+                            <div class="ap-compact-dotted row1 ap-actions-col2"></div>
+                            <div class="ap-compact-dotted row1 ap-actions-col3"></div>
+                        </div>
+                        <div class="ap-action-row row1">
+                            <div class="ap-compact-dotted row1 ap-actions-col1"></div>
+                            <div class="ap-compact-dotted row1 ap-actions-col2"></div>
+                            <div class="ap-compact-dotted row1 ap-actions-col3"></div>
+                        </div>
+                        <div class="ap-action-row row1">
+                            <div class="ap-compact-dotted row1 ap-actions-col1"></div>
+                            <div class="ap-compact-dotted row1 ap-actions-col2"></div>
+                            <div class="ap-compact-dotted row1 ap-actions-col3"></div>
+                        </div>
+                        <div class="ap-action-row row1">
+                            <div class="ap-compact-dotted row1 ap-actions-col1"></div>
+                            <div class="ap-compact-dotted row1 ap-actions-col2"></div>
+                            <div class="ap-compact-dotted row1 ap-actions-col3"></div>
+                        </div>
+                        <div class="ap-action-row row1">
+                            <div class="ap-compact-dotted row1 ap-actions-col1"></div>
+                            <div class="ap-compact-dotted row1 ap-actions-col2"></div>
+                            <div class="ap-compact-dotted row1 ap-actions-col3"></div>
+                        </div>
+                        <div class="ap-action-row row1">
+                            <div class="ap-compact-dotted row1 ap-actions-col1"></div>
+                            <div class="ap-compact-dotted row1 ap-actions-col2"></div>
+                            <div class="ap-compact-dotted row1 ap-actions-col3"></div>
+                        </div>
+                        <div class="ap-action-row row1">
+                            <div class="ap-compact-dotted row1 ap-actions-col1"></div>
+                            <div class="ap-compact-dotted row1 ap-actions-col2"></div>
+                            <div class="ap-compact-dotted row1 ap-actions-col3"></div>
+                        </div>
+                        <div class="ap-action-row row1">
+                            <div class="ap-compact-dotted row1 ap-actions-col1"></div>
+                            <div class="ap-compact-dotted row1 ap-actions-col2"></div>
+                            <div class="ap-compact-dotted row1 ap-actions-col3"></div>
+                        </div>
+                        <div class="ap-action-row row1">
+                            <div class="ap-compact-dotted row1 ap-actions-col1"></div>
+                            <div class="ap-compact-dotted row1 ap-actions-col2"></div>
+                            <div class="ap-compact-dotted row1 ap-actions-col3"></div>
+                        </div>
+                        <div class="ap-action-row row1">
+                            <div class="ap-compact-dotted row1 ap-actions-col1"></div>
+                            <div class="ap-compact-dotted row1 ap-actions-col2"></div>
+                            <div class="ap-compact-dotted row1 ap-actions-col3"></div>
+                        </div>
+                        <div class="ap-action-row row1">
+                            <div class="ap-compact-dotted row1 ap-actions-col1"></div>
+                            <div class="ap-compact-dotted row1 ap-actions-col2"></div>
+                            <div class="ap-compact-dotted row1 ap-actions-col3"></div>
+                        </div>
+                        <div class="ap-action-row row1">
+                            <div class="ap-compact-dotted row1 ap-actions-col1"></div>
+                            <div class="ap-compact-dotted row1 ap-actions-col2"></div>
+                            <div class="ap-compact-dotted row1 ap-actions-col3"></div>
+                        </div>
                     </div>
                 </div>
             </div>

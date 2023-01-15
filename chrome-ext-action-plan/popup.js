@@ -25,6 +25,9 @@ function loadPreSetValues(){
     document.getElementById("ap-due-date").value = allPlans[activeIndex].due_date;
     document.getElementById("ap-budget").value = allPlans[activeIndex].budget;
     document.getElementById("ap-completed").checked = allPlans[activeIndex].completed;
+    document.getElementById("ap-project-objectives").value = allPlans[activeIndex].objectives;
+
+    
 
 }
 
@@ -56,7 +59,10 @@ function handleBudgetChange(e) {
 }
 function handleCompletedChange(e) {
     allPlans[activeIndex].completed = e.target.checked;
-    console.log(`e.target.value`, e.target.checked)
+    saveInLocal('ap-all-plans',allPlans);
+}
+function handleObjectivesChange(e) {
+    allPlans[activeIndex].objectives =e.target.value;
     saveInLocal('ap-all-plans',allPlans);
 }
 
@@ -101,5 +107,5 @@ window.addEventListener('load', () => {
     document.getElementById("ap-due-date").addEventListener("change", handleDueDateChange);
     document.getElementById("ap-budget").addEventListener("change", handleBudgetChange);
     document.getElementById("ap-completed").addEventListener("change", handleCompletedChange);
-
+    document.getElementById("ap-project-objectives").addEventListener("change", handleObjectivesChange);
 });
