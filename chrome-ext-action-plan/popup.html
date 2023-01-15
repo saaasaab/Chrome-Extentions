@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Daily Action Plan</title>
     <script src="popup.js" defer></script>
+    <script src="long-press-event.js" defer></script>
     <style>
         :root{
             --spacing: 1.5rem;
@@ -320,14 +321,16 @@
     </style>
 </head>
 
-<body>
+
+<body data-long-press-delay="500">
     <div class="action-plan-wrapper">
 
       
         <div class="tab-header">
-            <div class="ap-tab active" id="tab1">Tab 1</div>
-            <div class="ap-tab" id="tab2">Tab 2</div>
-            <div class="ap-tab" id="tab3">Tab 3</div>
+            <!-- <div class="ap-tab " id="tab1">Tab 1</div> -->
+            <img class="ap-add-tab" src="add-icon.svg" alt="Add new tab SVG" />
+            <!-- <div class="ap-tab" id="tab2">Tab 2</div>
+            <div class="ap-tab" id="tab3">Tab 3</div> -->
         </div>
         <!-- <div class="tab-content">
             <div class="tab-pane active" id="tab1-content">Tab 1 Content</div>
