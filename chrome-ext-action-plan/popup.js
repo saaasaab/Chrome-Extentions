@@ -98,8 +98,6 @@ function loadPreSetValues(){
     document.getElementById("ap-project-objectives").value = activePlan.objectives ?? '';
     document.getElementById("ap-notes-and-ideas").value = activePlan.notes ?? '';
 
-    
-    console.log(`activePlan.action_items`, activePlan,activeIndex)
     activePlan.action_items.forEach((item,i)=>{
         document.getElementById(`ap-action-item-title-${i+1}`).value = activePlan.action_items[i].item ?? '';
         document.getElementById(`ap-action-item-date-${i+1}`).value = activePlan.action_items[i].due ?? '';
@@ -155,13 +153,15 @@ function handleActionCompleteChange(e, i) {
 function addTab(){
     allPlans.push(defaultPlan);
     saveInLocal('ap-all-plans',allPlans);
-    activeIndex = allPlans.length;
+    activeIndex = allPlans.length - 1;
     document.querySelector('.tab-header').innerHTML=`<img class="ap-add-tab" src="add-icon.svg" alt="Add new tab SVG" />`;
     
     allPlans.forEach((plan,i)=>{
         addTabsToPage(plan,i);
     });
-
+    addTabFunctionality()
+    loadPreSetValues();
+    activateHandlers();
 }
 
 function addTabsToPage(plan, i){
