@@ -91,16 +91,16 @@
             display: flex;
         }
 
-        #project-description{
+        #ap-project-name{
             width: 100%;
             height: calc(1.9*var(--spacing));
             resize: none;
             padding: 0;
             background: var(--white);
             border: none;
-            font-size: calc(var(--spacing)*.5);
+            font-size: calc(1.2*var(--spacing));
         }
-        #project-objectives{
+        #ap-project-objectives{
             width: 100%;
             height: calc(4.9*var(--spacing));
             resize: none;
@@ -275,29 +275,29 @@
                     <div class="ap-project-details">
                         <div class="ap-description-block row3 ap-solid">
                             <div class="ap-section-title">Project</div>
-                            <textarea name="" id="project-description"></textarea>
+                            <input name="Project Name" id="ap-project-name"/>
                         </div>
                         <div class="ap-text-block row1 ap-solid">
                             <div class="ap-section-title">Start Date:</div>
-                            <input type="date" class="ap-project-detail" name="Start_Date">
+                            <input type="date" id="ap-start-date" class="ap-project-detail" name="Start_Date">
                             
 
                         </div>
                         <div class="ap-text-block row1 ap-solid">
                             <div class="ap-section-title">Due Date:</div>
-                            <input type="date" class="ap-project-detail" name="Due Date">
+                            <input type="date" id="ap-due-date" class="ap-project-detail" name="Due Date">
 
                         </div>
                         <div class="ap-text-block row1 ap-solid">
                             <div class="ap-section-title">Budget:</div>
                             <div class="ap-section-budget">
                                 <span>$</span>
-                                <input type="number" min="0.01" step="0.01" >
+                                <input id="ap-budget"type="number" min="0.01" step="0.01" >
                             </div>
                         </div>
                         <div class="ap-text-block row1 ap-solid">
                             <div class="ap-section-title">Completed:</div>
-                            <input type="checkbox" class="ap-project-detail" name="Completed" >
+                            <input type="checkbox" id="ap-completed" class="ap-project-detail" name="Completed" >
 
                     
                         </div>
@@ -327,7 +327,7 @@
                 <div class="ap-project-right">
                     <div class="ap-objectives row6">
                         <div class="ap-section-title row1">Objectives:</div>
-                        <textarea name="Objectives" id="project-objectives"></textarea>
+                        <textarea name="Objectives" id="ap-project-objectives"></textarea>
                     </div>
                     <div class="ap-action-items">
                         <div class="ap-actions-col1">
