@@ -5,27 +5,63 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Demotivational</title>
+    <title>Daily Action Plan</title>
     <script src="popup.js" defer></script>
     <style>
         :root{
-            --spacing: 2rem;
+            --spacing: 1.5rem;
             --dark-blue: #161E30;
             --white: #F2F4F5;
             --base: #EFEFED;
+            
             font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
             background: var(--base);
         }
         .action-plan-wrapper{
             width: 100%;
-            max-width: 600px;
-            max-height: 800px;
-        }
-        .ap-tabs{
+            color: var(--dark-blue);
         }
         
-        .ap-body{
+        .tab-header {
+            display: flex;
+            gap: 3px;
+            background-color: #f1f1f1;
+        }
+
+      
+
+        .ap-tab {
+            margin: 0px;
+            border: 2px solid #ccc;
+            background-color: white;
+            padding: 5px;
+            margin: 0px 2px;
+            border-radius: 2px 2px 0px 0px;
+            cursor: pointer;
+            font-size: 12px;
+
+        }
+
+        .ap-tab.active {
+            border-bottom: none;
+            background-color: #f1f1f1;
+            color: blue;
+        }
+
+        .ap-body {
+            background-color: #f1f1f1;
+            border: 2px solid #ccc;
+            border-top: none;
+            border-radius: 0px 0px 2px 2px;
             padding: 10px 30px;
+        }
+
+        .tab-pane {
+            display: none;
+        }
+
+        .tab-pane.active {
+            display: block;
         }
         
         .ap-container{
@@ -48,7 +84,7 @@
             
         }
         .ap-project-header{
-            font-size: 1.5rem;
+            font-size: calc(var(--spacing)*.8);
             font-weight: 800;
         }
         .ap-text-block{
@@ -62,7 +98,7 @@
             padding: 0;
             background: var(--white);
             border: none;
-            font-size: 1.25rem;
+            font-size: calc(var(--spacing)*.5);
         }
         #project-objectives{
             width: 100%;
@@ -71,7 +107,7 @@
             padding: 0;
             background: var(--white);
             border: none;
-            font-size: 1.25rem;
+            font-size: calc(var(--spacing)*.7);
         }
         .ap-project-detail{
             width: 100%;
@@ -80,7 +116,7 @@
             padding: 0;
             background: var(--white);
             border: none;
-            font-size: 1rem;
+            font-size: calc(var(--spacing)*.7);
         }
 
         .ap-section-budget{
@@ -120,7 +156,7 @@
             line-height: var(--spacing);
             text-transform: capitalize;
             font-weight: 600;
-            font-size: 1.25rem;
+            font-size: calc(var(--spacing)*.5);
         }
         .ap-notes{
         }
@@ -130,7 +166,7 @@
         .ap-section-title-light{
             color: #757575;
             font-weight: 600;
-            font-size: 1.25rem;
+            font-size: calc(var(--spacing)*.75);
             line-height: calc(2*var(--spacing));
         }
         
@@ -143,14 +179,14 @@
         }
         .ap-actions-col1{
             padding-left: 10px;
-            width: 70%;
+            width: 80%;
         }
        
         .ap-actions-col2{
-            /* width: 0%; */
+            width: 20%;
         }
         .ap-actions-col3{
-            width: 10%;
+            /* width: 10%; */
         }
 
         .row-half{
@@ -187,11 +223,11 @@
 
         }
         .ap-solid{
-            border-bottom: solid 3px black;
+            border-bottom: solid 1px black;
         }
         .ap-compact-dotted{
             box-sizing:border-box;
-            border-bottom: dotted 3px #757575;
+            border-bottom: dotted 1px #757575;
         }
         .ap-spaced-dotted{
             /* Horizontal
@@ -213,97 +249,107 @@
             letter-spacing: var(--spacing); /* Use letter-spacing to increase space between dots*/
         }
 
-
     </style>
 </head>
 
 <body>
     <div class="action-plan-wrapper">
-        <div class="ap-tabs">TABS</div>
-            <div class="ap-body">
-                <div class="ap-project-header row1 ap-solid">Project Action Plan</div>
-                <div class="ap-container">
-                    <div class="ap-project-left">
-                        <div class="ap-project-details">
-                            <div class="ap-description-block row3 ap-solid">
-                                <div class="ap-section-title">Project</div>
-                                <textarea name="" id="project-description"></textarea>
-                            </div>
-                            <div class="ap-text-block row1 ap-solid">
-                                <div class="ap-section-title">Start Date:</div>
-                                <input type="date" class="ap-project-detail" name="Start Date">
 
-                            </div>
-                            <div class="ap-text-block row1 ap-solid">
-                                <div class="ap-section-title">Due Date:</div>
-                                <input type="date" class="ap-project-detail" name="Due Date">
+      
+        <div class="tab-header">
+            <div class="ap-tab active" id="tab1">Tab 1</div>
+            <div class="ap-tab" id="tab2">Tab 2</div>
+            <div class="ap-tab" id="tab3">Tab 3</div>
+        </div>
+        <!-- <div class="tab-content">
+            <div class="tab-pane active" id="tab1-content">Tab 1 Content</div>
+            <div class="tab-pane" id="tab2-content">Tab 2 Content</div>
+            <div class="tab-pane" id="tab3-content">Tab 3 Content</div>
+        </div> -->
+    
 
-                            </div>
-                            <div class="ap-text-block row1 ap-solid">
-                                <div class="ap-section-title">Budget:</div>
-                                <div class="ap-section-budget">
-                                    <span>$</span>
-                                    <input type="number" min="0.01" step="0.01" >
-                                </div>
+        <div class="ap-body">
+            <div class="ap-project-header row1 ap-solid">Project Action Plan</div>
+            <div class="ap-container">
+                <div class="ap-project-left">
+                    <div class="ap-project-details">
+                        <div class="ap-description-block row3 ap-solid">
+                            <div class="ap-section-title">Project</div>
+                            <textarea name="" id="project-description"></textarea>
+                        </div>
+                        <div class="ap-text-block row1 ap-solid">
+                            <div class="ap-section-title">Start Date:</div>
+                            <input type="date" class="ap-project-detail" name="Start_Date">
+                            
 
-                                
-                                <textarea name="Budget" class="ap-project-detail"></textarea>
-                            </div>
-                            <div class="ap-text-block row1 ap-solid">
-                                <div class="ap-section-title">Completed:</div>
-                                <input type="checkbox" class="ap-project-detail" name="Completed" >
+                        </div>
+                        <div class="ap-text-block row1 ap-solid">
+                            <div class="ap-section-title">Due Date:</div>
+                            <input type="date" class="ap-project-detail" name="Due Date">
 
-                      
+                        </div>
+                        <div class="ap-text-block row1 ap-solid">
+                            <div class="ap-section-title">Budget:</div>
+                            <div class="ap-section-budget">
+                                <span>$</span>
+                                <input type="number" min="0.01" step="0.01" >
                             </div>
                         </div>
-                        <div class="ap-notes">
-                            <!-- <div class="row-half"></div> -->
-                            <div class="ap-section-title-light row1point5">Notes & Ideas:</div>
-                            <!-- <div class="ap-notes-header"> </div> -->
-                            <div class="ap-spaced-dotted row1"></div>
-                            <div class="ap-spaced-dotted row1"></div>
-                            <div class="ap-spaced-dotted row1"></div>
-                            <div class="ap-spaced-dotted row1"></div>
-                            <div class="ap-spaced-dotted row1"></div>
-                            <div class="ap-spaced-dotted row1"></div>
-                            <div class="ap-spaced-dotted row1"></div>
-                            <div class="ap-spaced-dotted row1"></div>
-                            <div class="ap-spaced-dotted row1"></div>
-                            <div class="ap-spaced-dotted row1"></div>
-                            <div class="ap-spaced-dotted row1"></div>
-                            <div class="ap-spaced-dotted row1"></div>
-                            <div class="ap-spaced-dotted row1"></div>
+                        <div class="ap-text-block row1 ap-solid">
+                            <div class="ap-section-title">Completed:</div>
+                            <input type="checkbox" class="ap-project-detail" name="Completed" >
 
-
+                    
                         </div>
                     </div>
-                    
-                    <div class="ap-project-right">
-                        <div class="ap-objectives row6">
-                            <div class="ap-section-title row1">Objectives:</div>
-                            <textarea name="Objectives" id="project-objectives"></textarea>
-                        </div>
-                        <div class="ap-action-items">
-                            <div class="ap-actions-col1">
-                                <div class="ap-section-title row1 ap-solid">Action Items:</div>
-                                <div class="ap-compact-dotted row1"></div>
-                                <div class="ap-compact-dotted row1"></div>
-                                <div class="ap-compact-dotted row1"></div>
-                            </div>
-                            <div class="ap-actions-col2">
-                                <div class="ap-section-title row1 ap-solid">Due:</div>
-                                <div class="ap-compact-dotted row1"></div>
-                            </div>
-                            <!-- <div class="ap-actions-col3">
-                                <div class="ap-section-title row1 ap-solid">O</div>
-                                <div class="ap-compact-dotted row1"></div>
-                            </div> -->
+                    <div class="ap-notes">
+                        <!-- <div class="row-half"></div> -->
+                        <div class="ap-section-title-light row1point5">Notes & Ideas:</div>
+                        <!-- <div class="ap-notes-header"> </div> -->
+                        <div class="ap-spaced-dotted row1"></div>
+                        <div class="ap-spaced-dotted row1"></div>
+                        <div class="ap-spaced-dotted row1"></div>
+                        <div class="ap-spaced-dotted row1"></div>
+                        <div class="ap-spaced-dotted row1"></div>
+                        <div class="ap-spaced-dotted row1"></div>
+                        <div class="ap-spaced-dotted row1"></div>
+                        <div class="ap-spaced-dotted row1"></div>
+                        <div class="ap-spaced-dotted row1"></div>
+                        <div class="ap-spaced-dotted row1"></div>
+                        <div class="ap-spaced-dotted row1"></div>
+                        <div class="ap-spaced-dotted row1"></div>
+                        <div class="ap-spaced-dotted row1"></div>
 
+
+                    </div>
+                </div>
+                
+                <div class="ap-project-right">
+                    <div class="ap-objectives row6">
+                        <div class="ap-section-title row1">Objectives:</div>
+                        <textarea name="Objectives" id="project-objectives"></textarea>
+                    </div>
+                    <div class="ap-action-items">
+                        <div class="ap-actions-col1">
+                            <div class="ap-section-title row1 ap-solid">Action Items:</div>
+                            <div class="ap-compact-dotted row1"></div>
+                            <div class="ap-compact-dotted row1"></div>
+                            <div class="ap-compact-dotted row1"></div>
                         </div>
+                        <div class="ap-actions-col2">
+                            <div class="ap-section-title row1 ap-solid">Due:</div>
+                            <div class="ap-compact-dotted row1"></div>
+                        </div>
+                        <!-- <div class="ap-actions-col3">
+                            <div class="ap-section-title row1 ap-solid">O</div>
+                            <div class="ap-compact-dotted row1"></div>
+                        </div> -->
+
                     </div>
                 </div>
             </div>
         </div>
+        
     </div>
 </body>
 
