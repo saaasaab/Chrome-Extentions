@@ -1,19 +1,16 @@
 {
-    "name": "Daily Downer",
-    "description": "Sometimes we just need to be brought down",
-    "version": "1.4.0",
+    "name": "Netflix Anti-binge watching",
+    "description": "Prevents you from binging your favorite show",
+    "version": "1.0.0",
     "manifest_version": 3,
     "action": {
         "default_popup": "popup.html"
     },
-    "permissions": [
-        "notifications",
-        "alarms",
-        "storage"
-      ],
+    "permissions": [],
     "background": {
         "service_worker": "background.js"
     },
+    "host_permissions": [ "https://www.netflix.com/watch/*" ],
     "icons": {
         "16": "/meditate.png",
         "32": "/meditate.png",
