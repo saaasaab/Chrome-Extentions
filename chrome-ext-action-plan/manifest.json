@@ -1,14 +1,11 @@
 {
     "name": "The Project Action Plan",
     "description": "If you don't write it down, it will not be done",
-    "version": "1.0.3",
+    "version": "1.0.4",
     "manifest_version": 3,
     "action": {
         "default_popup": "popup.html"
     },
-    "permissions": [
-        "tabs"
-      ],
     "icons": {
         "16": "/icon16.png",
         "32": "/icon32.png",
