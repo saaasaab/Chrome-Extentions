@@ -180,13 +180,11 @@ function toDate(dateStr){
   }
 
 function addConditionalFormatting() {
-    // const dateFormatted = new Date().toISOString().slice(0, 10)
 
     const dateFormatted = new Date().toLocaleDateString().slice(0, 10)
     const dates = document.querySelectorAll(".ap-action-item-date");
 
-    var todayDate = new Date(dateFormatted).getTime() + 1000 * 60 * 60 * 24 * 3;
-
+    const todayDate = new Date(dateFormatted).getTime();
    
      // ascertain the timezone offset
     const timeOffset = (new Date()).getTimezoneOffset() * 60 * 1000

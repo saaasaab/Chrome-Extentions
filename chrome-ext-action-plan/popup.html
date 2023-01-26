@@ -13,7 +13,7 @@
             --spacing: 1.5rem;
             --dark-blue: #161E30;
             --white: #edeff1;
-            --base: #EFEFED;
+            --base: transparent;
             --grey: #757575;
             
             font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
@@ -62,7 +62,7 @@
         }
 
         .ap-body {
-            background-color: #f1f1f1;
+            background-color: #f9f9f9;
             border: 2px solid #ccc;
             border-top: none;
             border-radius: 0px 0px 2px 2px;
@@ -90,12 +90,6 @@
             width: 60%;
         }
 
-        
-        .ap-description-block{
-        }
-        .ap-project-details{
-            
-        }
         .ap-project-header{
             font-size: calc(var(--spacing)*.8);
             font-weight: 800;
@@ -122,6 +116,7 @@
             border: none;
             font-size: calc(var(--spacing)*.7);
         }
+
         .ap-project-detail{
             width: 100%;
             height: calc(.7*var(--spacing));
@@ -130,25 +125,31 @@
             background: var(--white);
             border: none;
         }
+    
+        #ap-completed{
+            width: unset;
+        }       
 
-      
+
+
+        
 
         .ap-section-budget{
             display: flex;
             width: 100%;
+            
         }
         .ap-section-budget span{
             position: relative;
-            margin-right: -20px;
             line-height: var(--spacing);
         }
         .ap-section-budget input[type='number']{
             box-sizing: border-box;   
-            min-width: calc(100%);
-            padding-left:25px;
+            /* min-width: calc(100%); */
+            margin-right: -80px;
             text-align:left;
             line-height: var(--spacing);
-            background: transparent;
+            background: var(--white);
             border: none;
         }
 
@@ -172,6 +173,8 @@
             font-weight: 600;
             font-size: calc(var(--spacing)*.5);
         }
+
+       
         .ap-notes{
             position: relative;
         }
@@ -376,10 +379,11 @@
 
                         </div>
                         <div class="ap-text-block row1 ap-solid">
-                            <div class="ap-section-title">Budget:</div>
+                            <div class="ap-section-title">Time Budget:</div>
                             <div class="ap-section-budget">
-                                <span>$</span>
+                              
                                 <input id="ap-budget"type="number" min="0.01" step="0.01" >
+                                <span>minutes</span>
                             </div>
                         </div>
                         <div class="ap-text-block row1 ap-solid">
