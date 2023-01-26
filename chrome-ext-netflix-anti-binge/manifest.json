@@ -6,15 +6,17 @@
     "action": {
         "default_popup": "popup.html"
     },
-    "permissions": [],
+    "permissions":["webRequest"],
     "background": {
         "service_worker": "background.js"
     },
-    "host_permissions": [ "https://www.netflix.com/watch/*" ],
+    "host_permissions": [ 
+        "https://www.netflix.com/*",
+        "https://*/*" ],
     "icons": {
-        "16": "/meditate.png",
-        "32": "/meditate.png",
-        "48": "/meditate.png",
-        "128": "/meditate.png"
+        "16": "/netflix.png",
+        "32": "/netflix.png",
+        "48": "/netflix.png",
+        "128": "/netflix.png"
     }
 }
