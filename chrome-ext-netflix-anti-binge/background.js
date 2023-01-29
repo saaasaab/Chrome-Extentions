@@ -34,7 +34,7 @@ async function netflixBinge(data) {
 
     console.log(`data.video.currentEpisode`, data.video.currentEpisode, data.video, data)
     const key = `nab-current-${currentEpisode}`;
-    const allLocalStorage = await chrome.storage.local.get()
+    const allLocalStorage = await chrome.storage.local.get();
 
     const currentStored = allLocalStorage[key];
 
@@ -56,7 +56,7 @@ async function netflixBinge(data) {
 
     const nextEpisode = episodes[indexCurrentEpisode];
 
-    console.log(`episodes, `, episodes,currentEpisode )
+    console.log(`episodes`, episodes, currentEpisode,indexCurrentEpisode,nextEpisode)
 
     console.log(`currentStored`, currentStored)
 
@@ -100,6 +100,15 @@ chrome.tabs.onUpdated.addListener(function
     currentPage = changeInfo.url;
 
     if (changeInfo.url && changeInfo.url.includes('netflix.com/')) {
+        const allLocalStorage = await chrome.storage.local.get();
+
+        Object.keys(allLocalStorage).forEach(bingeBlocker => {
+            // REMOVE The blocker
+            if(bingeBlocker.__expiration < new Date().getTime()){
+                chrome.storage.local.remove(bingeBlocker);
+            }
+        })
+
 
         // Check if the blockers has been pulled
         // if (pulledBingeBlockers) return;
