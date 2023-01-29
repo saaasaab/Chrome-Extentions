@@ -6,7 +6,7 @@
     "action": {
         "default_popup": "popup.html"
     },
-    "permissions":["webRequest"],
+    "permissions":["webRequest","storage","scripting"],
     "background": {
         "service_worker": "background.js"
     },

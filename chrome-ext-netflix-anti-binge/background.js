@@ -1,16 +1,12 @@
-function netflixBinge(data){
-    console.log(`data`, data)
-}
-chrome.webRequest.onCompleted.addListener(
-    (details)=>{
-        console.log(`details`, details)
-        if(pulledData) return;
-        fetch(details.url)
-            .then(response => response.json())
-            .then(data => netflixBinge(data));
-    },
-    {urls: ["https://www.netflix.com/**/website/memberapi/**/metadata*"]}
-)
+/*
+On install, it adds a listen.
+On load it adds a listen.
+Listen for Netflix
+
+Get all the Binge Blockers from local storage
+*/
+
+
 
 // Get the current selector with example.video.currentEpisode
 // Get the next episode by putting all the seasons.episodes in a list, find the next one labeled episodeId
@@ -21,7 +17,159 @@ chrome.webRequest.onCompleted.addListener(
 // disable next button
 // On disabled video, replace the page html with a LOCKED screen and a countdown.
 
-const example = {
+// 1. Check page 
+
+
+// executeScript runs this code inside the tab
+function inContent1() {
+    const el = document.querySelector('.watch-video')
+    // el.innerHTML = 'NO CAN WATCHTY';
+    // alert('deleting EVERYTHING');
+}
+
+
+async function netflixBinge(data) {
+    // Check local storage for current id
+    const currentEpisode = data.video.currentEpisode;
+
+    console.log(`data.video.currentEpisode`, data.video.currentEpisode, data.video, data)
+    const key = `nab-current-${currentEpisode}`;
+    const allLocalStorage = await chrome.storage.local.get()
+
+    const currentStored = allLocalStorage[key];
+
+
+    const seasons = data.video.seasons;
+
+    if (!seasons) {
+        console.log(`data`, data);
+        return
+    }
+
+    const episodes = seasons.map(season =>
+        season.episodes.map(ep => ep.episodeId)
+    ).flat();
+
+
+    const indexCurrentEpisode = episodes.indexOf(currentEpisode) + 1;
+    if (indexCurrentEpisode >= episodes.length) return;
+
+    const nextEpisode = episodes[indexCurrentEpisode];
+
+    console.log(`episodes, `, episodes,currentEpisode )
+
+    console.log(`currentStored`, currentStored)
+
+    if (currentStored && '__expiration' in currentStored) {
+        console.log(`There is something stored`)
+        // console.log(`_expiration`, _expiration)
+
+        
+        const [tab] = await chrome.tabs.query({active: true, currentWindow: true});
+
+        console.log(`tab`, tab, chrome.tabs.query({active: true, currentWindow: true}))
+        await chrome.scripting.executeScript({
+            target: {tabId: tab.id},
+            func: inContent1,
+        });
+
+        // This is where we block off?
+    }
+    else {
+        console.log('Adding the new key now');
+        setStorageItem(key, {next: nextEpisode, now: new Date().getTime()}, 18);
+    }
+
+}
+
+
+let pulledBingeBlockers = false;
+let bingeBlockers = [];
+
+let pulledData = false;
+
+let dataPulled = {};
+let currentPage = "";
+
+chrome.tabs.onUpdated.addListener(function
+    (tabId, changeInfo, tab) {
+
+    if (currentPage !== changeInfo.url) {
+        pulledData = false;
+    }
+    currentPage = changeInfo.url;
+
+    if (changeInfo.url && changeInfo.url.includes('netflix.com/')) {
+
+        // Check if the blockers has been pulled
+        // if (pulledBingeBlockers) return;
+
+        // Get all Binge Blockers
+        console.log(`NETFLIX`)
+        // const currentStored = await getStorageItem(key);
+
+        // pulledBingeBlockers = true;
+    }
+    // Check if we're on netflix
+    if (changeInfo.url && changeInfo.url.includes('netflix.com/watch')) {
+        // Check if the page is watched
+        chrome.webRequest.onCompleted.addListener(
+            // Listen for the member api code
+            (details) => {
+                if (pulledData) return;
+                fetch(details.url)
+                    .then(response => response.json())
+                    .then(data => netflixBinge(EXAMPLE))
+                    .catch((e) => console.log(e));
+
+                pulledData = true;
+            },
+            { urls: ["https://www.netflix.com/**/website/memberapi/**/metadata*"] }
+        );
+    }
+});
+
+
+
+
+
+
+
+function setStorageItem(key, item, expirationInHours) {
+    const storeItem = {
+        item: item
+    };
+
+    if (expirationInHours) {
+        storeItem.__expiration = Date.now() + (expirationInHours * 60 * 60 * 1000);
+    }
+
+    chrome.storage.local.set({ [key]: storeItem }, () => { });
+}
+
+async function getStorageItem(key) {
+
+    const str = await chrome.storage.local.get([key])
+    return str
+
+    // if (str) {
+    //     const item = JSON.parse(str);
+
+    //     if (item.__expiration && item.__expiration < Date.now()) {
+    //         removeStorageItem(key);
+    //         return null;
+    //     } else {
+    //         return item.item;
+    //     }
+    // } else {
+    //     return null;
+    // }
+}
+
+
+
+
+const EXAMPLE = {
     "version": "2.1",
     "trackIds": {
         "nextEpisode": 200257858,
@@ -35,24 +183,24 @@ const example = {
             {
                 "w": 1280,
                 "h": 720,
-                "url": "https://occ-0-2872-1007.1.nflxso.net/dnm/api/v6/6gmvu2hxdfnQ55LZZjyzYR4kzGk/AAAABVnr7PjIEc36V0-f7s2QX3yLWfGpVv455uDb6DbfgbfYB0HHeFma-PWb6AZAy9w3qkqZPAuJoDPudxwUVXrLu6l0KbG81daiDOUFnrHW60n90Z4Fq5G9sMlYP-zDLzflne-3qg.webp?r=4dc"
+                "url": "https://occ-0-2872-1007.1.nflxso.net/dnm/api/v6/6gmvu2hxdfnQ55LZZjyzYR4kzGk/AAAABU8sPXAqoyAt5xMAfRBuSAQ-Wnsv7aM5TDCQpePrrsLQZghDRp8JYnEkYWiTiBNXXPu0kZSF_8dDlktdOkZ5ZC3KS02BeT6nhKrJ7D75u9d2LQixBYmVgDeDlzg2mzPBtPkrag.webp?r=261"
             },
             {
                 "w": 1280,
                 "h": 720,
-                "url": "https://occ-0-2872-1007.1.nflxso.net/dnm/api/v6/6gmvu2hxdfnQ55LZZjyzYR4kzGk/AAAABVnr7PjIEc36V0-f7s2QX3yLWfGpVv455uDb6DbfgbfYB0HHeFma-PWb6AZAy9w3qkqZPAuJoDPudxwUVXrLu6l0KbG81daiDOUFnrHW60n90Z4Fq5G9sMlYP-zDLzflne-3qg.webp?r=4dc"
+                "url": "https://occ-0-2872-1007.1.nflxso.net/dnm/api/v6/6gmvu2hxdfnQ55LZZjyzYR4kzGk/AAAABU8sPXAqoyAt5xMAfRBuSAQ-Wnsv7aM5TDCQpePrrsLQZghDRp8JYnEkYWiTiBNXXPu0kZSF_8dDlktdOkZ5ZC3KS02BeT6nhKrJ7D75u9d2LQixBYmVgDeDlzg2mzPBtPkrag.webp?r=261"
             }
         ],
         "boxart": [
             {
                 "w": 426,
                 "h": 607,
-                "url": "https://occ-0-2872-1007.1.nflxso.net/dnm/api/v6/WNk1mr9x_Cd_2itp6pUM7-lXMJg/AAAABTkus35Or-1QXs-nDP7jXJk9uf-7fIEsIfvLdr8LhfSglj3PYgKmvryDU0KkL8UQRfdjTyB-5oKhQhAoNLub382MMA4rS843Sb3qXpSvzyDwM7eo70eH0vYK5oM36qplWhtufw.jpg?r=8eb"
+                "url": "https://occ-0-2872-1007.1.nflxso.net/dnm/api/v6/WNk1mr9x_Cd_2itp6pUM7-lXMJg/AAAABVUEDgRkTZxs8nVf_jBXtimZW0KZQka1-Ch-Gc3QHamxmD691005Oj4uPZx_MG7aG22mREWQv8_sF9qtOL6yMKgcPZJJfravF1Nsg8I43bsIeI1i51Wr2Urwv1PDqYX8t2bUnA.jpg?r=937"
             },
             {
                 "w": 284,
                 "h": 405,
-                "url": "https://occ-0-2872-1007.1.nflxso.net/dnm/api/v6/WNk1mr9x_Cd_2itp6pUM7-lXMJg/AAAABRDSUWpvpBOfBtb_UVANWWjDQTzI8p6F8emAsmMcSrOMdpe_Y6l-MWmr6Qf9SV5Jigr-WI28aROrZ3GLlWpOI0A574qWE56whgJqkSSYfDbbk6JtpBHkKCYP5LA9npvxGetYBw.jpg?r=8eb"
+                "url": "https://occ-0-2872-1007.1.nflxso.net/dnm/api/v6/WNk1mr9x_Cd_2itp6pUM7-lXMJg/AAAABRiZtF5tEYZwqTwmWH20WZfroL_HAZtVnwSUngIzBFnOV-wOgDDejB32BvRhf19KeGLcFBkUycRw78ApuFvVOl_jMdHoK5jlCyU23Xy-dG6Te1rJIKzyDfFC_MY8iBG-oKC0YA.jpg?r=937"
             }
         ],
         "storyart": [
@@ -161,7 +309,7 @@ const example = {
                         "creditsOffset": 3220,
                         "runtime": 3427,
                         "displayRuntime": 3427,
-                        "watchedToEndOffset": 3190,
+                        "watchedToEndOffset": 3191,
                         "autoplayable": true,
                         "title": "Fallen Angel",
                         "id": 80097694,
@@ -305,7 +453,7 @@ const example = {
                         "creditsOffset": 3035,
                         "runtime": 3247,
                         "displayRuntime": 3247,
-                        "watchedToEndOffset": 3002,
+                        "watchedToEndOffset": 3001,
                         "autoplayable": true,
                         "title": "The Wrong Man",
                         "id": 80097697,
@@ -353,7 +501,7 @@ const example = {
                         "creditsOffset": 2577,
                         "runtime": 2787,
                         "displayRuntime": 2787,
-                        "watchedToEndOffset": 2555,
+                        "watchedToEndOffset": 2554,
                         "autoplayable": true,
                         "title": "Man with My Face",
                         "id": 80097698,
@@ -609,8 +757,8 @@ const example = {
                         "title": "Phantom Lady",
                         "id": 80186761,
                         "bookmark": {
-                            "watchedDate": 1674716732008,
-                            "offset": 751
+                            "watchedDate": 1674789726108,
+                            "offset": 926
                         },
                         "skipMarkers": {
                             "credit": {
@@ -657,8 +805,8 @@ const example = {
                         "title": "Payment Deferred",
                         "id": 80991851,
                         "bookmark": {
-                            "watchedDate": 1674716687522,
-                            "offset": 0
+                            "watchedDate": 1582870787883,
+                            "offset": 2619
                         },
                         "skipMarkers": {
                             "credit": {
@@ -996,3 +1144,170 @@ const example = {
         }
     }
 }
+
+
+// declare module namespace {
+
+//     export interface TrackIds {
+//         nextEpisode: number;
+//         episodeSelector: number;
+//     }
+
+//     export interface Artwork {
+//         w: number;
+//         h: number;
+//         url: string;
+//     }
+
+//     export interface Boxart {
+//         w: number;
+//         h: number;
+//         url: string;
+//     }
+
+//     export interface Storyart {
+//         w: number;
+//         h: number;
+//         url: string;
+//     }
+
+//     export interface UserRating {
+//         matchScore?: any;
+//         tooNewForMatchScore: boolean;
+//         type: string;
+//         userRating: number;
+//     }
+
+//     export interface Credit {
+//         start?: any;
+//         end?: any;
+//     }
+
+//     export interface Recap {
+//         start?: any;
+//         end?: any;
+//     }
+
+//     export interface SkipMarkers {
+//         credit: Credit;
+//         recap: Recap;
+//         content: any[];
+//     }
+
+//     export interface Bookmark {
+//         watchedDate: any;
+//         offset: number;
+//     }
+
+//     export interface Credit2 {
+//         start: number;
+//         end: number;
+//     }
+
+//     export interface Recap2 {
+//         start: number;
+//         end: number;
+//     }
+
+//     export interface SkipMarkers2 {
+//         credit: Credit2;
+//         recap: Recap2;
+//         content: any[];
+//     }
+
+//     export interface Thumb {
+//         w: number;
+//         h: number;
+//         url: string;
+//     }
+
+//     export interface Still {
+//         w: number;
+//         h: number;
+//         url: string;
+//     }
+
+//     export interface Episode {
+//         start: any;
+//         end: any;
+//         synopsis: string;
+//         episodeId: number;
+//         requiresAdultVerification: boolean;
+//         requiresPin: boolean;
+//         requiresPreReleasePin: boolean;
+//         creditsOffset: number;
+//         runtime: number;
+//         displayRuntime: number;
+//         watchedToEndOffset: number;
+//         autoplayable: boolean;
+//         title: string;
+//         id: number;
+//         bookmark: Bookmark;
+//         skipMarkers: SkipMarkers2;
+//         hd: boolean;
+//         thumbs: Thumb[];
+//         stills: Still[];
+//         seq: number;
+//         hiddenEpisodeNumbers: boolean;
+//     }
+
+//     export interface Season {
+//         year: number;
+//         shortName: string;
+//         longName: string;
+//         hiddenEpisodeNumbers: boolean;
+//         title: string;
+//         id: number;
+//         seq: number;
+//         episodes: Episode[];
+//     }
+
+//     export interface Cinematch {
+//         type: string;
+//         value: string;
+//     }
+
+//     export interface TaglineMessage {
+//         tagline: string;
+//         classification: string;
+//     }
+
+//     export interface LiveEvent {
+//         hasLiveEvent: boolean;
+//         liveEventStartDate: number;
+//         liveEventEndDate: number;
+//     }
+
+//     export interface Video {
+//         title: string;
+//         synopsis: string;
+//         rating: string;
+//         artwork: Artwork[];
+//         boxart: Boxart[];
+//         storyart: Storyart[];
+//         type: string;
+//         unifiedEntityId: string;
+//         id: number;
+//         userRating: UserRating;
+//         skipMarkers: SkipMarkers;
+//         currentEpisode: number;
+//         hiddenEpisodeNumbers: boolean;
+//         requiresAdultVerification: boolean;
+//         requiresPin: boolean;
+//         requiresPreReleasePin: boolean;
+//         seasons: Season[];
+//         merchedVideoId?: any;
+//         cinematch: Cinematch;
+//         taglineMessage: TaglineMessage;
+//         liveEvent: LiveEvent;
+//     }
+
+//     export interface RootObject {
+//         version: string;
+//         trackIds: TrackIds;
+//         video: Video;
+//     }
+
+// }
+
+
