@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Netflix</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="google" value="notranslate">
+    <meta http-equiv="origin-trial" data-feature="xHE-AAC Support for Edge on Windows" data-expires="2022-11-24"
+        content="AqYbupvJwrlg4xruPXA25a95gupvR+OwRwb5mBQKVMAQutXXv4u3IpBKj9QaQfe+ZDKkmo+dm/5g7xxfjpnEMJ0AAAB0eyJvcmlnaW4iOiJodHRwczovL3d3dy5uZXRmbGl4LmNvbTo0NDMiLCJpc1N1YmRvbWFpbiI6ZmFsc2UsImZlYXR1cmUiOiJNc01lZGlhRm91bmRhdGlvblhIZUFhYyIsImV4cGlyeSI6MTY2OTI0ODAwMH0=">
+    <link type="text/css" rel="stylesheet"
+        href="https://assets.nflxext.com/web/ffe/wp/less/core/error-page.b122c37502204303115a.css" data-uia="botLink">
+    <link type="text/css" rel="stylesheet" data-uia="botLink">
+    <link type="text/css" rel="stylesheet"
+        href="https://assets.nflxext.com/web/ffe/wp/less/pages/akiraClient.19054ba379bb59edcaa2.css" data-uia="botLink">
+    <link rel="shortcut icon" href="https://assets.nflxext.com/ffe/siteui/common/icons/nficon2016.ico">
+  
+        <style data-emotion="css" data-s=""></style>
+</head>
+
+<style>
+    .nab-lock-screen {
+        background-color:  #141414;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+
+    .nab-top-text,
+    .nab-bottom-text {
+        font-size: 5rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .nab-bottom-text .time-left{
+        margin: 0;
+    }
+
+    #timer {
+        width: 200px;
+        height: 200px;
+        position: relative;
+    }
+
+    svg {
+        width: 100%;
+        height: 100%;
+    }
+
+    circle {
+        fill: none;
+        stroke: #E50914;
+        stroke-width: 5px;
+    }
+
+    #progress {
+        stroke: #141414;
+        stroke-dasharray: 282.74;
+        stroke-dashoffset: 282.74;
+        transform: rotate(-90deg);
+        transform-origin: 50% 50%;
+        transition: stroke-dashoffset 1s linear;
+        stroke-width: 11px;
+    }
+
+    #bg-circle {
+        fill: none;
+       stroke: #E50914;
+        stroke-width: 10px;
+    }
+
+    #nab-lock-icon{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        width: 50%;
+        height: 50%;
+        stroke: none;
+        fill: #E50914;
+    }
+</style>
+
+<body>
+    <div class="nab-lock-screen">
+        <div class="nab-top-text">Your show is locked</div>
+        <div class="nab-countdown">
+            <div id="timer">
+                <svg viewBox="0 0 100 100">
+                    <circle id="bg-circle" cx="50" cy="50" r="45"></circle>
+                    <circle id="progress" cx="50" cy="50" r="45"></circle>
+                </svg>
+                <svg id='nab-lock-icon' width="16" height="21" viewBox="0 0 16 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M2 21C1.45 21 0.979333 20.8043 0.588 20.413C0.196 20.021 0 19.55 0 19V9C0 8.45 0.196 7.979 0.588 7.587C0.979333 7.19567 1.45 7 2 7H3V5C3 3.61667 3.48767 2.43733 4.463 1.462C5.43767 0.487333 6.61667 0 8 0C9.38333 0 10.5627 0.487333 11.538 1.462C12.5127 2.43733 13 3.61667 13 5V7H14C14.55 7 15.021 7.19567 15.413 7.587C15.8043 7.979 16 8.45 16 9V19C16 19.55 15.8043 20.021 15.413 20.413C15.021 20.8043 14.55 21 14 21H2ZM2 19H14V9H2V19ZM8 16C8.55 16 9.021 15.8043 9.413 15.413C9.80433 15.021 10 14.55 10 14C10 13.45 9.80433 12.979 9.413 12.587C9.021 12.1957 8.55 12 8 12C7.45 12 6.97933 12.1957 6.588 12.587C6.196 12.979 6 13.45 6 14C6 14.55 6.196 15.021 6.588 15.413C6.97933 15.8043 7.45 16 8 16ZM5 7H11V5C11 4.16667 10.7083 3.45833 10.125 2.875C9.54167 2.29167 8.83333 2 8 2C7.16667 2 6.45833 2.29167 5.875 2.875C5.29167 3.45833 5 4.16667 5 5V7Z"/>
+                </svg>
+                    
+            </div>
+
+        </div>
+        <div class="nab-bottom-text">
+            <p>for</p>
+            <p id="time-left"></p>
+        </div>
+    </div>
+</body>
+
+
+<script defer>
+    function convertSecondsToTimeString(seconds) {
+        const hours = Math.floor(seconds / (60 * 60));
+        const minutes = Math.floor((seconds - (hours * 60 * 60)) / 60);
+        const secs = seconds - (hours * 60 * 60) - (minutes * 60);
+
+        let timeString = "";
+        if (hours > 0) {
+            timeString = hours + " hour" + (hours > 1 ? "s" : "") + " " + minutes + " minute" + (minutes > 1 ? "s" : "") + " " + secs + " second" + (secs > 1 ? "s" : "");
+        }
+        else if (minutes > 0) {
+            timeString = minutes + " minute" + (minutes > 1 ? "s" : "") + " " + secs + " second" + (secs > 1 ? "s" : "");
+        }
+        else {
+            timeString = secs + " second" + (secs > 1 ? "s" : "");
+        }
+        return timeString;
+    }
+    const progress = document.getElementById("progress");
+    const timeLeft = document.getElementById("time-left");
+
+    // set the countdown time in seconds
+    const now = new Date().getTime();
+    const countdownTime = 18 * 60 * 60;
+
+    let currentTime = Math.round((expiration - now) / 1000);
+
+    // update the timer every second
+    const updateTimer = setInterval(() => {
+        currentTime--;
+        timeLeft.innerHTML = convertSecondsToTimeString(currentTime);
+
+        // calculate the stroke-dashoffset value
+        const offset = (currentTime / countdownTime) * 282.74;
+        progress.style.strokeDashoffset = offset;
+
+        if (currentTime <= 0) {
+            clearInterval(updateTimer);
+            timeLeft.innerHTML = "Time's up!";
+        }
+    }, 1000);
+</script>
+
+
+
+</html>
