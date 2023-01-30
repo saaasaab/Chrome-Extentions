@@ -45,6 +45,26 @@ function inContent1(expiration) {
         }
         return timeString;
     }
+    function waitForElement(selector, cb) {
+        let timesRan = 0;
+        const waitInterval = setInterval(() => {
+            // Check that necessary element for injection exists
+            let el = document.querySelector(selector);
+    
+            timesRan++;
+            // Don't let this run over 100 times
+            console.log(`el`, el)
+            if (timesRan > 100) {
+                clearInterval(waitInterval);
+            }
+            if (el) {
+                clearInterval(waitInterval);
+                
+                cb(el);
+            }
+        }, 300);
+    }
+
 
     const el = document.querySelector('body');
 
@@ -134,33 +154,41 @@ circle {
         <div class="nab-bottom-text">
             <p id="time-left"></p>
         </div>
-    </div>`;
+</div>`;
 
-    el.innerHTML = html;
+
+
+    waitForElement("video", (waitedEl)=>{
+        waitedEl.pause();
+        el.innerHTML = html;
+
+        const progress = document.getElementById("progress");
+        const timeLeft = document.getElementById("time-left");
     
-    const progress = document.getElementById("progress");
-    const timeLeft = document.getElementById("time-left");
+        // set the countdown time in seconds
+        const now = new Date().getTime();
+        const countdownTime = 18 * 60 * 60;
+    
+        let currentTime = Math.round((expiration - now) / 1000);
+    
+        // update the timer every second
+        const updateTimer = setInterval(() => {
+            currentTime--;
+            timeLeft.innerHTML = convertSecondsToTimeString(currentTime);
+    
+            // calculate the stroke-dashoffset value
+            const offset = (currentTime / countdownTime) * 282.74;
+            progress.style.strokeDashoffset = offset;
+    
+            if (currentTime <= 0) {
+                clearInterval(updateTimer);
+                timeLeft.innerHTML = "Time's up!";
+            }
+        }, 1000);
 
-    // set the countdown time in seconds
-    const now = new Date().getTime();
-    const countdownTime = 18 * 60 * 60;
-
-    let currentTime = Math.round((expiration - now) / 1000);
-
-    // update the timer every second
-    const updateTimer = setInterval(() => {
-        currentTime--;
-        timeLeft.innerHTML = convertSecondsToTimeString(currentTime);
-
-        // calculate the stroke-dashoffset value
-        const offset = (currentTime / countdownTime) * 282.74;
-        progress.style.strokeDashoffset = offset;
-
-        if (currentTime <= 0) {
-            clearInterval(updateTimer);
-            timeLeft.innerHTML = "Time's up!";
-        }
-    }, 1000);
+    })
+   
+   
 
 }
 
@@ -215,13 +243,15 @@ async function netflixBinge(data) {
     }
 
 }
-
+chrome.tabs
 chrome.tabs.onUpdated.addListener(function
     (tabId, changeInfo, tab) {
 
+    console.log({ tabId, changeInfo, tab })
     if (currentPage !== changeInfo.url) {
         pulledData = false;
     }
+
     currentPage = changeInfo.url;
 
     if (changeInfo.url && changeInfo.url.includes('netflix.com/')) {
@@ -241,6 +271,8 @@ chrome.tabs.onUpdated.addListener(function
         // Check if the page is watched
         chrome.webRequest.onCompleted.addListener(
             // Listen for the member api code
+
+            // ************ This is preventing the lock on reload.
             (details) => {
                 if (pulledData) return;
 
