@@ -53,7 +53,7 @@ function inContent1(expiration) {
     
             timesRan++;
             // Don't let this run over 100 times
-            console.log(`el`, el)
+            // console.log(`el`, el)
             if (timesRan > 100) {
                 clearInterval(waitInterval);
             }
@@ -209,7 +209,6 @@ async function netflixBinge(data) {
     const indexNextEpisode = episodes.indexOf(currentEpisodeID) + 1;
 
 
-
     if (indexNextEpisode >= episodes.length) return;
 
     const nextEpisodeID = episodes[indexNextEpisode];
@@ -224,35 +223,42 @@ async function netflixBinge(data) {
     const currentStored = allLocalStorage[currentKey];
 
     if (currentStored && '__expiration' in currentStored) {
-        console.log(`There is something stored`)
+        // console.log(`There is something stored`)
         // console.log(`_expiration`, _expiration)=
-        const [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
+        const [tab] = await chrome.tabs.query({ active: true});
 
-        console.log(`tab`, tab)
         await chrome.scripting.executeScript({
             args: [currentStored.__expiration],
             target: { tabId: tab.id },
             func: inContent1,
         });
 
+        pulledData = false;
+
         // This is where we block off?
     }
     else {
-        console.log('Adding the new key now');
+        // console.log('Adding the new key now');
         setStorageItem(nextKey, {}, 18);
     }
 
 }
-chrome.tabs
+
 chrome.tabs.onUpdated.addListener(function
     (tabId, changeInfo, tab) {
 
-    console.log({ tabId, changeInfo, tab })
+    // console.log({ tabId, changeInfo, tab })
     if (currentPage !== changeInfo.url) {
         pulledData = false;
     }
 
     currentPage = changeInfo.url;
+ 
+    if (changeInfo.status && changeInfo.status === "loading") {
+        pulledData = false;
+
+        // console.log(`SETTING TO FALSE`)
+    }
 
     if (changeInfo.url && changeInfo.url.includes('netflix.com/')) {
         async () => {
@@ -274,6 +280,7 @@ chrome.tabs.onUpdated.addListener(function
 
             // ************ This is preventing the lock on reload.
             (details) => {
+                // console.log(`details`, details)
                 if (pulledData) return;
 
                 fetch(details.url)
