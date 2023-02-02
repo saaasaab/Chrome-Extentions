@@ -21,8 +21,7 @@ Get all the Binge Blockers from local storage
 
 
 let pulledData = false;
-
-let dataPulled = {};
+let currentDetailsObj = {}
 let currentPage = "";
 
 
@@ -54,7 +53,6 @@ function inContent1(expiration) {
 
             timesRan++;
             // Don't let this run over 100 times
-            // console.log(`el`, el)
             if (timesRan > 100) {
                 clearInterval(waitInterval);
             }
@@ -192,6 +190,8 @@ circle {
 
 async function netflixBinge(data) {
     // Check local storage for current id
+
+    console.log(`data`, data)
     const currentEpisodeID = data.video.currentEpisode;
 
     const seasons = data.video.seasons;
@@ -207,7 +207,6 @@ async function netflixBinge(data) {
     if (indexNextEpisode >= episodes.length) return;
     const nextEpisodeID = episodes[indexNextEpisode];
 
-
     // Check if current ID Is part of existing binges. 
 
     const allLocalStorage = await chrome.storage.local.get();
@@ -215,9 +214,11 @@ async function netflixBinge(data) {
     const currentKey = `nab-current-${currentEpisodeID}`;
     const nextKey = `nab-current-${nextEpisodeID}`;
     const currentStored = allLocalStorage[currentKey];
-    const nextStored = allLocalStorage[currentKey];
+    const nextStored = allLocalStorage[nextKey];
 
-    if (currentStored && '__expiration' in currentStored) {
+    console.log(`currentStored`, currentStored)
+    if (currentStored && '__expiration' in currentStored && currentStored.__expiration > new Date().getTime()) {
+        console.log('Adding to local storage')
         const [tab] = await chrome.tabs.query({ active: true });
 
         await chrome.scripting.executeScript({
@@ -227,18 +228,41 @@ async function netflixBinge(data) {
         });
 
         pulledData = false;
-
-        // This is where we block off?
     }
     else {
+        
         if(!nextStored) setStorageItem(nextKey, {}, 18);
     }
-
 }
 
-chrome.tabs.onUpdated.addListener(function
-    (tabId, changeInfo, tab) {
 
+async function removeFromLocalStorage(){
+    const allLocalStorage = await chrome.storage.local.get();
+    Object.keys(allLocalStorage).forEach(bingeBlocker => {
+        // REMOVE The blocker
+        const now = new Date().getTime();
+        const binge = allLocalStorage[bingeBlocker];
+        if (binge.__expiration < now) {
+            chrome.storage.local.remove(bingeBlocker);
+        }
+    })
+}
+
+let count = 0;
+
+function callNetflixAPI(details){
+    chrome.webRequest.onCompleted.removeListener(callNetflixAPI)
+    if (pulledData) return;
+    
+    fetch(details.url)
+        .then(response => response.json())
+        .then(data => netflixBinge(data))
+        .catch((e) => console.log(e));
+
+    pulledData = true;
+}
+
+function listenForNetflixToLoad (tabId, changeInfo, tab){
     if (currentPage !== changeInfo.url) {
         pulledData = false;
     }
@@ -247,40 +271,37 @@ chrome.tabs.onUpdated.addListener(function
 
     if (changeInfo.status && changeInfo.status === "loading") {
         pulledData = false;
-
     }
 
     if (changeInfo.url && changeInfo.url.includes('netflix.com/')) {
-        async () => {
-            const allLocalStorage = await chrome.storage.local.get();
-
-            Object.keys(allLocalStorage).forEach(bingeBlocker => {
-                // REMOVE The blocker
-                if (bingeBlocker.__expiration < new Date().getTime()) {
-                    chrome.storage.local.remove(bingeBlocker);
-                }
-            })
-        }
+        removeFromLocalStorage()
     }
+
     // Check if we're on netflix
     if (changeInfo.url && changeInfo.url.includes('netflix.com/watch')) {
         // Check if the page is watched
         chrome.webRequest.onCompleted.addListener(
             // Listen for the member api code
-            (details) => {
-                if (pulledData) return;
+            (details) => {       
+                if(details.initiator.includes('chrome-extension://')) return
+                if("documentId" in currentDetailsObj && currentDetailsObj.documentId === details.documentId ) return
 
-                fetch(details.url)
-                    .then(response => response.json())
-                    .then(data => netflixBinge(data))
-                    .catch((e) => console.log(e));
-
-                pulledData = true;
+                currentDetailsObj=details; 
+                console.log(count, details)
+                count++;
+                callNetflixAPI(details);
+            
             },
             { urls: ["https://www.netflix.com/**/website/memberapi/**/metadata*"] }
         );
     }
-});
+}
+
+chrome.tabs.onUpdated.addListener(
+    (tabId, changeInfo, tab)  => {
+        listenForNetflixToLoad(tabId, changeInfo, tab) 
+    }
+);
 
 
 
