@@ -1,18 +1,34 @@
 {
-    "name": "Netflix Anti-binge watching",
-    "description": "Prevents you from binging your favorite show",
-    "version": "1.0.0",
+    "name": "Netflix Anti-Binge",
+    "description": "Prevents binge-watching on Netflix by blocking the next video after watching the current one",
+    "version": "1.0",
     "manifest_version": 3,
     "action": {
         "default_popup": "popup.html"
     },
-    "permissions":["webRequest","storage","scripting"],
+    "permissions": [
+        "storage",
+        "tabs",
+        "scripting"
+    ],
     "background": {
         "service_worker": "background.js"
     },
-    "host_permissions": [ 
-        "https://www.netflix.com/*",
-        "https://*/*" ],
+    "content_scripts": [
+        {
+            "matches": ["*://*.netflix.com/*"],
+            "js": ["content-script.js"]
+        }
+    ],
+    "host_permissions": [
+        "*://*.netflix.com/*"
+    ],
+    "web_accessible_resources": [
+        {
+            "resources": ["netflix-extractor.js"],
+            "matches": ["*://*.netflix.com/*"]
+        }
+    ],
     "icons": {
         "16": "/netflix.png",
         "32": "/netflix.png",

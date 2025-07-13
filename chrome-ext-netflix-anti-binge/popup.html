@@ -1,8 +1,92 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-
-      </head>
+<html>
+<head>
+    <meta charset="utf-8">
+    <style>
+        body {
+            width: 300px;
+            padding: 20px;
+            font-family: 'Netflix Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            background: #141414;
+            color: white;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        
+        .header h1 {
+            color: #E50914;
+            margin: 0;
+            font-size: 18px;
+        }
+        
+        .status {
+            background: #333;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+        
+        .status h3 {
+            margin: 0 0 10px 0;
+            color: #E50914;
+        }
+        
+        .blocked-videos {
+            margin-bottom: 15px;
+        }
+        
+        .video-item {
+            background: #222;
+            padding: 10px;
+            border-radius: 4px;
+            margin-bottom: 8px;
+            font-size: 12px;
+        }
+        
+        .clear-btn {
+            background: #E50914;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 14px;
+        }
+        
+        .clear-btn:hover {
+            background: #f40612;
+        }
+        
+        .no-blocks {
+            color: #999;
+            font-style: italic;
+            text-align: center;
+        }
+    </style>
+</head>
 <body>
+    <div class="header">
+        <h1>Netflix Anti-Binge</h1>
+    </div>
+    
+    <div class="status">
+        <h3>Status</h3>
+        <div id="status-text">Checking...</div>
+    </div>
+    
+    <div class="blocked-videos">
+        <h3>Blocked Videos</h3>
+        <div id="blocked-list">
+            <div class="no-blocks">No videos currently blocked</div>
+        </div>
+    </div>
+    
+    <button class="clear-btn" id="clear-blocks">Clear All Blocks</button>
+    
+    <script src="popup.js"></script>
 </body>
 </html>

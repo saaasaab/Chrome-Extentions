@@ -1,6 +1,8 @@
-// Background script for Netflix Anti-Binge extension
+// Netflix Anti-binge Extension
+// Checks if user has watched a video and blocks the next video for a set time period
 
-console.log('Background script loaded!');
+let currentVideoId = null;
+let nextVideoId = null;
 
 // Convert seconds to readable time string
 function convertSecondsToTimeString(seconds) {
@@ -22,8 +24,29 @@ function convertSecondsToTimeString(seconds) {
     return timeString;
 }
 
+// Wait for an element to appear in the DOM
+function waitForElement(selector, cb) {
+    let timesRan = 0;
+    const waitInterval = setInterval(() => {
+        let el = document.querySelector(selector);
+        timesRan++;
+
+        if (timesRan > 100) {
+            clearInterval(waitInterval);
+            return;
+        }
+
+        if (el) {
+            clearInterval(waitInterval);
+            cb(el);
+        }
+    }, 300);
+}
+
 // Create and inject the lock screen
 function injectLockScreen(expiration) {
+    const el = document.querySelector('body');
+
     const html = `
 <style>
 .nab-lock-screen {
@@ -120,60 +143,42 @@ circle {
     </div>
 </div>`;
 
-    // Wait for video element to appear
-    let timesRan = 0;
-    const waitInterval = setInterval(() => {
-        let video = document.querySelector('video');
-        timesRan++;
+    waitForElement("video", (waitedEl) => {
+        console.log('%c Video element found, injecting lock screen', 'color: #bada55');
+        waitedEl.pause();
+        el.innerHTML = html;
 
-        if (timesRan > 100) {
-            clearInterval(waitInterval);
-            return;
-        }
+        const progress = document.getElementById("nab-progress");
+        const timeLeft = document.getElementById("nab-time-left");
 
-        if (video) {
-            clearInterval(waitInterval);
-            console.log('Video element found, injecting lock screen');
-            video.pause();
-            
-            // Remove any existing overlay
-            const existingOverlay = document.querySelector('.nab-lock-screen');
-            if (existingOverlay) {
-                existingOverlay.remove();
+        const now = new Date().getTime();
+        const countdownTime = 30 * 60; // 30 minutes in seconds (configurable)
+
+        let currentTime = Math.round((expiration - now) / 1000);
+
+        const updateTimer = setInterval(() => {
+            currentTime--;
+            timeLeft.innerHTML = convertSecondsToTimeString(currentTime);
+
+            const offset = (currentTime / countdownTime) * 282.74;
+            progress.style.strokeDashoffset = offset;
+
+            if (currentTime <= 0) {
+                clearInterval(updateTimer);
+                timeLeft.innerHTML = "Time's up! You can watch again.";
+                setTimeout(() => {
+                    location.reload();
+                }, 2000);
             }
-            
-            // Add the lock screen
-            document.body.insertAdjacentHTML('beforeend', html);
-
-            const progress = document.getElementById("nab-progress");
-            const timeLeft = document.getElementById("nab-time-left");
-
-            const now = new Date().getTime();
-            const countdownTime = 24 * 60 * 60; // 24 hours in seconds
-
-            let currentTime = Math.round((expiration - now) / 1000);
-
-            const updateTimer = setInterval(() => {
-                currentTime--;
-                timeLeft.innerHTML = convertSecondsToTimeString(currentTime);
-
-                const offset = (currentTime / countdownTime) * 282.74;
-                progress.style.strokeDashoffset = offset;
-
-                if (currentTime <= 0) {
-                    clearInterval(updateTimer);
-                    timeLeft.innerHTML = "Time's up! You can watch again.";
-                    setTimeout(() => {
-                        location.reload();
-                    }, 2000);
-                }
-            }, 1000);
-        }
-    }, 300);
+        }, 1000);
+    });
 }
 
 // Check if user has watched this video and should be blocked from next video
 async function checkVideoWatchHistory(currentVideoId, nextVideoId) {
+    // First, clean up any expired entry for this video
+    await cleanupExpiredEntry(currentVideoId);
+
     const allStorage = await chrome.storage.local.get();
     const videoKey = `nab-video-${currentVideoId}`;
     const videoData = allStorage[videoKey];
@@ -181,7 +186,7 @@ async function checkVideoWatchHistory(currentVideoId, nextVideoId) {
     if (videoData && videoData.__expiration) {
         const now = new Date().getTime();
         if (videoData.__expiration > now) {
-            console.log('Video already watched, blocking next video');
+            console.log('%c Video already watched, blocking next video', 'color: #ff4444');
             return videoData.__expiration;
         }
     }
@@ -191,7 +196,7 @@ async function checkVideoWatchHistory(currentVideoId, nextVideoId) {
 
 // Store video watch data
 function storeVideoWatch(currentVideoId) {
-    const expiration = Date.now() + (24 * 60 * 60 * 1000); // 24 hours from now
+    const expiration = Date.now() + (30 * 60 * 1000); // 30 minutes from now (configurable)
     const videoKey = `nab-video-${currentVideoId}`;
 
     chrome.storage.local.set({
@@ -201,15 +206,28 @@ function storeVideoWatch(currentVideoId) {
             __expiration: expiration
         }
     }, () => {
-        console.log('Stored video watch data for:', currentVideoId);
+        console.log('%c Stored video watch data', 'color: #44ff44');
     });
+}
+
+// Clean up expired entries for a specific video
+async function cleanupExpiredEntry(videoId) {
+    const videoKey = `nab-video-${videoId}`;
+    const videoData = await chrome.storage.local.get(videoKey);
+
+    if (videoData[videoKey] && videoData[videoKey].__expiration && videoData[videoKey].__expiration < Date.now()) {
+        await chrome.storage.local.remove(videoKey);
+        console.log('%c Cleaned up expired entry for video:', 'color: #44ff44', videoId);
+        return true;
+    }
+    return false;
 }
 
 // Main function to handle Netflix video
 async function handleNetflixVideo(currentVideoId, nextVideoId) {
-    if (!currentVideoId) return;
+    if (!currentVideoId || !nextVideoId) return;
 
-    console.log('Processing Netflix video:', { currentVideoId, nextVideoId });
+    console.log('%c Processing Netflix video', 'color: #db42ab', { currentVideoId, nextVideoId });
 
     // Check if we've already watched this video and should be blocked from next
     const expiration = await checkVideoWatchHistory(currentVideoId, nextVideoId);
@@ -217,6 +235,7 @@ async function handleNetflixVideo(currentVideoId, nextVideoId) {
     if (expiration) {
         // Block the next video
         const [tab] = await chrome.tabs.query({ active: true });
+
         
         await chrome.scripting.executeScript({
             args: [expiration],
@@ -229,20 +248,22 @@ async function handleNetflixVideo(currentVideoId, nextVideoId) {
     }
 }
 
+
+
 // Listen for tab updates
 chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
     if (changeInfo.status === 'complete' && tab.url && tab.url.includes('netflix.com/watch')) {
-        console.log('Netflix video page detected');
+        console.log('%c Netflix video page detected', 'color: #aa44dd');
 
         // Extract video ID from URL and check if it should be blocked
         const videoId = tab.url.split('/watch/')[1];
-        console.log('Video ID from URL:', videoId);
+        console.log('%c Video ID from URL:', 'color: #aa44dd', videoId);
 
         // Check if this video should be blocked
         checkVideoWatchHistory(videoId, null).then(expiration => {
             console.log('Expiration check result:', expiration);
             if (expiration) {
-                console.log('Video should be blocked, injecting lock screen');
+                console.log('%c Video should be blocked, injecting lock screen', 'color: #ff4444');
                 chrome.scripting.executeScript({
                     args: [expiration],
                     target: { tabId: tabId },
@@ -250,8 +271,10 @@ chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
                 });
             } else {
                 // If not blocked, trigger content script to extract video IDs
-                console.log('Video not blocked, triggering content script');
-                chrome.tabs.sendMessage(tabId, { type: 'PRINT_WINDOW_OBJECT' });
+                console.log('%c Video not blocked, triggering content script', 'color: #44ff44');
+                chrome.tabs.sendMessage(tabId, { type: 'EXTRACT_VIDEO_IDS' });
+
+                
             }
         });
     }
@@ -259,13 +282,36 @@ chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
 
 // Listen for messages from content script
 chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
-    console.log('Received message from content script:', message);
-    
-    if (message.type === 'WINDOW_OBJECT_DATA') {
-        console.log('Content script window object data:', message.data);
-    } else if (message.type === 'PAGE_CONTEXT_WINDOW_DATA') {
-        console.log('Page context window object data:', message.data);
-    } else if (message.type === 'NETFLIX_VIDEO_DATA') {
+   
+   console.log(message);
+    if (message.type === 'NETFLIX_VIDEO_DATA') {
         handleNetflixVideo(message.currentVideoId, message.nextVideoId);
+    } else if (message.type === 'EXTRACT_NETFLIX_VIDEO_IDS') {
+        // Extract video IDs from the specified tab
+        extractNetflixVideoIds(message.tabId);
+
     }
 });
+
+
+
+// Function to extract Netflix video IDs from a specific tab
+async function extractNetflixVideoIds(tabId) {
+    console.log('Starting Netflix video ID extraction...');
+    
+    try {
+        // Inject the Netflix extractor script file
+        await chrome.scripting.executeScript({
+            target: { tabId: tabId },
+            files: ['netflix-extractor.js']
+        });
+        
+        console.log('Netflix extractor script injected');
+        
+    } catch (error) {
+        console.error('Error extracting Netflix video IDs:', error);
+    }
+}
+
+
+
