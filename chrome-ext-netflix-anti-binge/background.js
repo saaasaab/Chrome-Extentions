@@ -2,25 +2,7 @@
 
 console.log('Background script loaded!');
 
-// Convert seconds to readable time string
-function convertSecondsToTimeString(seconds) {
-    const hours = Math.floor(seconds / (60 * 60));
-    const minutes = Math.floor((seconds - (hours * 60 * 60)) / 60);
-    const secs = seconds - (hours * 60 * 60) - (minutes * 60);
 
-    const isPlural = (num) => num > 1 ? "s" : "";
-    let timeString = "";
-    if (hours > 0) {
-        timeString = `${hours} hour${isPlural(hours)} ${minutes} minute${isPlural(minutes)} ${secs} second${isPlural(secs)}`;
-    }
-    else if (minutes > 0) {
-        timeString = `${minutes} minute${isPlural(minutes)} ${secs} second${isPlural(secs)}`;
-    }
-    else {
-        timeString = `${secs} second${isPlural(secs)}`;
-    }
-    return timeString;
-}
 
 // Create and inject the lock screen
 function injectLockScreen(expiration) {
@@ -120,6 +102,26 @@ circle {
     </div>
 </div>`;
 
+// Convert seconds to readable time string
+function convertSecondsToTimeString(seconds) {
+    const hours = Math.floor(seconds / (60 * 60));
+    const minutes = Math.floor((seconds - (hours * 60 * 60)) / 60);
+    const secs = seconds - (hours * 60 * 60) - (minutes * 60);
+
+    const isPlural = (num) => num > 1 ? "s" : "";
+    let timeString = "";
+    if (hours > 0) {
+        timeString = `${hours} hour${isPlural(hours)} ${minutes} minute${isPlural(minutes)} ${secs} second${isPlural(secs)}`;
+    }
+    else if (minutes > 0) {
+        timeString = `${minutes} minute${isPlural(minutes)} ${secs} second${isPlural(secs)}`;
+    }
+    else {
+        timeString = `${secs} second${isPlural(secs)}`;
+    }
+    return timeString;
+}
+
     // Wait for video element to appear
     let timesRan = 0;
     const waitInterval = setInterval(() => {
@@ -135,6 +137,7 @@ circle {
             clearInterval(waitInterval);
             console.log('Video element found, injecting lock screen');
             video.pause();
+            video.dataset.nabBlocked = 'true'; // Mark video as blocked
             
             // Remove any existing overlay
             const existingOverlay = document.querySelector('.nab-lock-screen');
@@ -149,7 +152,7 @@ circle {
             const timeLeft = document.getElementById("nab-time-left");
 
             const now = new Date().getTime();
-            const countdownTime = 24 * 60 * 60; // 24 hours in seconds
+            const countdownTime = 24 * 60 * 60; // 24 hours in seconds for progress bar
 
             let currentTime = Math.round((expiration - now) / 1000);
 
@@ -157,7 +160,9 @@ circle {
                 currentTime--;
                 timeLeft.innerHTML = convertSecondsToTimeString(currentTime);
 
-                const offset = (currentTime / countdownTime) * 282.74;
+                // Calculate progress based on 24-hour period
+                const progressPercent = Math.max(0, Math.min(1, currentTime / countdownTime));
+                const offset = (1 - progressPercent) * 282.74;
                 progress.style.strokeDashoffset = offset;
 
                 if (currentTime <= 0) {
@@ -189,43 +194,53 @@ async function checkVideoWatchHistory(currentVideoId, nextVideoId) {
     return null;
 }
 
-// Store video watch data
-function storeVideoWatch(currentVideoId) {
-    const expiration = Date.now() + (24 * 60 * 60 * 1000); // 24 hours from now
-    const videoKey = `nab-video-${currentVideoId}`;
+// Store video watch data - store the NEXT video ID with next day expiration
+function storeVideoWatch(currentVideoId, nextVideoId) {
+    if (!nextVideoId) {
+        console.log('No next video ID available, skipping storage');
+        return;
+    }
+    
+    // Calculate next day at midnight local time
+    const now = new Date();
+    const tomorrow = new Date(now);
+    tomorrow.setDate(tomorrow.getDate() + 1);
+    tomorrow.setHours(0, 0, 0, 0); // Set to midnight
+    
+    const expiration = tomorrow.getTime();
+    const videoKey = `nab-video-${nextVideoId}`;
 
     chrome.storage.local.set({
         [videoKey]: {
-            videoId: currentVideoId,
+            videoId: nextVideoId,
             watchedAt: Date.now(),
-            __expiration: expiration
+            __expiration: expiration,
+            blockedFrom: currentVideoId
         }
     }, () => {
-        console.log('Stored video watch data for:', currentVideoId);
+        console.log('Stored next video block for:', nextVideoId, 'expires:', new Date(expiration));
     });
 }
 
 // Main function to handle Netflix video
-async function handleNetflixVideo(currentVideoId, nextVideoId) {
+async function handleNetflixVideo(currentVideoId, nextVideoId, tabId) {
     if (!currentVideoId) return;
 
-    console.log('Processing Netflix video:', { currentVideoId, nextVideoId });
+    console.log('Processing Netflix video:', { currentVideoId, nextVideoId, tabId });
 
     // Check if we've already watched this video and should be blocked from next
     const expiration = await checkVideoWatchHistory(currentVideoId, nextVideoId);
 
     if (expiration) {
-        // Block the next video
-        const [tab] = await chrome.tabs.query({ active: true });
-        
+        // Block the next video - use the specific tab ID
         await chrome.scripting.executeScript({
             args: [expiration],
-            target: { tabId: tab.id },
+            target: { tabId: tabId },
             func: injectLockScreen,
         });
     } else {
         // Store the watch data for current video
-        storeVideoWatch(currentVideoId);
+        storeVideoWatch(currentVideoId, nextVideoId);
     }
 }
 
@@ -236,7 +251,6 @@ chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
 
         // Extract video ID from URL and check if it should be blocked
         const videoId = tab.url.split('/watch/')[1];
-        console.log('Video ID from URL:', videoId);
 
         // Check if this video should be blocked
         checkVideoWatchHistory(videoId, null).then(expiration => {
@@ -266,6 +280,8 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
     } else if (message.type === 'PAGE_CONTEXT_WINDOW_DATA') {
         console.log('Page context window object data:', message.data);
     } else if (message.type === 'NETFLIX_VIDEO_DATA') {
-        handleNetflixVideo(message.currentVideoId, message.nextVideoId);
+        // Use the sender's tab ID to ensure we inject into the correct Netflix tab
+        console.log('Sender tab ID:', sender);
+        handleNetflixVideo(message.currentVideoId, message.nextVideoId, sender.tab.id);
     }
 });

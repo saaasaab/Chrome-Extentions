@@ -12,11 +12,11 @@ function injectScriptFile(filename) {
 
 // Listen for messages from background script
 chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
-    console.log('Received message from background script:', message);
+    // console.log('Received message from background script:', message);
     
     if (message.type === 'PRINT_WINDOW_OBJECT') {
-        console.log('Content script window object:', window);
-        console.log('Content script window object keys:', Object.keys(window));
+        // console.log('Content script window object:', window);
+        // console.log('Content script window object keys:', Object.keys(window));
         
         // Inject script file to access page context window object
         injectScriptFile('netflix-extractor.js');
@@ -36,7 +36,7 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
 // Listen for messages from injected script
 window.addEventListener('message', (event) => {
     if (event.data.type === 'WINDOW_OBJECT_DATA') {
-        console.log('Received window object data from page context:', event.data.data);
+        // console.log('Received window object data from page context:', event.data.data);
         
         // Forward to background script
         chrome.runtime.sendMessage({
