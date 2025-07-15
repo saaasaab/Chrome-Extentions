@@ -1,0 +1,18 @@
+{
+  "name": "chrome-ext-listing-comments",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "build": "vite build && mkdir -p dist/widget dist/popup && cp src/widget/widget.html dist/widget/ && cp src/widget/widget.css dist/widget/ && cp src/popup/popup.html dist/popup/ && cp src/popup/popup.css dist/popup/",
+    "dev": "vite build --watch",
+    "preview": "vite preview",
+    "build:extension": "./build.sh"
+  },
+  "devDependencies": {
+    "vite": "^4.5.0"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.50.5"
+  }
+}

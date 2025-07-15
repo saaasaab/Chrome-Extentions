@@ -1,0 +1,76 @@
+{
+  "manifest_version": 3,
+  "name": "Listing Comments",
+  "version": "1.0.0",
+  "description": "Add comments to real estate listings on Zillow, Redfin, Apartments.com, and LoopNet",
+  
+  "permissions": [
+    "storage",
+    "activeTab",
+    "scripting"
+  ],
+  
+  "host_permissions": [
+    "https://*.zillow.com/*",
+    "https://*.redfin.com/*",
+    "https://*.apartments.com/*",
+    "https://*.loopnet.com/*",
+    "https://*.supabase.co/*"
+  ],
+  
+  "content_scripts": [
+    {
+      "matches": [
+        "https://*.zillow.com/*",
+        "https://*.redfin.com/*",
+        "https://*.apartments.com/*",
+        "https://*.loopnet.com/*"
+      ],
+      "js": ["dist/contentScript.js"],
+      "css": ["dist/widget/widget.css"],
+      "run_at": "document_end"
+    }
+  ],
+  
+  "background": {
+    "service_worker": "dist/background.js"
+  },
+  
+  "action": {
+    "default_popup": "dist/popup/popup.html",
+    "default_title": "Listing Comments",
+    "default_icon": {
+      "16": "assets/icons/icon16.png",
+      "48": "assets/icons/icon48.png",
+      "128": "assets/icons/icon128.png"
+    }
+  },
+  
+  "icons": {
+    "16": "assets/icons/icon16.png",
+    "48": "assets/icons/icon48.png",
+    "128": "assets/icons/icon128.png"
+  },
+  
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "dist/widget/widget.html",
+        "dist/widget.js",
+        "dist/widget/widget.css"
+      ],
+      "matches": [
+        "https://*.zillow.com/*",
+        "https://*.redfin.com/*",
+        "https://*.apartments.com/*",
+        "https://*.loopnet.com/*"
+      ]
+    }
+  ],
+  
+
+  
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self'"
+  }
+}

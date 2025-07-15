@@ -1,0 +1,218 @@
+<!-- Listing Comments Widget Content -->
+<div class="comments-container">
+  <!-- Authentication Section -->
+  <div class="auth-section" id="auth-section">
+    <div class="auth-status">
+      <div class="user-info" id="user-info" style="display: none;">
+        <div class="user-avatar">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M20 21V19C20 17.9391 19.5786 16.9217 18.8284 16.1716C18.0783 15.4214 17.0609 15 16 15H8C6.93913 15 5.92172 15.4214 5.17157 16.1716C4.42143 16.9217 4 17.9391 4 19V21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="12" cy="7" r="4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div class="user-details">
+          <span class="user-name" id="user-name">User Name</span>
+          <span class="user-email" id="user-email">user@example.com</span>
+        </div>
+        <button class="sign-out-btn" id="sign-out-btn">Sign Out</button>
+      </div>
+      <div class="anonymous-user" id="anonymous-user">
+        <div class="anonymous-badge">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M2 17L12 22L22 17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M2 12L12 17L22 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          Not signed in
+        </div>
+        <button class="sign-in-btn" id="sign-in-btn">Sign In</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main widget area: comments list + comment form -->
+  <div class="widget-main">
+    <!-- Quick Reactions Tally Bar -->
+    <div class="quick-reactions-tally" id="quick-reactions-tally" style="display: none;"></div>
+    <!-- Comments List -->
+    <div class="comments-list" id="comments-list">
+      <div class="comments-header">
+        <h4>Comments</h4>
+        <div class="sort-options">
+          <select id="sort-select">
+            <option value="newest">Newest First</option>
+            <option value="oldest">Oldest First</option>
+            <option value="helpful">Most Helpful</option>
+          </select>
+        </div>
+      </div>
+      <div class="comments-container" id="comments-container">
+        <!-- Comments will be dynamically loaded here -->
+        <div class="no-comments" id="no-comments">
+          <div class="no-comments-icon">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M21 15C21 15.5304 20.7893 16.0391 20.4142 16.4142C20.0391 16.7893 19.5304 17 19 17H7L3 21V5C3 4.46957 3.21071 3.96086 3.58579 3.58579C3.96086 3.21071 4.46957 3 5 3H19C19.5304 3 20.0391 3.21071 20.4142 3.58579C20.7893 3.96086 21 4.46957 21 5V15Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <p>No comments yet</p>
+          <p class="subtitle">Be the first to share your thoughts!</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Comment Form -->
+    <div class="comment-form" id="comment-form">
+      <div class="form-header">
+        <h4>Add a Comment</h4>
+        <div class="anonymous-toggle">
+          <label class="toggle-label">
+            <input type="checkbox" id="anonymous-toggle">
+            <span class="toggle-slider"></span>
+            Post as Anonymous
+          </label>
+        </div>
+      </div>
+      <div class="comment-form-row">
+        <button class="quick-reactions-toggle" id="quick-reactions-toggle" title="Quick Reactions">
+          <span>😊</span>
+        </button>
+        <textarea 
+          id="comment-text" 
+          placeholder="Share your thoughts about this listing..."
+          rows="3"
+          maxlength="500"
+        ></textarea>
+        <!-- Quick Reactions Pullout -->
+        <div class="quick-reactions-pullout" id="quick-reactions-pullout">
+          <div class="quick-reactions-title">Quick Reactions</div>
+          <div class="reaction-buttons">
+            <button class="reaction-btn" data-reaction="Good deal! 👍">
+              <span class="reaction-emoji">👍</span>
+              <span class="reaction-text">Good deal!</span>
+            </button>
+            <button class="reaction-btn" data-reaction="Not priced right 💸">
+              <span class="reaction-emoji">💸</span>
+              <span class="reaction-text">Not priced right</span>
+            </button>
+            <button class="reaction-btn" data-reaction="Listing is misleading ⚠️">
+              <span class="reaction-emoji">⚠️</span>
+              <span class="reaction-text">Misleading</span>
+            </button>
+            <button class="reaction-btn" data-reaction="Great location! 🏘️">
+              <span class="reaction-emoji">🏘️</span>
+              <span class="reaction-text">Great location</span>
+            </button>
+            <button class="reaction-btn" data-reaction="Needs work 🔧">
+              <span class="reaction-emoji">🔧</span>
+              <span class="reaction-text">Needs work</span>
+            </button>
+            <button class="reaction-btn" data-reaction="Perfect for me! ❤️">
+              <span class="reaction-emoji">❤️</span>
+              <span class="reaction-text">Perfect!</span>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="form-footer">
+        <span class="char-count" id="char-count">0/500</span>
+        <button class="submit-btn" id="submit-btn" disabled>Post Comment</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Loading Template -->
+  <div class="comment-loading" id="comment-loading" style="display: none;">
+    <div class="loading-spinner"></div>
+    <p>Loading comments...</p>
+  </div>
+
+  <!-- Comment Template (hidden) -->
+  <template id="comment-template">
+    <div class="comment-item">
+      <div class="comment-header">
+        <div class="comment-author">
+          <div class="author-avatar">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M20 21V19C20 17.9391 19.5786 16.9217 18.8284 16.1716C18.0783 15.4214 17.0609 15 16 15H8C6.93913 15 5.92172 15.4214 5.17157 16.1716C4.42143 16.9217 4 17.9391 4 19V21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <circle cx="12" cy="7" r="4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <div class="author-info">
+            <span class="author-name"></span>
+            <span class="comment-date"></span>
+          </div>
+        </div>
+        <div class="comment-actions">
+          <button class="action-btn report-btn" title="Report comment">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M10.29 3.86L1.82 18A2 2 0 0 0 3.54 21H20.46A2 2 0 0 0 22.18 18L13.71 3.86A2 2 0 0 0 10.29 3.86Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <line x1="12" y1="9" x2="12" y2="13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <line x1="12" y1="17" x2="12.01" y2="17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+      <div class="comment-content"></div>
+      <div class="comment-footer">
+        <button class="helpful-btn">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M14 9V5A3 3 0 0 0 8 5V9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M18 9V5A3 3 0 0 0 12 5V9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M4 9H20V19A2 2 0 0 1 18 21H6A2 2 0 0 1 4 19V9Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span class="helpful-count">0</span>
+        </button>
+        <span class="report-link">Report this comment</span>
+      </div>
+    </div>
+  </template>
+
+  <!-- Report Modal (hidden) -->
+  <div class="report-modal" id="report-modal" style="display: none;">
+    <div class="report-modal-content">
+      <div class="report-modal-header">
+        <h4>Report Comment</h4>
+        <button class="close-modal-btn" id="close-report-modal">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+      </div>
+      <div class="report-modal-body">
+        <p>Why are you reporting this comment?</p>
+        <div class="report-reasons">
+          <label class="report-reason">
+            <input type="radio" name="report-reason" value="spam">
+            <span>Spam or misleading</span>
+          </label>
+          <label class="report-reason">
+            <input type="radio" name="report-reason" value="inappropriate">
+            <span>Inappropriate content</span>
+          </label>
+          <label class="report-reason">
+            <input type="radio" name="report-reason" value="harassment">
+            <span>Harassment or bullying</span>
+          </label>
+          <label class="report-reason">
+            <input type="radio" name="report-reason" value="fake">
+            <span>Fake information</span>
+          </label>
+          <label class="report-reason">
+            <input type="radio" name="report-reason" value="other">
+            <span>Other</span>
+          </label>
+        </div>
+        <textarea 
+          id="report-details" 
+          placeholder="Additional details (optional)"
+          rows="3"
+          maxlength="200"
+        ></textarea>
+      </div>
+      <div class="report-modal-footer">
+        <button class="cancel-btn" id="cancel-report">Cancel</button>
+        <button class="submit-report-btn" id="submit-report" disabled>Submit Report</button>
+      </div>
+    </div>
+  </div>
+</div> 

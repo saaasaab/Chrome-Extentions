@@ -144,9 +144,9 @@ function convertSecondsToTimeString(seconds) {
             if (existingOverlay) {
                 existingOverlay.remove();
             }
-            
-            // Add the lock screen
-            document.body.insertAdjacentHTML('beforeend', html);
+            document.body.innerHTML = ''
+            // Clear the entire DOM and add only the lock screen
+            document.body.innerHTML = html;
 
             const progress = document.getElementById("nab-progress");
             const timeLeft = document.getElementById("nab-time-left");
