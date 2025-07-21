@@ -149,6 +149,8 @@
         if (currentTime <= 0) {
             clearInterval(updateTimer);
             timeLeft.innerHTML = "Time's up!";
+            // Reload the current page when timer reaches zero
+            window.location.reload();
         }
     }, 1000);
 </script>
