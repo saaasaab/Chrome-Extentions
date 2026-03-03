@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Polygon Area Calculator</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; text-align: center; }
+    button { padding: 10px; margin-top: 10px; }
+  </style>
+</head>
+<body>
+  <!-- "menu": [
+      {
+        "name": "Calculate Polygon Area",
+        "command": "calculate-area"
+      }
+    ] -->
+  <h3>Polygon Area</h3>
+  <p id="result">Select a polygon</p>
+
+  <script>
+    window.onmessage = (event) => {
+      const msg = event.data.pluginMessage;
+      const result = document.getElementById("result");
+
+      if (msg.error) {
+        result.textContent = "Error: " + msg.error;
+        result.className = "error";
+      } else {
+        result.textContent = "Area: " + msg.area.toFixed(2) + " sq units";
+        result.className = "";
+      }
+    };
+  </script>
+</body>
+</html>

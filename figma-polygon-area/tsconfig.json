@@ -1,0 +1,7 @@
+{
+  "compilerOptions": {
+    "lib": ["esnext"],
+    "typeRoots": ["./node_modules/@types", "./node_modules/@figma"],
+    "types": ["@figma/plugin-typings"]
+  }
+}
